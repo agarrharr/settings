@@ -1,0 +1,15 @@
+[user]
+	name = aharris88
+	email = aharris88@gmail.com
+[core]
+	editor = sublime +w
+	excludesfile = /Users/aharris88/.gitignore
+	autocrlf = input
+[color]
+	ui = true
+[merge]
+	tool = kdiff3
+[diff]
+	tool = kdiff3
+[push]
+	default = simple

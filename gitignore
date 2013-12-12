@@ -1,0 +1,5 @@
+
+#ignore operating system generated files
+.DS_Store
+.Trashes
+.Spotlight-V100
