@@ -21,3 +21,5 @@ set listchars=tab:▸\ ,eol:¬
 " NERDTree
 " open NERDTree when vim starts up
 autocmd vimenter * NERDTree
+
+colorscheme codeschool
