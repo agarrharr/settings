@@ -1,6 +1,7 @@
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
 
 syntax on
 set number
@@ -14,3 +15,9 @@ set expandtab
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
+
+" Plugins
+
+" NERDTree
+" open NERDTree when vim starts up
+autocmd vimenter * NERDTree
