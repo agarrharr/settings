@@ -10,6 +10,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Copy to system clipboard when you yank
+set clipboard=unnamed
+
 " Invisible Characters
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
@@ -22,4 +25,4 @@ set listchars=tab:▸\ ,eol:¬
 " open NERDTree when vim starts up
 autocmd vimenter * NERDTree
 
-colorscheme codeschool
+colorscheme Tomorrow-Night
