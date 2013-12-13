@@ -8,24 +8,20 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="mh"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ll='ls -lahG'
+alias ll='ls -la'
 alias ..='cd ..'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
 alias ..4='cd ../../../..'
 alias ~='cd ~'
-#alias mysql='/usr/local/mysql/bin/mysql'
-alias gitstat='git status'
 alias gitgraph='git log --graph --oneline --decorate --all'
-#alias phpunit='vendor/phpunit/phpunit/composer/bin/phpunit'
-#alias sasswatch='sass --watch -r sass-media_query_combiner'
 alias adb='adb forward tcp:9222 localabstract:chrome_devtools_remote'
-alias cake='lib/Cake/Console/cake'
 alias subl='sublime'
 alias geeknote='python ~/geeknote/geeknote.py'
 alias ttytter='perl ~/ttytter/ttytter.pl'
+
+# Turn on 255 Color
+set -g default-terminal "screen-256color"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -66,8 +62,6 @@ PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
 PATH="$PATH:/usr/local/lib/node_modules"
 #path to gem installed libraries
 PATH="$PATH:/usr/local/opt/ruby/bin"
-#path to trigger.io toolkit
-#PATH="$PATH:/Applications/TriggerToolkit.app/Contents/MacOS"
 #Android SDK
 PATH="$PATH:/Users/aharris88/adt/sdk/platform-tools:/Users/aharris88/adt/sdk/tools"
 #Kdiff3
