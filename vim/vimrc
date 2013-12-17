@@ -2,6 +2,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
+Bundle 'mattn/emmet-vim'
 
 syntax on
 set number
