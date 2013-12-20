@@ -3,6 +3,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mattn/emmet-vim'
+Bundle 'kien/ctrlp.vim'
 
 syntax on
 set number
@@ -14,6 +15,9 @@ set expandtab
 " Copy to system clipboard when you yank
 set clipboard=unnamed
 
+" set leader key to comma
+let mapleader = ","
+
 " Invisible Characters
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
@@ -24,6 +28,12 @@ set listchars=tab:▸\ ,eol:¬
 
 " NERDTree
 " open NERDTree when vim starts up
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
+" nmap <leader>n: NERDTree!<CR>
+" let NERDTreeMapOpenSplit='s'
+" let NERDTreeMapOpenVSplit='v'
+
+" ctrlp
+let g:ctrlp_map = '<leader>f'
 
 colorscheme Tomorrow-Night
