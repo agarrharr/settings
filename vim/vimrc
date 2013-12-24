@@ -4,6 +4,7 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mattn/emmet-vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'arecarn/frisk'
 
 syntax on
 set number
