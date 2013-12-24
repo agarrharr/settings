@@ -8,16 +8,18 @@ Bundle 'arecarn/frisk'
 Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'marijnh/tern_for_vim'
+Bundle 'vim-scripts/JavaScript-Indent'
 
 set t_Co=256
 syntax on
 set background=dark
 colorscheme Tomorrow-Night
 set number
-set smartindent
-set tabstop=4
-set shiftwidth=4
-set expandtab
+
+" Enable better indentation.
+set autoindent smartindent
+set smarttab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 " Copy to system clipboard when you yank
 set clipboard=unnamed
