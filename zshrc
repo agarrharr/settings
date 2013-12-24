@@ -41,7 +41,7 @@ set -g default-terminal "screen-256color"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
@@ -58,15 +58,21 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# RVM
+if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+
 # Customize to your needs...
 PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
 #path to node
 PATH="$PATH:/usr/local/lib/node_modules"
 #path to gem installed libraries
 PATH="$PATH:/usr/local/opt/ruby/bin"
+PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems/"
 #Android SDK
 PATH="$PATH:/Users/aharris88/adt/sdk/platform-tools:/Users/aharris88/adt/sdk/tools"
 #Kdiff3
 PATH="$PATH:/Applications/kdiff3.app/Contents/MacOS"
 
 export PATH
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
