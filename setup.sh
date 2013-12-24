@@ -62,3 +62,5 @@ install_zsh
 # npm should be installed with node
 # install jshint
 # npm install jshint -g
+# install tmux
+brew install tmux

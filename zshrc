@@ -19,7 +19,7 @@ alias adb='adb forward tcp:9222 localabstract:chrome_devtools_remote'
 alias subl='sublime'
 alias geeknote='python ~/geeknote/geeknote.py'
 alias ttytter='perl ~/ttytter/ttytter.pl'
-alias macvim='/Applications/MacVim.app/Contents/MacOS/Vim'
+# alias macvim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias bower='noglob bower' #Only needed for prezto or oh-my-zsh
 
 # Turn on 255 Color
