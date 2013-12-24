@@ -7,7 +7,10 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'arecarn/frisk'
 Bundle 'scrooloose/syntastic'
 
+set t_Co=256
 syntax on
+set background=dark
+colorscheme Tomorrow-Night
 set number
 set smartindent
 set tabstop=4
@@ -37,5 +40,3 @@ set listchars=tab:▸\ ,eol:¬
 
 " ctrlp
 let g:ctrlp_map = '<leader>f'
-
-colorscheme Tomorrow-Night
