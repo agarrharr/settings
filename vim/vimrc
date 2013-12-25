@@ -9,6 +9,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'vim-scripts/JavaScript-Indent'
+Bundle 'tpope/vim-surround'
 
 set t_Co=256
 syntax on
