@@ -25,7 +25,9 @@ set smarttab
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 " Copy to system clipboard when you yank
-set clipboard=unnamed
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
 
 " set leader key to comma
 let mapleader = ","
