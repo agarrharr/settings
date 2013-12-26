@@ -10,12 +10,14 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'vim-scripts/JavaScript-Indent'
 Bundle 'tpope/vim-surround'
+Bundle 'jamessan/vim-gnupg'
 
 set t_Co=256
 syntax on
 set background=dark
 colorscheme Tomorrow-Night
 set number
+set hlsearch
 
 " Enable better indentation.
 set autoindent smartindent
