@@ -24,12 +24,17 @@ set autoindent smartindent
 set smarttab
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
+" Code folding for javascript
+syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+setlocal foldmethod=syntax
+setlocal foldlevel=99
+
 " Copy to system clipboard when you yank
 if $TMUX == ''
   set clipboard+=unnamed
 endif
 
-" set leader key to comma
+" Set leader key to comma
 let mapleader = ","
 
 " Invisible Characters
