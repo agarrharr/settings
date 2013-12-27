@@ -42,6 +42,10 @@ let mapleader = ","
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
+" Change color to gray
+hi NonText ctermfg=7 guifg=gray
+" Show this character when the line wraps
+set showbreak=↪
 
 " Plugins
 
