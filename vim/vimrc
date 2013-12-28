@@ -15,7 +15,8 @@ Bundle 'jamessan/vim-gnupg'
 set t_Co=256
 syntax on
 set background=dark
-colorscheme Tomorrow-Night
+let g:solarized_termcolors=256
+colorscheme solarized
 set number
 set hlsearch
 
