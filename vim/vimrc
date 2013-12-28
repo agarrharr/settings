@@ -19,6 +19,9 @@ colorscheme Tomorrow-Night
 set number
 set hlsearch
 
+" Make the backspace work in terminal
+set backspace=indent,eol,start
+
 " Enable better indentation.
 set autoindent smartindent
 set smarttab
