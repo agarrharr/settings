@@ -112,6 +112,9 @@ set showbreak=↪
 " Toggle the case of the previous word in insert mode
 :inoremap <C-t> <esc>bg~wea
 
+" Put branch name in status line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
 " Remove all trailing whitespace in a file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
@@ -132,5 +135,3 @@ let SexyScroller_MaxTime=100
 " fugitive
 " Automatically remove fugitive buffers from the buffer list
 autocmd BufReadPost fugitive://* set bufhidden=delete
-" Put branch name in status line
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
