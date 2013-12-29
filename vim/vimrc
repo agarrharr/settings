@@ -63,6 +63,16 @@ hi NonText ctermfg=7 guifg=gray
 " Show this character when the line wraps
 set showbreak=↪
 
+" Map movement keys for insert mode
+:inoremap <C-h> <esc>i
+:inoremap <C-j> <esc>jli
+:inoremap <C-k> <esc>kli
+:inoremap <C-l> <esc>lli
+" Map deleting a line in insert mode
+:inoremap <C-d> <esc>ddi
+" Toggle the case of the previous word in insert mode
+:inoremap <C-t> <esc>bg~wea
+
 " Plugins
 
 " NERDTree
