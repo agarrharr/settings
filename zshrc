@@ -56,7 +56,5 @@ PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems/"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #Android SDK
 PATH="$PATH:/Users/aharris88/adt/sdk/platform-tools:/Users/aharris88/adt/sdk/tools"
-#Kdiff3
-PATH="$PATH:/Applications/kdiff3.app/Contents/MacOS"
 
 export PATH
