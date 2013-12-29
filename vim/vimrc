@@ -25,6 +25,8 @@ Bundle 'jamessan/vim-gnupg'
 Bundle 'docunext/closetag.vim'
 " Git commands inside vim
 Bundle 'tpope/vim-fugitive'
+" Scrolling with an easing effect
+Bundle 'joeytwiddle/sexy_scroller.vim'
 
 set t_Co=256
 syntax on
@@ -82,3 +84,9 @@ nnoremap <leader>n :NERDTree<CR>
 
 " ctrlp
 nnoremap <leader>f :CtrlP<CR>
+
+" sexy_scroller
+nnoremap <leader>s :SexyScrollerToggle<CR>
+let g:SexyScroller_EasingStyle=0
+let g:SexyScroller_ScrollTime=1
+let SexyScroller_MaxTime=100
