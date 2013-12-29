@@ -23,6 +23,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'jamessan/vim-gnupg'
 " Closes html/xml tags after typing </
 Bundle 'docunext/closetag.vim'
+" Git commands inside vim
+Bundle 'tpope/vim-fugitive'
 
 set t_Co=256
 syntax on
