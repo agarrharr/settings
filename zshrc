@@ -25,22 +25,7 @@ alias bower='noglob bower' #Only needed for prezto or oh-my-zsh
 # Turn on 255 Color
 set -g default-terminal "screen-256color"
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want to disable command autocorrection
+# Disable command autocorrection
 DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
@@ -68,11 +53,10 @@ PATH="$PATH:/usr/local/lib/node_modules"
 #path to gem installed libraries
 PATH="$PATH:/usr/local/opt/ruby/bin"
 PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems/"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #Android SDK
 PATH="$PATH:/Users/aharris88/adt/sdk/platform-tools:/Users/aharris88/adt/sdk/tools"
 #Kdiff3
 PATH="$PATH:/Applications/kdiff3.app/Contents/MacOS"
 
 export PATH
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
