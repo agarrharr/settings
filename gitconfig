@@ -2,14 +2,14 @@
 	name = aharris88
 	email = aharris88@gmail.com
 [core]
-	editor = sublime +w
+	editor = vim
 	excludesfile = /Users/aharris88/.gitignore
 	autocrlf = input
 [color]
 	ui = true
 [merge]
-	tool = kdiff3
+	tool = vimdiff
 [diff]
-	tool = kdiff3
+	tool = vimdiff
 [push]
 	default = simple
