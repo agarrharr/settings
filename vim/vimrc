@@ -36,11 +36,11 @@ if has("autocmd")
   autocmd bufwritepost vimrc source $MYVIMRC
 endif
 " Map open vimrc
-nnoremap <leader>ev <C-w>v<C-w>l:e $MYVIMRC<cr>
-nnoremap <leader>et <C-w>v<C-w>l:e ~/dotfiles/tmux.conf<cr>
-nnoremap <leader>ez <C-w>v<C-w>l:e ~/dotfiles/zshrc<cr>
-nnoremap <leader>em <C-w>v<C-w>l:e ~/dotfiles/mutt/muttrc<cr>
-nnoremap <leader>eg <C-w>v<C-w>l:e ~/dotfiles/gitconfig<cr>
+nnoremap <leader>ev :tabnew $MYVIMRC<cr>
+nnoremap <leader>et :tabnew ~/dotfiles/tmux.conf<cr>
+nnoremap <leader>ez :tabnew ~/dotfiles/zshrc<cr>
+nnoremap <leader>em :tabnew ~/dotfiles/mutt/muttrc<cr>
+nnoremap <leader>eg :tabnew ~/dotfiles/gitconfig<cr>
 
 syntax on
 set number
