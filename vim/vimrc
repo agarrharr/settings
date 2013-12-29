@@ -28,13 +28,56 @@ Bundle 'tpope/vim-fugitive'
 " Scrolling with an easing effect
 Bundle 'joeytwiddle/sexy_scroller.vim'
 
-set t_Co=256
+" Set leader key to comma
+let mapleader = ","
+
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost vimrc source $MYVIMRC
+endif
+" Map open vimrc
+nnoremap <leader>ev <C-w>v<C-w>l:e $MYVIMRC<cr>
+
 syntax on
-set background=dark
+set number
+set relativenumber
+set encoding=utf-8
+set t_Co=256
+" Set to dark theme at night and light theme during the day
+if strftime("%H") > 18
+  set background=dark
+elseif strftime("%H") > 6
+  set background=light
+else
+  set background=dark
+endif
 let g:solarized_termcolors=256
 colorscheme solarized
-set number
+" Turn on search highlighting
 set hlsearch
+set undofile
+" I don't think I need to be vi compatible
+set nocompatible
+" I don't need this (plus there's a possible security problem)
+set modelines=0
+
+" Set mappings panes
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+" Mapping for open vsplit and move into it
+nnoremap <leader>v <C-w>v<C-w>l
+
+" Turn off arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 
 " Make the backspace work in terminal
 set backspace=indent,eol,start
@@ -54,12 +97,9 @@ if $TMUX == ''
   set clipboard+=unnamed
 endif
 
-" Set leader key to comma
-let mapleader = ","
-
 " Invisible Characters
 " Shortcut to toggle invisible characters
-nnoremap <leader>l :set list!<CR>
+nnoremap <leader>i :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 " Change color to gray
@@ -67,15 +107,13 @@ hi NonText ctermfg=7 guifg=gray
 " Show this character when the line wraps
 set showbreak=↪
 
-" Map movement keys for insert mode
-:inoremap <C-h> <esc>i
-:inoremap <C-j> <esc>jli
-:inoremap <C-k> <esc>kli
-:inoremap <C-l> <esc>lli
 " Map deleting a line in insert mode
 :inoremap <C-d> <esc>ddi
 " Toggle the case of the previous word in insert mode
 :inoremap <C-t> <esc>bg~wea
+
+" Remove all trailing whitespace in a file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Plugins
 
@@ -86,7 +124,13 @@ nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>f :CtrlP<CR>
 
 " sexy_scroller
-nnoremap <leader>s :SexyScrollerToggle<CR>
+" Make the effect very slight
 let g:SexyScroller_EasingStyle=0
 let g:SexyScroller_ScrollTime=1
 let SexyScroller_MaxTime=100
+
+" fugitive
+" Automatically remove fugitive buffers from the buffer list
+autocmd BufReadPost fugitive://* set bufhidden=delete
+" Put branch name in status line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
