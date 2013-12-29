@@ -11,6 +11,7 @@ Bundle 'marijnh/tern_for_vim'
 Bundle 'vim-scripts/JavaScript-Indent'
 Bundle 'tpope/vim-surround'
 Bundle 'jamessan/vim-gnupg'
+Bundle 'docunext/closetag.vim'
 
 set t_Co=256
 syntax on
@@ -62,3 +63,6 @@ set showbreak=↪
 
 " ctrlp
 let g:ctrlp_map = '<leader>f'
+
+" closetag
+
