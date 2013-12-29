@@ -2,6 +2,7 @@ vim/.netrwhist
 vim/tmp
 
 mutt/certificates
+mutt/cache
 
 *.swp
 *.swo
