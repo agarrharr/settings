@@ -37,6 +37,10 @@ if has("autocmd")
 endif
 " Map open vimrc
 nnoremap <leader>ev <C-w>v<C-w>l:e $MYVIMRC<cr>
+nnoremap <leader>et <C-w>v<C-w>l:e ~/dotfiles/tmux.conf<cr>
+nnoremap <leader>ez <C-w>v<C-w>l:e ~/dotfiles/zshrc<cr>
+nnoremap <leader>em <C-w>v<C-w>l:e ~/dotfiles/mutt/muttrc<cr>
+nnoremap <leader>eg <C-w>v<C-w>l:e ~/dotfiles/gitconfig<cr>
 
 syntax on
 set number
