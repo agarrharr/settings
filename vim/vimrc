@@ -1,16 +1,27 @@
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
+" File tree
 Bundle 'scrooloose/nerdtree'
+" Expands abbreviations similar to emmet
 Bundle 'mattn/emmet-vim'
+" Fuzzy searching for opening files
 Bundle 'kien/ctrlp.vim'
+" Adds search capability on google, bing, SO, etc.
 Bundle 'arecarn/frisk'
+" Code linter
 Bundle 'scrooloose/syntastic'
+" Autocompletion
 Bundle 'Valloric/YouCompleteMe'
+" Code analysis engine for javascript to make syntastic smarter
 Bundle 'marijnh/tern_for_vim'
+" Fix javascript indentation
 Bundle 'vim-scripts/JavaScript-Indent'
+" Quoting/parenthesizing made simple
 Bundle 'tpope/vim-surround'
+" For editing gpg encrypted files which I store my mutt passwords in
 Bundle 'jamessan/vim-gnupg'
+" Closes html/xml tags after typing </
 Bundle 'docunext/closetag.vim'
 
 set t_Co=256
@@ -43,8 +54,8 @@ endif
 let mapleader = ","
 
 " Invisible Characters
-" Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
+" Shortcut to toggle invisible characters
+nnoremap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 " Change color to gray
@@ -55,14 +66,7 @@ set showbreak=↪
 " Plugins
 
 " NERDTree
-" open NERDTree when vim starts up
-" autocmd vimenter * NERDTree
-" nmap <leader>n: NERDTree!<CR>
-" let NERDTreeMapOpenSplit='s'
-" let NERDTreeMapOpenVSplit='v'
+nnoremap <leader>n :NERDTree<CR>
 
 " ctrlp
-let g:ctrlp_map = '<leader>f'
-
-" closetag
-
+nnoremap <leader>f :CtrlP<CR>
