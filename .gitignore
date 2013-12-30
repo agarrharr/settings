@@ -11,3 +11,4 @@ mutt/cache
 
 # Pianobar files
 config/pianobar/state
+config/pianobar/out

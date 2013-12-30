@@ -12,6 +12,8 @@ alias adb='adb forward tcp:9222 localabstract:chrome_devtools_remote'
 alias geeknote='python ~/geeknote/geeknote.py'
 alias ttytter='perl ~/ttytter/ttytter.pl'
 alias bower='noglob bower' #Only needed for prezto or oh-my-zsh
+# Commands for pianobar
+alias p='~/.config/pianobar/fifoCommands.sh' 
 
 # Turn on 255 Color
 set -g default-terminal "screen-256color"
