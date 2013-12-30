@@ -1,9 +1,13 @@
+# Vim files
 vim/.netrwhist
 vim/tmp
-
-mutt/certificates
-mutt/cache
-
 *.swp
 *.swo
 *.un~
+
+# Mutt files
+mutt/certificates
+mutt/cache
+
+# Pianobar files
+config/pianobar/state
