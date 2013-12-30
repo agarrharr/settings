@@ -43,7 +43,7 @@ PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
 PATH="$PATH:/usr/local/lib/node_modules"
 #path to gem installed libraries
 PATH="$PATH:/usr/local/opt/ruby/bin"
-PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems/"
+PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #Android SDK
 PATH="$PATH:/Users/aharris88/adt/sdk/platform-tools:/Users/aharris88/adt/sdk/tools"
