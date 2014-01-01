@@ -27,6 +27,8 @@ Bundle 'docunext/closetag.vim'
 Bundle 'tpope/vim-fugitive'
 " Scrolling with an easing effect
 Bundle 'joeytwiddle/sexy_scroller.vim'
+" Plugin for working with Mustache and Handlebars templates
+Bundle 'mustache/vim-mustache-handlebars'
 
 " Set leader key to comma
 let mapleader = ","
