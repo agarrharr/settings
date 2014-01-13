@@ -91,7 +91,7 @@ set backspace=indent,eol,start
 " Enable better indentation.
 set autoindent smartindent
 set smarttab
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Code folding for javascript
 syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
