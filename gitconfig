@@ -5,6 +5,8 @@
     editor = vim
     excludesfile = /Users/aharris88/.gitignore
     autocrlf = input
+[branch]
+    autosetuprebase = always
 [color]
     ui = true
 [merge]
