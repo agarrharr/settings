@@ -29,6 +29,10 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'joeytwiddle/sexy_scroller.vim'
 " Plugin for working with Mustache and Handlebars templates
 Bundle 'mustache/vim-mustache-handlebars'
+" Statusline customization
+Bundle 'bling/vim-airline'
+" Tmux statusline customization
+Bundle "edkolev/tmuxline.vim"
 
 " Set leader key to comma
 let mapleader = ","
@@ -66,6 +70,19 @@ set undofile
 set nocompatible
 " I don't need this (plus there's a possible security problem)
 set modelines=0
+
+" Show statusline even if there's only one pane
+set laststatus=2
+let g:airline_theme="solarized"
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+if has("gui_macvim")
+  " set fonts for gui vim
+  set guifont=Anonymous\ Pro\ for\ Powerline:h12
+endif
 
 " Set mappings panes
 nnoremap <C-h> <C-w>h
