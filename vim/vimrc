@@ -71,19 +71,6 @@ set nocompatible
 " I don't need this (plus there's a possible security problem)
 set modelines=0
 
-" Show statusline even if there's only one pane
-set laststatus=2
-let g:airline_theme="solarized"
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-if has("gui_macvim")
-  " set fonts for gui vim
-  set guifont=Anonymous\ Pro\ for\ Powerline:h12
-endif
-
 " Set mappings panes
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -158,3 +145,19 @@ let SexyScroller_MaxTime=100
 " fugitive
 " Automatically remove fugitive buffers from the buffer list
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" airline
+" Show statusline even if there's only one pane
+set laststatus=2
+let g:airline_theme="solarized"
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+if has("gui_macvim")
+  " set fonts for gui vim
+  set guifont=Anonymous\ Pro\ for\ Powerline:h12
+endif
+" Enable smarter tab line
+let g:airline#extensions#tabline#enabled = 1
