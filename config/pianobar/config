@@ -3,3 +3,4 @@ user = aharris88@gmail.com
 password_command = cat ~/my-pandora-pwd.txt
 
 out = ~/.config/pianobar/out
+act_songlove = =
