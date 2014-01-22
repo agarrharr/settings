@@ -33,6 +33,8 @@ Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'bling/vim-airline'
 " Tmux statusline customization
 Bundle "edkolev/tmuxline.vim"
+" Handle trailing whitespace
+Bundle "csexton/trailertrash.vim"
 
 " Set leader key to comma
 let mapleader = ","
