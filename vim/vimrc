@@ -33,6 +33,8 @@ Bundle 'bling/vim-airline'
 Bundle "edkolev/tmuxline.vim"
 " Handle trailing whitespace
 Bundle "csexton/trailertrash.vim"
+" Automatic indentation
+Bundle "tpope/vim-sleuth"
 
 " Set leader key to comma
 let mapleader = ","
@@ -95,7 +97,7 @@ set backspace=indent,eol,start
 " Enable better indentation.
 set autoindent smartindent
 set smarttab
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+" set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Code folding for javascript
 syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
