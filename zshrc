@@ -52,4 +52,7 @@ PATH="$PATH:/Users/aharris88/adt/sdk/platform-tools:/Users/aharris88/adt/sdk/too
 export PATH
 
 export EDITOR=vim
+export PAGER=less
 export LC_ALL=$LANG
+# Change less to ignore case, show colors, and change the less prompt to show file name (file number / how many files) Line line number/total lines in the file
+export LESS='-iR-P%f (%i/%m) Line %lt/%L'
