@@ -35,6 +35,8 @@ Bundle "edkolev/tmuxline.vim"
 Bundle "csexton/trailertrash.vim"
 " Automatic indentation
 Bundle "tpope/vim-sleuth"
+" Interact with tmux from vim
+Bundle "benmills/vimux"
 
 " Set leader key to comma
 let mapleader = ","
@@ -128,15 +130,12 @@ set showbreak=↪
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Remove all trailing whitespace in a file
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Plugins
 
 " NERDTree
 nnoremap <leader>n :NERDTree<CR>
-
-" ctrlp
-nnoremap <leader>f :CtrlP<CR>
 
 " fugitive
 " Automatically remove fugitive buffers from the buffer list
@@ -157,3 +156,21 @@ if has("gui_macvim")
 endif
 " Enable smarter tab line
 let g:airline#extensions#tabline#enabled = 1
+
+" vimux
+" Set tmux pane percentage
+let g:VimuxHeight = "35"
+" Split tmux pane horizontally
+let g:VimuxOrientation = "h"
+" Prompt for a command to run
+map <Leader>rp :VimuxPromptCommand<CR>
+" Run last command executed by VimuxRunCommand
+map <Leader>rl :VimuxRunLastCommand<CR>
+" Move into the tmux runner pane created by `VimuxRunCommand` and enter copy pmode (scroll mode)
+map <Leader>ri :VimuxInspectRunner<CR>
+" Close all other tmux panes in current window
+map <Leader>rx :VimuxClosePanes<CR>
+" Close tmux runner opened by VimuxRunCommand
+map <Leader>rq :VimuxCloseRunner<CR>
+" Cancel command running in the runner pane
+map <Leader>rc :VimuxInterruptRunner<CR>
