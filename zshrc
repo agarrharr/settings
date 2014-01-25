@@ -14,13 +14,20 @@ alias geeknote='python ~/geeknote/geeknote.py'
 alias ttytter='perl ~/ttytter/ttytter.pl'
 alias bower='noglob bower' #Only needed for prezto or oh-my-zsh
 # Commands for pianobar
-alias p='~/.config/pianobar/fifoCommands.sh' 
+alias p='~/.config/pianobar/fifoCommands.sh'
 
 # Turn on 255 Color
 set -g default-terminal "screen-256color"
 
 # Disable command autocorrection
 DISABLE_CORRECTION="true"
+
+# Enable autocompletion
+autoload -U compinit
+compinit
+
+# Autocompletion for timetrap
+fpath=(~/.rvm/gems/ruby-2.0.0-p353/gems/timetrap-1.8.12/completions/zsh $fpath)
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
