@@ -163,14 +163,16 @@ let g:VimuxHeight = "35"
 " Split tmux pane horizontally
 let g:VimuxOrientation = "h"
 " Prompt for a command to run
-map <Leader>rp :VimuxPromptCommand<CR>
+map <Leader>vp :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand
-map <Leader>rl :VimuxRunLastCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
 " Move into the tmux runner pane created by `VimuxRunCommand` and enter copy pmode (scroll mode)
-map <Leader>ri :VimuxInspectRunner<CR>
+map <Leader>vi :VimuxInspectRunner<CR>
 " Close all other tmux panes in current window
-map <Leader>rx :VimuxClosePanes<CR>
+map <Leader>vx :VimuxClosePanes<CR>
 " Close tmux runner opened by VimuxRunCommand
-map <Leader>rq :VimuxCloseRunner<CR>
-" Cancel command running in the runner pane
-map <Leader>rc :VimuxInterruptRunner<CR>
+map <Leader>vq :VimuxCloseRunner<CR>
+" Stop command running in the runner pane
+map <Leader>vs :VimuxInterruptRunner<CR>
+" Clear the runner pane
+map <Leader>vc: VimuxClearRunnerHistory<CR>
