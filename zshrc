@@ -28,6 +28,9 @@ compinit
 
 # Autocompletion for timetrap
 fpath=(~/.rvm/gems/ruby-2.0.0-p353/gems/timetrap-1.8.12/completions/zsh $fpath)
+# Autocompletion for tmuxinator
+source ~/.tmuxinator/
+source ~/.rvm/gems/ruby-2.0.0-p353/gems/tmuxinator-0.6.6/completion/tmuxinator.zsh
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
