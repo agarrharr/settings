@@ -51,4 +51,5 @@ PATH="$PATH:/Users/aharris88/adt/sdk/platform-tools:/Users/aharris88/adt/sdk/too
 
 export PATH
 
+export EDITOR=vim
 export LC_ALL=$LANG
