@@ -39,6 +39,8 @@ Bundle "tpope/vim-sleuth"
 Bundle "benmills/vimux"
 " Diplays tags in a pane
 Bundle "majutsushi/tagbar"
+" Show a git diff n the gutter
+Bundle "airblade/vim-gitgutter"
 
 " Set leader key to comma
 let mapleader = ","
