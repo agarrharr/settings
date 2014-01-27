@@ -177,3 +177,7 @@ map <leader>vq :VimuxCloseRunner<CR>
 map <leader>vs :VimuxInterruptRunner<CR>
 " Clear the runner pane
 map <leader>vc: VimuxClearRunnerHistory<CR>
+
+" tagbar
+let tagbar_ctags_bin = "/usr/local/bin/ctags"
+map <leader>m :TagbarToggle<CR>
