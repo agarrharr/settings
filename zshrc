@@ -18,6 +18,8 @@ alias p='~/.config/pianobar/fifoCommands.sh'
 alias chrome='open -a Google\ Chrome'
 alias td='t d -f day'
 
+alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+
 # Turn on 255 Color
 set -g default-terminal "screen-256color"
 
