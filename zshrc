@@ -72,3 +72,5 @@ export LC_ALL=$LANG
 export LESS='-iR-P%f (%i/%m) Line %lt/%L'
 # Display window names correctly in tmux
 export DISABLE_AUTO_TITLE=true
+
+[ -s "/Users/aharris88/.nvm/nvm.sh" ] && . "/Users/aharris88/.nvm/nvm.sh" # This loads nvm
