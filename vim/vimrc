@@ -78,6 +78,8 @@ set undofile
 set nocompatible
 " I don't need this (plus there's a possible security problem)
 set modelines=0
+" Don't add newline to end of file
+set fileformats+=dos
 
 " Set mappings panes
 nnoremap <C-h> <C-w>h
@@ -183,3 +185,6 @@ map <leader>vc: VimuxClearRunnerHistory<CR>
 " tagbar
 let tagbar_ctags_bin = "/usr/local/bin/ctags"
 map <leader>m :TagbarToggle<CR>
+
+" syntastic
+let g:syntastic_html_tidy_ignore_errors = ['warning: <div> proprietary attribute "data-role"']
