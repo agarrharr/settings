@@ -34,13 +34,15 @@ fpath=(~/.rvm/gems/ruby-2.0.0-p353/gems/timetrap-1.8.12/completions/zsh $fpath)
 source ~/.tmuxinator/
 source ~/.rvm/gems/ruby-2.0.0-p353/gems/tmuxinator-0.6.6/completion/tmuxinator.zsh
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+# Display dots while waiting for completion
+COMPLETION_WAITING_DOTS="true"
 
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
+# Disable marking untracked files under
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Increase ulimit (soft limit)
+# When I ran npm update..., I was getting this error: EMFILE, too many open files
+ulimit -n 1024
 
 # Plugins
 plugins=(git)
