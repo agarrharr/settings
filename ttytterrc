@@ -1,0 +1,11 @@
+ssl=1
+pause=auto
+mentions=1
+ansi=1
+vcheck=1
+newline=1
+hold=15
+backload=40
+simplestart=1
+verify=1
+readline="ttytter"
