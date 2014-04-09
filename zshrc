@@ -18,7 +18,9 @@ alias p='~/.config/pianobar/fifoCommands.sh'
 alias chrome='open -a Google\ Chrome'
 alias td='t d -f day'
 
-alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+alias reload="echo 'reload help:\n\r\n\rreloadzsh: reload zsh\n\rreloadtmux: reload tmux'"
+alias reloadzsh=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+alias reloadtmux="source-file ~/.tmux.conf && echo 'tmux config reloaded from ~/.tmux.conf'"
 
 # Turn on 255 Color
 set -g default-terminal "screen-256color"
