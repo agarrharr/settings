@@ -1,9 +1,6 @@
 # Vim files
 vim/.netrwhist
 vim/tmp
-*.swp
-*.swo
-*.un~
 
 # Mutt files
 mutt/certificates
