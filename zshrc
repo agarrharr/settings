@@ -68,6 +68,8 @@ PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems"
 PATH=$PATH:$HOME/.rvm/gems/ruby-2.0.0-p353/bin # Add RVM to PATH for scripting
 #Android SDK
 PATH="$PATH:/Users/aharris88/adt/sdk/platform-tools:/Users/aharris88/adt/sdk/tools"
+#Android NDK
+PATH="$PATH:/Users/aharris88/adt/ndk/platform-tools"
 
 export PATH
 
