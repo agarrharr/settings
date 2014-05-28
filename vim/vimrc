@@ -41,6 +41,8 @@ Bundle "benmills/vimux"
 Bundle "majutsushi/tagbar"
 " Show a git diff n the gutter
 Bundle "airblade/vim-gitgutter"
+" JavaScript Context Coloring
+Bundle "bigfish/vim-js-context-coloring"
 
 " Set leader key to comma
 let mapleader = ","
