@@ -2,5 +2,5 @@ autostart_station = 1583777466836531270
 user = aharris88@gmail.com
 password_command = cat ~/.my-pandora-pwd
 
-out = ~/.config/pianobar/out
+event_command = /Users/aharris88/.config/pianobar/songNotifications.rb
 act_songlove = =
