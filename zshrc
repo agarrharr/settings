@@ -14,6 +14,7 @@ alias ttytter='perl ~/ttytter/ttytter.pl'
 alias bower='noglob bower' #Only needed for prezto or oh-my-zsh
 # Command for pianobar
 alias p='~/.config/pianobar/fifoCommands.sh'
+alias playing='~/.config/pianobar/showCurrentSongNotification.rb'
 # Command for Chrome
 alias chrome='open -a Google\ Chrome'
 # Command for timetrap
