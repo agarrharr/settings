@@ -2,10 +2,6 @@
 
 require 'cgi'
 
-File.open('pianobar/nowplaying', 'w') do |f2|
-  f2.puts "hello"
-end
-
 trigger = ARGV.shift
 
 if trigger == 'songstart'
@@ -15,6 +11,6 @@ if trigger == 'songstart'
   `terminal-notifier -message "Artist: #{songinfo['artist']}\nAlbum: #{songinfo['album']}" -title "#{songinfo['title']}"`
 
   File.open('pianobar/nowplaying', 'w') do |f2|
-    f2.puts "#{songinfo['title']}\nby #{songinfo['artist']}"
+    f2.puts "#{songinfo['artist']}\n#{songinfo['album']}\n#{songinfo['title']}"
   end
 end
