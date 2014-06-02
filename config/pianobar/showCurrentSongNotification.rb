@@ -4,6 +4,8 @@ title = ""
 artist = ""
 album = ""
 
+flag = ARGV[0]
+
 counter = 1
 file = File.new('/Users/aharris88/.config/pianobar/nowplaying', 'r')
 while (line = file.gets)
@@ -19,4 +21,8 @@ while (line = file.gets)
   counter = counter + 1
 end
 
-`terminal-notifier -message "Artist: #{artist}\nAlbum: #{album}" -title "#{title}"`
+if flag == "--notification" || flag == "-n"
+  `terminal-notifier -message "Artist: #{artist}\rAlbum: #{album}" -title "#{title}"`
+else
+  puts "Song: #{title}\rArtist: #{artist}\rAlbum: #{album}"
+end
