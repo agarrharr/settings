@@ -89,6 +89,16 @@ set modelines=0
 " Don't add newline to end of file
 set fileformats+=dos
 
+" Fix terminal timeout when pressing escape
+if ! has('gui_running')
+    set ttimeoutlen=0
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=0
+    augroup END
+endif
+
 " Set mappings panes
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -107,6 +117,16 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+" Better pasting (taken from tpope/vim-unimpaired)
+nnoremap <silent> yo  :call <SID>setup_paste()<CR>o
+nnoremap <silent> yO  :call <SID>setup_paste()<CR>O
+function! s:setup_paste() abort
+  let s:paste = &paste
+  let s:mouse = &mouse
+  set paste
+  set mouse=
+endfunction
 
 " Make the backspace work in terminal
 set backspace=indent,eol,start
