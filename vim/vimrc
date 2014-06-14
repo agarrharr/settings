@@ -182,6 +182,9 @@ map <leader>vs :VimuxInterruptRunner<CR>
 " Clear the runner pane
 map <leader>vc: VimuxClearRunnerHistory<CR>
 
+" Trailer Trash
+hi UnwantedTrailerTrash guibg=red ctermbg=red
+
 " tagbar
 let tagbar_ctags_bin = "/usr/local/bin/ctags"
 map <leader>m :TagbarToggle<CR>
