@@ -24,9 +24,6 @@
 				"name": "hostname"
 			},
 			{
-				"name": "user"
-			},
-			{
 				"name": "virtualenv"
 			},
 			{

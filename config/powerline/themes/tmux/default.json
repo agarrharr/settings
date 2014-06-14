@@ -3,23 +3,31 @@
 	"segment_data": {
 		"uptime": {
 			"before": "⇑  "
-		},
-		"date": {
-			"before": "⌚ "
 		}
 	},
 	"segments": {
 		"right": [
 			{
-				"name": "uptime",
-				"priority": 50
+				"mode": "powerline.segments.common",
+				"name": "weather",
+				"args": {
+					"locaton_query": "84096"
+				}
 			},
 			{
-				"name": "system_load",
-				"priority": 50
+				"name": "battery",
+				"args": {
+					"gamify": false,
+					"steps": 5,
+					"empty_heart": "♥",
+					"full_heart": "♥"
+				}
 			},
 			{
-				"name": "date"
+				"name": "date",
+				"args": {
+					"format": "%m-%d-%y"
+				}
 			},
 			{
 				"name": "date",
@@ -27,9 +35,6 @@
 					"format": "%H:%M",
 					"istime": true
 				}
-			},
-			{
-				"name": "hostname"
 			}
 		]
 	}
