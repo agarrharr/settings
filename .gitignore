@@ -10,3 +10,4 @@ mutt/cache
 config/pianobar/state
 config/pianobar/out
 config/pianobar/nowplaying
+config/pianobar/ctl

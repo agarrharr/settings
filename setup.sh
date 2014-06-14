@@ -54,13 +54,3 @@ fi
 }
 
 install_zsh
-
-# install homebrew
-# ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-# install node
-# brew install node
-# npm should be installed with node
-# install jshint
-# npm install jshint -g
-# install tmux
-brew install tmux

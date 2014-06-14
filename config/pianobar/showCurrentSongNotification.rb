@@ -7,7 +7,7 @@ album = ""
 flag = ARGV[0]
 
 counter = 1
-file = File.new('/Users/aharris88/.config/pianobar/nowplaying', 'r')
+file = File.new('/Users/adamharris/.config/pianobar/nowplaying', 'r')
 while (line = file.gets)
   if counter == 1
     artist = line

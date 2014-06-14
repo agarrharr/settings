@@ -1,6 +1,9 @@
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Bundle 'gmarik/Vundle.vim'
 " File tree
 Bundle 'scrooloose/nerdtree'
 " Expands abbreviations similar to emmet
@@ -28,10 +31,6 @@ Bundle 'tpope/vim-fugitive'
 " Plugin for working with Mustache and Handlebars templates
 Bundle 'mustache/vim-mustache-handlebars'
 " Statusline customization
-Bundle 'bling/vim-airline'
-" Tmux statusline customization
-Bundle "edkolev/tmuxline.vim"
-" Handle trailing whitespace
 Bundle "csexton/trailertrash.vim"
 " Automatic indentation
 Bundle "tpope/vim-sleuth"
@@ -51,6 +50,12 @@ let mapleader = ","
 if has("autocmd")
   autocmd bufwritepost vimrc source $MYVIMRC
 endif
+
+" Powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
 " Map open vimrc
 nnoremap <leader>ev :tabnew $MYVIMRC<cr>
 nnoremap <leader>et :tabnew ~/dotfiles/tmux.conf<cr>
@@ -135,9 +140,6 @@ set showbreak=↪
 " Toggle the case of the previous word in insert mode
 :inoremap <C-t> <esc>bg~wea
 
-" Put branch name in status line
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
 " Remove all trailing whitespace in a file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
@@ -149,22 +151,6 @@ nnoremap <leader>n :NERDTree<CR>
 " fugitive
 " Automatically remove fugitive buffers from the buffer list
 autocmd BufReadPost fugitive://* set bufhidden=delete
-
-" airline
-" Show statusline even if there's only one pane
-set laststatus=2
-let g:airline_theme="solarized"
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-if has("gui_macvim")
-  " set fonts for gui vim
-  set guifont=Anonymous\ Pro\ for\ Powerline:h12
-endif
-" Enable smarter tab line
-let g:airline#extensions#tabline#enabled = 1
 
 " vimux
 " Set tmux pane percentage
