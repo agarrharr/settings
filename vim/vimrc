@@ -2,8 +2,8 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Bundle 'gmarik/Vundle.vim'
+call vundle#rc()
+Bundle 'gmarik/vundle'
 " File tree
 Bundle 'scrooloose/nerdtree'
 " Expands abbreviations similar to emmet
