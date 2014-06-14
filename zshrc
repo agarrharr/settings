@@ -56,7 +56,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Powerline
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # RVM
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
