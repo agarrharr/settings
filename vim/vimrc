@@ -70,11 +70,12 @@ set relativenumber
 set encoding=utf-8
 set t_Co=256
 " Set to dark theme at night and light theme during the day
-if strftime("%H") > 18
+if strftime("%H") < 6
   set background=dark
-elseif strftime("%H") > 6
-  set background=light
 else
+  set background=light
+endif
+if strftime("%H") > 18
   set background=dark
 endif
 let g:solarized_termcolors=256
