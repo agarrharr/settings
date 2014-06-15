@@ -57,7 +57,7 @@ python powerline_setup()
 python del powerline_setup
 set laststatus=2
 
-" Map open vimrc
+" Mappings to open config files
 nnoremap <leader>ev :tabnew $MYVIMRC<cr>
 nnoremap <leader>et :tabnew ~/dotfiles/tmux.conf<cr>
 nnoremap <leader>ez :tabnew ~/dotfiles/zshrc<cr>
@@ -69,6 +69,7 @@ set number
 set relativenumber
 set encoding=utf-8
 set t_Co=256
+
 " Set to dark theme at night and light theme during the day
 if strftime("%H") < 6
   set background=dark
@@ -80,9 +81,11 @@ if strftime("%H") > 18
 endif
 let g:solarized_termcolors=256
 colorscheme solarized
+
 " Turn on search highlighting
 set hlsearch
 set undofile
+
 " I don't think I need to be vi compatible
 set nocompatible
 " I don't need this (plus there's a possible security problem)
@@ -125,7 +128,6 @@ set backspace=indent,eol,start
 " Enable better indentation.
 set autoindent smartindent
 set smarttab
-" set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Code folding for javascript
 syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
@@ -133,9 +135,7 @@ setlocal foldmethod=syntax
 setlocal foldlevel=99
 
 " Copy to system clipboard when you yank
-if $TMUX == ''
-  set clipboard+=unnamed
-endif
+set clipboard=unnamed
 
 " Invisible Characters
 " Shortcut to toggle invisible characters
@@ -160,7 +160,7 @@ nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 " NERDTree
 nnoremap <leader>n :NERDTree<CR>
 
-" fugitive
+" Fugitive
 " Automatically remove fugitive buffers from the buffer list
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
