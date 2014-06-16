@@ -11,7 +11,8 @@
 				"mode": "powerline.segments.common",
 				"name": "weather",
 				"args": {
-					"locaton_query": "84096"
+					"locaton_query": "84096",
+					"unit": "F"
 				}
 			},
 			{
