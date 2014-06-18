@@ -14,6 +14,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'arecarn/frisk'
 " Code linter
 Bundle 'scrooloose/syntastic'
+" Commenter
+Bundle 'scrooloose/nerdcommenter'
 " Autocompletion
 Bundle 'Valloric/YouCompleteMe'
 " Code analysis engine for javascript to make syntastic smarter
@@ -93,8 +95,11 @@ set modelines=0
 " Don't add newline to end of file
 set fileformats+=dos
 
-" Fix terminal timeout when pressing escape
+" Set macvim font
+set guifont=Anonymous\ Pro\ for\ Powerline:h14
+
 if ! has('gui_running')
+  " Fix terminal timeout when pressing escape
     set ttimeoutlen=0
     augroup FastEscape
         autocmd!
