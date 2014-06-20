@@ -44,6 +44,8 @@ Bundle "majutsushi/tagbar"
 Bundle "airblade/vim-gitgutter"
 " JavaScript Context Coloring
 Bundle "bigfish/vim-js-context-coloring"
+" Editor config follows coding styles set in .editorconfig
+Bundle "editorconfig/editorconfig-vim"
 
 " Set leader key to comma
 let mapleader = ","
