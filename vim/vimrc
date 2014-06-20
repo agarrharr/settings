@@ -162,6 +162,9 @@ set showbreak=↪
 " Remove all trailing whitespace in a file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
+" Highlight characters over 132 characters
+:match ErrorMsg '\%>132v.\+'
+
 " Plugins
 
 " NERDTree
