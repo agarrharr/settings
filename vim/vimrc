@@ -15,7 +15,7 @@ Bundle 'arecarn/frisk'
 " Code linter
 Bundle 'scrooloose/syntastic'
 " Commenter
-Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-commentary'
 " Autocompletion
 Bundle 'Valloric/YouCompleteMe'
 " Code analysis engine for javascript to make syntastic smarter
@@ -135,6 +135,9 @@ set smarttab
 syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
 setlocal foldmethod=syntax
 setlocal foldlevel=99
+
+" Set comment style for javascript to single line
+autocmd FileType javascript set commentstring=//\ %s
 
 " Copy to system clipboard when you yank
 set clipboard=unnamed
