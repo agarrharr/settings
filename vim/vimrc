@@ -42,8 +42,6 @@ Bundle "benmills/vimux"
 Bundle "majutsushi/tagbar"
 " Show a git diff n the gutter
 Bundle "airblade/vim-gitgutter"
-" JavaScript Context Coloring
-Bundle "bigfish/vim-js-context-coloring"
 " Editor config follows coding styles set in .editorconfig
 Bundle "editorconfig/editorconfig-vim"
 
