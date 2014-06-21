@@ -144,6 +144,9 @@ setlocal foldlevel=99
 " Copy to system clipboard when you yank
 set clipboard=unnamed
 
+" Enable mouse in iTerm2
+set mouse=a
+
 " Invisible Characters
 " Shortcut to toggle invisible characters
 nnoremap <leader>i :set list!<CR>
