@@ -100,16 +100,6 @@ set fileformats+=dos
 " Set macvim font
 set guifont=Anonymous\ Pro\ for\ Powerline:h14
 
-if ! has('gui_running')
-  " Fix terminal timeout when pressing escape
-    set ttimeoutlen=0
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=0
-    augroup END
-endif
-
 " Set mappings panes
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -189,15 +179,15 @@ let g:VimuxHeight = "30"
 let g:VimuxOrientation = "h"
 " Prompt for a command to run
 map <leader>vp :VimuxPromptCommand<CR>
-" Run last command executed by VimuxRunCommand
+" Run last command
 map <leader>vl :VimuxRunLastCommand<CR>
 " Move into the tmux runner pane created by `VimuxRunCommand` and enter copy pmode (scroll mode)
 map <leader>vi :VimuxInspectRunner<CR>
-" Close tmux runner opened by VimuxRunCommand
+" Quit
 map <leader>vq :VimuxCloseRunner<CR>
-" Stop command running in the runner pane
+" Stop command
 map <leader>vs :VimuxInterruptRunner<CR>
-" Clear the runner pane
+" Clear
 map <leader>vc: VimuxClearRunnerHistory<CR>
 
 " Trailer Trash
