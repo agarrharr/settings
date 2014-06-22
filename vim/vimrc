@@ -44,6 +44,8 @@ Bundle "majutsushi/tagbar"
 Bundle "airblade/vim-gitgutter"
 " Editor config follows coding styles set in .editorconfig
 Bundle "editorconfig/editorconfig-vim"
+" Automatically add closing brackets
+Bundle 'Raimondi/delimitMate'
 
 " Set leader key to comma
 let mapleader = ","
@@ -201,3 +203,6 @@ map <leader>m :TagbarToggle<CR>
 
 " syntastic
 let g:syntastic_html_tidy_ignore_errors = ['warning: <div> proprietary attribute "data-role"']
+
+" delimitMate
+imap <C-c> <CR><Esc>O<Tab>
