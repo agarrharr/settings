@@ -145,9 +145,10 @@ set mouse=a
 
 " Invisible Characters
 " Shortcut to toggle invisible characters
-nnoremap <leader>i :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+:set list listchars=tab:\ \ " Note the trailing space
+nnoremap <leader>i :set list<CR>:set listchars=tab:▸\ ,eol:¬<CR>
+nnoremap <leader>io :set list<CR>:set listchars=tab:\ \ <CR>
 " Change color to gray
 hi NonText ctermfg=7 guifg=gray
 " Show this character when the line wraps
