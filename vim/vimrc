@@ -46,6 +46,8 @@ Bundle "airblade/vim-gitgutter"
 Bundle "editorconfig/editorconfig-vim"
 " Automatically add closing brackets
 Bundle 'Raimondi/delimitMate'
+" Change the background of css colors to match
+Bundle "ap/vim-css-color"
 
 " Set leader key to comma
 let mapleader = ","
