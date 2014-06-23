@@ -48,6 +48,8 @@ Bundle "editorconfig/editorconfig-vim"
 Bundle 'Raimondi/delimitMate'
 " Change the background of css colors to match
 Bundle "ap/vim-css-color"
+" When searching show 'At match #N out of M matches'
+Bundle "vim-scripts/IndexedSearch"
 
 " Set leader key to comma
 let mapleader = ","
