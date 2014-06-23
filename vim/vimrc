@@ -74,17 +74,17 @@ syntax on
 set number
 set relativenumber
 set encoding=utf-8
-set t_Co=256
 
 " Set to dark theme at night and light theme during the day
-if strftime("%H") < 6
-  set background=dark
-else
-  set background=light
-endif
-if strftime("%H") > 18
-  set background=dark
-endif
+"if strftime("%H") < 6
+"  set background=dark
+"else
+"  set background=light
+"endif
+"if strftime("%H") > 18
+"  set background=dark
+"endif
+set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
@@ -136,7 +136,7 @@ set smarttab
 " Code folding for javascript
 syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
 setlocal foldmethod=syntax
-setlocal foldlevel=99
+setlocal foldlevel=10
 
 " Set comment style for javascript to single line
 autocmd FileType javascript set commentstring=//\ %s
