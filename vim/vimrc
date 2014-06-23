@@ -50,6 +50,8 @@ Bundle 'Raimondi/delimitMate'
 Bundle "ap/vim-css-color"
 " When searching show 'At match #N out of M matches'
 Bundle "vim-scripts/IndexedSearch"
+" Plugin to move lines
+Bundle 'matze/vim-move'
 
 " Set leader key to comma
 let mapleader = ","
@@ -103,6 +105,13 @@ set fileformats+=dos
 
 " Set macvim font
 set guifont=Anonymous\ Pro\ for\ Powerline:h14
+
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
 
 " Set mappings panes
 nnoremap <C-h> <C-w>h
