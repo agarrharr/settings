@@ -105,13 +105,6 @@ set fileformats+=dos
 " Set macvim font
 set guifont=Anonymous\ Pro\ for\ Powerline:h14
 
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
-
 " Set mappings panes
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -120,16 +113,6 @@ nnoremap <C-l> <C-w>l
 " Mapping for opening splits and moving into it
 nnoremap <leader>sv <C-w>v<C-w>l
 nnoremap <leader>ss <C-w>s<C-w>j
-
-" Turn off arrow keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 
 " Mappings for easier search and replace
 noremap ;; :%s:::g<Left><Left><Left>
