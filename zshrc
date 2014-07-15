@@ -69,7 +69,8 @@ PATH="$PATH:/usr/local/lib/node_modules"
 PATH="$PATH:/usr/local/opt/ruby/bin"
 PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems"
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/gems/ruby-2.0.0-p353/bin # Add RVM to PATH for scripting
+
+PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.2/bin # Add RVM to PATH for scripting
 #Android SDK
 PATH="$PATH:/Users/aharris88/adt/sdk/platform-tools:/Users/aharris88/adt/sdk/tools"
 #Android NDK
