@@ -8,6 +8,7 @@ DEFAULT_USER=aharris88
 alias ll='ls -la'
 alias ..='cd ..'
 alias ~='cd ~'
+alias back='cd $OLDPWD'
 alias gitgraph='git log --graph --oneline --decorate --all'
 alias geeknote='python ~/geeknote/geeknote.py'
 alias ttytter='perl ~/ttytter/ttytter.pl'
