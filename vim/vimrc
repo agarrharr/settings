@@ -142,6 +142,7 @@ set clipboard=unnamed
 
 " Enable mouse in iTerm2
 set mouse=a
+set ttymouse=xterm2
 
 " Invisible Characters
 " Shortcut to toggle invisible characters
