@@ -153,7 +153,7 @@ nnoremap <leader>io :set list<CR>:set listchars=tab:\ \ <CR>
 " Change color to gray
 hi NonText ctermfg=7 guifg=gray
 " Show this character when the line wraps
-set showbreak=↪
+set showbreak=->
 
 " Set mappings for relative line numbering
 nnoremap <leader>lr :set relativenumber<CR>
