@@ -52,6 +52,9 @@ Bundle "ap/vim-css-color"
 Bundle "vim-scripts/IndexedSearch"
 " Plugin to move lines
 Bundle 'matze/vim-move'
+" Plugin to run mySQL commands
+Bundle 'vim-scripts/dbext.vim'
+Bundle 'bigfish/vim-js-context-coloring'
 
 " Set leader key to comma
 let mapleader = ","
@@ -205,3 +208,6 @@ let g:syntastic_html_tidy_ignore_errors = ['warning: <div> proprietary attribute
 
 " delimitMate
 imap <C-c> <CR><Esc>O<Tab>
+
+" dbext
+let g:dbext_default_profile_sqlClass = 'type=MYSQL:user=root:passwd=root:dbname=sqlClass'
