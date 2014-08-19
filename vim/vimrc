@@ -129,6 +129,9 @@ set backspace=indent,eol,start
 set autoindent smartindent
 set smarttab
 
+" Setup indicator for 132 columns
+set colorcolumn=133
+
 " Code folding for javascript
 syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
 setlocal foldmethod=syntax
