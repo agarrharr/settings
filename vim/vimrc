@@ -96,6 +96,7 @@ colorscheme solarized
 
 " Turn on search highlighting
 set hlsearch
+set incsearch
 set undofile
 
 " I don't think I need to be vi compatible
