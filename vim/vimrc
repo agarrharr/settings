@@ -22,6 +22,9 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'marijnh/tern_for_vim'
 " Fix javascript indentation
 Bundle 'vim-scripts/JavaScript-Indent'
+" JavaScript Beautifier (also html and css)
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'einars/js-beautify'
 " Quoting/parenthesizing made simple
 Bundle 'tpope/vim-surround'
 " For editing gpg encrypted files which I store my mutt passwords in
@@ -216,3 +219,19 @@ imap <C-c> <CR><Esc>O<Tab>
 
 " dbext
 let g:dbext_default_profile_sqlClass = 'type=MYSQL:user=root:passwd=root:dbname=sqlClass'
+
+" move
+let g:move_map_keys = 0
+vmap <C-j> <Plug>MoveBlockDown
+vmap <C-k> <Plug>MoveBlockUp
+nmap <C-j> <Plug>MoveLineDown
+nmap <C-k> <Plug>MoveLineUp
+
+" JsBeautify
+" for js
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
