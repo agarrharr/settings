@@ -36,10 +36,10 @@ autoload -U compinit
 compinit
 
 # Autocompletion for timetrap
-fpath=(~/.rvm/gems/ruby-2.0.0-p353/gems/timetrap-1.8.12/completions/zsh $fpath)
+fpath=(~/.rvm/gems/ruby-2.1.2/gems/timetrap-1.8.14/completions/zsh $fpath)
 # Autocompletion for tmuxinator
 source ~/.tmuxinator/
-source ~/.rvm/gems/ruby-2.0.0-p353/gems/tmuxinator-0.6.6/completion/tmuxinator.zsh
+source ~/.rvm/gems/ruby-2.1.2/gems/tmuxinator-0.6.8/completion/tmuxinator.zsh
 
 # Display dots while waiting for completion
 COMPLETION_WAITING_DOTS="true"
@@ -50,6 +50,8 @@ COMPLETION_WAITING_DOTS="true"
 # Increase ulimit (soft limit)
 # When I ran npm update..., I was getting this error: EMFILE, too many open files
 ulimit -n 1024
+
+setopt APPEND_HISTORY
 
 # Plugins
 plugins=(git)
@@ -69,8 +71,6 @@ PATH="$PATH:/usr/local/lib/node_modules"
 #path to gem installed libraries
 PATH="$PATH:/usr/local/opt/ruby/bin"
 PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems"
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.2/bin # Add RVM to PATH for scripting
 #Android SDK
 PATH="$PATH:/Users/aharris88/adt/sdk/platform-tools:/Users/aharris88/adt/sdk/tools"
