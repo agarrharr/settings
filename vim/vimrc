@@ -229,11 +229,11 @@ nmap <C-k> <Plug>MoveLineUp
 
 " JsBeautify
 " for js
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <leader>bj :call JsBeautify()<cr>
 " for html
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType html noremap <buffer> <leader>bh :call HtmlBeautify()<cr>
 " for css or scss
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+autocmd FileType css noremap <buffer> <leader>bc :call CSSBeautify()<cr>
 
 " Functions
 function! <SID>StripTrailingWhitespaces()
