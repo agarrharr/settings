@@ -20,8 +20,6 @@ Bundle 'tpope/vim-commentary'
 Bundle 'Valloric/YouCompleteMe'
 " Code analysis engine for javascript to make syntastic smarter
 Bundle 'marijnh/tern_for_vim'
-" Fix javascript indentation
-Bundle 'vim-scripts/JavaScript-Indent'
 " JavaScript Beautifier (also html and css)
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
@@ -58,6 +56,8 @@ Bundle 'matze/vim-move'
 " Plugin to run mySQL commands
 Bundle 'vim-scripts/dbext.vim'
 Bundle 'bigfish/vim-js-context-coloring'
+" Plugin to generate jsdocs
+Bundle 'heavenshell/vim-jsdoc'
 
 " Set leader key to comma
 let mapleader = ","
