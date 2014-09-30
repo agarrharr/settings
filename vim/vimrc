@@ -58,6 +58,8 @@ Bundle 'vim-scripts/dbext.vim'
 Bundle 'bigfish/vim-js-context-coloring'
 " Plugin to generate jsdocs
 Bundle 'heavenshell/vim-jsdoc'
+" Spotify client
+Bundle 'takac/vim-spotifysearch'
 
 " Set leader key to comma
 let mapleader = ","
@@ -247,3 +249,17 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
+
+" Highlight all instances of word under cursor, when idle.
+" It doesn't clobber the search register
+set updatetime=10
+
+function! HighlightWordUnderCursor()
+    if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
+        exec 'match' 'Search' '/\V\<'.expand('<cword>').'\>/'
+    else
+        match none
+    endif
+endfunction
+
+autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
