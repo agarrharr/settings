@@ -89,3 +89,11 @@ export DISABLE_AUTO_TITLE=true
 
 [ -s "/Users/adamharris/.nvm/nvm.sh" ] && . "/Users/adamharris/.nvm/nvm.sh" # This loads nvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# load additional configuration
+if [[ -d ~/.zshrc.d ]]; then
+    for file in ~/.zshrc.d/*.zsh; do
+        source "$file"
+    done
+    unset file
+fi
