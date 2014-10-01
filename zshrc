@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="mh"
-DEFAULT_USER=aharris88
+DEFAULT_USER=adamharris
 
 # Aliases
 alias ll='ls -la'
@@ -73,9 +73,9 @@ PATH="$PATH:/usr/local/opt/ruby/bin"
 PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems"
 PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.2/bin # Add RVM to PATH for scripting
 #Android SDK
-PATH="$PATH:/Users/aharris88/adt/sdk/platform-tools:/Users/aharris88/adt/sdk/tools"
+PATH="$PATH:/Users/adamharris/Development/adt/sdk/platform-tools:/Users/adamharris/Development/adt/sdk/tools"
 #Android NDK
-PATH="$PATH:/Users/aharris88/adt/ndk/platform-tools"
+#PATH="$PATH:/Users/adamharris/adt/ndk/platform-tools"
 
 export PATH
 
@@ -87,5 +87,5 @@ export LESS='-iR-P%f (%i/%m) Line %lt/%L'
 # Display window names correctly in tmux
 export DISABLE_AUTO_TITLE=true
 
-[ -s "/Users/aharris88/.nvm/nvm.sh" ] && . "/Users/aharris88/.nvm/nvm.sh" # This loads nvm
+[ -s "/Users/adamharris/.nvm/nvm.sh" ] && . "/Users/adamharris/.nvm/nvm.sh" # This loads nvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
