@@ -102,6 +102,9 @@ colorscheme solarized
 " Turn on spell checking for commit messages and automatic wrapping at the recommeneded 72 characters
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
+" Define a thesaurus file
+set thesaurus+=~/dotfiles/mthesaur.txt
+
 " Turn on search highlighting
 set hlsearch
 set incsearch
