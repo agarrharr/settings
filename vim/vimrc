@@ -6,6 +6,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 " File tree
 Bundle 'scrooloose/nerdtree'
+" Make NERDTree smarter
+Bundle 'jistr/vim-nerdtree-tabs'
 " Expands abbreviations similar to emmet
 Bundle 'mattn/emmet-vim'
 " Fuzzy searching for opening files
@@ -188,7 +190,7 @@ nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
 " Plugins
 
 " NERDTree
-nnoremap <leader>n :NERDTree<CR>
+nnoremap <leader>n :NERDTreeTabsToggle<CR>
 
 " Fugitive
 " Automatically remove fugitive buffers from the buffer list
