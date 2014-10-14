@@ -99,6 +99,9 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
+" Turn on spell checking for commit messages and automatic wrapping at the recommeneded 72 characters
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
 " Turn on search highlighting
 set hlsearch
 set incsearch
