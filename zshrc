@@ -61,9 +61,6 @@ source $ZSH/oh-my-zsh.sh
 # Powerline
 source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
-# RVM
-if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
-
 # Path
 PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
 #path to node
@@ -71,7 +68,9 @@ PATH="$PATH:/usr/local/lib/node_modules"
 #path to gem installed libraries
 PATH="$PATH:/usr/local/opt/ruby/bin"
 PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems"
-PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.2/bin # Add RVM to PATH for scripting
+# RVM
+PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.2/bin
+
 #Android SDK
 PATH="$PATH:/Users/adamharris/Development/adt/sdk/platform-tools:/Users/adamharris/Development/adt/sdk/tools"
 #Android NDK
@@ -82,13 +81,14 @@ export PATH
 export EDITOR=vim
 export PAGER=less
 export LC_ALL=$LANG
+
 # Change less to ignore case, show colors, and change the less prompt to show file name (file number / how many files) Line line number/total lines in the file
 export LESS='-iR-P%f (%i/%m) Line %lt/%L'
 # Display window names correctly in tmux
 export DISABLE_AUTO_TITLE=true
 
-[ -s "/Users/adamharris/.nvm/nvm.sh" ] && . "/Users/adamharris/.nvm/nvm.sh" # This loads nvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Load nvm
+[ -s "/Users/adamharris/.nvm/nvm.sh" ] && . "/Users/adamharris/.nvm/nvm.sh"
 
 # load additional configuration
 if [[ -d ~/.zshrc.d ]]; then
