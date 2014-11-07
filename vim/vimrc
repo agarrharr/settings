@@ -35,8 +35,6 @@ Bundle 'docunext/closetag.vim'
 Bundle 'tpope/vim-fugitive'
 " Plugin for working with Mustache and Handlebars templates
 Bundle 'mustache/vim-mustache-handlebars'
-" Statusline customization
-Bundle "csexton/trailertrash.vim"
 " Automatic indentation
 Bundle "tpope/vim-sleuth"
 " Interact with tmux from vim
@@ -132,9 +130,9 @@ nnoremap <leader>sv <C-w>v<C-w>l
 nnoremap <leader>ss <C-w>s<C-w>j
 
 " Mappings for easier search and replace
-noremap ;; :%s:::g<Left><Left><Left>
-noremap ;' :%s:::cg<Left><Left><Left><Left>
-cmap ;\ \(\)<Left><Left>
+" noremap ;; :%s:::g<Left><Left><Left>
+" noremap ;' :%s:::cg<Left><Left><Left><Left>
+" cmap ;\ \(\)<Left><Left>
 
 " Make the backspace work in terminal
 set backspace=indent,eol,start
@@ -161,12 +159,15 @@ set clipboard=unnamed
 set mouse=a
 set ttymouse=xterm2
 
+" Set indentation to tab characters of 4 width
+:set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+
 " Invisible Characters
 " Shortcut to toggle invisible characters
 " Use the same symbols as TextMate for tabstops and EOLs
-:set list listchars=tab:\ \ " Note the trailing space
+:set list listchars=tab:\ \ ,trail:-
 nnoremap <leader>i :set list<CR>:set listchars=tab:▸\ ,eol:¬<CR>
-nnoremap <leader>io :set list<CR>:set listchars=tab:\ \ <CR>
+nnoremap <leader>io :set list<CR>:set listchars=tab:\ \ ,trail:-<CR>
 " Change color to gray
 hi NonText ctermfg=7 guifg=gray
 " Show this character when the line wraps
@@ -213,9 +214,6 @@ map <leader>vq :VimuxCloseRunner<CR>
 map <leader>vs :VimuxInterruptRunner<CR>
 " Clear
 map <leader>vc: VimuxClearRunnerHistory<CR>
-
-" Trailer Trash
-hi UnwantedTrailerTrash guibg=red ctermbg=red
 
 " tagbar
 let tagbar_ctags_bin = "/usr/local/bin/ctags"
