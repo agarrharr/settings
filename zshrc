@@ -31,6 +31,8 @@ set -g default-terminal "screen-256color"
 # Disable command autocorrection
 DISABLE_CORRECTION="true"
 
+DISABLE_AUTO_TITLE=true
+
 # Enable autocompletion
 autoload -U compinit
 compinit
@@ -90,10 +92,3 @@ export DISABLE_AUTO_TITLE=true
 # Load nvm
 [ -s "/Users/adamharris/.nvm/nvm.sh" ] && . "/Users/adamharris/.nvm/nvm.sh"
 
-# load additional configuration
-if [[ -d ~/.zshrc.d ]]; then
-    for file in ~/.zshrc.d/*.zsh; do
-        source "$file"
-    done
-    unset file
-fi

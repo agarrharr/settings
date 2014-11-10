@@ -185,9 +185,6 @@ nnoremap <leader>ll :set norelativenumber<CR>
 " Remove all trailing whitespace in a file
 nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
 
-" Highlight characters over 132 characters
-:match ErrorMsg '\%>132v.\+'
-
 " Plugins
 
 " NERDTree
