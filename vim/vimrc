@@ -60,6 +60,8 @@ Bundle 'bigfish/vim-js-context-coloring'
 Bundle 'heavenshell/vim-jsdoc'
 " Spotify client
 Bundle 'takac/vim-spotifysearch'
+" Multiple Cursors
+Bundle 'terryma/vim-multiple-cursors'
 
 " Set leader key to comma
 let mapleader = ","
