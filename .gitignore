@@ -13,3 +13,7 @@ config/pianobar/nowplaying
 config/pianobar/ctl
 
 config/configstore
+
+# tmux-resurrect files
+tmux/resurrect/*.txt
+tmux/resurrect/last
