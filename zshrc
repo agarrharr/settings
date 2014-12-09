@@ -38,10 +38,9 @@ autoload -U compinit
 compinit
 
 # Autocompletion for timetrap
-fpath=(~/.rvm/gems/ruby-2.1.2/gems/timetrap-1.8.14/completions/zsh $fpath)
+fpath=(~/.rvm/gems/ruby-2.1.5/gems/timetrap-1.8.14/completions/zsh $fpath)
 # Autocompletion for tmuxinator
-source ~/.tmuxinator/
-source ~/.rvm/gems/ruby-2.1.2/gems/tmuxinator-0.6.8/completion/tmuxinator.zsh
+source ~/.bin/tmuxinator.zsh
 
 # Display dots while waiting for completion
 COMPLETION_WAITING_DOTS="true"
@@ -71,7 +70,7 @@ PATH="$PATH:/usr/local/lib/node_modules"
 PATH="$PATH:/usr/local/opt/ruby/bin"
 PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems"
 # RVM
-PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.2/bin
+PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.5/bin
 
 #Android SDK
 PATH="$PATH:/Users/adamharris/Development/adt/sdk/platform-tools:/Users/adamharris/Development/adt/sdk/tools"
@@ -92,3 +91,5 @@ export DISABLE_AUTO_TITLE=true
 # Load nvm
 [ -s "/Users/adamharris/.nvm/nvm.sh" ] && . "/Users/adamharris/.nvm/nvm.sh"
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
