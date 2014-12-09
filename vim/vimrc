@@ -53,8 +53,6 @@ Bundle "ap/vim-css-color"
 Bundle "vim-scripts/IndexedSearch"
 " Plugin to move lines
 Bundle 'matze/vim-move'
-" Plugin to run mySQL commands
-Bundle 'vim-scripts/dbext.vim'
 Bundle 'bigfish/vim-js-context-coloring'
 " Plugin to generate jsdocs
 Bundle 'heavenshell/vim-jsdoc'
