@@ -4,3 +4,19 @@
 [submodule "vim/bundle/vundle"]
 	path = vim/bundle/vundle
 	url = https://github.com/gmarik/vundle.git
+[submodule "vim/bundle/frisk"]
+	path = vim/bundle/frisk
+	url = https://github.com/arecarn/frisk
+	ignore = dirty
+[submodule "vim/bundle/vim-js-context-coloring"]
+	path = vim/bundle/vim-js-context-coloring
+	url = https://github.com/bigfish/vim-js-context-coloring
+	ignore = dirty
+[submodule "vim/bundle/vim-move"]
+	path = vim/bundle/vim-move
+	url = https://github.com/matze/vim-move
+	ignore = dirty
+[submodule "vim/bundle/vim-multiple-cursors"]
+	path = vim/bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors
+	ignore = dirty
