@@ -28,6 +28,9 @@ alias reloadtmux="source-file ~/.tmux.conf && echo 'tmux config reloaded from ~/
 # Turn on 255 Color
 set -g default-terminal "screen-256color"
 
+# Turn on interactive comments
+setopt interactivecomments
+
 # Disable command autocorrection
 DISABLE_CORRECTION="true"
 
