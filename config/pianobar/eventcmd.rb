@@ -12,5 +12,5 @@ if trigger == 'songstart'
     f2.puts "#{songinfo['artist']}\n#{songinfo['album']}\n#{songinfo['title']}"
   end
 
-  system("ruby pianobarFirebase.rb")
+  system("ruby ~/.config/pianobar/pianobarFirebase.rb")
 end
