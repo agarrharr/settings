@@ -11,7 +11,7 @@ Bundle 'jistr/vim-nerdtree-tabs'
 " Expands abbreviations similar to emmet
 Bundle 'mattn/emmet-vim'
 " Fuzzy searching for opening files
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 " Adds search capability on google, bing, SO, etc.
 Bundle 'arecarn/frisk'
 " Code linter
