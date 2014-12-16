@@ -25,5 +25,6 @@ while (line = file.gets)
 end
 
 base_uri = 'https://blazing-fire-5020.firebaseio.com/'
-firebase = Firebase::Client.new(base_uri)
-firebase.push("songs", { :artist => artist, :title => title, :album => album})
+secret_key = ''
+firebase = Firebase::Client.new(base_uri, secret_key)
+firebase.set("currentSong", { :artist => artist, :title => title, :album => album})
