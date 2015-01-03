@@ -25,6 +25,6 @@ while (line = file.gets)
 end
 
 base_uri = 'https://blazing-fire-5020.firebaseio.com/'
-secret_key = ''
+system("ruby ~/.pianobarKey.rb") # secret_key = ''
 firebase = Firebase::Client.new(base_uri, secret_key)
 firebase.set("currentSong", { :artist => artist, :title => title, :album => album})
