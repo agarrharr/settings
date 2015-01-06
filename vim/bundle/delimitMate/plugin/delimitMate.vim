@@ -65,8 +65,6 @@ function! s:init() "{{{
 	call s:option_init("excluded_regions_list", split(s:g('excluded_regions'), ',\s*'))
 	let enabled = len(s:g('excluded_regions_list')) > 0
 	call s:option_init("excluded_regions_enabled", enabled)
-	" excluded filetypes
-	call s:option_init("excluded_ft", "")
 	" expand_space
 	if exists("b:delimitMate_expand_space") && type(b:delimitMate_expand_space) == type("")
 		echom "b:delimitMate_expand_space is '".b:delimitMate_expand_space."' but it must be either 1 or 0!"
@@ -105,9 +103,31 @@ function! s:init() "{{{
 	" jump_expansion
 	call s:option_init("jump_expansion", 0)
 	" smart_matchpairs
-	call s:option_init("smart_matchpairs", '^\%(\w\|\!\|£\|\$\|_\|["'']\s*\S\)')
+	call s:option_init("smart_matchpairs", '^\%(\w\|\!\|£\|\$\|_\)')
 	" smart_quotes
-	call s:option_init("smart_quotes", 1)
+	" XXX: backward compatibility. Ugly, should go the way of the dodo soon.
+	let quotes = escape(join(s:g('quotes_list'), ''), '\-^[]')
+	let default_smart_quotes = '\%(\w\|[^[:punct:][:space:]' . quotes . ']\|\%(\\\\\)*\\\)\%#\|\%#\%(\w\|[^[:space:][:punct:]' . quotes . ']\)'
+	if exists('g:delimitMate_smart_quotes') && type(g:delimitMate_smart_quotes) == type(0)
+		if g:delimitMate_smart_quotes
+			unlet g:delimitMate_smart_quotes
+		else
+			unlet g:delimitMate_smart_quotes
+			let g:delimitMate_smart_quotes = ''
+		endif
+	endif
+	if exists('b:delimitMate_smart_quotes') && type(b:delimitMate_smart_quotes) == type(0)
+		if b:delimitMate_smart_quotes
+			unlet b:delimitMate_smart_quotes
+			if exists('g:delimitMate_smart_quotes') && type(g:delimitMate_smart_quotes) && g:delimitMate_smart_quotes
+				let b:delimitMate_smart_quotes = default_smart_quotes
+			endif
+		else
+			unlet b:delimitMate_smart_quotes
+			let b:delimitMate_smart_quotes = ''
+		endif
+	endif
+	call s:option_init("smart_quotes", default_smart_quotes)
 	" apostrophes
 	call s:option_init("apostrophes", "")
 	call s:option_init("apostrophes_list", split(s:g('apostrophes'), ":\s*"))
@@ -142,6 +162,7 @@ function! s:Map() "{{{
 		let save_cpo = &cpo
 		set keymap=
 		set cpo&vim
+		silent! doautocmd <nomodeline> User delimitMate_map
 		if s:g('autoclose')
 			call s:AutoClose()
 		else
@@ -161,23 +182,24 @@ endfunction "}}} Map()
 
 function! s:Unmap() " {{{
 	let imaps =
-				\ s:g('right_delims') +
-				\ s:g('left_delims') +
-				\ s:g('quotes_list') +
-				\ s:g('apostrophes_list') +
+				\ s:g('right_delims', []) +
+				\ s:g('left_delims', []) +
+				\ s:g('quotes_list', []) +
+				\ s:g('apostrophes_list', []) +
 				\ ['<BS>', '<C-h>', '<S-BS>', '<Del>', '<CR>', '<Space>', '<S-Tab>', '<Esc>'] +
 				\ ['<Up>', '<Down>', '<Left>', '<Right>', '<LeftMouse>', '<RightMouse>'] +
 				\ ['<C-Left>', '<C-Right>'] +
 				\ ['<Home>', '<End>', '<PageUp>', '<PageDown>', '<S-Down>', '<S-Up>', '<C-G>g']
 
 	for map in imaps
-		if maparg(map, "i") =~? 'delimitMate'
+		if maparg(map, "i") =~# '^<Plug>delimitMate'
 			if map == '|'
 				let map = '<Bar>'
 			endif
 			exec 'silent! iunmap <buffer> ' . map
 		endif
 	endfor
+	silent! doautocmd <nomodeline> User delimitMate_unmap
 	let b:delimitMate_enabled = 0
 endfunction " }}} s:Unmap()
 
