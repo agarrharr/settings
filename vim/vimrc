@@ -2,66 +2,66 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
-Bundle 'gmarik/vundle'
+call vundle#begin()
+Plugin 'gmarik/vundle'
 " File tree
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 " Make NERDTree smarter
-Bundle 'jistr/vim-nerdtree-tabs'
+Plugin 'jistr/vim-nerdtree-tabs'
 " Expands abbreviations similar to emmet
-Bundle 'mattn/emmet-vim'
+Plugin 'mattn/emmet-vim'
 " Fuzzy searching for opening files
-Bundle 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Adds search capability on google, bing, SO, etc.
-Bundle 'arecarn/frisk'
+Plugin 'arecarn/frisk'
 " Code linter
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 " Commenter
-Bundle 'tpope/vim-commentary'
+Plugin 'tpope/vim-commentary'
 " Autocompletion
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 " Code analysis engine for javascript to make syntastic smarter
-Bundle 'marijnh/tern_for_vim'
+Plugin 'marijnh/tern_for_vim'
 " JavaScript Beautifier (also html and css)
-Bundle 'maksimr/vim-jsbeautify'
-Bundle 'einars/js-beautify'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'einars/js-beautify'
 " Quoting/parenthesizing made simple
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 " For editing gpg encrypted files which I store my mutt passwords in
-Bundle 'jamessan/vim-gnupg'
+Plugin 'jamessan/vim-gnupg'
 " Closes html/xml tags after typing </
-Bundle 'docunext/closetag.vim'
+Plugin 'docunext/closetag.vim'
 " Git commands inside vim
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 " Plugin for working with Mustache and Handlebars templates
-Bundle 'mustache/vim-mustache-handlebars'
+Plugin 'mustache/vim-mustache-handlebars'
 " Automatic indentation
-Bundle "tpope/vim-sleuth"
+Plugin 'tpope/vim-sleuth'
 " Interact with tmux from vim
-Bundle "benmills/vimux"
+Plugin 'benmills/vimux'
 " Diplays tags in a pane
-Bundle "majutsushi/tagbar"
+Plugin 'majutsushi/tagbar'
 " Show a git diff n the gutter
-Bundle "airblade/vim-gitgutter"
+Plugin 'airblade/vim-gitgutter'
 " Editor config follows coding styles set in .editorconfig
-Bundle "editorconfig/editorconfig-vim"
+Plugin 'editorconfig/editorconfig-vim'
 " Automatically add closing brackets
-Bundle 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 " Change the background of css colors to match
-Bundle "ap/vim-css-color"
+Plugin 'ap/vim-css-color'
 " When searching show 'At match #N out of M matches'
-Bundle "vim-scripts/IndexedSearch"
+Plugin 'vim-scripts/IndexedSearch'
 " Plugin to move lines
-Bundle 'matze/vim-move'
-Bundle 'bigfish/vim-js-context-coloring'
+Plugin 'matze/vim-move'
+Plugin 'bigfish/vim-js-context-coloring'
 " Plugin to generate jsdocs
-Bundle 'heavenshell/vim-jsdoc'
+Plugin 'heavenshell/vim-jsdoc'
 " Spotify client
-Bundle 'takac/vim-spotifysearch'
+Plugin 'takac/vim-spotifysearch'
 " Multiple Cursors
-Bundle 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 " Repeat with . after plugin maps
-Bundle 'tpope/vim-repeat'
+Plugin 'tpope/vim-repeat'
 
 " Set leader key to comma
 let mapleader = ","
