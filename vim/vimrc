@@ -3,7 +3,7 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 " File tree
 Plugin 'scrooloose/nerdtree'
 " Make NERDTree smarter
@@ -40,7 +40,7 @@ Plugin 'tpope/vim-sleuth'
 " Interact with tmux from vim
 Plugin 'benmills/vimux'
 " Diplays tags in a pane
-Plugin 'majutsushi/tagbar'
+" Plugin 'majutsushi/tagbar'
 " Show a git diff n the gutter
 Plugin 'airblade/vim-gitgutter'
 " Editor config follows coding styles set in .editorconfig
