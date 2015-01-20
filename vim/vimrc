@@ -42,7 +42,7 @@ Plugin 'benmills/vimux'
 " Diplays tags in a pane
 " Plugin 'majutsushi/tagbar'
 " Show a git diff n the gutter
-Plugin 'airblade/vim-gitgutter'
+" Plugin 'airblade/vim-gitgutter'
 " Editor config follows coding styles set in .editorconfig
 Plugin 'editorconfig/editorconfig-vim'
 " Automatically add closing brackets

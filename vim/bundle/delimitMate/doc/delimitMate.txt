@@ -310,6 +310,21 @@ e.g.: >
         let delimitMate_excluded_ft = "mail,txt"
 <
 ------------------------------------------------------------------------------
+                                             *'delimitMate_insert_eol_marker'*
+Values: Integer                                                              ~
+Default: 1                                                              ~
+
+Whether to insert the eol marker (EM) or not. The EM is inserted following
+rules:
+
+0 -> never
+1 -> when inserting any matchpair
+2 -> when expanding car return in matchpair
+
+e.g.: >
+        au FileType c,perl let b:delimitMate_insert_eol_marker = 2
+<
+------------------------------------------------------------------------------
                                                     *'delimitMate_eol_marker'*
 Values: String.                                                              ~
 Default: Empty.                                                              ~
@@ -549,6 +564,16 @@ Re-sets all the mappings used for this script, use it if any option has been
 changed or if the filetype option hasn't been set yet.
 
 ------------------------------------------------------------------------------
+:DelimitMateOn                                                *:DelimitMateOn*
+
+Enable delimitMate mappings.
+
+------------------------------------------------------------------------------
+:DelimitMateOff                                              *:DelimitMateOff*
+
+Disable delimitMate mappings.
+
+------------------------------------------------------------------------------
 :DelimitMateSwitch                                        *:DelimitMateSwitch*
 
 Switches the plug-in on and off.
@@ -779,8 +804,10 @@ This script was inspired by the auto-completion of delimiters on TextMate.
 
   Version      Date      Release notes                                       ~
 |---------|------------|-----------------------------------------------------|
-    2.7     2013-07-15 * Current release:
-                         - Lots of bug fixes.
+    2.8     2013-07-15 * Current release:
+                         - Add :DelimitMateOn & :DelimitMateOff.
+|---------|------------|-----------------------------------------------------|
+    2.7     2013-07-15 * - Lots of bug fixes.
                          - Add delimitMate_offByDefault.
                          - Add delimitMate_eol_marker.
                          - Reduce the number of mappings.
