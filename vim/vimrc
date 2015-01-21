@@ -42,7 +42,7 @@ Plugin 'benmills/vimux'
 " Diplays tags in a pane
 " Plugin 'majutsushi/tagbar'
 " Show a git diff n the gutter
-" Plugin 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 " Editor config follows coding styles set in .editorconfig
 Plugin 'editorconfig/editorconfig-vim'
 " Automatically add closing brackets
@@ -257,7 +257,7 @@ endfunction
 
 " Highlight all instances of word under cursor, when idle.
 " It doesn't clobber the search register
-set updatetime=10
+set updatetime=100
 
 function! HighlightWordUnderCursor()
     if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
