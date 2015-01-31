@@ -20,3 +20,7 @@
 	path = vim/bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors
 	ignore = dirty
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
+	ignore = dirty
