@@ -62,6 +62,8 @@ Plugin 'takac/vim-spotifysearch'
 Plugin 'terryma/vim-multiple-cursors'
 " Repeat with . after plugin maps
 Plugin 'tpope/vim-repeat'
+" A fancy start screen for vim
+Plugin 'mhinz/vim-startify'
 
 " Set leader key to comma
 let mapleader = ","
@@ -274,3 +276,23 @@ function! HighlightWordUnderCursor()
 endfunction
 
 autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
+
+
+let g:startify_custom_header = [
+  \ "                                                        ",
+  \ "        ________        ________                        ",
+  \ "       /VVVVVVVV\      /VVVVVVVV\                       ",
+  \ "       \VVVVVVVV/      \VVVVVVVV/                       ",
+  \ "        |VVVVVV|        /VVVVV/'                        ",
+  \ "        |VVVVVV|      /VVVVV/'                          ",
+  \ "        |VVVVVV|    /VVVVV/'                            ",
+  \ "        |VVVVVV|  /VVVVV/'                              ",
+  \ "        |VVVVVV|/VVV___                                 ",
+  \ "        |VVVVVVVVVV/##/  _ _ _ _                        ",
+  \ "        |VVVVVVVVV___  /#_#,#_#,\                       ",
+  \ "        |VVVVVVV//##/ /#/ /#/'/#/                       ",
+  \ "        |VVVVV/' /#/ /#/ /#/ /#/                        ",
+  \ "        |VVV/'  /#/ /#/ /#/ /#/                         ",
+  \ "        'V/'  /##//##//##//###/                         ",
+  \ "                                                        ",
+  \ ]
