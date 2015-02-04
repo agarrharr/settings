@@ -259,6 +259,12 @@ endfunction
 " It doesn't clobber the search register
 set updatetime=100
 
+" Fixes issue I was having with background color
+if &term =~ '256color'
+    " disable Background Color Erase (BCE)
+    set t_ut=
+endif
+
 function! HighlightWordUnderCursor()
     if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
         exec 'match' 'Search' '/\V\<'.expand('<cword>').'\>/'
