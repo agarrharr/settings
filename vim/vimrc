@@ -33,6 +33,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mustache/vim-mustache-handlebars'
 " Automatic indentation
 Plugin 'tpope/vim-sleuth'
+" Indentation lines
+Plugin 'Yggdroot/indentLine'
 " Interact with tmux from vim
 Plugin 'benmills/vimux'
 " Diplays tags in a pane
@@ -237,6 +239,35 @@ autocmd FileType html noremap <buffer> <leader>bh :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <leader>bc :call CSSBeautify()<cr>
 
+
+" Startify
+let g:startify_custom_header = [
+  \ "                                                        ",
+  \ "        ________        ________                        ",
+  \ "       /VVVVVVVV\      /VVVVVVVV\                       ",
+  \ "       \VVVVVVVV/      \VVVVVVVV/                       ",
+  \ "        |VVVVVV|        /VVVVV/'                        ",
+  \ "        |VVVVVV|      /VVVVV/'                          ",
+  \ "        |VVVVVV|    /VVVVV/'                            ",
+  \ "        |VVVVVV|  /VVVVV/'                              ",
+  \ "        |VVVVVV|/VVV___                                 ",
+  \ "        |VVVVVVVVVV/##/  _ _ _ _                        ",
+  \ "        |VVVVVVVVV___  /#_#,#_#,\                       ",
+  \ "        |VVVVVVV//##/ /#/ /#/'/#/                       ",
+  \ "        |VVVVV/' /#/ /#/ /#/ /#/                        ",
+  \ "        |VVV/'  /#/ /#/ /#/ /#/                         ",
+  \ "        'V/'  /##//##//##//###/                         ",
+  \ "                                                        ",
+  \ ]
+
+let g:startify_session_persistence = 2
+
+" indentLine
+let g:indentLine_color_term = 8
+
+nnoremap <leader>il :IndentLinesToggle<cr>
+let g:indentLine_char = '┊'
+
 " Functions
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
@@ -269,23 +300,3 @@ function! HighlightWordUnderCursor()
 endfunction
 
 autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
-
-
-let g:startify_custom_header = [
-  \ "                                                        ",
-  \ "        ________        ________                        ",
-  \ "       /VVVVVVVV\      /VVVVVVVV\                       ",
-  \ "       \VVVVVVVV/      \VVVVVVVV/                       ",
-  \ "        |VVVVVV|        /VVVVV/'                        ",
-  \ "        |VVVVVV|      /VVVVV/'                          ",
-  \ "        |VVVVVV|    /VVVVV/'                            ",
-  \ "        |VVVVVV|  /VVVVV/'                              ",
-  \ "        |VVVVVV|/VVV___                                 ",
-  \ "        |VVVVVVVVVV/##/  _ _ _ _                        ",
-  \ "        |VVVVVVVVV___  /#_#,#_#,\                       ",
-  \ "        |VVVVVVV//##/ /#/ /#/'/#/                       ",
-  \ "        |VVVVV/' /#/ /#/ /#/ /#/                        ",
-  \ "        |VVV/'  /#/ /#/ /#/ /#/                         ",
-  \ "        'V/'  /##//##//##//###/                         ",
-  \ "                                                        ",
-  \ ]
