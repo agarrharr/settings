@@ -131,11 +131,6 @@ nnoremap <leader>l <C-w>l
 nnoremap <leader>sv <C-w>v<C-w>l
 nnoremap <leader>ss <C-w>s<C-w>j
 
-" Mappings for easier search and replace
-" noremap ;; :%s:::g<Left><Left><Left>
-" noremap ;' :%s:::cg<Left><Left><Left><Left>
-" cmap ;\ \(\)<Left><Left>
-
 " Make the backspace work in terminal
 set backspace=indent,eol,start
 
@@ -199,37 +194,37 @@ let g:VimuxHeight = "30"
 " Split tmux pane horizontally
 let g:VimuxOrientation = "h"
 " Prompt for a command to run
-map <leader>vp :VimuxPromptCommand<CR>
+noremap <leader>vp :VimuxPromptCommand<CR>
 " Run last command
-map <leader>vl :VimuxRunLastCommand<CR>
+noremap <leader>vl :VimuxRunLastCommand<CR>
 " Move into the tmux runner pane created by `VimuxRunCommand` and enter copy pmode (scroll mode)
-map <leader>vi :VimuxInspectRunner<CR>
+noremap <leader>vi :VimuxInspectRunner<CR>
 " Quit
-map <leader>vq :VimuxCloseRunner<CR>
+noremap <leader>vq :VimuxCloseRunner<CR>
 " Stop command
-map <leader>vs :VimuxInterruptRunner<CR>
+noremap <leader>vs :VimuxInterruptRunner<CR>
 " Clear
-map <leader>vc: VimuxClearRunnerHistory<CR>
+noremap <leader>vc: VimuxClearRunnerHistory<CR>
 
 " tagbar
 let tagbar_ctags_bin = "/usr/local/bin/ctags"
-map <leader>m :TagbarToggle<CR>
+noremap <leader>m :TagbarToggle<CR>
 
 " syntastic
 let g:syntastic_html_tidy_ignore_errors = ['warning: <div> proprietary attribute "data-role"']
 
 " delimitMate
-imap <C-c> <CR><Esc>O<Tab>
+inoremap <C-c> <CR><Esc>O<Tab>
 
 " dbext
 let g:dbext_default_profile_sqlClass = 'type=MYSQL:user=root:passwd=root:dbname=sqlClass'
 
 " move
 let g:move_map_keys = 0
-vmap <C-j> <Plug>MoveBlockDown
-vmap <C-k> <Plug>MoveBlockUp
-nmap <C-j> <Plug>MoveLineDown
-nmap <C-k> <Plug>MoveLineUp
+vnoremap <C-j> <Plug>MoveBlockDown
+vnoremap <C-k> <Plug>MoveBlockUp
+nnoremap <C-j> <Plug>MoveLineDown
+nnoremap <C-k> <Plug>MoveLineUp
 
 " JsBeautify
 " for js
