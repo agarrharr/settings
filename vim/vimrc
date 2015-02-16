@@ -67,11 +67,6 @@ Plugin 'mhinz/vim-startify'
 let mapleader = ","
 let maplocalleader = "\\"
 
-" Source the vimrc file after saving it
-if has("autocmd")
-  autocmd bufwritepost vimrc source $MYVIMRC
-endif
-
 " Powerline
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
@@ -84,6 +79,8 @@ nnoremap <leader>et :tabnew ~/dotfiles/tmux.conf<cr>
 nnoremap <leader>ez :tabnew ~/dotfiles/zshrc<cr>
 nnoremap <leader>em :tabnew ~/dotfiles/mutt/muttrc<cr>
 nnoremap <leader>eg :tabnew ~/dotfiles/gitconfig<cr>
+
+nnoremap <leader>vs :source $MYVIMRC<cr>
 
 syntax on
 set number
@@ -196,16 +193,6 @@ let g:VimuxHeight = "30"
 let g:VimuxOrientation = "h"
 " Prompt for a command to run
 noremap <leader>vp :VimuxPromptCommand<CR>
-" Run last command
-noremap <leader>vl :VimuxRunLastCommand<CR>
-" Move into the tmux runner pane created by `VimuxRunCommand` and enter copy pmode (scroll mode)
-noremap <leader>vi :VimuxInspectRunner<CR>
-" Quit
-noremap <leader>vq :VimuxCloseRunner<CR>
-" Stop command
-noremap <leader>vs :VimuxInterruptRunner<CR>
-" Clear
-noremap <leader>vc: VimuxClearRunnerHistory<CR>
 
 " tagbar
 let tagbar_ctags_bin = "/usr/local/bin/ctags"
