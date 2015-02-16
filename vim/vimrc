@@ -65,6 +65,7 @@ Plugin 'mhinz/vim-startify'
 
 " Set leader key to comma
 let mapleader = ","
+let maplocalleader = "\\"
 
 " Source the vimrc file after saving it
 if has("autocmd")
