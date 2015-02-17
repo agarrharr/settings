@@ -180,6 +180,8 @@ nnoremap <leader>ll :set norelativenumber<CR>
 " Remove all trailing whitespace in a file
 nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
 
+iabbrev @@ aharris88@gmail.com
+
 " Plugins
 
 " Fugitive
