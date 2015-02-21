@@ -60,8 +60,6 @@ Plugin 'takac/vim-spotifysearch'
 Plugin 'terryma/vim-multiple-cursors'
 " Repeat with . after plugin maps
 Plugin 'tpope/vim-repeat'
-" A fancy start screen for vim
-Plugin 'mhinz/vim-startify'
 
 " Set leader key to comma
 let mapleader = ","
@@ -223,29 +221,6 @@ autocmd FileType javascript noremap <buffer>  <leader>bj :call JsBeautify()<cr>
 autocmd FileType html noremap <buffer> <leader>bh :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <leader>bc :call CSSBeautify()<cr>
-
-
-" Startify
-let g:startify_custom_header = [
-  \ "                                                        ",
-  \ "        ________        ________                        ",
-  \ "       /VVVVVVVV\      /VVVVVVVV\                       ",
-  \ "       \VVVVVVVV/      \VVVVVVVV/                       ",
-  \ "        |VVVVVV|        /VVVVV/'                        ",
-  \ "        |VVVVVV|      /VVVVV/'                          ",
-  \ "        |VVVVVV|    /VVVVV/'                            ",
-  \ "        |VVVVVV|  /VVVVV/'                              ",
-  \ "        |VVVVVV|/VVV___                                 ",
-  \ "        |VVVVVVVVVV/##/  _ _ _ _                        ",
-  \ "        |VVVVVVVVV___  /#_#,#_#,\                       ",
-  \ "        |VVVVVVV//##/ /#/ /#/'/#/                       ",
-  \ "        |VVVVV/' /#/ /#/ /#/ /#/                        ",
-  \ "        |VVV/'  /#/ /#/ /#/ /#/                         ",
-  \ "        'V/'  /##//##//##//###/                         ",
-  \ "                                                        ",
-  \ ]
-
-let g:startify_session_persistence = 2
 
 " indentLine
 let g:indentLine_color_term = 8
