@@ -180,6 +180,14 @@ nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
 
 iabbrev @@ aharris88@gmail.com
 
+set updatetime=100
+
+" Fixes issue I was having with background color
+if &term =~ '256color'
+    " disable Background Color Erase (BCE)
+    set t_ut=
+endif
+
 " Plugins
 
 " Fugitive
@@ -243,14 +251,6 @@ endfunction
 
 " Highlight all instances of word under cursor, when idle.
 " It doesn't clobber the search register
-set updatetime=100
-
-" Fixes issue I was having with background color
-if &term =~ '256color'
-    " disable Background Color Erase (BCE)
-    set t_ut=
-endif
-
 function! HighlightWordUnderCursor()
     if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
         exec 'match' 'Search' '/\V\<'.expand('<cword>').'\>/'
@@ -260,3 +260,11 @@ function! HighlightWordUnderCursor()
 endfunction
 
 autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
+
+function! ShowOnGithub()
+  let u = system("echo ${${${$(git --git-dir=.git config --get remote.origin.url)#git@github.com:}%.git}#https://github.com/} | xargs echo -n")
+  silent exec "!open "."https://github.com/".u."/blob/master/".@%.'\#L'.line(".")
+endfunction
+command! -nargs=0 ShowOnGithub call ShowOnGithub()
+ 
+nnoremap <Leader>gh :ShowOnGithub<CR>
