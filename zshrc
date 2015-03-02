@@ -65,10 +65,11 @@ source $ZSH/oh-my-zsh.sh
 # Powerline
 source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
+# rvm
+source ~/.nvm/nvm.sh
+
 # Path
 PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
-#path to node
-PATH="$PATH:/usr/local/lib/node_modules"
 #path to gem installed libraries
 PATH="$PATH:/usr/local/opt/ruby/bin"
 PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems"
@@ -91,9 +92,5 @@ export LC_ALL=$LANG
 export LESS='-iR-P%f (%i/%m) Line %lt/%L'
 # Display window names correctly in tmux
 export DISABLE_AUTO_TITLE=true
-
-# Load nvm
-[ -s "/Users/adamharris/.nvm/nvm.sh" ] && . "/Users/adamharris/.nvm/nvm.sh"
-
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
