@@ -37,8 +37,6 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'Yggdroot/indentLine'
 " Interact with tmux from vim
 Plugin 'benmills/vimux'
-" Diplays tags in a pane
-" Plugin 'majutsushi/tagbar'
 " Show a git diff n the gutter
 Plugin 'airblade/vim-gitgutter'
 " Editor config follows coding styles set in .editorconfig
@@ -216,11 +214,10 @@ inoremap <C-c> <CR><Esc>O<Tab>
 let g:dbext_default_profile_sqlClass = 'type=MYSQL:user=root:passwd=root:dbname=sqlClass'
 
 " move
-let g:move_map_keys = 0
-vnoremap <C-j> <Plug>MoveBlockDown
-vnoremap <C-k> <Plug>MoveBlockUp
-nnoremap <C-j> <Plug>MoveLineDown
-nnoremap <C-k> <Plug>MoveLineUp
+nmap <C-j> <Plug>MoveLineDown
+nmap <C-k> <Plug>MoveLineUp
+vmap <C-j> <Plug>MoveBlockDown
+vmap <C-k> <Plug>MoveBlockUp
 
 " JsBeautify
 " for js
