@@ -61,12 +61,6 @@ Plugin 'tpope/vim-repeat'
 let mapleader = ","
 let maplocalleader = "\\"
 
-" Powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-set laststatus=2
-
 " Mappings to open config files
 nnoremap <leader>ev :tabnew $MYVIMRC<cr>
 nnoremap <leader>et :tabnew ~/dotfiles/tmux.conf<cr>
