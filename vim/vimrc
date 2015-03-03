@@ -171,6 +171,11 @@ nnoremap <leader>ll :set norelativenumber<CR>
 " Toggle the case of the previous word in insert mode
 :inoremap <C-t> <esc>bg~wea
 
+" Open auto completed brackets
+inoremap <C-c> <CR><Esc>O<Tab>
+" Open auto completed brackets and put a semicolon on the end
+inoremap <C-v> <CR><Esc>A;<Esc>O<Tab>
+
 " Remove all trailing whitespace in a file
 nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
 
@@ -204,9 +209,6 @@ noremap <leader>m :TagbarToggle<CR>
 
 " syntastic
 let g:syntastic_html_tidy_ignore_errors = ['warning: <div> proprietary attribute "data-role"']
-
-" delimitMate
-inoremap <C-c> <CR><Esc>O<Tab>
 
 " dbext
 let g:dbext_default_profile_sqlClass = 'type=MYSQL:user=root:passwd=root:dbname=sqlClass'
