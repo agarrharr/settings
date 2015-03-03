@@ -39,8 +39,6 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'benmills/vimux'
 " Show a git diff n the gutter
 Plugin 'airblade/vim-gitgutter'
-" Editor config follows coding styles set in .editorconfig
-Plugin 'editorconfig/editorconfig-vim'
 " Automatically add closing brackets
 Plugin 'Raimondi/delimitMate'
 " Change the background of css colors to match
