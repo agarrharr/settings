@@ -74,10 +74,10 @@ PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems"
 PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.5/bin
 
 #Android SDK
-PATH="$PATH:/Users/adamharris/Library/Android/sdk/platform-tools"
-PATH="$PATH:/Users/adamharris/Library/Android/sdk/tools"
+PATH="$PATH:/Library/Android/sdk/platform-tools"
+PATH="$PATH:/Library/Android/sdk/tools"
 export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk
-export ANDROID_HOME=/Users/adamharris/Library/Android/sdk
+export ANDROID_HOME=/Library/Android/sdk
 
 export PATH
 
