@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/adamharris/dotfiles/vim/bundle/delimitMate'
+let g:netrw_dirhist_2='/Users/adamharris/dotfiles/vim/bundle/delimitMate/plugin'
+let g:netrw_dirhist_3='/Users/adamharris/Development/domo/DA/PieWithLegend'
+let g:netrw_dirhist_4='/Users/adamharris/Development/Mountainview-WebDesign/lifestonechurch/assets/css'
+let g:netrw_dirhist_5='/Users/adamharris/Development/domo/DA/legend'
+let g:netrw_dirhist_6='/Users/adamharris/Development/domo/DA/legend/media'
+let g:netrw_dirhist_7='/Users/adamharris/Development/domo/DA/legend'
+let g:netrw_dirhist_8='/Users/adamharris/Development/reveal.js'

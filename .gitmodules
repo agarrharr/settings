@@ -24,3 +24,26 @@
 	path = vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
 	ignore = dirty
+[submodule "nvim/bundle/vundle"]
+	path = nvim/bundle/vundle
+	url = https://github.com/gmarik/vundle.git
+[submodule "nvim/bundle/frisk"]
+	path = nvim/bundle/frisk
+	url = https://github.com/arecarn/frisk
+	ignore = dirty
+[submodule "nvim/bundle/vim-js-context-coloring"]
+	path = nvim/bundle/vim-js-context-coloring
+	url = https://github.com/bigfish/vim-js-context-coloring
+	ignore = dirty
+[submodule "nvim/bundle/vim-move"]
+	path = nvim/bundle/vim-move
+	url = https://github.com/matze/vim-move
+	ignore = dirty
+[submodule "nvim/bundle/vim-multiple-cursors"]
+	path = nvim/bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors
+	ignore = dirty
+[submodule "nvim/bundle/YouCompleteMe"]
+	path = nvim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
+	ignore = dirty

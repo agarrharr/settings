@@ -1,0 +1,261 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+Plugin 'gmarik/Vundle.vim'
+" Expands abbreviations similar to emmet
+Plugin 'mattn/emmet-vim'
+" Fuzzy searching for opening files
+Plugin 'ctrlpvim/ctrlp.vim'
+" Adds search capability on google, bing, SO, etc.
+Plugin 'arecarn/frisk'
+" Code linter
+Plugin 'scrooloose/syntastic'
+" Commenter
+Plugin 'tpope/vim-commentary'
+" Autocompletion
+Plugin 'Valloric/YouCompleteMe'
+" Code analysis engine for javascript to make syntastic smarter
+Plugin 'marijnh/tern_for_vim'
+" JavaScript Beautifier (also html and css)
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'einars/js-beautify'
+" Quoting/parenthesizing made simple
+Plugin 'tpope/vim-surround'
+" For editing gpg encrypted files which I store my mutt passwords in
+Plugin 'jamessan/vim-gnupg'
+" Closes html/xml tags after typing </
+Plugin 'docunext/closetag.vim'
+" Git commands inside vim
+Plugin 'tpope/vim-fugitive'
+" Plugin for working with Mustache and Handlebars templates
+Plugin 'mustache/vim-mustache-handlebars'
+" Automatic indentation
+Plugin 'tpope/vim-sleuth'
+" Indentation lines
+Plugin 'Yggdroot/indentLine'
+" Interact with tmux from vim
+Plugin 'benmills/vimux'
+" Show a git diff n the gutter
+Plugin 'airblade/vim-gitgutter'
+" Automatically add closing brackets
+Plugin 'Raimondi/delimitMate'
+" Change the background of css colors to match
+Plugin 'ap/vim-css-color'
+" When searching show 'At match #N out of M matches'
+Plugin 'vim-scripts/IndexedSearch'
+" Plugin to move lines
+Plugin 'matze/vim-move'
+Plugin 'bigfish/vim-js-context-coloring'
+" Plugin to generate jsdocs
+Plugin 'heavenshell/vim-jsdoc'
+" Spotify client
+Plugin 'takac/vim-spotifysearch'
+" Multiple Cursors
+Plugin 'terryma/vim-multiple-cursors'
+" Repeat with . after plugin maps
+Plugin 'tpope/vim-repeat'
+
+" Set leader key to comma
+let mapleader = ","
+let maplocalleader = "\\"
+
+" Mappings to open config files
+nnoremap <leader>ev :tabnew $MYVIMRC<cr>
+nnoremap <leader>et :tabnew ~/dotfiles/tmux.conf<cr>
+nnoremap <leader>ez :tabnew ~/dotfiles/zshrc<cr>
+nnoremap <leader>em :tabnew ~/dotfiles/mutt/muttrc<cr>
+nnoremap <leader>eg :tabnew ~/dotfiles/gitconfig<cr>
+
+nnoremap <leader>vs :source $MYVIMRC<cr>
+
+syntax on
+set number
+set encoding=utf-8
+
+" Set to dark theme at night and light theme during the day
+"if strftime("%H") < 6
+"  set background=dark
+"else
+"  set background=light
+"endif
+"if strftime("%H") > 18
+"  set background=dark
+"endif
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
+" Turn on spell checking for commit messages and automatic wrapping at the recommeneded 72 characters
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
+" Define a thesaurus file
+set thesaurus+=~/dotfiles/mthesaur.txt
+
+" Turn on search highlighting
+set hlsearch
+set incsearch
+set undofile
+
+" I don't think I need to be vi compatible
+set nocompatible
+" I don't need this (plus there's a possible security problem)
+set modelines=0
+" Don't add newline to end of file
+set fileformats+=dos
+
+" Set macvim font
+set guifont=Anonymous\ Pro\ for\ Powerline:h14
+
+" Set mappings panes
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
+" Mapping for opening splits and moving into it
+nnoremap <leader>sv <C-w>v<C-w>l
+nnoremap <leader>ss <C-w>s<C-w>j
+
+" Make the backspace work in terminal
+set backspace=indent,eol,start
+
+" Enable better indentation.
+set autoindent smartindent
+set smarttab
+
+" Setup indicator for 132 columns
+set colorcolumn=133
+
+" Code folding for javascript
+syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+setlocal foldmethod=syntax
+setlocal foldlevel=10
+
+" Set comment style for javascript to single line
+autocmd FileType javascript set commentstring=//\ %s
+
+" Copy to system clipboard when you yank
+set clipboard=unnamed
+
+" Enable mouse in iTerm2
+set mouse=a
+set ttymouse=xterm2
+
+" Set indentation to tab characters of 4 width
+:set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+
+" Invisible Characters
+" Shortcut to toggle invisible characters
+" Use the same symbols as TextMate for tabstops and EOLs
+:set list listchars=tab:\ \ ,trail:-
+nnoremap <leader>i :set list<CR>:set listchars=tab:▸\ ,eol:¬<CR>
+nnoremap <leader>io :set list<CR>:set listchars=tab:\ \ ,trail:-<CR>
+" Change color to gray
+hi NonText ctermfg=7 guifg=gray
+" Show this character when the line wraps
+set showbreak=↪\ " Note the trailing space (escaped with a backslash) because this character is wider than 1 normal character
+
+" Set mappings for relative line numbering
+nnoremap <leader>lr :set relativenumber<CR>
+nnoremap <leader>ll :set norelativenumber<CR>
+
+" Map deleting a line in insert mode
+:inoremap <C-d> <esc>ddi
+" Toggle the case of the previous word in insert mode
+:inoremap <C-t> <esc>bg~wea
+
+" Open auto completed brackets
+inoremap <C-c> <CR><Esc>O<Tab>
+" Open auto completed brackets and put a semicolon on the end
+inoremap <C-v> <CR><Esc>A;<Esc>O<Tab>
+
+" Remove all trailing whitespace in a file
+nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
+
+iabbrev @@ aharris88@gmail.com
+
+set updatetime=100
+
+" Fixes issue I was having with background color
+if &term =~ '256color'
+    " disable Background Color Erase (BCE)
+    set t_ut=
+endif
+
+" Plugins
+
+" Fugitive
+" Automatically remove fugitive buffers from the buffer list
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" vimux
+" Set tmux pane percentage
+let g:VimuxHeight = "30"
+" Split tmux pane horizontally
+let g:VimuxOrientation = "h"
+" Prompt for a command to run
+noremap <leader>vp :VimuxPromptCommand<CR>
+
+" tagbar
+let tagbar_ctags_bin = "/usr/local/bin/ctags"
+noremap <leader>m :TagbarToggle<CR>
+
+" syntastic
+let g:syntastic_html_tidy_ignore_errors = ['warning: <div> proprietary attribute "data-role"']
+
+" dbext
+let g:dbext_default_profile_sqlClass = 'type=MYSQL:user=root:passwd=root:dbname=sqlClass'
+
+" move
+nmap <C-j> <Plug>MoveLineDown
+nmap <C-k> <Plug>MoveLineUp
+vmap <C-j> <Plug>MoveBlockDown
+vmap <C-k> <Plug>MoveBlockUp
+
+" JsBeautify
+" for js
+autocmd FileType javascript noremap <buffer>  <leader>bj :call JsBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <leader>bh :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <leader>bc :call CSSBeautify()<cr>
+
+" indentLine
+let g:indentLine_color_term = 8
+
+nnoremap <leader>il :IndentLinesToggle<cr>
+let g:indentLine_char = '┊'
+
+" Functions
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+" Highlight all instances of word under cursor, when idle.
+" It doesn't clobber the search register
+function! HighlightWordUnderCursor()
+    if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
+        exec 'match' 'Search' '/\V\<'.expand('<cword>').'\>/'
+    else
+        match none
+    endif
+endfunction
+
+autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
+
+function! ShowOnGithub()
+  let u = system("echo ${${${$(git --git-dir=.git config --get remote.origin.url)#git@github.com:}%.git}#https://github.com/} | xargs echo -n")
+  silent exec "!open "."https://github.com/".u."/blob/master/".@%.'\#L'.line(".")
+endfunction
+command! -nargs=0 ShowOnGithub call ShowOnGithub()
+ 
+nnoremap <Leader>gh :ShowOnGithub<CR>
