@@ -22,7 +22,6 @@ Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'marijnh/tern_for_vim'
 " JavaScript Beautifier (also html and css)
 Plug 'maksimr/vim-jsbeautify'
-Plug 'einars/js-beautify'
 " Quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
 " For editing gpg encrypted files which I store my mutt passwords in
@@ -49,11 +48,8 @@ Plug 'ap/vim-css-color'
 Plug 'vim-scripts/IndexedSearch'
 " Plugin to move lines
 Plug 'matze/vim-move'
-Plug 'bigfish/vim-js-context-coloring'
 " Plugin to generate jsdocs
 Plug 'heavenshell/vim-jsdoc'
-" Spotify client
-Plug 'takac/vim-spotifysearch'
 " Multiple Cursors
 Plug 'terryma/vim-multiple-cursors'
 " Repeat with . after plugin maps
