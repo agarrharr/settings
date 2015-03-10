@@ -7,7 +7,12 @@ Plug 'mattn/emmet-vim'
 " Fuzzy searching for opening files
 Plug 'ctrlpvim/ctrlp.vim'
 " Code linter
-Plug 'scrooloose/syntastic'
+function! Installjshint(info)
+  if a:info.status == 'installed' || a:info.force
+    !npm install -g jshint
+  endif
+endfunction
+Plug 'scrooloose/syntastic', { 'do': function('Installjshint') }
 " Commenter
 Plug 'tpope/vim-commentary'
 " Autocompletion
