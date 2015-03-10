@@ -1,61 +1,65 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.nvim/plugged')
+
 " Expands abbreviations similar to emmet
-Plugin 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 " Fuzzy searching for opening files
-Plugin 'ctrlpvim/ctrlp.vim'
-" Adds search capability on google, bing, SO, etc.
-Plugin 'arecarn/frisk'
+Plug 'ctrlpvim/ctrlp.vim'
 " Code linter
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 " Commenter
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 " Autocompletion
-Plugin 'Valloric/YouCompleteMe'
+function! BuildYCM(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.sh
+  endif
+endfunction
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 " Code analysis engine for javascript to make syntastic smarter
-Plugin 'marijnh/tern_for_vim'
+Plug 'marijnh/tern_for_vim'
 " JavaScript Beautifier (also html and css)
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'einars/js-beautify'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'einars/js-beautify'
 " Quoting/parenthesizing made simple
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " For editing gpg encrypted files which I store my mutt passwords in
-Plugin 'jamessan/vim-gnupg'
+Plug 'jamessan/vim-gnupg'
 " Closes html/xml tags after typing </
-Plugin 'docunext/closetag.vim'
+Plug 'docunext/closetag.vim'
 " Git commands inside vim
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Plugin for working with Mustache and Handlebars templates
-Plugin 'mustache/vim-mustache-handlebars'
+Plug 'mustache/vim-mustache-handlebars'
 " Automatic indentation
-Plugin 'tpope/vim-sleuth'
+Plug 'tpope/vim-sleuth'
 " Indentation lines
-Plugin 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 " Interact with tmux from vim
-Plugin 'benmills/vimux'
+Plug 'benmills/vimux'
 " Show a git diff n the gutter
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 " Automatically add closing brackets
-Plugin 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 " Change the background of css colors to match
-Plugin 'ap/vim-css-color'
+Plug 'ap/vim-css-color'
 " When searching show 'At match #N out of M matches'
-Plugin 'vim-scripts/IndexedSearch'
+Plug 'vim-scripts/IndexedSearch'
 " Plugin to move lines
-Plugin 'matze/vim-move'
-Plugin 'bigfish/vim-js-context-coloring'
+Plug 'matze/vim-move'
+Plug 'bigfish/vim-js-context-coloring'
 " Plugin to generate jsdocs
-Plugin 'heavenshell/vim-jsdoc'
+Plug 'heavenshell/vim-jsdoc'
 " Spotify client
-Plugin 'takac/vim-spotifysearch'
+Plug 'takac/vim-spotifysearch'
 " Multiple Cursors
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 " Repeat with . after plugin maps
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
+
+call plug#end()
 
 " Set leader key to comma
 let mapleader = ","
