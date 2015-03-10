@@ -19,7 +19,12 @@ function! BuildYCM(info)
 endfunction
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 " Code analysis engine for javascript to make syntastic smarter
-Plug 'marijnh/tern_for_vim'
+function! BuildTern(info)
+  if a:info.status == 'installed' || a:info.force
+    !npm install
+  endif
+endfunction
+Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
 " JavaScript Beautifier (also html and css)
 Plug 'maksimr/vim-jsbeautify'
 " Quoting/parenthesizing made simple
