@@ -40,8 +40,6 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'tpope/vim-sleuth'
 " Indentation lines
 Plug 'Yggdroot/indentLine'
-" Interact with tmux from vim
-Plug 'benmills/vimux'
 " Show a git diff n the gutter
 Plug 'airblade/vim-gitgutter'
 " Automatically add closing brackets
@@ -193,23 +191,8 @@ endif
 " Automatically remove fugitive buffers from the buffer list
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-" vimux
-" Set tmux pane percentage
-let g:VimuxHeight = "30"
-" Split tmux pane horizontally
-let g:VimuxOrientation = "h"
-" Prompt for a command to run
-noremap <leader>vp :VimuxPromptCommand<CR>
-
-" tagbar
-let tagbar_ctags_bin = "/usr/local/bin/ctags"
-noremap <leader>m :TagbarToggle<CR>
-
 " syntastic
 let g:syntastic_html_tidy_ignore_errors = ['warning: <div> proprietary attribute "data-role"']
-
-" dbext
-let g:dbext_default_profile_sqlClass = 'type=MYSQL:user=root:passwd=root:dbname=sqlClass'
 
 " move
 nmap <C-j> <Plug>MoveLineDown
