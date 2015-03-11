@@ -21,6 +21,8 @@ alias chrome='open -a Google\ Chrome'
 # Command for timetrap
 alias td='t d -f day'
 
+alias vi='vim -u ~/.vim/essential.vim'
+
 alias reload="echo 'reload help:\n\r\n\rreloadzsh: reload zsh\n\rreloadtmux: reload tmux'"
 alias reloadzsh=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias reloadtmux="source-file ~/.tmux.conf && echo 'tmux config reloaded from ~/.tmux.conf'"
