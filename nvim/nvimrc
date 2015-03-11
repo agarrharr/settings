@@ -105,12 +105,12 @@ set hlsearch
 set incsearch
 set undofile
 
-" I don't think I need to be vi compatible
-set nocompatible
 " I don't need this (plus there's a possible security problem)
 set modelines=0
 " Don't add newline to end of file
 set fileformats+=dos
+
+set wildignorecase
 
 " Set macvim font
 set guifont=Anonymous\ Pro\ for\ Powerline:h14
