@@ -33,15 +33,13 @@ Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
 Plug 'maksimr/vim-jsbeautify'
 " Quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
-" For editing gpg encrypted files which I store my mutt passwords in
-Plug 'jamessan/vim-gnupg'
 " Closes html/xml tags after typing </
 Plug 'docunext/closetag.vim'
 " Git commands inside vim
 Plug 'tpope/vim-fugitive'
 " Automatic indentation
 Plug 'tpope/vim-sleuth'
-" Indentation lines
+" Show the indentation with vertical lines
 Plug 'Yggdroot/indentLine'
 " Show a git diff n the gutter
 Plug 'airblade/vim-gitgutter'
