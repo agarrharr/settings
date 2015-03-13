@@ -39,8 +39,6 @@ Plug 'jamessan/vim-gnupg'
 Plug 'docunext/closetag.vim'
 " Git commands inside vim
 Plug 'tpope/vim-fugitive'
-" Plugin for working with Mustache and Handlebars templates
-Plug 'mustache/vim-mustache-handlebars'
 " Automatic indentation
 Plug 'tpope/vim-sleuth'
 " Indentation lines
