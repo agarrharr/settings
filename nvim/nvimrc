@@ -148,6 +148,8 @@ set ttymouse=xterm2
 " Set indentation to tab characters of 4 width
 :set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 
+tnoremap <Esc> <C-\><C-n>
+
 " Invisible Characters
 " Shortcut to toggle invisible characters
 " Use the same symbols as TextMate for tabstops and EOLs
