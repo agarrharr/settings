@@ -111,14 +111,28 @@ set wildignorecase
 " Set macvim font
 set guifont=Anonymous\ Pro\ for\ Powerline:h14
 
-" Set mappings panes
-nnoremap <leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>l <C-w>l
+" Mappings for moving around panes
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
+
+inoremap <C-h> <Esc><C-w>h
+inoremap <C-j> <Esc><C-w>j
+inoremap <C-k> <Esc><C-w>k
+inoremap <C-l> <Esc><C-w>l
+
 " Mapping for opening splits and moving into it
 nnoremap <leader>sv <C-w>v<C-w>l
 nnoremap <leader>ss <C-w>s<C-w>j
+
+" Quit terminal mode with escape key
+tnoremap <Esc> <C-\><C-n>
 
 " Make the backspace work in terminal
 set backspace=indent,eol,start
@@ -148,8 +162,6 @@ set ttymouse=xterm2
 " Set indentation to tab characters of 4 width
 :set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 
-tnoremap <Esc> <C-\><C-n>
-
 " Invisible Characters
 " Shortcut to toggle invisible characters
 " Use the same symbols as TextMate for tabstops and EOLs
@@ -166,9 +178,9 @@ nnoremap <leader>lr :set relativenumber<CR>
 nnoremap <leader>ll :set norelativenumber<CR>
 
 " Map deleting a line in insert mode
-:inoremap <C-d> <esc>ddi
+:inoremap <C-d> <Esc>ddi
 " Toggle the case of the previous word in insert mode
-:inoremap <C-t> <esc>bg~wea
+:inoremap <C-t> <Esc>bg~wea
 
 " Open auto completed brackets
 inoremap <C-c> <CR><Esc>O<Tab>
@@ -198,10 +210,10 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 let g:syntastic_html_tidy_ignore_errors = ['warning: <div> proprietary attribute "data-role"']
 
 " move
-nmap <C-j> <Plug>MoveLineDown
-nmap <C-k> <Plug>MoveLineUp
-vmap <C-j> <Plug>MoveBlockDown
-vmap <C-k> <Plug>MoveBlockUp
+nmap <C-u> <Plug>MoveLineDown
+nmap <C-i> <Plug>MoveLineUp
+vmap <C-u> <Plug>MoveBlockDown
+vmap <C-i> <Plug>MoveBlockUp
 
 " JsBeautify
 " for js
