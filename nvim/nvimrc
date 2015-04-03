@@ -108,6 +108,9 @@ set fileformats+=dos
 
 set wildignorecase
 
+" Treat all numerals as decimal (for <C-a> and <C-x>)
+set nrformats=
+
 " Set macvim font
 set guifont=Anonymous\ Pro\ for\ Powerline:h14
 
