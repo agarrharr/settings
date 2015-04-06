@@ -91,7 +91,10 @@ let g:solarized_termcolors=256
 colorscheme solarized
 
 " Turn on spell checking for commit messages and automatic wrapping at the recommeneded 72 characters
-autocmd Filetype gitcommit setlocal spell textwidth=72
+augroup filetype_gitcommit
+  autocmd!
+  autocmd Filetype gitcommit setlocal spell textwidth=72
+augroup END
 
 " Define a thesaurus file
 set thesaurus+=~/dotfiles/mthesaur.txt
@@ -153,7 +156,10 @@ setlocal foldmethod=syntax
 setlocal foldlevel=10
 
 " Set comment style for javascript to single line
-autocmd FileType javascript set commentstring=//\ %s
+augroup filetype_js
+  autocmd!
+  autocmd FileType javascript set commentstring=//\ %s
+augroup END
 
 " Copy to system clipboard when you yank
 set clipboard=unnamed
@@ -207,7 +213,10 @@ endif
 
 " Fugitive
 " Automatically remove fugitive buffers from the buffer list
-autocmd BufReadPost fugitive://* set bufhidden=delete
+augroup plugin_fugitive
+  autocmd!
+  autocmd BufReadPost fugitive://* set bufhidden=delete
+augroup END
 
 " syntastic
 let g:syntastic_html_tidy_ignore_errors = ['warning: <div> proprietary attribute "data-role"']
@@ -220,11 +229,14 @@ vmap <C-i> <Plug>MoveBlockUp
 
 " JsBeautify
 " for js
-autocmd FileType javascript noremap <buffer>  <leader>bj :call JsBeautify()<cr>
-" for html
-autocmd FileType html noremap <buffer> <leader>bh :call HtmlBeautify()<cr>
-" for css or scss
-autocmd FileType css noremap <buffer> <leader>bc :call CSSBeautify()<cr>
+augroup plugin_fugitive
+  autocmd!
+  autocmd FileType javascript noremap <buffer>  <leader>bj :call JsBeautify()<cr>
+  " for html
+  autocmd FileType html noremap <buffer> <leader>bh :call HtmlBeautify()<cr>
+  " for css or scss
+  autocmd FileType css noremap <buffer> <leader>bc :call CSSBeautify()<cr>
+augroup END
 
 " indentLine
 let g:indentLine_color_term = 8
@@ -255,7 +267,10 @@ function! HighlightWordUnderCursor()
     endif
 endfunction
 
-autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
+augroup function_highlightWord
+  autocmd!
+  autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
+augroup END
 
 function! ShowOnGithub()
   let u = system("echo ${${${$(git --git-dir=.git config --get remote.origin.url)#git@github.com:}%.git}#https://github.com/} | xargs echo -n")
