@@ -227,10 +227,10 @@ augroup END
 let g:syntastic_html_tidy_ignore_errors = ['warning: <div> proprietary attribute "data-role"']
 
 " move
-nmap <C-u> <Plug>MoveLineDown
-nmap <C-i> <Plug>MoveLineUp
-vmap <C-u> <Plug>MoveBlockDown
-vmap <C-i> <Plug>MoveBlockUp
+nmap <M-j> <Plug>MoveLineDown
+nmap <M-k> <Plug>MoveLineUp
+vmap <M-j> <Plug>MoveBlockDown
+vmap <M-k> <Plug>MoveBlockUp
 
 " JsBeautify
 " for js
@@ -282,5 +282,5 @@ function! ShowOnGithub()
   silent exec "!open "."https://github.com/".u."/blob/master/".@%.'\#L'.line(".")
 endfunction
 command! -nargs=0 ShowOnGithub call ShowOnGithub()
- 
+
 nnoremap <Leader>gh :ShowOnGithub<CR>
