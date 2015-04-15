@@ -1,4 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/adamharris/Development/Mountainview-WebDesign/harris-storage'
-let g:netrw_dirhist_2='/Users/adamharris/Development/github/aharris88.github.io/_posts'
