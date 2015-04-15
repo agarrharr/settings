@@ -171,6 +171,11 @@ set ttymouse=xterm2
 " Set indentation to tab characters of 4 width
 :set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 
+" Close the Omni-Completion tip window when a selection is made
+" These lines close it on movement in insert mode or when leaving insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
 " Invisible Characters
 " Shortcut to toggle invisible characters
 " Use the same symbols as TextMate for tabstops and EOLs
