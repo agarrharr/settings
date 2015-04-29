@@ -21,6 +21,10 @@ alias chrome='open -a Google\ Chrome'
 # Command for timetrap
 alias td='t d -f day'
 
+# The Fuck (https://github.com/nvbn/thefuck)
+alias fuck='eval $(thefuck $(fc -ln -1))'
+alias doh='fuck'
+
 alias vi='vim -u ~/.vim/essential.vim'
 
 alias reload="echo 'reload help:\n\r\n\rreloadzsh: reload zsh\n\rreloadtmux: reload tmux'"
