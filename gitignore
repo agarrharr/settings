@@ -12,6 +12,7 @@
 *.swp
 *.swo
 *.un~
+.netrwhist
 
 # WebStorm Files
 *.idea
