@@ -81,6 +81,11 @@ PATH="$PATH:/Library/Android/sdk/tools"
 export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk
 export ANDROID_HOME=/Library/Android/sdk
 
+# Go
+export GOPATH=$HOME/Go/
+PATH="$PATH:/usr/local/go:/usr/local/go/bin"
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/Go/src:/Go/src/code.google.com/p/portaudio-go
+
 export PATH
 
 export EDITOR=vim
