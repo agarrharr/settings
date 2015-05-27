@@ -77,6 +77,9 @@ syntax on
 set number
 set encoding=utf-8
 
+set laststatus=2
+set ruler
+
 " Set to dark theme at night and light theme during the day
 "if strftime("%H") < 6
 "  set background=dark
