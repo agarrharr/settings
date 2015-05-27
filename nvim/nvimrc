@@ -166,7 +166,6 @@ set clipboard=unnamed
 
 " Enable mouse in iTerm2
 set mouse=a
-set ttymouse=xterm2
 
 " Set indentation to tab characters of 4 width
 :set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
