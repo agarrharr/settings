@@ -10,17 +10,16 @@ alias ..='cd ..'
 alias ~='cd ~'
 alias back='cd $OLDPWD'
 alias gitgraph='git log --graph --oneline --decorate --all'
+alias fch='open -na "Google Chrome" --args "--user-data-dir=$HOME/.fresh-chrome" --enable-precise-memory-info --js-flags="--nocrankshaft --nouse-ic --expose-gc"'
+
 alias geeknote='python ~/geeknote/geeknote.py'
 alias ttytter='perl ~/ttytter/ttytter.pl'
 alias bower='noglob bower' #Only needed for prezto or oh-my-zsh
 # Command for pianobar
 alias p='~/.config/pianobar/fifoCommands.sh'
 alias playing='ruby ~/.config/pianobar/showCurrentSongNotification.rb --notification'
-# Command for Chrome
-alias chrome='open -a Google\ Chrome'
 # Command for timetrap
 alias td='t d -f day'
-
 # The Fuck (https://github.com/nvbn/thefuck)
 alias fuck='eval $(thefuck $(fc -ln -1))'
 alias doh='fuck'
