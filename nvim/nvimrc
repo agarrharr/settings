@@ -127,9 +127,14 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 tnoremap <C-h> <C-\><C-n><C-w>h
+" Workaround since <C-h> isn't working in neovim right now
+tnoremap <C-w>h <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
+
+" Put it into insert mode when entering a terminal pane
+autocmd BufWinEnter,WinEnter term://* startinsert
 
 inoremap <C-h> <Esc><C-w>h
 inoremap <C-j> <Esc><C-w>j
