@@ -256,6 +256,10 @@ let g:indentLine_color_term = 8
 nnoremap <leader>il :IndentLinesToggle<cr>
 let g:indentLine_char = '┊'
 
+" jsdoc
+nnoremap <C-d> :JsDoc<cr>
+let g:jsdoc_default_mapping = 0
+
 " Functions
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
