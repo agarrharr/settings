@@ -41,6 +41,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 " Show the indentation with vertical lines
 Plug 'Yggdroot/indentLine'
+" Detect the indentation automatically
+Plug 'ciaranm/detectindent'
 " Show a git diff n the gutter
 Plug 'airblade/vim-gitgutter'
 " Automatically add closing brackets

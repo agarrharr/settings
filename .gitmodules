@@ -36,3 +36,7 @@
 	path = nvim/plugged/syntastic
 	url = https://github/com/scrooloose/syntastic
 	ignore = dirty
+[submodule "nvim/plugged/detectindent"]
+	path = nvim/plugged/detectindent
+	url = https://github/com/ciaranm/detectindent
+	ignore = dirty
