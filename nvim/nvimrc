@@ -31,13 +31,6 @@ endfunction
 Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
 " JavaScript Beautifier (also html and css)
 Plug 'maksimr/vim-jsbeautify'
-" EditorConfig
-function! InstallEditorConfigCore(info)
-  if a:info.status == 'installed' || a:info.force
-    !brew install editorconfig
-  endif
-endfunction
-Plug 'editorconfig/editorconfig-vim', { 'do': function('InstallEditorConfigCore') }
 " Quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
 " Closes html/xml tags after typing </
