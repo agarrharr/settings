@@ -102,6 +102,12 @@ augroup filetype_gitcommit
   autocmd Filetype gitcommit setlocal spell textwidth=72
 augroup END
 
+" Turn on spell checking for markdown files
+augroup filetype_markdown
+  autocmd!
+  autocmd Filetype markdown setlocal spell
+augroup END
+
 " Define a thesaurus file
 set thesaurus+=~/dotfiles/mthesaur.txt
 
