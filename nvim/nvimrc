@@ -58,6 +58,9 @@ Plug 'terryma/vim-multiple-cursors'
 " Repeat with . after plugin maps
 Plug 'tpope/vim-repeat'
 
+" Syntax for jekyll markdown with front matter
+Plug 'PProvost/vim-markdown-jekyll'
+
 call plug#end()
 
 " Set leader key to comma
