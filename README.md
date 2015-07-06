@@ -21,3 +21,17 @@ git clone git://github.com/aharris88/dotfiles ~/dotfiles
 cd ~/dotfiles
 ./setup.sh
 ```
+
+```
+# install homebrew
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+# install nvm
+# install node
+#install iojs
+# install tmux
+brew install tmux
+# reattach-to-user-namespace allows you to copy from tmux to the system clipboard
+# if you don't have it installed then when you start tmux it will exit with `[exited]`
+# if you don't want to install this, remove the line in `tmux.conf` that includes `reattach-to-user-namespace`
+brew install reattach-to-user-namespace
+```
