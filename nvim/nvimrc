@@ -137,6 +137,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+nnoremap <silent> <Leader>> :exe "vertical resize +20"<CR>
+nnoremap <silent> <Leader>< :exe "vertical resize -20"<CR>
+
 tnoremap <C-h> <C-\><C-n><C-w>h
 " Workaround since <C-h> isn't working in neovim right now
 tnoremap <C-w>h <C-\><C-n><C-w>h
