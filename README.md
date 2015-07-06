@@ -1,5 +1,5 @@
-Dotfiles
-========
+# Dotfiles
+
 This repository includes all of my custom dotfiles.  They should be cloned to your home directory so that the path is `~/dotfiles/`.  The included setup script creates symlinks from your home directory to the files which are located in `~/dotfiles/`.
 
 The setup script is smart enough to back up your existing dotfiles into a `~/dotfiles_old/` directory if you already have any dotfiles of the same name as the dotfile symlinks being created in your home directory.
@@ -13,8 +13,7 @@ So, to recap, the install script will:
 3. Check to see if `zsh` is installed, if it isn't, try to install it.
 4. If zsh is installed, run a `chsh -s` to set it as the default shell.
 
-Installation
-------------
+## Installation
 
 ``` bash
 git clone git://github.com/aharris88/dotfiles ~/dotfiles
@@ -22,12 +21,19 @@ cd ~/dotfiles
 ./setup.sh
 ```
 
+## Get Homebrew
+
 ```
 # install homebrew
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 # install nvm
 # install node
 #install iojs
+```
+
+## Tmux
+
+```
 # install tmux
 brew install tmux
 # reattach-to-user-namespace allows you to copy from tmux to the system clipboard
