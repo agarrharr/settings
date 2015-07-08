@@ -41,3 +41,10 @@ brew install tmux
 # if you don't want to install this, remove the line in `tmux.conf` that includes `reattach-to-user-namespace`
 brew install reattach-to-user-namespace
 ```
+
+## Other stuff
+
+```
+# pianobar (pandora player)
+brew install pianobar
+```

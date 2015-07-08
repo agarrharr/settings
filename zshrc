@@ -16,6 +16,7 @@ alias geeknote='python ~/geeknote/geeknote.py'
 alias ttytter='perl ~/ttytter/ttytter.pl'
 alias bower='noglob bower' #Only needed for prezto or oh-my-zsh
 # Command for pianobar
+alias pandora='pianobar'
 alias p='~/.config/pianobar/fifoCommands.sh'
 alias playing='ruby ~/.config/pianobar/showCurrentSongNotification.rb --notification'
 # Command for timetrap
