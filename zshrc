@@ -77,7 +77,7 @@ PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbi
 PATH="$PATH:/usr/local/opt/ruby/bin"
 PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems"
 # RVM
-PATH=$PATH:$HOME/.rvm/gems/ruby-2.1.5/bin
+PATH="$PATH:$HOME/.rvm/gems/ruby-2.1.5/bin"
 
 #Android SDK
 PATH="$PATH:/Library/Android/sdk/platform-tools"
@@ -89,6 +89,9 @@ export ANDROID_HOME=/Library/Android/sdk
 export GOPATH=$HOME/Go/
 PATH="$PATH:/usr/local/go:/usr/local/go/bin"
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/Go/src:/Go/src/code.google.com/p/portaudio-go
+
+# imgcat
+PATH="$PATH:$HOME/dotfiles/bin"
 
 export PATH
 
