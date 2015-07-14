@@ -26,9 +26,17 @@ cd ~/dotfiles
 ```
 # install homebrew
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+```
+
+## Node
+
+```
 # install nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
 # install node
-#install iojs
+nvm install stable
+# install iojs
+nvm install iojs
 ```
 
 ## Tmux
