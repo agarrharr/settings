@@ -132,6 +132,10 @@ set nrformats=
 set guifont=Anonymous\ Pro\ for\ Powerline:h14
 
 " Mappings for moving around panes
+" Temporary workaround since C-h doesn't work in neovim
+if has('nvim')
+    nnoremap <BS> <C-w>h
+endif
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
