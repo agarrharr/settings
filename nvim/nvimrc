@@ -63,6 +63,8 @@ Plug 'tpope/vim-repeat'
 " Syntax for jekyll markdown with front matter
 Plug 'PProvost/vim-markdown-jekyll'
 
+Plug 'aharris88/consolation-vim'
+
 call plug#end()
 
 " Set leader key to comma
@@ -273,6 +275,10 @@ let g:indentLine_color_term = 8
 
 nnoremap <leader>il :IndentLinesToggle<cr>
 let g:indentLine_char = '┊'
+
+" consolate
+
+nnoremap <leader>c :Consolate<cr>
 
 " jsdoc
 nnoremap <C-d> :JsDoc<cr>
