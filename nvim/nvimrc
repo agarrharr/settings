@@ -45,16 +45,12 @@ Plug 'Yggdroot/indentLine'
 Plug 'ciaranm/detectindent'
 " Show a git diff n the gutter
 Plug 'airblade/vim-gitgutter'
-" Automatically add closing brackets
-Plug 'Raimondi/delimitMate'
 " Change the background of css colors to match
 Plug 'ap/vim-css-color'
 " When searching show 'At match #N out of M matches'
 Plug 'vim-scripts/IndexedSearch'
 " Plugin to move lines
 Plug 'matze/vim-move'
-" Plugin to generate jsdocs
-Plug 'heavenshell/vim-jsdoc'
 " Multiple Cursors
 Plug 'terryma/vim-multiple-cursors'
 " Repeat with . after plugin maps
@@ -279,10 +275,6 @@ let g:indentLine_char = '┊'
 " consolate
 
 nnoremap <leader>c :Consolate<cr>
-
-" jsdoc
-nnoremap <C-d> :JsDoc<cr>
-let g:jsdoc_default_mapping = 0
 
 " Functions
 function! <SID>StripTrailingWhitespaces()
