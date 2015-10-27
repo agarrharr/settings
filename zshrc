@@ -5,11 +5,6 @@ ZSH_THEME="mh"
 DEFAULT_USER=adamharris
 
 # Aliases
-alias ll='ls -la'
-alias ..='cd ..'
-alias ~='cd ~'
-alias back='cd $OLDPWD'
-alias gitgraph='git log --graph --oneline --decorate --all'
 alias fch='open -na "Google Chrome" --args "--user-data-dir=$HOME/.fresh-chrome" --enable-precise-memory-info --js-flags="--nocrankshaft --nouse-ic --expose-gc"'
 
 alias geeknote='python ~/geeknote/geeknote.py'
@@ -22,8 +17,11 @@ alias playing='ruby ~/.config/pianobar/showCurrentSongNotification.rb --notifica
 # Command for timetrap
 alias td='t d -f day'
 # The Fuck (https://github.com/nvbn/thefuck)
-alias fuck='eval $(thefuck $(fc -ln -1))'
-alias doh='fuck'
+alias doh='eval $(thefuck $(fc -ln -1))'
+# trash-cli
+alias tr='trash'
+# hub
+alias git='hub'
 
 alias vi='vim -u ~/.vim/essential.vim'
 
@@ -64,15 +62,18 @@ ulimit -n 1024
 setopt APPEND_HISTORY
 
 # Plugins
-plugins=(git)
+plugins=(bower brew git github gitignore node npm osx pip rvm themes tmux z)
 
 source $ZSH/oh-my-zsh.sh
 
 # rvm
 source ~/.nvm/nvm.sh
 
+# include Z, yo
+. `brew --prefix`/etc/profile.d/z.sh
+
 # Path
-PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
+PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/bin:$PATH"
 #path to gem installed libraries
 PATH="$PATH:/usr/local/opt/ruby/bin"
 PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems"
@@ -94,8 +95,9 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/Go/src:/Go/src/code.google.com/p/p
 PATH="$PATH:$HOME/dotfiles/bin"
 
 export PATH
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-export EDITOR=vim
+export EDITOR=nvim
 export PAGER=less
 export LC_ALL=$LANG
 
@@ -104,4 +106,3 @@ export LESS='-iR-P%f (%i/%m) Line %lt/%L'
 # Display window names correctly in tmux
 export DISABLE_AUTO_TITLE=true
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
