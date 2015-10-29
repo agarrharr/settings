@@ -66,6 +66,8 @@ plugins=(bower brew git github gitignore node npm osx pip rvm themes tmux z)
 
 source $ZSH/oh-my-zsh.sh
 
+source $HOME/dotfiles/bin/zshCustomFunctions.sh
+
 # rvm
 source ~/.nvm/nvm.sh
 
