@@ -6,7 +6,7 @@ source ~/.mutt/colors/mutt-colors-solarized-dark-256.muttrc
 set imap_user = $my_email_a
 set imap_pass = $my_pass_a
 set smtp_url = $my_url_a
-set smtp_pass = ""
+set smtp_pass = $my_pass_a
 set from = $my_email_a
 set realname = $my_realname
 
