@@ -115,6 +115,8 @@ set thesaurus+=~/dotfiles/mthesaur.txt
 set hlsearch
 set incsearch
 set undofile
+" Hide undo files in netrw
+let g:netrw_list_hide='.*\.un\~$'
 
 " I don't need this (plus there's a possible security problem)
 set modelines=0
