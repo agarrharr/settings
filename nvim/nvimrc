@@ -78,7 +78,6 @@ nnoremap <leader>vs :source $MYVIMRC<cr>
 
 syntax on
 set number
-set encoding=utf-8
 
 set laststatus=2
 set ruler
