@@ -55,11 +55,13 @@ Plug 'matze/vim-move'
 Plug 'terryma/vim-multiple-cursors'
 " Repeat with . after plugin maps
 Plug 'tpope/vim-repeat'
-
 " Syntax for jekyll markdown with front matter
 Plug 'PProvost/vim-markdown-jekyll'
-
+" Add JavaScript console.log
 Plug 'aharris88/consolation-vim'
+" Track time spent coding
+Plug 'wakatime/vim-wakatime'
+
 
 call plug#end()
 

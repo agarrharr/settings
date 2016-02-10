@@ -40,3 +40,7 @@
 	path = nvim/plugged/detectindent
 	url = https://github/com/ciaranm/detectindent
 	ignore = dirty
+[submodule "nvim/plugged/vim-wakatime"]
+	path = nvim/plugged/vim-wakatime
+	url = https://github/com/wakatime/vim-wakatime
+	ignore = dirty
