@@ -68,3 +68,14 @@ Return to Control_L (+ When you type Return only, send Return) + [KeyRepeat]
 # pianobar (pandora player)
 brew install pianobar
 ```
+
+[Fix sudo vulnerability](http://blog.rongarret.info/2015/08/psa-beware-of-sudo-on-os-x.html)
+```
+sudo visudo
+```
+
+and add this line
+
+```
+Defaults tty_tickets
+```
