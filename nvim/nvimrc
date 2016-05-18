@@ -9,7 +9,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Code linter
 function! Installjshint(info)
   if a:info.status == 'installed' || a:info.force
-    !npm install -g jshint
+    !npm install -g eslint
   endif
 endfunction
 Plug 'scrooloose/syntastic', { 'do': function('Installjshint') }
@@ -246,7 +246,7 @@ augroup plugin_fugitive
 augroup END
 
 " syntastic
-let g:syntastic_html_tidy_ignore_errors = ['warning: <div> proprietary attribute "data-role"']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " move
 nmap <M-j> <Plug>MoveLineDown
