@@ -173,6 +173,9 @@ set smarttab
 " Setup indicator for 132 columns
 set colorcolumn=133
 
+" Make Y yank to the end of the line instead of the entire line (i.e. same as yy).
+noremap Y y$
+
 " Code folding for javascript
 syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
 setlocal foldmethod=syntax
