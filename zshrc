@@ -1,20 +1,6 @@
 DEFAULT_USER=adamharris
 
 # Aliases
-alias fch='open -na "Google Chrome" --args "--user-data-dir=$HOME/.fresh-chrome" --enable-precise-memory-info --js-flags="--nocrankshaft --nouse-ic --expose-gc"'
-alias geeknote='python ~/geeknote/geeknote.py'
-alias ttytter='perl ~/ttytter/ttytter.pl'
-# Command for pianobar
-alias pandora='pianobar'
-alias p='~/.config/pianobar/fifoCommands.sh'
-alias playing='ruby ~/.config/pianobar/showCurrentSongNotification.rb --notification'
-# Command for timetrap
-alias td='t d -f day'
-# The Fuck (https://github.com/nvbn/thefuck)
-alias doh='eval $(thefuck $(fc -ln -1))'
-# trash-cli
-alias tr='trash'
-# hub
 alias git='hub'
 
 alias vi='vim -u ~/.vim/essential.vim'
@@ -73,31 +59,16 @@ source ~/.nvm/nvm.sh
 
 # Path
 PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/bin:$PATH"
-# path to gem installed libraries
-PATH="$PATH:/usr/local/opt/ruby/bin"
-PATH="$PATH:/Library/Ruby/Gems/2.0.0/gems"
+# Ruby
+PATH="$PATH:/usr/local/opt/ruby/bin:/Library/Ruby/Gems/2.0.0/gems"
 # RVM
-PATH="$PATH:$HOME/.rvm/gems/ruby-2.1.5/bin"
-
-# Android SDK
-PATH="$PATH:/Library/Android/sdk/platform-tools"
-PATH="$PATH:/Library/Android/sdk/tools"
-export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk
-export ANDROID_HOME=/Library/Android/sdk
-
-# Go
-PATH="$PATH:/usr/local/go:/usr/local/go/bin"
-export GOPATH=$HOME/Go/
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/Go/src:/Go/src/code.google.com/p/portaudio-go
+PATH="$PATH:$HOME/.rvm/gems/ruby-2.1.5/bin:$HOME/.rvm/bin"
 
 # Play Framework
 PATH="$PATH:/Applications/play-1.2.7.2"
 
 # dotfiles bin
 PATH="$PATH:$HOME/dotfiles/bin"
-
-# Add RVM to PATH for scripting
-PATH="$PATH:$HOME/.rvm/bin"
 
 export PATH
 
