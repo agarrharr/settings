@@ -8,3 +8,18 @@ function base64EncodeSvg() {
     echo "background: url('data:image/svg+xml;base64,"$(openssl base64 < $1)"');"
     echo "background: url('data:image/svg+xml;base64,"$(openssl base64 < $1)"');" | pbcopy
 }
+
+# note
+function n() {
+    $EDITOR ~/notes/"$*".txt
+}
+
+# note search
+function ns() {
+    grep "$*" -r ~/notes
+}
+
+# note title search
+function nts() {
+    ls -c ~/notes | grep "$*"
+}
