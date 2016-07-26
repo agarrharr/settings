@@ -61,6 +61,9 @@ Plug 'PProvost/vim-markdown-jekyll'
 Plug 'aharris88/consolation-vim'
 " Track time spent coding
 Plug 'wakatime/vim-wakatime'
+" enhances netrw
+Plug 'tpope/vim-vinegar'
+
 
 call plug#end()
 
