@@ -89,3 +89,9 @@ Defaults tty_tickets
 ```
 npm install -g diff-so-fancy
 ```
+
+### Prompt
+
+```
+npm install --global pure-prompt
+```
