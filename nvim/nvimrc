@@ -62,7 +62,6 @@ Plug 'aharris88/consolation-vim'
 " Track time spent coding
 Plug 'wakatime/vim-wakatime'
 
-
 call plug#end()
 
 " Set leader key to comma
@@ -313,3 +312,5 @@ endfunction
 command! -nargs=0 ShowOnGithub call ShowOnGithub()
 
 nnoremap <Leader>gh :ShowOnGithub<CR>
+
+setlocal conceallevel=0
