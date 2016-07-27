@@ -15,6 +15,10 @@ alias ~="cd ~"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+function take() {
+    mkdir $1
+    cd $1
+}
 
 alias ga="git add"
 alias gc="git commit --verbose"
