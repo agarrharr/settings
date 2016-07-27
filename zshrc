@@ -45,6 +45,13 @@ DISABLE_AUTO_TITLE=true
 autoload -U compinit
 compinit
 
+# Use emacs keybindings
+bindkey -e
+
+# Enable history search with arrow keys
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
+
 # Autocompletion for timetrap
 fpath=(~/.rvm/gems/ruby-2.1.5/gems/timetrap-1.8.14/completions/zsh $fpath)
 
