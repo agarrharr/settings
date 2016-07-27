@@ -32,10 +32,6 @@ alias gst="git status"
 # Turn on 255 Color
 set -g default-terminal "screen-256color"
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-
 # Turn on interactive comments
 setopt interactivecomments
 
