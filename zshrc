@@ -13,6 +13,7 @@ alias lsa="ls -la"
 
 alias ga="git add"
 alias gc="git commit --verbose"
+alias gcm="git checkout master"
 alias gco="git checkout"
 alias gd="git diff"
 alias gl="git pull"
