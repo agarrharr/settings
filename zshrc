@@ -10,6 +10,11 @@ alias reloadzsh=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias reloadtmux="source-file ~/.tmux.conf && echo 'tmux config reloaded from ~/.tmux.conf'"
 
 alias lsa="ls -la"
+alias -- -="cd -"
+alias ~="cd ~"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 
 alias ga="git add"
 alias gc="git commit --verbose"
