@@ -28,6 +28,13 @@ function! BuildTern(info)
     !npm install
   endif
 endfunction
+
+function! InstallInstantMarkdown(info)
+  if a:info.status == 'installed' || a:info.force
+    !npm -g install instant-markdown-d
+  endif
+endfunction
+
 Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
 " JavaScript Beautifier (also html and css)
 Plug 'maksimr/vim-jsbeautify'
@@ -63,6 +70,8 @@ Plug 'aharris88/consolation-vim'
 Plug 'wakatime/vim-wakatime'
 " enhances netrw
 Plug 'tpope/vim-vinegar'
+" markdown preview
+Plug 'suan/vim-instant-markdown', { 'do': function('InstallInstantMarkdown') }
 
 
 call plug#end()
