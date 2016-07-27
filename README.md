@@ -93,5 +93,13 @@ npm install -g diff-so-fancy
 ### Prompt
 
 ```
-npm install --global pure-prompt
+npm install -g pure-prompt
+```
+
+### Hyperterm
+
+Install hyperterm
+
+```
+npm install -g config-hyperterm
 ```
