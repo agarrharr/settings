@@ -26,6 +26,7 @@ alias gcm="git checkout master"
 alias gco="git checkout"
 alias gd="git diff"
 alias gl="git pull"
+alias glg="git log --stat --max-count=10"
 alias gp="git push"
 alias gst="git status"
 
