@@ -1,7 +1,5 @@
 # Vim files
 nvim/.netrwhist
-vim/.netrwhist
-vim/tmp
 
 # Mutt files
 mutt/certificates

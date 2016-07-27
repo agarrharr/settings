@@ -11,7 +11,7 @@ set from = $my_email_a
 set realname = $my_realname
 
 # Change the following line to a different editor you prefer.
-set editor = "vim"
+set editor = "nvim"
 
 # Basic config, you can leave this as is
 set folder = "imaps://imap.gmail.com:993"
