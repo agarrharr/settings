@@ -45,6 +45,10 @@ DISABLE_AUTO_TITLE=true
 autoload -U compinit
 compinit
 
+# Make autocompletion case-insensitive and fuzzy (mid-word completion)
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' \
+  '+l:|?=** r:|?=**'
+
 # Use emacs keybindings
 bindkey -e
 
