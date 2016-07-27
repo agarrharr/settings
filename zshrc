@@ -86,3 +86,4 @@ export LC_ALL=$LANG
 # Change less to ignore case, show colors, and change the less prompt to show file name (file number / how many files) Line line number/total lines in the file
 export LESS='-iR-P%f (%i/%m) Line %lt/%L'
 
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

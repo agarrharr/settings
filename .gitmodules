@@ -44,3 +44,6 @@
 	path = nvim/plugged/vim-wakatime
 	url = https://github/com/wakatime/vim-wakatime
 	ignore = dirty
+[submodule "zsh/zsh-syntax-highlighting"]
+	path = zsh/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
