@@ -2,10 +2,6 @@ filetype off
 
 call plug#begin('~/.nvim/plugged')
 
-" Expands abbreviations similar to emmet
-Plug 'mattn/emmet-vim'
-" Fuzzy searching for opening files
-Plug 'ctrlpvim/ctrlp.vim'
 " Code linter
 function! Installjshint(info)
   if a:info.status == 'installed' || a:info.force
@@ -16,26 +12,28 @@ Plug 'scrooloose/syntastic', { 'do': function('Installjshint') }
 " Commenter
 Plug 'tpope/vim-commentary'
 " Autocompletion
-function! BuildYCM(info)
-  if a:info.status == 'installed' || a:info.force
-    !./install.sh
-  endif
+function! DoRemote(arg)
+  UpdateRemotePlugins
 endfunction
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 " Code analysis engine for javascript to make syntastic smarter
 function! BuildTern(info)
   if a:info.status == 'installed' || a:info.force
     !npm install
   endif
 endfunction
-
+Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
+" markdown preview
 function! InstallInstantMarkdown(info)
   if a:info.status == 'installed' || a:info.force
     !npm -g install instant-markdown-d
   endif
 endfunction
-
-Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
+Plug 'suan/vim-instant-markdown', { 'do': function('InstallInstantMarkdown') }
+" Expands abbreviations similar to emmet
+Plug 'mattn/emmet-vim'
+" Fuzzy searching for opening files
+Plug 'ctrlpvim/ctrlp.vim'
 " JavaScript Beautifier (also html and css)
 Plug 'maksimr/vim-jsbeautify'
 " Quoting/parenthesizing made simple
@@ -70,8 +68,8 @@ Plug 'aharris88/consolation-vim'
 Plug 'wakatime/vim-wakatime'
 " enhances netrw
 Plug 'tpope/vim-vinegar'
-" markdown preview
-Plug 'suan/vim-instant-markdown', { 'do': function('InstallInstantMarkdown') }
+" Distraction-free writing
+Plug 'junegunn/goyo.vim'
 
 
 call plug#end()
