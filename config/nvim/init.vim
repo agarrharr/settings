@@ -70,6 +70,8 @@ Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-vinegar'
 " Distraction-free writing
 Plug 'junegunn/goyo.vim'
+" Search
+Plug 'mileszs/ack.vim'
 
 
 call plug#end()
