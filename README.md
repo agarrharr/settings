@@ -96,6 +96,14 @@ npm install -g diff-so-fancy
 npm install -g pure-prompt
 ```
 
+### iTerm
+
+This fixes the problem with [Ctrl+h not working in neovim](https://github.com/neovim/neovim/issues/2048)
+Preferences -> Keys
+Add a new Key Mapping by typing Ctrl+h
+Choose "Send Escape Sequence" for the Action
+Type "[104;5u" for Esc+
+
 ### Hyperterm
 
 Install hyperterm
