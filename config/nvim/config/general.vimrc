@@ -90,8 +90,6 @@ highlight NonText ctermfg=7 guifg=gray
 " Show this character when the line wraps
 set showbreak=↪\ " Note the trailing space (escaped with a backslash) because this character is wider than 1 normal character
 
-iabbrev @@ aharris88@gmail.com
-
 set updatetime=100
 
 " Fixes issue I was having with background color
