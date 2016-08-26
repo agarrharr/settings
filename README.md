@@ -99,10 +99,11 @@ npm install -g pure-prompt
 ### iTerm
 
 This fixes the problem with [Ctrl+h not working in neovim](https://github.com/neovim/neovim/issues/2048)
-Preferences -> Keys
-Add a new Key Mapping by typing Ctrl+h
-Choose "Send Escape Sequence" for the Action
-Type "[104;5u" for Esc+
+
+1. Preferences -> Keys
+1. Add a new Key Mapping by typing Ctrl+h
+1. Choose "Send Escape Sequence" for the Action
+1. Type "[104;5u" for Esc+
 
 ### Hyperterm
 
