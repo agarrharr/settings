@@ -1,18 +1,6 @@
-# Vim files
-nvim/.netrwhist
-
-# Mutt files
+# Mutt
 mutt/certificates
 mutt/cache
 
-# Pianobar files
+# Pianobar
 config/pianobar/state
-config/pianobar/out
-config/pianobar/nowplaying
-config/pianobar/ctl
-
-config/configstore
-
-# tmux-resurrect files
-tmux/resurrect/*.txt
-tmux/resurrect/last
