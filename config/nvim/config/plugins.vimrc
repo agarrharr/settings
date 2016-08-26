@@ -11,6 +11,7 @@ augroup END
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_args = "--config ~/.eslintrc"
 
 " Move
 nmap <M-j> <Plug>MoveLineDown
