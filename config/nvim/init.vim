@@ -12,17 +12,13 @@ Plug 'scrooloose/syntastic', { 'do': function('Installjshint') }
 " Commenter
 Plug 'tpope/vim-commentary'
 " Autocompletion
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-" Code analysis engine for javascript to make syntastic smarter
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 function! BuildTern(info)
   if a:info.status == 'installed' || a:info.force
-    !npm install
+    !npm install -g tern
   endif
 endfunction
-Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
+Plug 'carlitux/deoplete-ternjs', { 'do': function('BuildTern') }
 " markdown preview
 function! InstallInstantMarkdown(info)
   if a:info.status == 'installed' || a:info.force
@@ -72,6 +68,10 @@ Plug 'tpope/vim-vinegar'
 Plug 'junegunn/goyo.vim'
 " Search
 Plug 'mileszs/ack.vim'
+" Scratchpad
+Plug 'metakirby5/codi.vim'
+" Helps you open the right file
+Plug 'EinfachToll/DidYouMean'
 
 
 call plug#end()
@@ -251,6 +251,10 @@ if &term =~ '256color'
 endif
 
 " Plugins
+"
+" Use deoplete
+let g:deoplete#enable_at_startup = 1
+let g:tern_request_timeout = 1
 
 " Fugitive
 " Automatically remove fugitive buffers from the buffer list
