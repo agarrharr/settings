@@ -65,6 +65,9 @@ function dotfiles {
 
 function nvim_plugins {
 
+  # required for deoplete plugin in neovim
+  pip3 install neovim
+
   # Install vim-plug
   curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -82,9 +85,6 @@ function gui_apps {
 
 function other_apps {
   gem install timetrap
-
-  # required for deoplete plugin in neovim
-  pip3 install neovim
 }
 
 function bootstrap {
@@ -94,8 +94,8 @@ function bootstrap {
   npm_packages "eslint diff-so-fancy mocha pure-prompt"
   dotfiles ".bin .config .eslintrc .gitconfig .gitignore .hushlogin .hyperterm.js .mutt .muttrc .tmux .tmux.conf .zsh .zshrc" ~/settings/dotfiles
   gui_apps "audacity audacity-lame-library bartender better-window-manager dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow spotify sublime-text textexpander ynab"
-  other_apps
   nvim_plugins
+  other_apps
 }
 
 # Init
