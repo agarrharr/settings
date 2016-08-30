@@ -63,11 +63,9 @@ function dotfiles {
 function nvim_plugins {
 
   # Install vim-plug
-  echo "Install vim-plug"
   curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
   # Use vim-plug to install Neovim plugins
-  echo "PlugInstall"
   nvim +PlugInstall +qall
 }
 
@@ -85,16 +83,11 @@ function other_apps {
 
 function bootstrap {
   install_zsh
-  echo "homebrew_packages"
   homebrew_packages "git hub n neovim/neovim/neovim pianobar reattach-to-user-namespace tmux vim z"
   # reattach-to-user-namespace is for tmux
-  echo "npm_packages"
   npm_packages "eslint diff-so-fancy mocha pure-prompt"
-  echo "dotfiles"
   dotfiles ".bin .config .eslintrc .gitconfig .gitignore .hushlogin .hyperterm.js .mutt .muttrc .tmux .tmux.conf .zsh .zshrc" ~/settings/dotfiles
-  echo "nvim_plugins"
   nvim_plugins
-  echo "gui_apps"
   gui_apps "audacity audacity-lame-library bartender better-window-manager dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow spotify ynab"
   other_apps
 }
