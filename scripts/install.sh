@@ -88,7 +88,7 @@ function bootstrap {
   npm_packages "eslint diff-so-fancy mocha pure-prompt"
   dotfiles ".bin .config .eslintrc .gitconfig .gitignore .hushlogin .hyperterm.js .mutt .muttrc .tmux .tmux.conf .zsh .zshrc" ~/settings/dotfiles
   nvim_plugins
-  gui_apps "audacity audacity-lame-library bartender better-window-manager dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow spotify ynab"
+  gui_apps "audacity audacity-lame-library bartender better-window-manager dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow spotify sublime-text textexpander ynab"
   other_apps
 }
 
