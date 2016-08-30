@@ -1,53 +1,77 @@
-# Dotfiles
+# Settings
 
-This repository includes all of my custom dotfiles.  They should be cloned to your home directory so that the path is `~/dotfiles/`.  The included setup script creates symlinks from your home directory to the files which are located in `~/dotfiles/`.
-
-The setup script is smart enough to back up your existing dotfiles into a `~/dotfiles_old/` directory if you already have any dotfiles of the same name as the dotfile symlinks being created in your home directory.
+This repository includes all of my custom settings and dotfiles. They have been generalized as much as possible for use by other people, but they are mostly just for my personal use.
 
 I also prefer `zsh` as my shell of choice.  As such, the setup script will check to see if `zsh` is installed.  If `zsh` is installed, and it is not already configured as the default shell, the setup script will execute a `chsh -s $(which zsh)`.  This changes the default shell to zsh, and takes effect as soon as a new zsh is spawned or on next login.
 
 So, to recap, the install script will:
 
-1. Back up any existing dotfiles in your home directory to `~/dotfiles_old/`
-2. Create symlinks to the dotfiles in `~/dotfiles/` in your home directory
-3. Check to see if `zsh` is installed, if it isn't, try to install it.
-4. If zsh is installed, run a `chsh -s` to set it as the default shell.
+1. Install zsh and set it as the default shell
+1. Install Homebrew
+1. Install Homebrew packages
+1. Install npm
+1. Install npm packages
+1. Create symlinks to the dotfiles in `~/settings/dotfiles/` in your home directory
+1. Install neovim plugins
+1. Install gui apps with Homebrew Cask
 
 ## Installation
 
+### Download files
 ``` bash
-git clone git://github.com/aharris88/dotfiles ~/dotfiles
-cd ~/dotfiles
-./setup.sh
+curl -LO https://github.com/aharris88/settings/archive/master.zip
+unzip master.zip
+mv settings-master settings
+rm master.zip
 ```
 
-## Get Homebrew
+### Run Install script
 
-```
-# install homebrew
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-```
-
-## Node
-
-```
-# install nvm
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
-# install node
-nvm install stable
-# install iojs
-nvm install iojs
+```bash
+./settings/scripts/install.sh
 ```
 
-## Tmux
+### Add SSH key to Github
 
+Accept the default file (~/.ssh/id_rsa) and enter a passphrase.
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your.email.address@example.com"
 ```
-# install tmux
-brew install tmux
-# reattach-to-user-namespace allows you to copy from tmux to the system clipboard
-# if you don't have it installed then when you start tmux it will exit with `[exited]`
-# if you don't want to install this, remove the line in `tmux.conf` that includes `reattach-to-user-namespace`
-brew install reattach-to-user-namespace
+
+Ensure ssh-agent is enabled.
+
+```bash
+eval "$(ssh-agent -s)"
+```
+
+Add your SSH key to the ssh-agent.
+
+```bash
+ssh-add ~/.ssh/id_rsa
+```
+
+Copy the ssh key to your clipboard.
+
+```bash
+pbcopy < ~/.ssh/id_rsa.pub
+```
+
+Add new SSH key to github on the [ssh settings page](https://github.com/settings/ssh).
+
+### Add git remote to settings directory
+
+```bash
+git init
+git add .
+git remote add origin git@github.com:aharris88/settings.git
+git remote update
+```
+
+Enter your password for the SSH key "id_rsa". And check "Remember password in my keychain".
+
+```bash
+git checkout master
 ```
 
 ## Keyboard Settings
@@ -64,13 +88,6 @@ Return to Control_L (+ When you type Return only, send Return) + [KeyRepeat]
 
 ## Other stuff
 
-### Pianobar
-
-```
-# pianobar (pandora player)
-brew install pianobar
-```
-
 ### Fix sudo vulnerability
 
 [Fix sudo vulnerability](http://blog.rongarret.info/2015/08/psa-beware-of-sudo-on-os-x.html)
@@ -84,18 +101,6 @@ and add this line
 Defaults tty_tickets
 ```
 
-### Git pager
-
-```
-npm install -g diff-so-fancy
-```
-
-### Prompt
-
-```
-npm install -g pure-prompt
-```
-
 ### iTerm
 
 This fixes the problem with [Ctrl+h not working in neovim](https://github.com/neovim/neovim/issues/2048)
@@ -104,11 +109,3 @@ This fixes the problem with [Ctrl+h not working in neovim](https://github.com/ne
 1. Add a new Key Mapping by typing Ctrl+h
 1. Choose "Send Escape Sequence" for the Action
 1. Type "[104;5u" for Esc+
-
-### Hyperterm
-
-Install hyperterm
-
-```
-npm install -g config-hyperterm
-```
