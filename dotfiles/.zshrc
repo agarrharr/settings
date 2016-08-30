@@ -97,13 +97,12 @@ COMPLETION_WAITING_DOTS="true"
 setopt APPEND_HISTORY
 
 # prompt
+# https://github.com/sindresorhus/pure/issues/116
+fpath+=("/usr/local/share/zsh/site-functions")
 autoload -U promptinit && promptinit
 prompt pure
 
-source $HOME/dotfiles/bin/zshCustomFunctions.sh
-
-# rvm
-source ~/.nvm/nvm.sh
+source $HOME/.bin/zshCustomFunctions.sh
 
 # include Z, yo
 . `brew --prefix`/etc/profile.d/z.sh
