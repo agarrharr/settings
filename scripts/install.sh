@@ -82,17 +82,20 @@ function gui_apps {
 
 function other_apps {
   gem install timetrap
+
+  # required for deoplete plugin in neovim
+  pip3 install neovim
 }
 
 function bootstrap {
   install_zsh
-  homebrew_packages "git hub n neovim/neovim/neovim pianobar reattach-to-user-namespace tmux vim z"
+  homebrew_packages "git hub n neovim/neovim/neovim pianobar python3 reattach-to-user-namespace tmux vim z"
   # reattach-to-user-namespace is for tmux
   npm_packages "eslint diff-so-fancy mocha pure-prompt"
   dotfiles ".bin .config .eslintrc .gitconfig .gitignore .hushlogin .hyperterm.js .mutt .muttrc .tmux .tmux.conf .zsh .zshrc" ~/settings/dotfiles
-  nvim_plugins
   gui_apps "audacity audacity-lame-library bartender better-window-manager dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow spotify sublime-text textexpander ynab"
   other_apps
+  nvim_plugins
 }
 
 # Init
