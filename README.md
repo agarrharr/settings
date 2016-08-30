@@ -175,6 +175,9 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Make script to create `~/Development` directory
 - [ ] Add Karabiner file
 - [ ] Run `.macos` file in `install.sh`
+- [ ] Install Anki
+- [ ] Add `clean.sh` to clear trash and downloads
+- [ ] Wakatime (`~/.wakatime.cfg`)
 - [ ] Add this stuff to `.macos` file
     - Move Applications folder into the Dock FO
     - Display Applications and Downloads as Folder instead of Stack
