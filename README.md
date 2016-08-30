@@ -1,3 +1,8 @@
+# Notes on updating to macOS Sierra
+
+- [Karabiner does not work yet](https://pqrs.org/osx/karabiner/)
+- [Seil does not work yet](https://pqrs.org/osx/karabiner/seil.html.en)
+
 # Settings
 
 This repository includes all of my custom settings and dotfiles. They have been generalized as much as possible for use by other people, but they are mostly just for my personal use.
@@ -82,9 +87,9 @@ I remap my keys so that the caps lock key is control and control is caps lock, b
 
 To do this go to System Preferences -> Keyboard -> Modifier Keys... -> and switch Caps Lock and Control.
 
-Then install [Karabiner](https://github.com/tekezo/Karabiner). And turn on these settings:
+Open Karabiner
 
-Control-L to Control_L (+ When you type Control_L only, send Escape)
+Control_L to Control_L (+ When you type Control_L only, send Escape)
 
 Return to Control_L (+ When you type Return only, send Return) + [KeyRepeat]
 
@@ -102,6 +107,8 @@ This fixes the problem with [Ctrl+h not working in neovim](https://github.com/ne
 - Set Chrome to default browser
 - Sign in
 - Chrome menu -> "Warn Before Quitting (⌘Q)"
+- Sign in to LastPass
+- Configure One Number
 
 ### Dropbox
 
