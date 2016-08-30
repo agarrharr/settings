@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+# Ask for the administrator password upfront
+sudo -v
+
 function install_zsh () {
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then

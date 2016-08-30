@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+# Ask for the administrator password upfront
+sudo -v
+
 echo "Running software update script"
 echo "Updating Homebrew packages and Cask graphical apps"
 brew update && brew upgrade
