@@ -1,3 +1,6 @@
+# Nvim
+**/nvim/autoload/*
+
 # Mutt
 mutt/certificates
 mutt/cache
