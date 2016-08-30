@@ -31,7 +31,7 @@ function homebrew_packages {
   if [[ $? != 0 ]] ; then
       # Install Homebrew
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  else  
+  else
       brew update
   fi
 
@@ -63,15 +63,17 @@ function dotfiles {
 function nvim_plugins {
 
   # Install vim-plug
-  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  echo "Install vim-plug"
+  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-  # Use Vundle to install Vim plugins
+  # Use vim-plug to install Neovim plugins
+  echo "PlugInstall"
   nvim +PlugInstall +qall
 }
 
-function graphical_apps {
+function gui_apps {
 
-  # Use Homebrew Cask to install graphical apps
+  # Use Homebrew Cask to install gui apps
   for app in $1; do
     brew cask install $app
   done
@@ -79,12 +81,17 @@ function graphical_apps {
 
 function bootstrap {
   install_zsh
-  homebrew_packages "git hub n neovim/neovim/neovim reattach-to-user-namespace tmux vim"
+  echo "homebrew_packages"
+  homebrew_packages "git hub n neovim/neovim/neovim pianobar reattach-to-user-namespace tmux vim z"
   # reattach-to-user-namespace is for tmux
-  npm_packages "eslint diff-so-fancy"
-  dotfiles ".bin .config .eslintrc .gitconfig .gitignore .hushlogin .hyperterm.js .mutt .muttrc .tmux .tmux.conf .zsh .zshrc" ~/settings/dotfiles 
+  echo "npm_packages"
+  npm_packages "eslint diff-so-fancy mocha pure-prompt"
+  echo "dotfiles"
+  dotfiles ".bin .config .eslintrc .gitconfig .gitignore .hushlogin .hyperterm.js .mutt .muttrc .tmux .tmux.conf .zsh .zshrc" ~/settings/dotfiles
+  echo "nvim_plugins"
   nvim_plugins
-  graphical_apps "google-chrome hyperterm karabiner screenflow spotify flux rescuetime"
+  echo "gui_apps"
+  gui_apps "audacity audacity-lame-library bartender better-window-manager dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow spotify ynab"
 }
 
 # Init
