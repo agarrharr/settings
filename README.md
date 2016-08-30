@@ -189,22 +189,18 @@ Create `~/.my-pandora-pwd` that contains password.
 
 ## Todo
 
-- [ ] Add instructions on Create `~/.bin/zshCustomFunctions.sh`
+- [ ] Add instructions to create `~/.bin/zshCustomFunctions.sh`
 - [ ] Add Sublime Text settings and add this to .macOS
     `cp -r ~/settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null`
-- [ ] Add colors to scripts
+- [ ] Add colors to scripts (`install.sh` and `update.sh`)
 - [ ] Add Surfingkeys instructions and config file
 - [ ] Setup Better Window Manager
-- [ ] Make `install.sh` and `update.sh` ask for sudo password at the beginning?
 - [ ] Make script to create `~/Development` directory
 - [ ] Add Karabiner file
 - [ ] Add this stuff to `.macOS` file
-    - System Preferences -> Security & Privacy -> General -> Require password *immediately* after sleep or screen saver begins
-    - Autohide the dock
     - Move Applications folder into the Dock FO
     - Display Applications and Downloads as Folder instead of Stack
-    - Remove everything else from the dock
-    - Set Finder to column view
-    - Remove AirDrop, All My Files, iCloud Drive, Applications, Downloads, Documents, Desktop. It should only have Dropbox and Development
-    - Hide Tags, and Shared
-    - Finder Preferences -> General -> "Show these items on the desktop" Uncheck "Hard disks", "External disks", "CDs, DvDs, and iPods", and "Connected servers”
+    - Finder - Remove AirDrop, All My Files, iCloud Drive, Applications, Downloads, Documents, Desktop. It should only have Dropbox and Development
+    - Finder - Hide Tags, and Shared
+    - Don't light up keyboard
+    - Set screensaver
