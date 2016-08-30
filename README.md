@@ -22,61 +22,31 @@ The install script will:
 
 ## Installation
 
-### Download files
+Download files
+
 ``` bash
-curl -LO https://github.com/aharris88/settings/archive/master.zip
-unzip master.zip
-mv settings-master settings
-rm master.zip
+cd ~ && curl -LO https://github.com/aharris88/settings/archive/master.zip && unzip master.zip &&  mv settings-master settings && rm master.zip
 ```
 
-### Run Install script
+Run Install script
 
 ```bash
 ./settings/scripts/install.sh
 ```
 
-### Add SSH key to Github
-
-Accept the default file (`~/.ssh/id_rsa`) and enter a passphrase.
+Add SSH key to Github on the [ssh settings page](https://github.com/settings/ssh).
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "your.email.address@example.com"
-```
-
-Ensure ssh-agent is enabled.
-
-```bash
 eval "$(ssh-agent -s)"
-```
-
-Add your SSH key to the ssh-agent.
-
-```bash
 ssh-add ~/.ssh/id_rsa
-```
-
-Copy the ssh key to your clipboard.
-
-```bash
 pbcopy < ~/.ssh/id_rsa.pub
 ```
 
-Add new SSH key to github on the [ssh settings page](https://github.com/settings/ssh).
-
-### Add git remote to settings directory
+Add git remote to settings directory
 
 ```bash
-git init
-git add .
-git remote add origin git@github.com:aharris88/settings.git
-git remote update
-```
-
-Enter your password for the SSH key "id_rsa". And check "Remember password in my keychain".
-
-```bash
-git checkout master
+git init && git add . && git remote add origin git@github.com:aharris88/settings.git && git remote update && git checkout master
 ```
 
 ## App Settings
@@ -197,14 +167,15 @@ Create `~/.my-pandora-pwd` that contains password.
 ## Todo
 
 - [ ] Add instructions to create `~/.bin/zshCustomFunctions.sh`
-- [ ] Add Sublime Text settings and add this to .macOS
+- [ ] Add Sublime Text settings and add this to .macos
     `cp -r ~/settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null`
 - [ ] Add colors to scripts (`install.sh` and `update.sh`)
 - [ ] Add Surfingkeys instructions and config file
 - [ ] Setup Better Window Manager
 - [ ] Make script to create `~/Development` directory
 - [ ] Add Karabiner file
-- [ ] Add this stuff to `.macOS` file
+- [ ] Run `.macos` file in `install.sh`
+- [ ] Add this stuff to `.macos` file
     - Move Applications folder into the Dock FO
     - Display Applications and Downloads as Folder instead of Stack
     - Finder - Remove AirDrop, All My Files, iCloud Drive, Applications, Downloads, Documents, Desktop. It should only have Dropbox and Development
