@@ -2,8 +2,8 @@
 **/nvim/autoload/*
 
 # Mutt
-mutt/certificates
-mutt/cache
+**/.mutt/certificates
+**/.mutt/cache
 
 # Pianobar
 config/pianobar/state

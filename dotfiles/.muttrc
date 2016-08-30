@@ -2,7 +2,6 @@
 source "gpg -dq $HOME/.my-pwds.gpg |"
 source ~/.mutt/colors/mutt-colors-solarized-dark-256.muttrc
 
-# Change the following six lines to match your Gmail account details
 set imap_user = $my_email_a
 set imap_pass = $my_pass_a
 set smtp_url = $my_url_a

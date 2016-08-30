@@ -37,7 +37,7 @@ Run Install script
 Add SSH key to Github on the [ssh settings page](https://github.com/settings/ssh).
 
 ```bash
-ssh-keygen -t rsa -b 4096 -C "your.email.address@example.com"
+ssh-keygen -t rsa -b 4096 -C "your.email@example.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
@@ -127,6 +127,31 @@ Sign in
 - Sign into iCloud.
 - Turn off "Use iCloud for mail, contacts, calendars, reminders, notes, and Safari"
 - Turn on "Use Find My Mac"
+
+### Mutt
+
+On Google, enable 2-step verification and add an [app specific password](https://security.google.com/settings/security/apppasswords). Use this password in the `~/.my-pwds` file.
+
+```
+set my_realname="Your Name"
+set my_email_a="your.email@gmail.com"
+set my_pass_a="password"
+set my_url_a="smtp://username@smtp.gmail.com:587/"
+```
+
+Create gpg key.
+
+```
+gpg --gen-key
+```
+Accept all the defaults, enter real name, email address, and password for the key. This is the password that you will use for mutt.
+
+Encrypt the password file and delete the old one. srm is a more secure delete.
+
+```
+gpg -r aharris88@gmail.com -e ~/.my-pwds
+srm ~/.my-pwds
+```
 
 ### Fix sudo vulnerability
 
