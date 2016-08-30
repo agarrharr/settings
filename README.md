@@ -122,6 +122,12 @@ Sign in
 
 ## Other stuff
 
+### iCloud
+
+- Sign into iCloud.
+- Turn off "Use iCloud for mail, contacts, calendars, reminders, notes, and Safari"
+- Turn on "Use Find My Mac"
+
 ### Fix sudo vulnerability
 
 [Fix sudo vulnerability](http://blog.rongarret.info/2015/08/psa-beware-of-sudo-on-os-x.html)
