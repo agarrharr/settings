@@ -79,6 +79,10 @@ function gui_apps {
   done
 }
 
+function other_apps {
+  gem install timetrap
+}
+
 function bootstrap {
   install_zsh
   echo "homebrew_packages"
@@ -92,6 +96,7 @@ function bootstrap {
   nvim_plugins
   echo "gui_apps"
   gui_apps "audacity audacity-lame-library bartender better-window-manager dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow spotify ynab"
+  other_apps
 }
 
 # Init
