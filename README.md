@@ -80,7 +80,7 @@ git checkout master
 
 I remap my keys so that the caps lock key is control and control is caps lock, but it's only control if you press it in combination with another key, otherwise it's escape. And then my enter/return key is control if pressed in combination, otherwise it's enter.
 
-To do this go to System Preferences -> Keyboarda -> Modifier Keys... -> and switch Caps Lock and Control.
+To do this go to System Preferences -> Keyboard -> Modifier Keys... -> and switch Caps Lock and Control.
 
 Then install [Karabiner](https://github.com/tekezo/Karabiner). And turn on these settings:
 
@@ -101,6 +101,7 @@ This fixes the problem with [Ctrl+h not working in neovim](https://github.com/ne
 
 - Set Chrome to default browser
 - Sign in
+- Chrome menu -> "Warn Before Quitting (⌘Q)"
 
 ### Dropbox
 
