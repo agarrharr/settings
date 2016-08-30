@@ -55,7 +55,8 @@ function dotfiles {
 
   # Create dotfile symlinks in home directory
   for file in $1; do
-    ln -s $2/$file ~/.$file
+    rm -rf ~/$file
+    ln -s $2/$file ~/$file
   done
 }
 
@@ -81,7 +82,7 @@ function bootstrap {
   homebrew_packages "git hub n neovim/neovim/neovim reattach-to-user-namespace tmux vim"
   # reattach-to-user-namespace is for tmux
   npm_packages "eslint diff-so-fancy"
-  dotfiles "bin config eslintrc gitconfig gitignore hushlogin hyperterm.js mutt muttrc tmux tmux.conf zsh zshrc" ~/settings/dotfiles 
+  dotfiles ".bin .config .eslintrc .gitconfig .gitignore .hushlogin .hyperterm.js .mutt .muttrc .tmux .tmux.conf .zsh .zshrc" ~/settings/dotfiles 
   nvim_plugins
   graphical_apps "google-chrome hyperterm karabiner screenflow spotify flux rescuetime"
 }
