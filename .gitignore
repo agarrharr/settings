@@ -1,9 +1,12 @@
 # Nvim
-**/nvim/autoload/*
+dotfiles/.config/nvim/autoload/*
+
+# Hub
+dotfiles/.config/hub
 
 # Mutt
-**/.mutt/certificates
-**/.mutt/cache
+dotfiles/.mutt/certificates
+dotfiles/.mutt/cache
 
 # Pianobar
 config/pianobar/state
