@@ -26,6 +26,10 @@ else
 fi
 }
 
+function submodules () {
+  git submodule init && git submodule update
+}
+
 function homebrew_packages {
 
   # Install or update Homebrew
@@ -89,6 +93,7 @@ function other_apps {
 
 function bootstrap {
   install_zsh
+  submodules
   homebrew_packages "git gpg hub mutt n neovim/neovim/neovim pianobar python3 reattach-to-user-namespace tmux vim z"
   # reattach-to-user-namespace is for tmux
   npm_packages "eslint diff-so-fancy mocha pure-prompt trash-cli"

@@ -7,6 +7,8 @@ sudo -v
 echo "Running software update script"
 echo "Updating Homebrew packages and Cask graphical apps"
 brew update && brew upgrade
+echo "Updating Git Submodules"
+cd ~/setttings && git submodule update && cd -
 echo "Updating Node"
 n latest
 echo "Updating npm packages"
