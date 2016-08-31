@@ -1,9 +1,9 @@
 " Mappings to open config files
 nnoremap <leader>ev :tabnew $MYVIMRC<cr>
-nnoremap <leader>et :tabnew ~/dotfiles/tmux.conf<cr>
-nnoremap <leader>ez :tabnew ~/dotfiles/zshrc<cr>
-nnoremap <leader>em :tabnew ~/dotfiles/mutt/muttrc<cr>
-nnoremap <leader>eg :tabnew ~/dotfiles/gitconfig<cr>
+nnoremap <leader>et :tabnew ~/.tmux.conf<cr>
+nnoremap <leader>ez :tabnew ~/.zshrc<cr>
+nnoremap <leader>em :tabnew ~/.muttrc<cr>
+nnoremap <leader>eg :tabnew ~/.gitconfig<cr>
 
 nnoremap <leader>vs :source $MYVIMRC<cr>
 
