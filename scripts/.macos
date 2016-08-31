@@ -119,6 +119,9 @@ defaults write com.apple.dock static-only -bool true
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
+# Show the dock after 2 seconds
+defaults write com.apple.dock autohide-delay -float 2000
+
 # Hot corners
 # Possible values:
 #  0: no-op
