@@ -1,7 +1,14 @@
 # Notes on updating to macOS Sierra
 
-- [Karabiner does not work yet](https://pqrs.org/osx/karabiner/)
-- [Seil does not work yet](https://pqrs.org/osx/karabiner/seil.html.en)
+- [ ] Karabiner - [does not work yet](https://pqrs.org/osx/karabiner/)
+- [ ] Seil - [does not work yet](https://pqrs.org/osx/karabiner/seil.html.en)
+- [ ] Bartender 2 - [test build for macOS Sierra](https://www.macbartender.com/blog/macOS%20Sierra%20Test%20Build/)
+- [ ] iStat Menus
+- [x] Screenflow
+- [ ] Creative Cloud
+- [ ] Box Sync
+- [ ] Karabiner
+- [ ] Outlook
 
 # Settings
 
