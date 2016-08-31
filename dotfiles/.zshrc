@@ -41,6 +41,11 @@ DISABLE_CORRECTION="true"
 
 DISABLE_AUTO_TITLE=true
 
+# Fix Ctrl-h mapping for neovim
+# https://github.com/neovim/neovim/wiki/FAQ#my-ctrl-h-mapping-doesnt-work
+infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
+tic $TERM.ti
+
 # Enable autocompletion
 autoload -U compinit
 compinit
