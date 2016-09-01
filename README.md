@@ -210,6 +210,10 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Install Anki
 - [ ] Add `clean.sh` to clear trash and downloads
 - [ ] Wakatime (`~/.wakatime.cfg`)
+- [ ] Set up [Slate](https://github.com/jigish/slate)
+- [ ] iTunes / podcasts
+- [ ] Fitbit desktop app
+- [ ] [Airbnb eslint config](https://www.npmjs.com/package/eslint-config-airbnb)
 - [ ] Add this stuff to `.macos` file
     - Move Applications folder into the Dock FO
     - Display Applications and Downloads as Folder instead of Stack
