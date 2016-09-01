@@ -10,7 +10,7 @@ function base64EncodeSvg() {
 }
 
 # note
-function n() {
+function note() {
     $EDITOR ~/notes/"$*".txt
 }
 
