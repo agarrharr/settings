@@ -13,8 +13,8 @@ echo "Updating Node"
 n latest
 echo "Updating npm packages"
 npm update -g
-echo "Updating Vim plugins"
-vim +PluginInstall +PluginClean +qall
+echo "Updating Neovim plugins"
+nvim +PlugInstall +PlugClean +qall
 echo "Updating Mac"
 sudo softwareupdate -iva
 echo "Software update complete!"
