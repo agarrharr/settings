@@ -213,6 +213,7 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Set up [Slate](https://github.com/jigish/slate)
 - [ ] iTunes / podcasts
 - [ ] Fitbit desktop app
+- [ ] Figure out meta key in hyperterm
 - [ ] [Airbnb eslint config](https://www.npmjs.com/package/eslint-config-airbnb)
 - [ ] Add this stuff to `.macos` file
     - Move Applications folder into the Dock FO
