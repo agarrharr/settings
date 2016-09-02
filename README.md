@@ -53,7 +53,7 @@ pbcopy < ~/.ssh/id_rsa.pub
 Add git remote to settings directory
 
 ```bash
-git init && git add . && git remote add origin git@github.com:aharris88/settings.git && git remote update && git checkout master
+cd ~/settings && git init && git add . && git remote add origin git@github.com:aharris88/settings.git && git remote update && git checkout master
 ```
 
 ## App Settings
