@@ -88,11 +88,6 @@ Sign in
 
 Sign in
 
-### YNAB
-
-- Put in activation key
-- Point to budget file on Dropbox
-
 ### Notational Velocity
 
 - Preferences -> Notes -> Storage -> Store and read notes on disk as: Plain Text Files *

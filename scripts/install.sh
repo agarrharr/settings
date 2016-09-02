@@ -99,7 +99,7 @@ function bootstrap {
   # reattach-to-user-namespace is for tmux
   npm_packages "eslint diff-so-fancy mocha pure-prompt trash-cli"
   dotfiles ".bin .config .eslintrc .gitconfig .gitignore .hushlogin .hyperterm.js .mutt .muttrc .tmux .tmux.conf .zsh .zshrc" ~/settings/dotfiles
-  gui_apps "audacity audacity-lame-library bartender better-window-manager dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow seil spotify sublime-text textexpander ynab"
+  gui_apps "audacity audacity-lame-library bartender better-window-manager dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow seil spotify sublime-text textexpander"
   nvim_plugins
   other_apps
 }
