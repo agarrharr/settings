@@ -1,6 +1,25 @@
-DEFAULT_USER=adamharris
+# ==================================================================
+# Path
+# ==================================================================
 
+RUBY_PATH="$PATH:/usr/local/opt/ruby/bin:/Library/Ruby/Gems/2.0.0/gems"
+RVM_PATH="$PATH:$HOME/.rvm/gems/ruby-2.1.5/bin:$HOME/.rvm/bin"
+PLAY_PATH="$PATH:/Applications/play-1.2.7.2"
+export PATH="$PATH:RUBY_PATH:RVM_PATH:PLAY_PATH"
+
+# ==================================================================
+# Prompt
+# ==================================================================
+
+# https://github.com/sindresorhus/pure/issues/116
+fpath+=("/usr/local/share/zsh/site-functions")
+autoload -U promptinit && promptinit
+prompt pure
+
+# ==================================================================
 # Aliases
+# ==================================================================
+
 alias git='hub'
 
 alias vi='vim -u ~/.vim/essential.vim'
@@ -30,32 +49,9 @@ alias glg="git log --stat --max-count=10"
 alias gp="git push"
 alias gst="git status"
 
-# Turn on 255 Color
-set -g default-terminal "screen-256color"
-
-# Turn on interactive comments
-setopt interactivecomments
-
-# Disable command autocorrection
-DISABLE_CORRECTION="true"
-
-DISABLE_AUTO_TITLE=true
-
-# Fix Ctrl-h mapping for neovim
-# https://github.com/neovim/neovim/wiki/FAQ#my-ctrl-h-mapping-doesnt-work
-infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
-tic $TERM.ti
-
-# Enable autocompletion
-autoload -U compinit
-compinit
-
-# Make autocompletion case-insensitive and fuzzy (mid-word completion)
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' \
-  '+l:|?=** r:|?=**'
-
-# Use emacs keybindings
-bindkey -e
+# ==================================================================
+# History
+# ==================================================================
 
 # Enable history search with arrow keys and ctrl+p and ctrl+n
 autoload -U history-search-end
@@ -67,7 +63,6 @@ bindkey '\e[B' history-beginning-search-forward-end
 bindkey '^P' history-beginning-search-backward-end
 bindkey '^N' history-beginning-search-forward-end
 
-# History
 if [ -z "$HISTFILE" ]; then
     HISTFILE=$HOME/.zsh_history
 fi
@@ -91,7 +86,42 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
-# End History
+
+# ==================================================================
+# Editor
+# ==================================================================
+
+export EDITOR=nvim
+
+# Fix Ctrl-h mapping for neovim
+# https://github.com/neovim/neovim/wiki/FAQ#my-ctrl-h-mapping-doesnt-work
+infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
+tic $TERM.ti
+
+# ==================================================================
+# Pager
+# ==================================================================
+
+export PAGER=less
+
+# Change less to ignore case, show colors, and change the less prompt to show file name (file number / how many files) Line line number/total lines in the file
+export LESS='-iR-P%f (%i/%m) Line %lt/%L'
+
+
+# ==================================================================
+# Autocompletion
+# ==================================================================
+
+# Enable autocompletion
+autoload -U compinit
+compinit
+
+# Make autocompletion case-insensitive and fuzzy (mid-word completion)
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' \
+  '+l:|?=** r:|?=**'
+
+# Use emacs keybindings
+bindkey -e
 
 # Autocompletion for timetrap
 fpath=(~/.rvm/gems/ruby-2.1.5/gems/timetrap-1.8.14/completions/zsh $fpath)
@@ -99,39 +129,30 @@ fpath=(~/.rvm/gems/ruby-2.1.5/gems/timetrap-1.8.14/completions/zsh $fpath)
 # Display dots while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-setopt APPEND_HISTORY
+# Disable command autocorrection
+DISABLE_CORRECTION="true"
 
-# prompt
-# https://github.com/sindresorhus/pure/issues/116
-fpath+=("/usr/local/share/zsh/site-functions")
-autoload -U promptinit && promptinit
-prompt pure
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# ==================================================================
+# Other
+# ==================================================================
+
+DEFAULT_USER=adamharris
+
+# Turn on 256 Color
+set -g default-terminal "screen-256color"
+
+# Turn on interactive comments
+setopt interactivecomments
+
+DISABLE_AUTO_TITLE=true
+
+setopt APPEND_HISTORY
 
 source $HOME/.bin/zshCustomFunctions.sh
 
 # include Z, yo
 . `brew --prefix`/etc/profile.d/z.sh
 
-# Path
-PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/bin:$PATH"
-# Ruby
-PATH="$PATH:/usr/local/opt/ruby/bin:/Library/Ruby/Gems/2.0.0/gems"
-# RVM
-PATH="$PATH:$HOME/.rvm/gems/ruby-2.1.5/bin:$HOME/.rvm/bin"
-
-# Play Framework
-PATH="$PATH:/Applications/play-1.2.7.2"
-
-# dotfiles bin
-PATH="$PATH:$HOME/dotfiles/bin"
-
-export PATH
-
-export EDITOR=nvim
-export PAGER=less
 export LC_ALL=$LANG
-
-# Change less to ignore case, show colors, and change the less prompt to show file name (file number / how many files) Line line number/total lines in the file
-export LESS='-iR-P%f (%i/%m) Line %lt/%L'
-
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

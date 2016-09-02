@@ -210,6 +210,7 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Fitbit desktop app
 - [ ] Figure out meta key in hyperterm
 - [ ] [Airbnb eslint config](https://www.npmjs.com/package/eslint-config-airbnb)
+- [ ] Remove Play from path
 - [ ] Add this stuff to `.macos` file
     - Move Applications folder into the Dock FO
     - Display Applications and Downloads as Folder instead of Stack
