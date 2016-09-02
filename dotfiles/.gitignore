@@ -16,3 +16,6 @@
 
 # WebStorm Files
 *.idea
+
+# Npm
+npm-debug.log
