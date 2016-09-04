@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -euo pipefail
 
 # Ask for the administrator password upfront
@@ -27,7 +28,7 @@ function install_zsh () {
 }
 
 function submodules () {
-  git submodule init && git submodule update
+  cd ~/settings && git submodule init && git submodule update && cd -
 }
 
 function homebrew_packages {
@@ -88,6 +89,10 @@ function gui_apps {
   done
 }
 
+function ruby {
+  gem install bundler
+}
+
 function other_apps {
   gem install timetrap
 }
@@ -95,12 +100,13 @@ function other_apps {
 function bootstrap {
   install_zsh
   submodules
-  homebrew_packages "git gpg hub mutt n neovim/neovim/neovim pianobar python3 reattach-to-user-namespace tmux vim z"
   # reattach-to-user-namespace is for tmux
+  homebrew_packages "git gpg hub mutt n neovim/neovim/neovim pianobar python3 reattach-to-user-namespace tmux vim z"
   npm_packages "eslint diff-so-fancy mocha pure-prompt trash-cli"
   dotfiles ".bin .config .eslintrc .gitconfig .gitignore .hushlogin .hyperterm.js .mutt .muttrc .tmux .tmux.conf .zsh .zshrc" ~/settings/dotfiles
   gui_apps "audacity audacity-lame-library bartender better-window-manager dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow seil spotify sublime-text textexpander"
   nvim_plugins
+  ruby
   other_apps
 }
 
