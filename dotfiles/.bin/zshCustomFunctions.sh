@@ -11,15 +11,15 @@ function base64EncodeSvg() {
 
 # note
 function note() {
-    $EDITOR ~/notes/"$*".txt
+    $EDITOR ~/Dropbox/notes/"$*".txt
 }
 
 # note search
 function ns() {
-    grep "$*" -r ~/notes
+    grep "$*" -r ~/Dropbox/notes
 }
 
 # note title search
 function nts() {
-    ls -c ~/notes | grep "$*"
+    ls -c ~/Dropbox/notes | grep "$*"
 }
