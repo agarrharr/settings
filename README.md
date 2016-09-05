@@ -1,13 +1,11 @@
 # Notes on updating to macOS Sierra
 
 - [ ] Karabiner - [does not work yet](https://pqrs.org/osx/karabiner/)
-- [ ] Seil - [does not work yet](https://pqrs.org/osx/karabiner/seil.html.en)
 - [ ] Bartender 2 - [test build for macOS Sierra](https://www.macbartender.com/blog/macOS%20Sierra%20Test%20Build/)
 - [ ] iStat Menus
 - [x] Screenflow
 - [ ] Creative Cloud
 - [ ] Box Sync
-- [ ] Karabiner
 - [ ] Outlook
 
 # Settings
@@ -97,31 +95,31 @@ Sign in
 
 - Show time and battery
 - Use fuzzy clock
-- Use the green battery and customize the colors to be red when low, else black and turn on “Customize menubar for different states”
+- Use the green horizontal battery
+  - Use custom colours and change the colors to be red when low, else black
+  - Turn on “Customize menubar for different states”
 
 ### Bartender
 
 - Enable hiding Spotlight with Bartender (https://www.macbartender.com/B2/system-item-setup/)
 - Menu Items
-  - Completely Hide Menu Bar Item: User, Battery, Clock, Spotlight, Notification Center
+  - Completely Hide Menu Bar Item: Battery, Clock, Spotlight, Notification Center
   - Nothing, Bartender does not do anything: iStat Menus Status
   - Show in Bartender Bar, not in Menu Bar: everything else
-- Airport (wifi): Item Updates: Show item in menu bar
+- Airport (wifi): Item Updates: Show item in menu bar (on) for (5 Seconds)
 - General
-  - Clicking on Bartender will: Display all items in Menu Bar
-  - Startup: Launch Bartender at Login
-  - Clicking on Bartender will: Display Bartender Bar items in menu bar
+  - Startup: Launch Bartender at Login (on)
+  - Clicking on Bartender will (Display Bartender Bar items in menu bar)
 - Appearance
-  - Turn off Insert a gap when Notification Center is hidden
-- Move iStat Menus Status all the way to the right, then wifi, then volume
+  - Gap at right of menu bar: Insert a gap when Notification Center is hidden (off)
+- Command + drap  the bartender icon all the way to the right, then iStat Menus Status, then wifi, then volume
 
 ## Other stuff
 
 ### iCloud
 
-- Sign into iCloud.
-- Turn off "Use iCloud for mail, contacts, calendars, reminders, notes, and Safari"
-- Turn on "Use Find My Mac"
+- Sign into iCloud
+- Find My Mac (on)
 
 ### Mutt
 
@@ -215,6 +213,7 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] In `install.sh`, why not just symlink all dotfiles instead of having to list them out
 - [ ] In `install.sh`, install rvm and ruby gems
 - [ ] Install flux
+- [ ] Save email in pianobar config with saving to github
 - [ ] Add this stuff to `.macos` file
     - Move Applications folder into the Dock FO
     - Display Applications and Downloads as Folder instead of Stack
