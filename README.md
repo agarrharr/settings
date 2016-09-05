@@ -214,6 +214,7 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] .npmrc file
 - [ ] In `install.sh`, why not just symlink all dotfiles instead of having to list them out
 - [ ] In `install.sh`, install rvm and ruby gems
+- [ ] Install flux
 - [ ] Add this stuff to `.macos` file
     - Move Applications folder into the Dock FO
     - Display Applications and Downloads as Folder instead of Stack
