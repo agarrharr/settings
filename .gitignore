@@ -9,4 +9,4 @@ dotfiles/.mutt/certificates
 dotfiles/.mutt/cache
 
 # Pianobar
-config/pianobar/state
+dotfiles/.config/pianobar/state
