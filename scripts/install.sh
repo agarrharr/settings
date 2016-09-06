@@ -61,11 +61,10 @@ function npm_packages {
 }
 
 function dotfiles {
-
   # Create dotfile symlinks in home directory
-  for file in $1; do
+  for file in $(ls -A ~/settings/dotfiles);
     rm -rf ~/$file
-    ln -s $2/$file ~/$file
+    ln -s ~/settings/dotfiles/$file ~/$file
   done
 }
 
@@ -103,7 +102,7 @@ function bootstrap {
   # reattach-to-user-namespace is for tmux
   homebrew_packages "git gpg hub mutt n neovim/neovim/neovim pianobar python3 reattach-to-user-namespace tmux vim z"
   npm_packages "eslint diff-so-fancy mocha pure-prompt trash-cli"
-  dotfiles ".bin .config .eslintrc .gitconfig .gitignore .hushlogin .hyperterm.js .mutt .muttrc .tmux .tmux.conf .zsh .zshrc" ~/settings/dotfiles
+  dotfiles
   gui_apps "audacity audacity-lame-library bartender better-window-manager dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow spotify sublime-text textexpander"
   nvim_plugins
   ruby
