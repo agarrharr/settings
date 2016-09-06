@@ -37,6 +37,12 @@ function submodules () {
   cd ~/settings && git submodule init && git submodule update && cd -
 }
 
+function install_or_update_homebrew_package {
+  if ! brew list $1 >& /dev/null; then
+	brew install $1
+  fi
+}
+
 function homebrew_packages {
   # Install or update Homebrew
   which -s brew
@@ -53,7 +59,7 @@ function homebrew_packages {
   # Use Homebrew to install command line packages
   fancy_echo 'Installing Homebrew packages'
   for package in $1; do
-    brew install $package
+    install_or_update_homebrew_package $package
   done
 }
 
@@ -119,7 +125,7 @@ function ruby {
   fi
 }
 
-function gem_install_or_update() {
+function install_or_update_gem {
   if gem list "$1" | grep "^$1 ("; then
     fancy_echo "Updating %s ..." "$1"
     gem update "$@"
@@ -132,7 +138,7 @@ function gem_install_or_update() {
 function ruby_gems {
   fancy_echo 'Installing Ruby gems'
   for gem in $1; do
-    gem_install_or_update $gem
+    install_or_update_gem $gem
   done
 }
 
