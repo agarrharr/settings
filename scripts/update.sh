@@ -5,19 +5,23 @@ set -euo pipefail
 # Ask for the administrator password upfront
 sudo -v
 
-echo "Running software update script"
-echo "Updating Homebrew packages and Cask graphical apps"
+fancy_echo() {
+  echo $'\e[32;1m'$1$'\e[0m'
+}
+
+fancy_echo "Running software update script"
+fancy_echo "Updating Homebrew packages and Cask graphical apps"
 brew update && brew upgrade
-echo "Updating Git Submodules"
+fancy_echo "Updating Git Submodules"
 cd ~/setttings && git submodule update && cd -
-echo "Updating Node"
+fancy_echo "Updating Node"
 n latest
-echo "Updating npm packages"
+fancy_echo "Updating npm packages"
 npm update -g
-echo "Updating RubyGems"
+fancy_echo "Updating RubyGems"
 gem update --system
-echo "Updating Neovim plugins"
+fancy_echo "Updating Neovim plugins"
 nvim +PlugInstall +PlugClean +qall
-echo "Updating Mac"
+fancy_echo "Updating Mac"
 sudo softwareupdate -iva
-echo "Software update complete!"
+fancy_echo "Software update complete!"

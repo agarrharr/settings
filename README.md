@@ -194,7 +194,6 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Add instructions for [iTerm theme and settings](http://www.adamwadeharris.com/my-iterm-2-setup/)
 - [ ] Add Sublime Text settings and add this to .macos
     `cp -r ~/settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null`
-- [ ] Add colors to scripts (`install.sh` and `update.sh`)
 - [ ] Add Surfingkeys instructions and config file
 - [ ] Setup Better Window Manager
 - [ ] Make script to create `~/Development` directory
