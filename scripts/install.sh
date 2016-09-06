@@ -62,7 +62,7 @@ function npm_packages {
 
 function dotfiles {
   # Create dotfile symlinks in home directory
-  for file in $(ls -A ~/settings/dotfiles);
+  for file in $(find ~/settings/dotfiles -depth 1 -exec basename {} \;); do
     rm -rf ~/$file
     ln -s ~/settings/dotfiles/$file ~/$file
   done

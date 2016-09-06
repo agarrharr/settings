@@ -210,7 +210,6 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] [Airbnb eslint config](https://www.npmjs.com/package/eslint-config-airbnb)
 - [ ] Remove Play from path
 - [ ] .npmrc file
-- [ ] In `install.sh`, in dotfiles, use `find` instead of `ls`
 - [ ] In `install.sh`, install rvm and ruby gems
 - [ ] Install flux
 - [ ] Save email in pianobar config with saving to github
