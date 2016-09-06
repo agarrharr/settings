@@ -100,10 +100,21 @@ function gui_apps {
   done
 }
 
-function ruby {
+gem_install_or_update() {
+  if gem list "$1" | grep "^$1 ("; then
+    fancy_echo "Updating %s ..." "$1"
+    gem update "$@"
+  else
+    fancy_echo "Installing %s ..." "$1"
+    gem install "$@"
+  fi
+}
+
+function ruby_gems {
   fancy_echo 'Installing Ruby gems'
-  gem install bundler
-  gem install timetrap
+  for gem in $1; do
+    gem_install_or_update $gem
+  done
 }
 
 function bootstrap {
@@ -115,7 +126,7 @@ function bootstrap {
   npm_packages "eslint diff-so-fancy mocha pure-prompt trash-cli"
   gui_apps "audacity audacity-lame-library bartender better-window-manager dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow spotify sublime-text textexpander"
   nvim_plugins
-  ruby
+  ruby_gems "bundler timetrap"
 }
 
 # Init
