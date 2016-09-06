@@ -56,19 +56,21 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
 
 ## App Settings
 
-### Karabiner
+### Keyboard
 
-I remap my keys so that the caps lock key is control and control is caps lock, but it's only control if you press it in combination with another key, otherwise it's escape. And then my enter/return key is control if pressed in combination, otherwise it's enter.
+I remap my keys so that the control is caps lock, and caps lock key is control, but it's only control if you press it in combination with another key, otherwise it's escape. And then my enter/return key is control if pressed in combination, otherwise it's enter.
 
 To do this go to System Preferences -> Keyboard -> Modifier Keys... -> and switch Caps Lock and Control.
+
+You have to do this for the built in keyboard, as well as for any external keyboards.
+
+Also for my Das Keyboard, I switch Command and Option so that Command is right next to the space bar.
 
 Open Karabiner
 
 Control_L to Control_L (+ When you type Control_L only, send Escape)
 
 Return to Control_L (+ When you type Return only, send Return) + [KeyRepeat]
-
-### iTerm
 
 ### Chrome
 
