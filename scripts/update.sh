@@ -11,7 +11,7 @@ fancy_echo() {
 
 fancy_echo "Running software update script"
 fancy_echo "Updating Homebrew packages and Cask graphical apps"
-brew update && brew upgrade
+brew update && brew upgrade && brew cleanup
 fancy_echo "Updating Git Submodules"
 cd ~/setttings && git submodule update && cd -
 fancy_echo "Updating Node"
