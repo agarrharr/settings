@@ -1,4 +1,33 @@
 # ==================================================================
+# General
+# ==================================================================
+
+DEFAULT_USER=adamharris
+
+# Use emacs keybindings
+bindkey -e
+
+# Turn on 256 Color
+set -g default-terminal "screen-256color"
+
+# Turn on interactive comments
+setopt interactivecomments
+
+DISABLE_AUTO_TITLE=true
+
+setopt APPEND_HISTORY
+
+source $HOME/.bin/zshCustomFunctions.sh
+
+# include Z, yo
+. `brew --prefix`/etc/profile.d/z.sh
+
+export LC_ALL=$LANG
+
+# Type ".." instead of "cd ..", "/usr/include" instead of "cd /usr/include".
+setopt auto_cd
+
+# ==================================================================
 # Path
 # ==================================================================
 
@@ -113,9 +142,6 @@ compinit
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' \
   '+l:|?=** r:|?=**'
 
-# Use emacs keybindings
-bindkey -e
-
 # Autocompletion for timetrap
 fpath=(~/.rvm/gems/ruby-2.1.5/gems/timetrap-1.8.14/completions/zsh $fpath)
 
@@ -126,29 +152,3 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_CORRECTION="true"
 
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# ==================================================================
-# Other
-# ==================================================================
-
-DEFAULT_USER=adamharris
-
-# Turn on 256 Color
-set -g default-terminal "screen-256color"
-
-# Turn on interactive comments
-setopt interactivecomments
-
-DISABLE_AUTO_TITLE=true
-
-setopt APPEND_HISTORY
-
-source $HOME/.bin/zshCustomFunctions.sh
-
-# include Z, yo
-. `brew --prefix`/etc/profile.d/z.sh
-
-export LC_ALL=$LANG
-
-# Type ".." instead of "cd ..", "/usr/include" instead of "cd /usr/include".
-setopt auto_cd
