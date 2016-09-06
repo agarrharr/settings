@@ -1,3 +1,5 @@
+dotfiles/.config/configstore
+
 # Nvim
 dotfiles/.config/nvim/autoload/*
 
