@@ -116,6 +116,11 @@ Sign in
   - Gap at right of menu bar: Insert a gap when Notification Center is hidden (off)
 - Command + drap  the bartender icon all the way to the right, then iStat Menus Status, then wifi, then volume
 
+### Slate
+
+- Launch Slate on Login (on)
+- Automatically Check for Updates (on)
+
 ## Other stuff
 
 ### iCloud
@@ -205,7 +210,6 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Install [Airbnb eslint config](https://www.npmjs.com/package/eslint-config-airbnb)
 - [ ] Add `clean.sh` to clear trash and downloads
 - [ ] Wakatime (`~/.wakatime.cfg`)
-- [ ] Set up [Slate](https://github.com/jigish/slate)
 - [ ] Add instructions for iTunes / podcasts
 - [ ] Fitbit desktop app
 - [ ] Figure out meta key in hyperterm
