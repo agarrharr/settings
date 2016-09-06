@@ -91,11 +91,6 @@ setopt share_history # share command history data
 
 export EDITOR=nvim
 
-# Fix Ctrl-h mapping for neovim
-# https://github.com/neovim/neovim/wiki/FAQ#my-ctrl-h-mapping-doesnt-work
-infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
-tic $TERM.ti
-
 # ==================================================================
 # Pager
 # ==================================================================
