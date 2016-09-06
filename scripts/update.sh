@@ -14,6 +14,8 @@ echo "Updating Node"
 n latest
 echo "Updating npm packages"
 npm update -g
+echo "Updating RubyGems"
+gem update --system
 echo "Updating Neovim plugins"
 nvim +PlugInstall +PlugClean +qall
 echo "Updating Mac"
