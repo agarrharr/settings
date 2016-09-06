@@ -2,10 +2,10 @@
 # Path
 # ==================================================================
 
-RUBY_PATH="$PATH:/usr/local/opt/ruby/bin:/Library/Ruby/Gems/2.0.0/gems"
-RVM_PATH="$PATH:$HOME/.rvm/gems/ruby-2.1.5/bin:$HOME/.rvm/bin"
-PLAY_PATH="$PATH:/Applications/play-1.2.7.2"
-export PATH="$PATH:RUBY_PATH:RVM_PATH:PLAY_PATH"
+RUBY_PATH="/usr/local/opt/ruby/bin:/Library/Ruby/Gems/2.0.0/gems"
+RVM_PATH="$HOME/.rvm/gems/ruby-2.1.5/bin:$HOME/.rvm/bin"
+PLAY_PATH="/Applications/play-1.2.7.2"
+export PATH="$PATH:$RUBY_PATH:$RVM_PATH:$PLAY_PATH"
 
 # ==================================================================
 # Prompt
