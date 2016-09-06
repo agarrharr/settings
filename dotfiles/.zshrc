@@ -29,11 +29,9 @@ alias reloadzsh=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias reloadtmux="source-file ~/.tmux.conf && echo 'tmux config reloaded from ~/.tmux.conf'"
 
 alias lsa="ls -la"
-alias -- -="cd -"
-alias ~="cd ~"
-alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
 function take() {
     mkdir $1
     cd $1
@@ -156,3 +154,6 @@ source $HOME/.bin/zshCustomFunctions.sh
 . `brew --prefix`/etc/profile.d/z.sh
 
 export LC_ALL=$LANG
+
+# Type ".." instead of "cd ..", "/usr/include" instead of "cd /usr/include".
+setopt auto_cd
