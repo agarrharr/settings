@@ -100,7 +100,26 @@ function gui_apps {
   done
 }
 
-gem_install_or_update() {
+function ruby {
+  if ! command -v rbenv >/dev/null; then
+    if ! command -v rvm >/dev/null; then
+      fancy_echo 'Installing RVM and the latest Ruby...'
+      curl -L https://get.rvm.io | bash -s stable --ruby --auto-dotfiles --autolibs=enable
+      . ~/.rvm/scripts/rvm
+    else
+      local_version="$(rvm -v 2> /dev/null | awk '$2 != ""{print $2}')"
+      latest_version="$(curl -s https://raw.githubusercontent.com/wayneeseguin/rvm/stable/VERSION)"
+      if [ "$local_version" != "$latest_version" ]; then
+        fancy_echo 'Upgrading RVM...'
+        rvm get stable --auto-dotfiles --autolibs=enable --with-gems="bundler"
+      else
+        fancy_echo "Already using the latest version of RVM. Skipping..."
+      fi
+    fi
+  fi
+}
+
+function gem_install_or_update() {
   if gem list "$1" | grep "^$1 ("; then
     fancy_echo "Updating %s ..." "$1"
     gem update "$@"
@@ -126,6 +145,7 @@ function bootstrap {
   npm_packages "eslint diff-so-fancy mocha pure-prompt trash-cli"
   gui_apps "audacity audacity-lame-library bartender better-window-manager dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow spotify sublime-text textexpander"
   nvim_plugins
+  ruby
   ruby_gems "bundler timetrap"
 }
 
