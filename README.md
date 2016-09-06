@@ -190,31 +190,30 @@ Create `~/.my-pandora-pwd` that contains password.
 
 ## Todo
 
-- [ ] Add instructions to create `~/.bin/zshCustomFunctions.sh`
 - [ ] Add instructions for [iTerm theme and settings](http://www.adamwadeharris.com/my-iterm-2-setup/)
 - [ ] Add Sublime Text settings and add this to .macos
     `cp -r ~/settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null`
 - [ ] Add Surfingkeys instructions and config file
 - [ ] Setup Better Window Manager
 - [ ] Make script to create `~/Development` directory
-- [ ] Add Karabiner file
 - [ ] Run `.macos` file in `install.sh`
 - [ ] Install Anki
+- [ ] Install Flux
+- [ ] Install TextExpander
+- [ ] Install [Airbnb eslint config](https://www.npmjs.com/package/eslint-config-airbnb)
 - [ ] Add `clean.sh` to clear trash and downloads
 - [ ] Wakatime (`~/.wakatime.cfg`)
 - [ ] Set up [Slate](https://github.com/jigish/slate)
-- [ ] iTunes / podcasts
+- [ ] Add instructions for iTunes / podcasts
 - [ ] Fitbit desktop app
 - [ ] Figure out meta key in hyperterm
-- [ ] [Airbnb eslint config](https://www.npmjs.com/package/eslint-config-airbnb)
-- [ ] Remove Play from path
-- [ ] .npmrc file
-- [ ] Install flux
-- [ ] Save email in pianobar config with saving to github
-- [ ] Add this stuff to `.macos` file
+- [ ] Remove Play from path (when no longer needed)
+- [ ] Add .npmrc file?
+- [ ] Add this stuff to `.macos` file if possible
     - Move Applications folder into the Dock FO
     - Display Applications and Downloads as Folder instead of Stack
     - Finder - Remove AirDrop, All My Files, iCloud Drive, Applications, Downloads, Documents, Desktop. It should only have Dropbox and Development
     - Finder - Hide Tags, and Shared
     - Don't light up keyboard
     - Set screensaver
+    - Trackpad settings (turn tap to click on)
