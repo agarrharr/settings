@@ -264,7 +264,6 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Add config for Wakatime (`~/.wakatime.cfg`)
 - [ ] Add config for npm (.npmrc)
 - [ ] In `install.sh`, create `~/Development` directory
-- [ ] Add `clean.sh` to clear trash and downloads
 - [ ] Add Sublime Text settings and add this to `.macos`
     `cp -r ~/settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null`
 - [ ] Fix meta key in hyperterm
