@@ -152,8 +152,8 @@ function bootstrap {
   dotfiles
   # reattach-to-user-namespace is for tmux
   homebrew_packages "git gpg hub mutt n neovim/neovim/neovim pianobar python3 reattach-to-user-namespace tmux vim z"
-  npm_packages "eslint diff-so-fancy mocha pure-prompt trash-cli"
-  gui_apps "audacity audacity-lame-library bartender dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow slate spotify sublime-text textexpander"
+  npm_packages "diff-so-fancy eslint eslint-config-airbnb mocha pure-prompt trash-cli"
+  gui_apps "anki audacity audacity-lame-library bartender dropbox evernote fitbit-connect flux flycut glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow slate spotify sublime-text textexpander"
   nvim_plugins
   ruby
   ruby_gems "bundler timetrap"

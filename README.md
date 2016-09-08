@@ -258,11 +258,6 @@ Create `~/.my-pandora-pwd` that contains password.
 
 ## Todo
 
-- [ ] Install Anki
-- [ ] Install TextExpander
-- [ ] Install [Airbnb eslint config](https://www.npmjs.com/package/eslint-config-airbnb)
-- [ ] Install Fitbit desktop app
-- [ ] Install clipboard manager (Flycut)
 - [ ] Add instructions for [iTerm theme and settings](http://www.adamwadeharris.com/my-iterm-2-setup/)
 - [ ] Add instructions for iTunes / podcasts
 - [ ] Add instructions for Surfingkeys and config file
@@ -270,7 +265,7 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Add config for npm (.npmrc)
 - [ ] In `install.sh`, create `~/Development` directory
 - [ ] Add `clean.sh` to clear trash and downloads
-- [ ] Add Sublime Text settings and add this to .macos
+- [ ] Add Sublime Text settings and add this to `.macos`
     `cp -r ~/settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null`
 - [ ] Fix meta key in hyperterm
 - [ ] Remove Play from path (when no longer needed)
