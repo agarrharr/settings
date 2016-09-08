@@ -12,7 +12,9 @@
 
 This repository includes all of my custom settings and dotfiles. They have been generalized as much as possible for use by other people, but they are mostly just for my personal use.
 
-I also prefer `zsh` instead of `bash`, so the setup script will check to see if `zsh` is installed.  If `zsh` is installed, and it is not already configured as the default shell, the setup script will execute a `chsh -s $(which zsh)`.  This changes the default shell to zsh, and takes effect as soon as a new zsh is spawned or on next login.
+I prefer `zsh` instead of `bash`, so the setup script will check to see if `zsh` is installed.  If `zsh` is installed, and it is not already configured as the default shell, the setup script will execute a `chsh -s $(which zsh)`.  This changes the default shell to zsh, and takes effect as soon as a new zsh is spawned or on next login.
+
+I remap my keyboard so that the control is caps lock, and caps lock key is control, but it's only control if you press it in combination with another key, otherwise it's escape. And then my enter/return key is control if pressed in combination, otherwise it's enter.
 
 The install script will:
 
@@ -56,21 +58,11 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
 
 ## App Settings
 
-### Keyboard
+### Karabiner
 
-I remap my keys so that the control is caps lock, and caps lock key is control, but it's only control if you press it in combination with another key, otherwise it's escape. And then my enter/return key is control if pressed in combination, otherwise it's enter.
+- [x] Control_L to Control_L (+ When you type Control_L only, send Escape)
 
-To do this go to System Preferences -> Keyboard -> Modifier Keys... -> and switch Caps Lock and Control.
-
-You have to do this for the built in keyboard, as well as for any external keyboards.
-
-Also for my Das Keyboard, I switch Command and Option so that Command is right next to the space bar.
-
-Open Karabiner
-
-Control_L to Control_L (+ When you type Control_L only, send Escape)
-
-Return to Control_L (+ When you type Return only, send Return) + [KeyRepeat]
+- [x] Return to Control_L (+ When you type Return only, send Return) + [KeyRepeat]
 
 ### Chrome
 
@@ -121,12 +113,80 @@ Sign in
 - Launch Slate on Login (on)
 - Automatically Check for Updates (on)
 
+### Flux
+
+- Start Flux
+
 ## Other stuff
 
-### iCloud
+### System Preferences
 
-- Sign into iCloud
-- Find My Mac (on)
+- General
+  - Default web browser: Google Chrome.app
+- Desktop & Screen Saver
+  - Screen Saver
+    - Change Screen Saver
+    - Hot Corners...
+      - Top Left: Start Screen Saver
+      - Top Right: Start Screen Saver
+- Keyboard
+  - [ ] Adjust keyboard brightness in low light
+  - Modifier Keys...
+    - Apple Internal Keyboard / Trackpad
+      - Caps Lock (⇪) Key: ⌃ Control
+      - Control (⌃) Key: ⇪ Caps Lock
+    - Das Keyboard
+      - Caps Lock (⇪) Key: ⌃ Control
+      - Control (⌃) Key: ⇪ Caps Lock
+      - Option (⌥) Key: ⌘ Command
+      - Command (⌘) Key: ⌥ Option
+- Trackpad
+  - Point & Click
+    - [ ] Look up & data detectors
+    - [x] Tap to click
+  - More Gestures
+    - [ ] Swipe between pages
+    - [ ] Launchpad
+- iCloud
+  - [x] Find My Mac
+- Users & Groups
+  - Login Items
+    - [x] Bartender 2
+    - [x] Flux
+    - [x] iTunesHelper
+    - [x] Box Sync
+    - [x] Flycut
+    - [x] Dropbox
+    - [x] RescueTime
+    - [x] Karabiner
+    - [x] Fitbit
+    - [x] TextExpander
+    - [x] Slate
+
+### Finder
+
+- Preferences
+  - General
+    - Show these items on the desktop:
+      - [ ] Hard disks
+      - [ ] External disks
+      - [ ] CDs, DVDs, and iPods
+      - [ ] Connected servers
+    - New Finder windows show: Development
+- Sidebar
+  - Favorites
+    - [ ] AirDrop
+    - [ ] All My Files
+    - [ ] iCloud Drive
+    - [ ] Applications
+    - [x] Downloads
+    - [x] Documents
+    - [x] Desktop
+    - [x] Dropbox
+    - [x] Development
+    - [x] Box Sync
+  - Hide Tags
+  - Hide Shared
 
 ### Mutt
 
@@ -156,6 +216,7 @@ srm ~/.my-pwds
 ### Fix sudo vulnerability
 
 [Fix sudo vulnerability](http://blog.rongarret.info/2015/08/psa-beware-of-sudo-on-os-x.html)
+
 ```
 sudo visudo
 ```
@@ -197,29 +258,19 @@ Create `~/.my-pandora-pwd` that contains password.
 
 ## Todo
 
-- [ ] Add instructions for [iTerm theme and settings](http://www.adamwadeharris.com/my-iterm-2-setup/)
-- [ ] Add Sublime Text settings and add this to .macos
-    `cp -r ~/settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null`
-- [ ] Add Surfingkeys instructions and config file
-- [ ] Setup Better Window Manager
-- [ ] Make script to create `~/Development` directory
-- [ ] Run `.macos` file in `install.sh`
 - [ ] Install Anki
-- [ ] Install Flux
 - [ ] Install TextExpander
 - [ ] Install [Airbnb eslint config](https://www.npmjs.com/package/eslint-config-airbnb)
-- [ ] Add `clean.sh` to clear trash and downloads
-- [ ] Wakatime (`~/.wakatime.cfg`)
+- [ ] Install Fitbit desktop app
+- [ ] Install clipboard manager (Flycut)
+- [ ] Add instructions for [iTerm theme and settings](http://www.adamwadeharris.com/my-iterm-2-setup/)
 - [ ] Add instructions for iTunes / podcasts
-- [ ] Fitbit desktop app
-- [ ] Figure out meta key in hyperterm
+- [ ] Add instructions for Surfingkeys and config file
+- [ ] Add config for Wakatime (`~/.wakatime.cfg`)
+- [ ] Add config for npm (.npmrc)
+- [ ] In `install.sh`, create `~/Development` directory
+- [ ] Add `clean.sh` to clear trash and downloads
+- [ ] Add Sublime Text settings and add this to .macos
+    `cp -r ~/settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null`
+- [ ] Fix meta key in hyperterm
 - [ ] Remove Play from path (when no longer needed)
-- [ ] Add .npmrc file?
-- [ ] Add this stuff to `.macos` file if possible
-    - Move Applications folder into the Dock FO
-    - Display Applications and Downloads as Folder instead of Stack
-    - Finder - Remove AirDrop, All My Files, iCloud Drive, Applications, Downloads, Documents, Desktop. It should only have Dropbox and Development
-    - Finder - Hide Tags, and Shared
-    - Don't light up keyboard
-    - Set screensaver
-    - Trackpad settings (turn tap to click on)

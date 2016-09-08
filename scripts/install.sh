@@ -142,6 +142,10 @@ function ruby_gems {
   done
 }
 
+function macos {
+  ~/settings/scripts/.macos
+}
+
 function bootstrap {
   install_zsh
   submodules
@@ -149,10 +153,11 @@ function bootstrap {
   # reattach-to-user-namespace is for tmux
   homebrew_packages "git gpg hub mutt n neovim/neovim/neovim pianobar python3 reattach-to-user-namespace tmux vim z"
   npm_packages "eslint diff-so-fancy mocha pure-prompt trash-cli"
-  gui_apps "audacity audacity-lame-library bartender better-window-manager dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow slate spotify sublime-text textexpander"
+  gui_apps "audacity audacity-lame-library bartender dropbox evernote flux glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow slate spotify sublime-text textexpander"
   nvim_plugins
   ruby
   ruby_gems "bundler timetrap"
+  macos
 }
 
 # Init
