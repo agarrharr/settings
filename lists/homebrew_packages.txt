@@ -1,0 +1,12 @@
+git
+gpg
+hub
+mutt
+n
+neovim/neovim/neovim
+pianobar
+python3
+reattach-to-user-namespace
+tmux
+vim
+z

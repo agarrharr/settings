@@ -56,9 +56,11 @@ function homebrew_packages {
       brew update
   fi
 
+  packages=$(cat ~/settings/lists/homebrew_packages.txt)
+
   # Use Homebrew to install command line packages
   fancy_echo 'Installing Homebrew packages'
-  for package in $1; do
+  for package in $packages; do
     install_or_update_homebrew_package $package
   done
 }
@@ -68,8 +70,10 @@ function npm_packages {
 
   n latest
 
+  packages=$(cat ~/settings/lists/npm_packages.txt)
+
   # Use npm to install command line packages
-  for package in $1; do
+  for package in $packages; do
     npm install -g $package
   done
 }
@@ -99,9 +103,10 @@ function nvim_plugins {
 
 function gui_apps {
   fancy_echo 'Installing GUI apps'
+  apps=$(cat ~/settings/lists/gui_apps.txt)
 
   # Use Homebrew Cask to install gui apps
-  for app in $1; do
+  for app in $apps; do
     brew cask install $app
   done
 }
@@ -136,8 +141,10 @@ function install_or_update_gem {
 }
 
 function ruby_gems {
+  gems=$(cat ~/settings/lists/ruby_gems.txt)
+
   fancy_echo 'Installing Ruby gems'
-  for gem in $1; do
+  for gem in $gems; do
     install_or_update_gem $gem
   done
 }
@@ -150,13 +157,12 @@ function bootstrap {
   install_zsh
   submodules
   dotfiles
-  # reattach-to-user-namespace is for tmux
-  homebrew_packages "git gpg hub mutt n neovim/neovim/neovim pianobar python3 reattach-to-user-namespace tmux vim z"
-  npm_packages "diff-so-fancy eslint eslint-config-airbnb mocha pure-prompt trash-cli"
-  gui_apps "anki audacity audacity-lame-library bartender dropbox evernote fitbit-connect flux flycut glueprint google-chrome hyperterm istat-menus iterm2 karabiner notational-velocity rescuetime screenflow slate spotify sublime-text textexpander"
+  homebrew_packages
+  npm_packages
+  gui_apps
   nvim_plugins
   ruby
-  ruby_gems "bundler timetrap"
+  ruby_gems
   macos
 }
 
