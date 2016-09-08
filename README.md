@@ -228,6 +228,7 @@ Create `~/.my-pandora-pwd` that contains password.
 
 ## Todo
 
+- [ ] Install Spotify
 - [ ] Add instructions for [iTerm theme and settings](http://www.adamwadeharris.com/my-iterm-2-setup/)
 - [ ] Add instructions for iTunes / podcasts
 - [ ] Add instructions for Surfingkeys and config file
