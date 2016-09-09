@@ -225,6 +225,12 @@ Host gitlab.com
 
 Create `~/.my-pandora-pwd` that contains password.
 
+### Other
+
+- Outlook
+- Creative Cloud
+  - Photoshop
+  - Illustrator
 
 ## Todo
 
@@ -246,4 +252,3 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Creative Cloud
 - [ ] Box Sync
 - [ ] Outlook
-

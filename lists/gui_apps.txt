@@ -1,6 +1,7 @@
 anki
 audacity
 audacity-lame-library
+audio-hijack
 bartender
 dropbox
 evernote
