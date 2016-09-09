@@ -19,19 +19,14 @@ The install script will:
 
 ## Installation
 
-Download files
-
 ``` bash
-cd ~ && curl -LO https://github.com/aharris88/settings/archive/master.zip && unzip master.zip &&  mv settings-master settings && rm master.zip
+cd ~ && curl -LO https://github.com/aharris88/settings/archive/master.zip && unzip master.zip &&  mv settings-master settings && rm master.zip && cd -
+~/settings/scripts/install.sh
 ```
 
-Run Install script
+## Add Git Remote to Settings Directory
 
-```bash
-./settings/scripts/install.sh
-```
-
-Add SSH key to Github on the [ssh settings page](https://github.com/settings/ssh).
+[Add SSH key to Github](https://github.com/settings/ssh)
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "your.email@example.com"
@@ -40,10 +35,8 @@ ssh-add ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
 ```
 
-Add git remote to settings directory
-
 ```bash
-cd ~/settings && git init && git add . && git remote add origin git@github.com:aharris88/settings.git && git remote update && git checkout master
+cd ~/settings && git init && git add . && git remote add origin git@github.com:aharris88/settings.git && git remote update && git checkout master && cd -
 ```
 
 ## Manual Settings
