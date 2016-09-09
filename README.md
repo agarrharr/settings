@@ -228,12 +228,14 @@ Create `~/.my-pandora-pwd` that contains password.
 ### Other
 
 - Outlook
-- Creative Cloud
-  - Photoshop
-  - Illustrator
+- Tweetdeck
 
 ## Todo
 
+- [ ] Install audiobookbinder
+- [ ] Install transmit
+- [ ] Install steam
+- [ ] Install Final Cut Pro
 - [ ] Add instructions for iTunes / podcasts
 - [ ] Add instructions for Surfingkeys and config file
 - [ ] Add config for Wakatime (`~/.wakatime.cfg`)
