@@ -228,13 +228,10 @@ Create `~/.my-pandora-pwd` that contains password.
 
 ## Todo
 
-- [ ] Install Spotify
-- [ ] Add instructions for [iTerm theme and settings](http://www.adamwadeharris.com/my-iterm-2-setup/)
 - [ ] Add instructions for iTunes / podcasts
 - [ ] Add instructions for Surfingkeys and config file
 - [ ] Add config for Wakatime (`~/.wakatime.cfg`)
 - [ ] Add config for npm (.npmrc)
-- [ ] In `install.sh`, create `~/Development` directory
 - [ ] Add Sublime Text settings and add this to `.macos`
     `cp -r ~/settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null`
 - [ ] Fix meta key in hyperterm

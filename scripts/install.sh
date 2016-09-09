@@ -5,7 +5,7 @@ set -euo pipefail
 # Ask for the administrator password upfront
 sudo -v
 
-fancy_echo() {
+function fancy_echo() {
   echo $'\e[32;1m'$1$'\e[0m'
 }
 
@@ -132,10 +132,10 @@ function ruby {
 
 function install_or_update_gem {
   if gem list "$1" | grep "^$1 ("; then
-    fancy_echo "Updating %s ..." "$1"
+    fancy_echo "Updating $1..."
     gem update "$@"
   else
-    fancy_echo "Installing %s ..." "$1"
+    fancy_echo "Installing $1..."
     gem install "$@"
   fi
 }
@@ -150,10 +150,16 @@ function ruby_gems {
 }
 
 function macos {
+  fancy_echo 'Run Mac Scripts'
   ~/settings/scripts/.macos
 }
 
-function bootstrap {
+function development {
+  fancy_echo 'Create Development directory'
+  mkdir -p ~/Development
+}
+
+function install {
   install_zsh
   submodules
   dotfiles
@@ -164,7 +170,7 @@ function bootstrap {
   ruby
   ruby_gems
   macos
+  development
 }
 
-# Init
-bootstrap
+install
