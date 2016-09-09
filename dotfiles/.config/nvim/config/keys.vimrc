@@ -53,4 +53,4 @@ inoremap <C-c> <CR><Esc>O<Tab>
 inoremap <C-v> <CR><Esc>A;<Esc>O<Tab>
 
 " Remove all trailing whitespace in a file
-nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <leader>w :call StripTrailingWhitespaces()<CR>
