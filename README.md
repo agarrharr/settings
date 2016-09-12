@@ -142,14 +142,14 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
     - Favorites
       - [ ] AirDrop
       - [ ] All My Files
-      - [ ] iCloud Drive
       - [ ] Applications
-      - [x] Downloads
-      - [x] Documents
-      - [x] Desktop
+      - [ ] Desktop
+      - [ ] iCloud Drive
       - [x] Dropbox
-      - [x] Development
       - [x] Box Sync
+      - [x] Development
+      - [x] Documents
+      - [x] Downloads
     - Hide Tags
     - Hide Shared
 

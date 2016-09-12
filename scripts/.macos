@@ -75,6 +75,8 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 
 # Finder: show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool true
+# Delete .DS_Store on desktop and prevent saving files to Desktop
+rm -f ~/Desktop/.DS_Store && chmod 500 ~/Desktop
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true

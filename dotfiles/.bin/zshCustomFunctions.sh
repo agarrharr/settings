@@ -23,3 +23,13 @@ function ns() {
 function nts() {
     ls -c ~/Dropbox/notes | grep "$*"
 }
+
+function hideAllFiles() {
+    defaults write com.apple.finder AppleShowAllFiles -bool NO
+    killall Finder
+}
+
+function showAllFiles() {
+    defaults write com.apple.finder AppleShowAllFiles -bool YES
+    killall Finder
+}
