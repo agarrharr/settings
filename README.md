@@ -56,6 +56,8 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
   - Sign in
 - Fitbit
   - Sign in
+- Spotify
+  - Sign in
 - Notational Velocity
   - Preferences -> Notes -> Storage -> Store and read notes on disk as: Plain Text Files *
   - Notes -> Read notes from: ~/Dropbox/notes
@@ -83,6 +85,8 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
   - Command + drap  the bartender icon all the way to the right, then iStat Menus Status, then wifi, then volume
 - Slate
   - [x] Automatically Check for Updates
+- TextExpander
+  - [ ] Play sound
 - System Preferences
   - General
     - Default web browser: Google Chrome.app
