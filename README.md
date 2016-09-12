@@ -70,7 +70,7 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
 - Bartender
   - Enable hiding Spotlight with Bartender (https://www.macbartender.com/B2/system-item-setup/)
   - Menu Items
-    - Completely Hide Menu Bar Item: Battery, Clock, Spotlight, Notification Center
+    - Completely Hide Menu Bar Item: Battery, Clock, Spotlight, Notification Center, User
     - Nothing, Bartender does not do anything: iStat Menus Status
     - Show in Bartender Bar, not in Menu Bar: everything else
     - Airport (wifi)
