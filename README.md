@@ -180,20 +180,6 @@ gpg -r aharris88@gmail.com -e ~/.my-pwds
 srm ~/.my-pwds
 ```
 
-### Fix sudo vulnerability
-
-[Fix sudo vulnerability](http://blog.rongarret.info/2015/08/psa-beware-of-sudo-on-os-x.html)
-
-```
-sudo visudo
-```
-
-and add this line
-
-```
-Defaults tty_tickets
-```
-
 ### SSH Config
 
 Create `~/.ssh/config`. Here is an example:

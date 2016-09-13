@@ -159,6 +159,11 @@ function development {
   mkdir -p ~/Development
 }
 
+function fix_sudo_vulnerability {
+  fancy_echo 'Fixing sudo vulnerability'
+  /bin/bash ~/settings/scripts/fix-sudo-vulnerability.sh
+}
+
 function install {
   install_zsh
   submodules
@@ -171,6 +176,7 @@ function install {
   ruby_gems
   macos
   development
+  fix_sudo_vulnerability
 }
 
 install
