@@ -87,6 +87,8 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
   - [x] Automatically Check for Updates
 - TextExpander
   - [ ] Play sound
+  - Default is to expand snippet groups in: all applications, except...
+    - [x] Simulator
 - System Preferences
   - General
     - Default web browser: Google Chrome.app
@@ -225,7 +227,7 @@ Create `~/.my-pandora-pwd` that contains password.
 ## Notes on updating to macOS Sierra
 
 - [ ] Karabiner - [does not work yet](https://pqrs.org/osx/karabiner/)
-- [ ] Bartender 2 - [test build for macOS Sierra](https://www.macbartender.com/blog/macOS%20Sierra%20Test%20Build/)
+- [x] Bartender 2 - [works](https://www.macbartender.com/blog/macOS%20Sierra%20Ready/)
 - [ ] iStat Menus
 - [x] Screenflow
 - [ ] Creative Cloud
