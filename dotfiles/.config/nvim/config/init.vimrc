@@ -36,8 +36,6 @@ Plug 'docunext/closetag.vim'
 Plug 'tpope/vim-fugitive'
 " Automatic indentation
 Plug 'tpope/vim-sleuth'
-" Show the indentation with vertical lines
-Plug 'Yggdroot/indentLine'
 " Show a git diff n the gutter
 Plug 'airblade/vim-gitgutter'
 " Change the background of css colors to match

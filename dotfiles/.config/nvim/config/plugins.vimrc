@@ -29,12 +29,6 @@ augroup plugin_fugitive
   autocmd FileType css noremap <buffer> <leader>bc :call CSSBeautify()<cr>
 augroup END
 
-" IndentLine
-let g:indentLine_color_term = 8
-
-nnoremap <leader>il :IndentLinesToggle<cr>
-let g:indentLine_char = '┊'
-
 " Consolate
 
 nnoremap <leader>c :Consolate<cr>
