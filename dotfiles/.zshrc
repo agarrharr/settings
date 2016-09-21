@@ -17,7 +17,7 @@ DISABLE_AUTO_TITLE=true
 
 setopt APPEND_HISTORY
 
-source $HOME/.bin/zshCustomFunctions.sh
+source $HOME/bin/zshCustomFunctions.sh
 
 # include Z, yo
 . `brew --prefix`/etc/profile.d/z.sh
@@ -31,10 +31,11 @@ setopt auto_cd
 # Path
 # ==================================================================
 
+LOCAL_PATH="$HOME/bin"
 RUBY_PATH="/usr/local/opt/ruby/bin:/Library/Ruby/Gems/2.0.0/gems"
 RVM_PATH="$HOME/.rvm/gems/ruby-2.1.5/bin:$HOME/.rvm/bin"
 PLAY_PATH="/Applications/play-1.2.7.2"
-export PATH="$PATH:$RUBY_PATH:$RVM_PATH:$PLAY_PATH"
+export PATH="$PATH:$LOCAL_PATH:$RUBY_PATH:$RVM_PATH:$PLAY_PATH"
 
 # ==================================================================
 # Prompt
