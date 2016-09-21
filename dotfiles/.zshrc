@@ -53,9 +53,8 @@ alias git='hub'
 
 alias vi='vim -u ~/.vim/essential.vim'
 
-alias reload="echo 'reload help:\n\r\n\rreloadzsh: reload zsh\n\rreloadtmux: reload tmux'"
+alias reload="echo 'reload help:\n\r\n\rreload zsh: reloadzsh\n\rreload tmux: prefix r\n\rreload vim: <leader>vs'"
 alias reloadzsh=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
-alias reloadtmux="source-file ~/.tmux.conf && echo 'tmux config reloaded from ~/.tmux.conf'"
 
 alias lsa="ls -la"
 alias ...="cd ../.."
