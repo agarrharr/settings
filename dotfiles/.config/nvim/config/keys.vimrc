@@ -35,6 +35,9 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 nnoremap <leader>sv <C-w>v<C-w>l
 nnoremap <leader>ss <C-w>s<C-w>j
 
+" Quit terminal mode with escape key
+tnoremap <Esc> <C-\><C-n>
+
 " Make Y yank to the end of the line instead of the entire line (i.e. same as yy).
 noremap Y y$
 
