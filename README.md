@@ -213,6 +213,7 @@ Create `~/.my-pandora-pwd` that contains password.
 
 - [ ] Install audiobookbinder
 - [ ] Install transmit
+- [ ] Install Xcode
 - [ ] Install steam
 - [ ] Install Final Cut Pro
 - [ ] Add instructions for iTunes / podcasts
