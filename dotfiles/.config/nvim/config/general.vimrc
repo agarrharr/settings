@@ -1,8 +1,4 @@
-syntax on
 set number
-
-set laststatus=2
-set ruler
 
 colorscheme nova
 
@@ -21,9 +17,6 @@ augroup filetype_markdown
   autocmd!
   autocmd Filetype markdown setlocal spell
 augroup END
-
-" Define a thesaurus file
-set thesaurus+=~/dotfiles/mthesaur.txt
 
 " Turn on search highlighting
 set hlsearch
@@ -54,9 +47,6 @@ augroup END
 " Copy to system clipboard when you yank
 set clipboard=unnamed
 
-" Enable mouse in iTerm2
-set mouse=a
-
 " Close the Omni-Completion tip window when a selection is made
 " These lines close it on movement in insert mode or when leaving insert mode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
@@ -72,8 +62,6 @@ nnoremap <leader>io :set list<CR>:set listchars=tab:\ \ ,trail:-<CR>
 highlight NonText ctermfg=7 guifg=gray
 " Show this character when the line wraps
 set showbreak=↪\ " Note the trailing space (escaped with a backslash) because this character is wider than 1 normal character
-
-set updatetime=100
 
 " Fixes issue I had with json files hiding quotes
 setlocal conceallevel=0
