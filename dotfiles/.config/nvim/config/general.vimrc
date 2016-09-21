@@ -63,5 +63,8 @@ highlight NonText ctermfg=7 guifg=gray
 " Show this character when the line wraps
 set showbreak=↪\ " Note the trailing space (escaped with a backslash) because this character is wider than 1 normal character
 
+" Fixes issue with highlighting current word being too slow
+set updatetime=100
+
 " Fixes issue I had with json files hiding quotes
 setlocal conceallevel=0
