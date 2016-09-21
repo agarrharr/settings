@@ -6,7 +6,7 @@ function! Installjshint(info)
     !npm install -g eslint
   endif
 endfunction
-Plug 'scrooloose/syntastic', { 'do': function('Installjshint') }
+" Plug 'scrooloose/syntastic', { 'do': function('Installjshint') }
 function! BuildTern(info)
   if a:info.status == 'installed' || a:info.force
     !npm install -g tern
@@ -24,8 +24,6 @@ Plug 'suan/vim-instant-markdown', { 'do': function('InstallInstantMarkdown') }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Commenter
 Plug 'tpope/vim-commentary'
-" Expands abbreviations similar to emmet
-Plug 'mattn/emmet-vim'
 " Fuzzy searching for opening files
 Plug 'ctrlpvim/ctrlp.vim'
 " JavaScript Beautifier (also html and css)
@@ -40,8 +38,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 " Show the indentation with vertical lines
 Plug 'Yggdroot/indentLine'
-" Detect the indentation automatically
-Plug 'ciaranm/detectindent'
 " Show a git diff n the gutter
 Plug 'airblade/vim-gitgutter'
 " Change the background of css colors to match
@@ -50,8 +46,6 @@ Plug 'ap/vim-css-color'
 Plug 'vim-scripts/IndexedSearch'
 " Plugin to move lines
 Plug 'matze/vim-move'
-" Multiple Cursors
-Plug 'terryma/vim-multiple-cursors'
 " Repeat with . after plugin maps
 Plug 'tpope/vim-repeat'
 " Syntax for jekyll markdown with front matter
@@ -72,6 +66,8 @@ Plug 'metakirby5/codi.vim'
 Plug 'EinfachToll/DidYouMean'
 " Color theme
 Plug 'trevordmiller/nova-vim'
+" JavaScript syntax highlighting and indentation
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 

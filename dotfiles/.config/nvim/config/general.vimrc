@@ -4,8 +4,6 @@ set number
 set laststatus=2
 set ruler
 
-set background=dark
-let g:solarized_termcolors=256
 colorscheme nova
 
 " Set leader key to comma
@@ -44,20 +42,8 @@ set wildignorecase
 " Put it into insert mode when entering a terminal pane
 autocmd BufWinEnter,WinEnter term://* startinsert
 
-" Make the backspace work in terminal
-set backspace=indent,eol,start
-
-" Enable better indentation.
-set autoindent smartindent
-set smarttab
-
 " Setup indicator for 132 columns
 set colorcolumn=133
-
-" Code folding for javascript
-syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
-setlocal foldmethod=syntax
-setlocal foldlevel=10
 
 " Set comment style for javascript to single line
 augroup filetype_js
@@ -70,9 +56,6 @@ set clipboard=unnamed
 
 " Enable mouse in iTerm2
 set mouse=a
-
-" Set indentation to tab characters of 4 width
-:set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 
 " Close the Omni-Completion tip window when a selection is made
 " These lines close it on movement in insert mode or when leaving insert mode
@@ -91,12 +74,6 @@ highlight NonText ctermfg=7 guifg=gray
 set showbreak=↪\ " Note the trailing space (escaped with a backslash) because this character is wider than 1 normal character
 
 set updatetime=100
-
-" Fixes issue I was having with background color
-if &term =~ '256color'
-    " disable Background Color Erase (BCE)
-    set t_ut=
-endif
 
 " Fixes issue I had with json files hiding quotes
 setlocal conceallevel=0
