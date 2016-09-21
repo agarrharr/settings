@@ -7,10 +7,6 @@ function! Installjshint(info)
   endif
 endfunction
 Plug 'scrooloose/syntastic', { 'do': function('Installjshint') }
-" Commenter
-Plug 'tpope/vim-commentary'
-" Autocompletion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 function! BuildTern(info)
   if a:info.status == 'installed' || a:info.force
     !npm install -g tern
@@ -24,6 +20,10 @@ function! InstallInstantMarkdown(info)
   endif
 endfunction
 Plug 'suan/vim-instant-markdown', { 'do': function('InstallInstantMarkdown') }
+" Autocompletion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Commenter
+Plug 'tpope/vim-commentary'
 " Expands abbreviations similar to emmet
 Plug 'mattn/emmet-vim'
 " Fuzzy searching for opening files
@@ -70,6 +70,8 @@ Plug 'mileszs/ack.vim'
 Plug 'metakirby5/codi.vim'
 " Helps you open the right file
 Plug 'EinfachToll/DidYouMean'
+" Color theme
+Plug 'trevordmiller/nova-vim'
 
 call plug#end()
 

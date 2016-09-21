@@ -6,7 +6,7 @@ set ruler
 
 set background=dark
 let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme nova
 
 " Set leader key to comma
 let mapleader = ","
