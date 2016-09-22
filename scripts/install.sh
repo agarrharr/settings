@@ -56,7 +56,7 @@ function homebrew_packages {
       brew update
   fi
 
-  packages=$(cat ~/settings/lists/homebrew_packages.txt)
+  packages=$(cat ~/settings/apps/homebrew_packages.txt)
 
   # Use Homebrew to install command line packages
   fancy_echo 'Installing Homebrew packages'
@@ -70,7 +70,7 @@ function npm_packages {
 
   n latest
 
-  packages=$(cat ~/settings/lists/npm_packages.txt)
+  packages=$(cat ~/settings/apps/npm_packages.txt)
 
   # Use npm to install command line packages
   for package in $packages; do
@@ -103,7 +103,7 @@ function nvim_plugins {
 
 function gui_apps {
   fancy_echo 'Installing GUI apps'
-  apps=$(cat ~/settings/lists/gui_apps.txt)
+  apps=$(cat ~/settings/apps/gui_apps.txt)
 
   # Use Homebrew Cask to install gui apps
   for app in $apps; do
@@ -141,7 +141,7 @@ function install_or_update_gem {
 }
 
 function ruby_gems {
-  gems=$(cat ~/settings/lists/ruby_gems.txt)
+  gems=$(cat ~/settings/apps/ruby_gems.txt)
 
   fancy_echo 'Installing Ruby gems'
   for gem in $gems; do
