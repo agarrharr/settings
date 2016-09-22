@@ -136,8 +136,7 @@ autoload -U compinit
 compinit
 
 # Make autocompletion case-insensitive and mid-word completion (not fuzzy)
-zstyle ':completion:*' completer _complete
-zstyle ':completion:*:*:git:files' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 bindkey '^i' expand-or-complete-prefix
 
