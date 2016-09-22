@@ -10,9 +10,6 @@ bindkey -e
 # Turn on 256 Color
 set -g default-terminal "screen-256color"
 
-# Turn on interactive comments
-setopt interactivecomments
-
 DISABLE_AUTO_TITLE=true
 
 setopt APPEND_HISTORY
@@ -138,17 +135,13 @@ export LESS='-iR-P%f (%i/%m) Line %lt/%L'
 autoload -U compinit
 compinit
 
-# Make autocompletion case-insensitive and fuzzy (mid-word completion)
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' \
-  '+l:|?=** r:|?=**'
+# Make autocompletion case-insensitive and mid-word completion (not fuzzy)
+zstyle ':completion:*' completer _complete
+zstyle ':completion:*:*:git:files' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-# Autocompletion for timetrap
-fpath=(~/.rvm/gems/ruby-2.1.5/gems/timetrap-1.8.14/completions/zsh $fpath)
+bindkey '^i' expand-or-complete-prefix
 
 # Display dots while waiting for completion
 COMPLETION_WAITING_DOTS="true"
-
-# Disable command autocorrection
-DISABLE_CORRECTION="true"
 
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
