@@ -89,6 +89,10 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
   - [ ] Play sound
   - Default is to expand snippet groups in: all applications, except...
     - [x] Simulator
+- iTerm 2
+  1. Download [nova.itermcolors](https://raw.githubusercontent.com/trevordmiller/nova-iterm/master/build/nova.itermcolors)
+  1. Profiles -> Colors -> Color Presets -> Import
+  1. Select "nova.itermcolors"
 - System Preferences
   - General
     - Default web browser: Google Chrome.app
@@ -211,6 +215,7 @@ Create `~/.my-pandora-pwd` that contains password.
 
 ## Todo
 
+- [ ] Replace Slate and Flycut with [Keyboard Maestro](http://www.keyboardmaestro.com/)
 - [ ] Install audiobookbinder
 - [ ] Install transmit
 - [ ] Install Xcode

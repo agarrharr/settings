@@ -57,7 +57,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyperterm-snazzy', 'hyperterm-summon'],
+  plugins: ['nova-hyperterm', 'hyperterm-summon'],
 
   // in development, you can create a directory under
   // `~/.hyperterm_plugins/local/` and include it here
