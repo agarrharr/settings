@@ -6,7 +6,7 @@
     autocrlf = input
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     ignorecase = false
-	pager = "diff-so-fancy | less --tabs=1,5 -R"
+    pager = "diff-so-fancy | less --tabs=1,5 -R"
 [web]
     browser = google-chrome
 [rerere]
@@ -39,3 +39,5 @@
     default = simple
 [alias]
     passport = !${HOME}/.git/hooks/bin/git-passport/git-passport.py
+[user]
+    useconfigonly = true
