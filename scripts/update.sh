@@ -21,6 +21,7 @@ npm update -g
 fancy_echo "Updating RubyGems"
 gem update --system
 fancy_echo "Updating Neovim plugins"
+nvim +PlugUpgrade +qall
 nvim +PlugInstall +PlugClean +qall
 fancy_echo "Updating Mac"
 sudo softwareupdate -iva
