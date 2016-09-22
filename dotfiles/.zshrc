@@ -2,7 +2,7 @@
 # General
 # ==================================================================
 
-DEFAULT_USER=adamharris
+DEFAULT_USER=`whoami`
 
 # Use emacs keybindings
 bindkey -e
