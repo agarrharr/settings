@@ -19,7 +19,7 @@ inoremap <C-k> <Esc><C-w>k
 inoremap <C-l> <Esc><C-w>l
 
 
-nnoremap <silent> <Leader>. :exe "vertical resize +10"<CR>
+nnoremap <silent> <Leader>, :exe "vertical resize +10"<CR>
 nnoremap <silent> <Leader>. :exe "vertical resize -10"<CR>
 
 " Movement commands for :terminal windows
