@@ -46,7 +46,7 @@
   func = blue
   old = red strike
   new = cyan
-  commit = blue
+  commit = cyan
   whitespace = red
   context = normal
 [color "branch"]
