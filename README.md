@@ -20,7 +20,7 @@ The install script will:
 ## Installation
 
 ``` bash
-cd ~ && curl -LO https://github.com/aharris88/settings/archive/master.zip && unzip master.zip &&  mv settings-master settings && rm master.zip && cd -
+curl -LO https://github.com/aharris88/settings/archive/master.zip && unzip master.zip &&  mv settings-master ~/settings && rm master.zip
 ~/settings/scripts/install.sh
 ```
 
@@ -229,6 +229,12 @@ Create `~/.my-pandora-pwd` that contains password.
     `cp -r ~/settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null`
 - [ ] Fix meta key in hyperterm
 - [ ] Remove Play from path (when no longer needed)
+- [ ] Install [tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+- [ ] Add essential.vim for very basic settings
+- [ ] Figure out why javascript autocomplete sometimes knows built-in js functions and sometimes it doesn't
+- [ ] Make script to set computer to more normal settings
+- [ ] Make script to get started for work
+- [ ] Make script for taking a break
 
 ## Notes on updating to macOS Sierra
 
