@@ -31,6 +31,21 @@ set modelines=0
 set fileformats+=dos
 
 set wildignorecase
+set wildignore+=*.zip
+set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=*.pdf
+set wildignore+=*.swp
+set wildignore+=*/.git/*
+set wildignore+=*DS_Store*
+set wildignore+=*/node_modules/*
+set wildignore+=npm-debug.log
+set wildignore+=.eslintcache
+set wildignore+=*/build/*
+set wildignore+=*/lib/*
+set wildignore+=*/dist/*
+set wildignore+=*/vendor/*
+set wildignore+=*/compiled/*
+set wildignore+=*/cache/*
 
 " Put it into insert mode when entering a terminal pane
 autocmd BufWinEnter,WinEnter term://* startinsert

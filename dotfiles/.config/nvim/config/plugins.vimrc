@@ -33,3 +33,7 @@ augroup END
 
 nnoremap <leader>c :Consolate<cr>
 
+" CtrlP
+
+let g:ctrlp_cmd='CtrlP :pwd'
+let g:ctrlp_match_window = 'results:100'
