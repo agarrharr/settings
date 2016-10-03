@@ -223,6 +223,7 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Install Final Cut Pro
 - [ ] Add instructions for iTunes / podcasts
 - [ ] Add instructions for Surfingkeys and config file
+- [ ] Learn Surfingkeys
 - [ ] Add config for Wakatime (`~/.wakatime.cfg`)
 - [ ] Add config for npm (.npmrc)
 - [ ] Add Sublime Text settings and add this to `.macos`
@@ -235,6 +236,7 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Make script to set computer to more normal settings
 - [ ] Make script to get started for work
 - [ ] Make script for taking a break
+- [ ] Make script to sync fitbit every morning
 
 ## Notes on updating to macOS Sierra
 
