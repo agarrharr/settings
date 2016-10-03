@@ -57,6 +57,7 @@ alias reloadzsh=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias lsa="ls -la"
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias 1="cd -"
 
 function take() {
     mkdir $1
