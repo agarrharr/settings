@@ -45,10 +45,17 @@ noremap Y y$
 nnoremap <leader>lr :set relativenumber<CR>
 nnoremap <leader>ll :set norelativenumber<CR>
 
-" Remove all trailing whitespace in a file
-nnoremap <leader>w :call StripTrailingWhitespaces()<CR>
-
 " Timetrap
 nnoremap <leader>tt :!t w<CR>
 nnoremap <leader>ti :!t in<CR>
 nnoremap <leader>to :!t out<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mappings for Functions
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Remove all trailing whitespace in a file
+nnoremap <leader>w :StripTrailingWhitespaces<CR>
+
+" Print current git branch
+nnoremap <leader>b :PrintCurrentBranch<CR>

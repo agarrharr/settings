@@ -9,6 +9,7 @@ function! StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
+command! -nargs=0 StripTrailingWhitespaces call StripTrailingWhitespaces()
 
 " Highlight all instances of word under cursor, when idle.
 " It doesn't clobber the search register
@@ -32,3 +33,8 @@ endfunction
 command! -nargs=0 ShowOnGithub call ShowOnGithub()
 
 nnoremap <Leader>gh :ShowOnGithub<CR>
+
+function! PrintCurrentBranch()
+  exec ":r!git rev-parse --abbrev-ref HEAD"
+endfunction
+command! -nargs=0 PrintCurrentBranch call PrintCurrentBranch()
