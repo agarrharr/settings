@@ -238,6 +238,7 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Make script for taking a break
 - [ ] Make script to sync fitbit every morning
 - [ ] Try out [ale for neovim linting](https://github.com/w0rp/ale)
+- [ ] Get Neomake instead of Syntastic
 
 ## Notes on updating to macOS Sierra
 
