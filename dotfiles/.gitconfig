@@ -38,15 +38,15 @@
   nobranch = red
   unmerged = red
   untracked = cyan
-  added = cyan
-  changed = red
+  added = green
+  changed = red bold
 [color "diff"]
-  meta = yellow bold
+  meta = yellow
   frag = black bold
   func = blue
   old = red strike
-  new = cyan
-  commit = cyan
+  new = green
+  commit = blue
   whitespace = red
   context = normal
 [color "branch"]
