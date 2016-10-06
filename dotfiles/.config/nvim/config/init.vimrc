@@ -66,6 +66,8 @@ Plug 'EinfachToll/DidYouMean'
 Plug 'trevordmiller/nova-vim'
 " JavaScript syntax highlighting and indentation
 Plug 'pangloss/vim-javascript'
+" JavaScript React
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
