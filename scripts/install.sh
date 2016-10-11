@@ -81,6 +81,28 @@ function npm_packages {
   done
 }
 
+yarn_get_tarball() {
+  # https://yarnpkg.com/install.sh
+  reset="\e[0m"
+  cyan="\e[0;36m"
+  cd ~
+  printf "$cyan> Downloading tarball...$reset\n"
+  curl -L -o yarn.tar.gz "https://yarnpkg.com/latest.tar.gz" >/dev/null # get tarball
+
+  printf "$cyan> Extracting to ~/.yarn...$reset\n"
+  mkdir .yarn
+  tar zxf yarn.tar.gz -C .yarn --strip 1 # extract tarball
+  rm -rf yarn.tar.gz # remove tarball
+  cd -
+}
+
+function install_yarn {
+  fancy_echo 'Installing Yarn'
+  if  [ ! -d $HOME/.yarn ]; then
+    yarn_get_tarball
+  fi
+}
+
 function dotfiles {
   fancy_echo 'Copying dotfiles'
 
@@ -179,6 +201,7 @@ function install {
   dotfiles
   homebrew_packages
   npm_packages
+  install_yarn
   gui_apps
   nvim_plugins
   ruby

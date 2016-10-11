@@ -33,7 +33,8 @@ RUBY_PATH="/usr/local/opt/ruby/bin:/Library/Ruby/Gems/2.0.0/gems"
 RVM_PATH="$HOME/.rvm/gems/ruby-2.1.5/bin:$HOME/.rvm/bin"
 PLAY_PATH="/Applications/play-1.2.7.2"
 PROJECT_NPM_PATH="./node_modules/.bin"
-export PATH="$PATH:$LOCAL_PATH:$RUBY_PATH:$RVM_PATH:$PLAY_PATH:$PROJECT_NPM_PATH"
+YARN_PATH="$HOME/.yarn/bin"
+export PATH="$PATH:$LOCAL_PATH:$RUBY_PATH:$RVM_PATH:$PLAY_PATH:$PROJECT_NPM_PATH:$YARN_PATH"
 
 # ==================================================================
 # Prompt
