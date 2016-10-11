@@ -37,14 +37,7 @@ function submodules () {
   cd ~/settings && git submodule init && git submodule update && cd -
 }
 
-function install_or_update_homebrew_package {
-  if ! brew list $1 >& /dev/null; then
-	brew install $1
-  fi
-}
-
-function homebrew_packages {
-  # Install or update Homebrew
+function install_or_update_homebrew {
   which -s brew
   if [[ $? != 0 ]] ; then
       fancy_echo 'Installing Homebrew'
@@ -55,6 +48,16 @@ function homebrew_packages {
       fancy_echo 'Updating Homebrew'
       brew update
   fi
+}
+
+function install_or_update_homebrew_package {
+  if ! brew list $1 >& /dev/null; then
+	brew install $1
+  fi
+}
+
+function homebrew_packages {
+  install_or_update_homebrew
 
   packages=$(cat ~/settings/apps/homebrew_packages.txt)
 
@@ -101,13 +104,19 @@ function nvim_plugins {
   nvim +PlugInstall +qall
 }
 
+function install_or_update_gui_app {
+  if ! brew cask list $1 >& /dev/null; then
+	brew cask install $1
+  fi
+}
+
 function gui_apps {
   fancy_echo 'Installing GUI apps'
   apps=$(cat ~/settings/apps/gui_apps.txt)
 
   # Use Homebrew Cask to install gui apps
   for app in $apps; do
-    brew cask install $app
+    install_or_update_gui_app $app
   done
 }
 
