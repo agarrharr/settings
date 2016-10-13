@@ -14,8 +14,10 @@ augroup END
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 
+highlight NeomakeErrorMsg guifg=#DF8C8C
+highlight NeomakeWarningMsg guifg=#F2C38F
 let g:neomake_error_sign={'text': '✖', 'texthl': 'NeomakeErrorMsg'}
-let g:neomake_warning_sign={'text': '⚠️', 'texthl': 'NeomakeErrorMsg'}
+let g:neomake_warning_sign={'text': '⚠️', 'texthl': 'NeomakeWarningMsg'}
 let g:neomake_javascript_enabled_makers = ['eslint_d', 'eslint']
 let g:neomake_jsx_enabled_makers = ['eslint_d', 'eslint']
 
