@@ -52,6 +52,8 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
   - Configure One Number
 - Dropbox
   - Sign in
+  - Preferences -> Import -> Photos
+    - [ ] Enable camera uploads for [Photos and videos]
 - Evernote
   - Sign in
 - Fitbit
