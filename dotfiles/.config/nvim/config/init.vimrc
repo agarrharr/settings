@@ -1,12 +1,8 @@
 call plug#begin('~/.nvim/plugged')
 
 " Code linter
-function! Installjshint(info)
-  if a:info.status == 'installed' || a:info.force
-    !npm install -g eslint
-  endif
-endfunction
-" Plug 'scrooloose/syntastic', { 'do': function('Installjshint') }
+Plug 'neomake/neomake'
+" Autocompletion
 function! BuildTern(info)
   if a:info.status == 'installed' || a:info.force
     !npm install -g tern

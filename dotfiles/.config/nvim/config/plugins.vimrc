@@ -9,9 +9,15 @@ augroup plugin_fugitive
   autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
 
-" Syntastic
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_args = "--config ~/.eslintrc"
+" Neomake
+
+autocmd! BufWritePost * Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
+
+let g:neomake_error_sign={'text': '✖', 'texthl': 'NeomakeErrorMsg'}
+let g:neomake_warning_sign={'text': '⚠️', 'texthl': 'NeomakeErrorMsg'}
+let g:neomake_javascript_enabled_makers = ['eslint_d', 'eslint']
+let g:neomake_jsx_enabled_makers = ['eslint_d', 'eslint']
 
 " Move
 nmap <M-j> <Plug>MoveLineDown
