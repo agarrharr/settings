@@ -28,7 +28,7 @@ vmap <M-j> <Plug>MoveBlockDown
 vmap <M-k> <Plug>MoveBlockUp
 
 " JsBeautify
-augroup plugin_fugitive
+augroup plugin_jsBeautify
   autocmd!
   autocmd FileType javascript noremap <buffer>  <leader>bj :call JsBeautify()<cr>
   " for html
