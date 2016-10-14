@@ -25,6 +25,7 @@ numi
 paw
 rescuetime
 screenflow
+skitch
 skype
 slate
 spotify
