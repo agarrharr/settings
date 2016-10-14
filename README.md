@@ -58,6 +58,8 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
   - Sign in
 - Fitbit
   - Sign in
+- Paw
+  - [Download](https://paw.cloud/)
 - Spotify
   - Sign in
 - Notational Velocity
