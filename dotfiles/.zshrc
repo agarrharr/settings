@@ -5,7 +5,9 @@
 DEFAULT_USER=`whoami`
 
 # Use emacs keybindings
-bindkey -e
+bindkey -v
+bindkey -M vicmd v edit-command-line
+autoload edit-command-line; zle -N edit-command-line
 
 # Turn on 256 Color
 set -g default-terminal "screen-256color"
