@@ -7,6 +7,7 @@ neovim/neovim/neovim
 pianobar
 python3
 reattach-to-user-namespace
+thefuck
 tmux
 vim
 z
