@@ -208,6 +208,16 @@ Host gitlab.com
     IdentityFile ~/.ssh/gitlab_rsa
 ```
 
+### Work vimrc
+
+Create `~/.workvimrc`
+
+Put something like this in it to make `:Gbrowse` from vim-fugitive work.
+
+```
+let g:fugitive_github_domains = ['git@workgithub.com']
+```
+
 ### Pianobar
 
 Create `~/.my-pandora-pwd` that contains password.

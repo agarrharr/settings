@@ -8,7 +8,7 @@
     ignorecase = false
     pager = "diff-so-fancy | less --tabs=1,5 -R"
 [web]
-    browser = google-chrome
+    browser = open
 [rerere]
     enabled = 1
     autoupdate = 1
