@@ -11,7 +11,7 @@ function! StripTrailingWhitespaces()
 endfunction
 command! -nargs=0 StripTrailingWhitespaces call StripTrailingWhitespaces()
 
-" Highlight all instances of word under cursor, when idle.
+" Highlight all instances of word under cursor
 " It doesn't clobber the search register
 function! HighlightWordUnderCursor()
     if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
@@ -20,11 +20,7 @@ function! HighlightWordUnderCursor()
         match none
     endif
 endfunction
-
-augroup function_highlightWord
-  autocmd!
-  autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
-augroup END
+command! -nargs=0 HighlightWordUnderCursor call HighlightWordUnderCursor()
 
 function! ShowOnGithub()
   let u = system("echo ${${${$(git --git-dir=.git config --get remote.origin.url)#git@github.com:}%.git}#https://github.com/} | xargs echo -n")

@@ -59,3 +59,6 @@ nnoremap <leader>w :StripTrailingWhitespaces<CR>
 
 " Print current git branch
 nnoremap <leader>b :PrintCurrentBranch<CR>
+
+" Highlight the word under the cursor
+nnoremap <leader>h :HighlightWordUnderCursor<CR>
