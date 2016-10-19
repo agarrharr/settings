@@ -83,3 +83,7 @@ set updatetime=100
 
 " Fixes issue I had with json files hiding quotes
 setlocal conceallevel=0
+
+" Helps gf know how to open javascript files
+set path+=**
+set suffixesadd+=.js
