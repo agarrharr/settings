@@ -263,3 +263,4 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Creative Cloud
 - [ ] Box Sync
 - [ ] Outlook
+- [ ] [Change update script](https://github.com/trevordmiller/settings/commit/ade02137d090ad02aea47e7bdb48d21966bdce93)
