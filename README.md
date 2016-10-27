@@ -218,6 +218,14 @@ Put something like this in it to make `:Gbrowse` from vim-fugitive work.
 let g:fugitive_github_domains = ['git@workgithub.com']
 ```
 
+### .local.zshrc
+
+Put something like this in `.local.zshrc`
+
+```
+alias ge="git config --global user.email 'aharris88@users.noreply.github.com'"
+```
+
 ### Pianobar
 
 Create `~/.my-pandora-pwd` that contains password.

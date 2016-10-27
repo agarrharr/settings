@@ -17,6 +17,7 @@ DISABLE_AUTO_TITLE=true
 setopt APPEND_HISTORY
 
 source $HOME/bin/zshCustomFunctions.sh
+source $HOME/.local.zshrc
 
 # include Z, yo
 . `brew --prefix`/etc/profile.d/z.sh
