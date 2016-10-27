@@ -1,3 +1,8 @@
+" ack.vim
+" don't jump to first result automatically
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>"
+
 " deoplete.nvim
 let g:deoplete#enable_at_startup = 1
 let g:tern_request_timeout = 1
