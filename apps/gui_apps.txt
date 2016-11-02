@@ -10,7 +10,6 @@ dropbox
 evernote
 fitbit-connect
 flux
-flycut
 glueprint
 google-chrome
 grandperspective
@@ -30,4 +29,3 @@ skype
 slate
 spotify
 sublime-text
-textexpander
