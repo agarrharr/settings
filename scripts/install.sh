@@ -98,6 +98,7 @@ yarn_get_tarball() {
 
 function install_yarn {
   fancy_echo 'Installing Yarn'
+  rm -rf $HOME/.yarn
   if  [ ! -d $HOME/.yarn ]; then
     yarn_get_tarball
   fi
