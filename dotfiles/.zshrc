@@ -69,7 +69,7 @@ function take() {
     cd $1
 }
 
-alias ga="git add"
+alias ga="gitAddStatus"
 alias gc="git commit --verbose"
 alias gcm="git checkout master"
 alias gco="git checkout"
@@ -78,6 +78,11 @@ alias gl="git pull"
 alias glg="git log --stat --max-count=10"
 alias gp="git push"
 alias gst="git status"
+
+gitAddStatus() {
+  git add $*
+  git status
+}
 
 # ==================================================================
 # History
