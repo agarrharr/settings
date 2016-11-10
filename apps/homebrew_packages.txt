@@ -1,3 +1,4 @@
+dfu-util
 git
 gpg
 hub
