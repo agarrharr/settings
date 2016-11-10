@@ -241,6 +241,9 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Make control key also escape key when hit by itself
 - [ ] Figure out what to do with extra keys
 - [ ] Add music buttons to ergodox
+- [ ] Add super key to ergodox
+- [ ] Use superkey for moving windows
+- [ ] Make key binding to move windows between screens
 - [ ] Figure how to control mouse with ergodox
 - [ ] Add instructions for Surfingkeys and config file
 - [ ] Learn Surfingkeys
@@ -261,7 +264,6 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Make script to set computer to more normal settings
 - [ ] Make script to get started for work
 - [ ] Make script for taking a break
-- [ ] Make script to sync fitbit every morning
 - [ ] Try out [ale for neovim linting](https://github.com/w0rp/ale)
 - [ ] Make sure JsBeautify still works
 
