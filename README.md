@@ -237,22 +237,25 @@ Create `~/.my-pandora-pwd` that contains password.
 
 ## Todo
 
+- [ ] Add ergodox firmware
+- [ ] Make control key also escape key when hit by itself
+- [ ] Figure out what to do with extra keys
+- [ ] Add music buttons to ergodox
+- [ ] Figure how to control mouse with ergodox
+- [ ] Add instructions for Surfingkeys and config file
+- [ ] Learn Surfingkeys
+- [ ] Install [tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
 - [ ] Replace Slate and Flycut with [Keyboard Maestro](http://www.keyboardmaestro.com/)
 - [ ] Install audiobookbinder
 - [ ] Install transmit
 - [ ] Install Xcode
 - [ ] Install steam
 - [ ] Install Final Cut Pro
-- [ ] Add instructions for iTunes / podcasts
-- [ ] Add instructions for Surfingkeys and config file
-- [ ] Learn Surfingkeys
 - [ ] Add config for Wakatime (`~/.wakatime.cfg`)
 - [ ] Add config for npm (.npmrc)
 - [ ] Add Sublime Text settings and add this to `.macos`
     `cp -r ~/settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null`
-- [ ] Fix meta key in hyperterm
 - [ ] Remove Play from path (when no longer needed)
-- [ ] Install [tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
 - [ ] Add essential.vim for very basic settings
 - [ ] Figure out why javascript autocomplete sometimes knows built-in js functions and sometimes it doesn't
 - [ ] Make script to set computer to more normal settings
