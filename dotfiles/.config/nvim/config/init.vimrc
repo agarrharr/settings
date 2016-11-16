@@ -64,6 +64,8 @@ Plug 'trevordmiller/nova-vim'
 Plug 'pangloss/vim-javascript'
 " JavaScript React
 Plug 'mxw/vim-jsx'
+" Navigate seamlessly between vim and tmux splits
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 

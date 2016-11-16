@@ -238,16 +238,13 @@ Create `~/.my-pandora-pwd` that contains password.
 ## Todo
 
 - [ ] Add ergodox firmware
-- [ ] Make control key also escape key when hit by itself
-- [ ] Figure out what to do with extra keys
-- [ ] Add music buttons to ergodox
+- [ ] Make control key also escape key when hit by itself with ergodox instead of Karabiner
 - [ ] Add super key to ergodox
 - [ ] Use superkey for moving windows
-- [ ] Make key binding to move windows between screens
 - [ ] Figure how to control mouse with ergodox
-- [ ] Add instructions for Surfingkeys and config file
+- [ ] Make key binding to move windows between screens
 - [ ] Learn Surfingkeys
-- [ ] Install [tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+- [ ] Add instructions for Surfingkeys and config file
 - [ ] Replace Slate and Flycut with [Keyboard Maestro](http://www.keyboardmaestro.com/)
 - [ ] Install audiobookbinder
 - [ ] Install transmit
