@@ -17,7 +17,6 @@ hyperterm
 istat-menus
 iterm2
 kap
-karabiner
 mou
 notational-velocity
 numi

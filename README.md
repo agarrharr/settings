@@ -41,9 +41,6 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
 
 ## Manual Settings
 
-- Karabiner
-  - [x] Control_L to Control_L (+ When you type Control_L only, send Escape)
-  - [x] Return to Control_L (+ When you type Return only, send Return) + [KeyRepeat]
 - Chrome
   - Set Chrome to default browser
   - Sign in
@@ -74,7 +71,7 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
 - Bartender
   - Enable hiding Spotlight with Bartender (https://www.macbartender.com/B2/system-item-setup/)
   - Menu Items
-    - Completely Hide Menu Bar Item: Battery, Clock, Spotlight, Notification Center, User
+    - Completely Hide Menu Bar Item: Battery, Clock, Siri, Spotlight, Notification Center, User
     - Nothing, Bartender does not do anything: iStat Menus Status
     - Show in Bartender Bar, not in Menu Bar: everything else
     - Airport (wifi)
@@ -129,7 +126,6 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
       - [x] Flycut
       - [x] Dropbox
       - [x] RescueTime
-      - [x] Karabiner
       - [x] Fitbit
       - [x] TextExpander
       - [x] Slate
@@ -237,8 +233,8 @@ Create `~/.my-pandora-pwd` that contains password.
 
 ## Todo
 
+- [ ] [Change update script](https://github.com/trevordmiller/settings/commit/ade02137d090ad02aea47e7bdb48d21966bdce93)
 - [ ] Add ergodox firmware
-- [ ] Make control key also escape key when hit by itself with ergodox instead of Karabiner
 - [ ] Add super key to ergodox
 - [ ] Use superkey for moving windows
 - [ ] Figure how to control mouse with ergodox
@@ -263,14 +259,3 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Make script for taking a break
 - [ ] Try out [ale for neovim linting](https://github.com/w0rp/ale)
 - [ ] Make sure JsBeautify still works
-
-## Notes on updating to macOS Sierra
-
-- [ ] Karabiner - [does not work yet](https://pqrs.org/osx/karabiner/)
-- [x] Bartender 2 - [works](https://www.macbartender.com/blog/macOS%20Sierra%20Ready/)
-- [ ] iStat Menus
-- [x] Screenflow
-- [ ] Creative Cloud
-- [ ] Box Sync
-- [ ] Outlook
-- [ ] [Change update script](https://github.com/trevordmiller/settings/commit/ade02137d090ad02aea47e7bdb48d21966bdce93)
