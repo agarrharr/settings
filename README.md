@@ -130,6 +130,9 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
       - [x] Fitbit
       - [x] TextExpander
       - [x] Slate
+  - Accessibility
+    - [x] Use scroll gesture with modifier keys to zoom:
+      - Control
 - Finder
   - Preferences
     - General
