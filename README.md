@@ -99,6 +99,7 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
     - Default web browser: Google Chrome.app
   - Keyboard
     - [ ] Adjust keyboard brightness in low light
+    - [x] Use all keyboard and emoji viewers as standard function keys
     - Modifier Keys...
       - Apple Internal Keyboard / Trackpad
         - Caps Lock (⇪) Key: ⌃ Control
