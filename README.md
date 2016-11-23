@@ -241,10 +241,10 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Add ergodox firmware
 - [ ] Add super key to ergodox
 - [ ] Use superkey for moving windows
-- [ ] Figure how to control mouse with ergodox
 - [ ] Make key binding to move windows between screens
-- [ ] Learn Surfingkeys
+- [ ] Figure how to control mouse with ergodox
 - [ ] Add instructions for Surfingkeys and config file
+- [ ] Learn Surfingkeys
 - [ ] Replace Slate and Flycut with [Keyboard Maestro](http://www.keyboardmaestro.com/)
 - [ ] Install audiobookbinder
 - [ ] Install transmit
