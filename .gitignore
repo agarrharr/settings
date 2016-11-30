@@ -12,3 +12,9 @@ dotfiles/.mutt/cache
 
 # Pianobar
 dotfiles/.config/pianobar/state
+
+# Ergodox
+ergodox/kll
+ergodox/log
+ergodox/*.bin
+ergodox/*.kll
