@@ -254,7 +254,6 @@ Create `~/.my-pandora-pwd` that contains password.
 - [ ] Add config for npm (.npmrc)
 - [ ] Add Sublime Text settings and add this to `.macos`
     `cp -r ~/settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null`
-- [ ] Remove Play from path (when no longer needed)
 - [ ] Add essential.vim for very basic settings
 - [ ] Figure out why javascript autocomplete sometimes knows built-in js functions and sometimes it doesn't
 - [ ] Make script to set computer to more normal settings
