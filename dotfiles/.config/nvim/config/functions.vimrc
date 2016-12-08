@@ -31,6 +31,8 @@ command! -nargs=0 ShowOnGithub call ShowOnGithub()
 nnoremap <Leader>gh :ShowOnGithub<CR>
 
 function! PrintCurrentBranch()
-  exec ":r!git rev-parse --abbrev-ref HEAD"
+  exec ":.-1read!git rev-parse --abbrev-ref HEAD"
+  :execute "normal! A: "
+  startinsert!
 endfunction
 command! -nargs=0 PrintCurrentBranch call PrintCurrentBranch()
