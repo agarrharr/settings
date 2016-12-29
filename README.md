@@ -41,38 +41,31 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
 
 ## Manual Settings
 
-- Chrome
-  - Set Chrome to default browser
-  - Sign in
-  - Chrome menu -> "Warn Before Quitting (⌘Q)"
-  - Sign in to LastPass
-  - Configure One Number
-- Dropbox
-  - Sign in
-  - Preferences -> Import -> Photos
-    - [ ] Enable camera uploads for [Photos and videos]
 - Evernote
   - Sign in
 - Fitbit
   - Sign in
-- Paw
-  - [Download](https://paw.cloud/)
 - Spotify
   - Sign in
+- Chrome
+  - Sign in
+  - Set Chrome to default browser
+  - Chrome menu -> "Warn Before Quitting (⌘Q)"
+  - Sign in to LastPass
+- Dropbox
+  - Sign in
+  - Preferences -> Import -> Photos
+    - [ ] Enable camera uploads for [Photos and videos]
+- Paw
+  - [Download](https://paw.cloud/)
 - Notational Velocity
   - Preferences -> Notes -> Storage -> Store and read notes on disk as: Plain Text Files *
   - Notes -> Read notes from: ~/Dropbox/notes
-- iStat Menus
-  - Show time and battery
-  - Use fuzzy clock
-  - Use the green horizontal battery
-    - Use custom colours and change the colors to be red when low, else black
-    - [x] Customize menubar for different states
 - Bartender
   - Enable hiding Spotlight with Bartender (https://www.macbartender.com/B2/system-item-setup/)
   - Menu Items
     - Completely Hide Menu Bar Item: Battery, Clock, Siri, Spotlight, Notification Center, User
-    - Nothing, Bartender does not do anything: iStat Menus Status
+    - Nothing, Bartender does not do anything: BitBar
     - Show in Bartender Bar, not in Menu Bar: everything else
     - Airport (wifi)
       - Item Updates
@@ -83,13 +76,7 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
     - Clicking on Bartender will (Display Bartender Bar items in menu bar)
   - Appearance
     - Gap at right of menu bar: Insert a gap when Notification Center is hidden (off)
-  - Command + drap  the bartender icon all the way to the right, then iStat Menus Status, then wifi, then volume
-- Slate
-  - [x] Automatically Check for Updates
-- TextExpander
-  - [ ] Play sound
-  - Default is to expand snippet groups in: all applications, except...
-    - [x] Simulator
+  - Command + drap  the bartender icon all the way to the right, BitBar, wifi, then volume
 - iTerm 2
   1. Download [nova.itermcolors](https://raw.githubusercontent.com/trevordmiller/nova-iterm/master/build/nova.itermcolors)
   1. Profiles -> Colors -> Color Presets -> Import
@@ -128,8 +115,6 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
       - [x] Dropbox
       - [x] RescueTime
       - [x] Fitbit
-      - [x] TextExpander
-      - [x] Slate
   - Accessibility
     - [x] Use scroll gesture with modifier keys to zoom:
       - Control
@@ -237,27 +222,27 @@ Create `~/.my-pandora-pwd` that contains password.
 
 ## Todo
 
-- [ ] [Change update script](https://github.com/trevordmiller/settings/commit/ade02137d090ad02aea47e7bdb48d21966bdce93)
-- [ ] Add super key to ergodox
-- [ ] Use superkey for moving windows
-- [ ] Make key binding to move windows between screens
-- [ ] Figure how to control mouse with ergodox
-- [ ] Add instructions for Surfingkeys and config file
-- [ ] Learn Surfingkeys
-- [ ] Replace Slate and Flycut with [Keyboard Maestro](http://www.keyboardmaestro.com/)
+- [ ] Scripts - [Change update script](https://github.com/trevordmiller/settings/commit/ade02137d090ad02aea47e7bdb48d21966bdce93)
+- [ ] Ergodox - Add super key
+- [ ] Ergodox - Figure how to control mouse with ergodox
+- [ ] Keyboard Maestro - Use superkey for moving windows
+- [ ] Keyboard Maestro - Make key binding to move windows between screens
+- [ ] Surfingkeys - Add instructions for Surfingkeys and config file
+- [ ] Surfingkeys - Learn Surfingkeys
+- [ ] Vim - Add config for Wakatime (`~/.wakatime.cfg`)
+- [ ] Npm - Add config for npm (.npmrc)
+- [ ] Sublime Text - add settings and add this to `.macos`
+    `cp -r ~/settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null`
+- [ ] Vim - add essential.vim for very basic settings
+- [ ] Vim - Figure out why javascript autocomplete sometimes knows built-in js functions and sometimes it doesn't
+- [ ] Scripts - Make script to set computer to more normal settings
+- [ ] Scripts - Make script to get started for work
+- [ ] Scripts - Make script for taking a break
+- [ ] Vim - Try out [ale for neovim linting](https://github.com/w0rp/ale)
+- [ ] Vim - Make sure JsBeautify still works
 - [ ] Install audiobookbinder
 - [ ] Install transmit
 - [ ] Install Xcode
 - [ ] Install steam
 - [ ] Install Final Cut Pro
-- [ ] Add config for Wakatime (`~/.wakatime.cfg`)
-- [ ] Add config for npm (.npmrc)
-- [ ] Add Sublime Text settings and add this to `.macos`
-    `cp -r ~/settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null`
-- [ ] Add essential.vim for very basic settings
-- [ ] Figure out why javascript autocomplete sometimes knows built-in js functions and sometimes it doesn't
-- [ ] Make script to set computer to more normal settings
-- [ ] Make script to get started for work
-- [ ] Make script for taking a break
-- [ ] Try out [ale for neovim linting](https://github.com/w0rp/ale)
-- [ ] Make sure JsBeautify still works
+- [ ] Uninstall Evernote
