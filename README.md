@@ -84,6 +84,8 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
 - System Preferences
   - General
     - Default web browser: Google Chrome.app
+  - Mission Control
+    - [ ] Automatically rearrange Spaces based on most recent use
   - Keyboard
     - [ ] Adjust keyboard brightness in low light
     - [x] Use all keyboard and emoji viewers as standard function keys
