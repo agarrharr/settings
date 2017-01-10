@@ -134,8 +134,8 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
       - [ ] Applications
       - [ ] Desktop
       - [ ] iCloud Drive
+      - [ ] Box Sync
       - [x] Dropbox
-      - [x] Box Sync
       - [x] Development
       - [x] Documents
       - [x] Downloads
