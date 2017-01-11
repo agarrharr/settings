@@ -1,6 +1,3 @@
 diff-so-fancy
-eslint
-eslint-config-airbnb
-mocha
 pure-prompt
 trash-cli
