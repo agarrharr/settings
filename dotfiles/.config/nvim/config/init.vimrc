@@ -64,6 +64,8 @@ Plug 'trevordmiller/nova-vim'
 Plug 'pangloss/vim-javascript'
 " JavaScript React
 Plug 'mxw/vim-jsx'
+" Highlight yanked text
+Plug 'machakann/vim-highlightedyank'
 
 call plug#end()
 
