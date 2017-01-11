@@ -114,11 +114,24 @@ function dotfiles {
   done
 }
 
+function nvim {
+  fancy_echo "Installing Neovim"
+  fancy_echo "Brew install neovim"
+  brew tap neovim/neovim
+  brew install neovim --HEAD
+  fancy_echo "pip install neovim"
+  pip2 install neovim
+  pip3 install neovim
+  fancy_echo "gem install neovim"
+  gem install neovim
+
+  # https://github.com/neovim/neovim/wiki/FAQ#my-ctrl-h-mapping-doesnt-work
+  infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
+  tic $TERM.ti
+}
+
 function nvim_plugins {
   fancy_echo 'Installing Neovim plugins'
-
-  # required for deoplete plugin in neovim
-  pip3 install neovim
 
   # Install vim-plug
   curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -199,6 +212,7 @@ function install {
   npm_packages
   install_yarn
   gui_apps
+  nvim
   nvim_plugins
   ruby
   ruby_gems
