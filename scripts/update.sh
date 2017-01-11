@@ -26,5 +26,5 @@ fancy_echo "Updating Neovim plugins"
 nvim +PlugUpgrade +qall
 nvim +PlugInstall +PlugClean +qall
 fancy_echo "Updating Mac"
-sudo softwareupdate -iva
+sudo softwareupdate -ia
 fancy_echo "Software update complete!"

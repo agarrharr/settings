@@ -224,7 +224,6 @@ Create `~/.my-pandora-pwd` that contains password.
 
 ## Todo
 
-- [ ] Scripts - [Change update script](https://github.com/trevordmiller/settings/commit/ade02137d090ad02aea47e7bdb48d21966bdce93)
 - [ ] Ergodox - Add super key
 - [ ] Ergodox - Figure how to control mouse with ergodox
 - [ ] Keyboard Maestro - Use superkey for moving windows
