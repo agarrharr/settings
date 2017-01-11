@@ -24,9 +24,6 @@ nnoremap <silent> <Leader>. :exe "vertical resize -10"<CR>
 
 " Movement commands for :terminal windows
 tnoremap <C-h> <C-\><C-n><C-w>h
-" Workaround since <C-h> isn't working in neovim right now
-" https://github.com/neovim/neovim/wiki/FAQ#my-ctrl-h-mapping-doesnt-work
-tnoremap <C-w>h <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
