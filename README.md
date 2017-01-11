@@ -179,11 +179,15 @@ srm ~/.my-pwds
 
 Create `~/.my-pandora-pwd` that contains password.
 
-#### Other Apps to install
+### Mac App Store Apps to Install
+
+- Final Cut Pro
+- OneDrive
+
+#### Other Apps to Install
 
 - Outlook
 - Tweetdeck
-- Final Cut Pro
 
 ### Manual Development Settings
 
