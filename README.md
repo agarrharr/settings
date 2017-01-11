@@ -72,14 +72,14 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
   - [x] Find My Mac
 - Users & Groups
   - Login Items
-    - [x] Bartender 2
+    - [x] Bartender
+    - [x] Bitbar
+    - [x] Box Sync
+    - [x] Dropbox
     - [x] Flux
     - [x] iTunesHelper
-    - [x] Box Sync
-    - [x] Flycut
-    - [x] Dropbox
+    - [x] Keyboard Maestro
     - [x] RescueTime
-    - [x] Fitbit
 - Accessibility
   - [x] Use scroll gesture with modifier keys to zoom:
     - Control
@@ -111,28 +111,6 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
 
 ### Manual Application Settings
 
-#### Spotify
-
-- Sign in
-
-#### Chrome
-
-- Sign in
-- Set Chrome to default browser
-- Chrome menu -> "Warn Before Quitting (⌘Q)"
-- Sign in to LastPass
-
-#### Dropbox
-
-- Sign in
-- Preferences -> Import -> Photos
-  - [ ] Enable camera uploads for [Photos and videos]
-
-#### Notational Velocity
-
-- Preferences -> Notes -> Storage -> Store and read notes on disk as: Plain Text Files *
-- Notes -> Read notes from: ~/Dropbox/notes
-
 #### Bartender
 
 - Enable hiding Spotlight with Bartender (https://www.macbartender.com/B2/system-item-setup/)
@@ -150,6 +128,16 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
 - Appearance
   - Gap at right of menu bar: Insert a gap when Notification Center is hidden (off)
 - Command + drap  the bartender icon all the way to the right, BitBar, wifi, then volume
+
+#### Chrome
+
+- Chrome menu -> "Warn Before Quitting (⌘Q)"
+
+#### Dropbox
+
+- Sign in
+- Preferences -> Import -> Photos
+  - [ ] Enable camera uploads for [Photos and videos]
 
 #### iTerm 2
 
@@ -181,6 +169,11 @@ Encrypt the password file and delete the old one. srm is a more secure delete.
 gpg -r aharris88@gmail.com -e ~/.my-pwds
 srm ~/.my-pwds
 ```
+
+#### Notational Velocity
+
+- Preferences -> Notes -> Storage -> Store and read notes on disk as: Plain Text Files *
+- Notes -> Read notes from: ~/Dropbox/notes
 
 #### Pianobar
 
