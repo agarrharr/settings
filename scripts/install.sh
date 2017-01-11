@@ -9,6 +9,11 @@ function fancy_echo() {
   echo $'\e[32;1m'$1$'\e[0m'
 }
 
+function install_xcode_command_line_tools () {
+  fancy_echo 'Installing Xcode Command Line Tools'
+  xcode-select --install
+}
+
 function install_zsh () {
   fancy_echo 'Installing zsh'
   # Test to see if zshell is installed.  If it is:
@@ -205,6 +210,7 @@ function development {
 }
 
 function install {
+  install_xcode_command_line_tools
   install_zsh
   submodules
   dotfiles
