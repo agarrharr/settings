@@ -20,6 +20,8 @@ fancy_echo "Updating npm packages"
 npm update -g
 fancy_echo "Updating RubyGems"
 gem update --system
+fancy_echo "Updating Pip"
+pip install --upgrade pip
 fancy_echo "Updating Neovim plugins"
 nvim +PlugUpgrade +qall
 nvim +PlugInstall +PlugClean +qall
