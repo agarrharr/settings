@@ -18,12 +18,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "#:None",
-                    "label": "NONE"
-                },
-                "2": {
-                    "key": "F11",
-                    "label": "F11"
+                    "key": "LAT2",
+                    "label": "LATCH-2"
                 }
             }
         },
@@ -120,8 +116,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "BACKTICK",
-                    "label": "`"
+                    "key": "ESCAPE",
+                    "label": "ESC"
                 },
                 "7": {
                     "key": "#:flashMode()",
@@ -137,8 +133,8 @@
             "h": 6,
             "layers": {
                 "0": {
-                    "key": "LAT2",
-                    "label": "LATCH-2"
+                    "key": "BACKTICK",
+                    "label": "`"
                 }
             }
         },
@@ -332,8 +328,8 @@
             "h": 6,
             "layers": {
                 "0": {
-                    "key": "ESCAPE",
-                    "label": "ESC"
+                    "key": "#:None",
+                    "label": "NONE"
                 }
             }
         },
@@ -542,10 +538,6 @@
                 "0": {
                     "key": "MINUS",
                     "label": "-"
-                },
-                "2": {
-                    "key": "F12",
-                    "label": "F12"
                 }
             }
         },
@@ -661,6 +653,10 @@
                     "key": "EQUAL",
                     "label": "="
                 },
+                "2": {
+                    "key": "F11",
+                    "label": "F11"
+                },
                 "7": {
                     "key": "#:flashMode()",
                     "label": "FLASH"
@@ -771,6 +767,10 @@
                 "0": {
                     "key": "BACKSLASH",
                     "label": "\\"
+                },
+                "2": {
+                    "key": "F12",
+                    "label": "F12"
                 }
             }
         },
