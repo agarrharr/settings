@@ -11,7 +11,11 @@ function fancy_echo() {
 
 function install_xcode_command_line_tools () {
   fancy_echo 'Installing Xcode Command Line Tools'
-  xcode-select --install
+  if pkgutil --pkg-info com.apple.pkg.CLTools_Executables >/dev/null 2>&1; then
+    echo 'Already installed'
+  else
+    xcode-select --install
+  fi
 }
 
 function install_zsh () {
