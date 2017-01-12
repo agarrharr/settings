@@ -51,9 +51,6 @@ nnoremap <leader>to :!t out<CR>
 " Mappings for Functions
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" Remove all trailing whitespace in a file
-nnoremap <leader>w :StripTrailingWhitespaces<CR>
-
 " Print current git branch
 nnoremap <leader>b :PrintCurrentBranch<CR>
 

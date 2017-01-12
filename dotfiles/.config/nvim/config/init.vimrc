@@ -16,14 +16,19 @@ function! InstallInstantMarkdown(info)
   endif
 endfunction
 Plug 'suan/vim-instant-markdown', { 'do': function('InstallInstantMarkdown') }
+" Formatter
+function! InstallJsBeautifier(info)
+  if a:info.status == 'installed' || a:info.force
+    !npm -g install js-beautify
+  endif
+endfunction
+Plug 'Chiel92/vim-autoformat', { 'do': function('InstallJsBeautifier') }
 " Autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Commenter
 Plug 'tpope/vim-commentary'
 " Fuzzy searching for opening files
 Plug 'ctrlpvim/ctrlp.vim'
-" JavaScript Beautifier (also html and css)
-Plug 'maksimr/vim-jsbeautify'
 " Quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
 " Closes html/xml tags after typing </

@@ -26,15 +26,10 @@ nmap <M-k> <Plug>MoveLineUp
 vmap <M-j> <Plug>MoveBlockDown
 vmap <M-k> <Plug>MoveBlockUp
 
-" vim-jsbeautify
-augroup plugin_jsBeautify
-  autocmd!
-  autocmd FileType javascript noremap <buffer>  <leader>bj :call JsBeautify()<cr>
-  " for html
-  autocmd FileType html noremap <buffer> <leader>bh :call HtmlBeautify()<cr>
-  " for css or scss
-  autocmd FileType css noremap <buffer> <leader>bc :call CSSBeautify()<cr>
-augroup END
+" vim-autoformat
+nnoremap <leader>a :Autoformat<CR>
+nnoremap <leader>w :RemoveTrailingSpaces<CR>
+
 
 " consolate-vim
 nnoremap <leader>c :Consolate<cr>
