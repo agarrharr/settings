@@ -27,7 +27,7 @@ vmap <M-j> <Plug>MoveBlockDown
 vmap <M-k> <Plug>MoveBlockUp
 
 " vim-autoformat
-nnoremap <leader>a :Autoformat<CR>
+nnoremap <leader>f :Autoformat<CR>
 nnoremap <leader>w :RemoveTrailingSpaces<CR>
 
 
