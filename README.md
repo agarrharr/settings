@@ -124,6 +124,7 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
         - for: 5 Seconds
 - General
   - [x] Launch Bartender at Login
+  - [ ] Autohides
   - Clicking on Bartender will (Display Bartender Bar items in menu bar)
 - Appearance
   - Gap at right of menu bar: Insert a gap when Notification Center is hidden (off)
