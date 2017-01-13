@@ -1,3 +1,4 @@
 diff-so-fancy
+prettier
 pure-prompt
 trash-cli

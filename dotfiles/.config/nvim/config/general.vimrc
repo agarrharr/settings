@@ -53,11 +53,18 @@ autocmd BufWinEnter,WinEnter term://* startinsert
 " Setup indicator for 132 columns
 set colorcolumn=133
 
-" Set comment style for javascript to single line
+" Set comment style for JavaScript to single line
 augroup filetype_js
   autocmd!
   autocmd FileType javascript set commentstring=//\ %s
 augroup END
+
+" Helps gf know how to open JavaScript files
+set path+=**
+set suffixesadd+=.js
+
+" Set prettier as the JavaScript formatter
+autocmd FileType javascript set formatprg=prettier\ --stdin
 
 " Copy to system clipboard when you yank
 set clipboard=unnamed
@@ -83,7 +90,3 @@ set updatetime=100
 
 " Fixes issue I had with json files hiding quotes
 setlocal conceallevel=0
-
-" Helps gf know how to open javascript files
-set path+=**
-set suffixesadd+=.js
