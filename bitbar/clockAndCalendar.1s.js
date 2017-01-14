@@ -7,6 +7,8 @@
 // <bitbar.desc>Clock and calendar. It has an option for 24 hour time.</bitbar.desc>
 // <bitbar.dependencies>node.js</bitbar.dependencies>
 
+const ncp = require('./clockAndCalendar/node_modules/copy-paste');
+
 const options = {
   notation: '24',
 };
@@ -15,29 +17,38 @@ const months = ['January','February','March','April','May','June','July','August
 const RED = '\033[0;31m';
 const YELLOW = '\033[0;33m';
 const NC = '\033[0m';
-const filters = `trim=false font=AndaleMono href=https://calendar.google.com/`;
+const linkFilter = `font=AndaleMono href=https://calendar.google.com/`;
+const fontFilter = `font=AndaleMono`;
+const trimFilter = `trim=false`;
 
 const now = new Date();
-let hour = now.getHours();
-let minutes = now.getMinutes();
-const day = now.getDate();
-const month = months[now.getMonth()];
-const firstDayOfWeek = new Date(now.getFullYear(), now.getMonth(), 1).getDay();
+
 const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
-
 const numberOfDigits = (a) =>  Math.floor(Math.log10(a)) + 1;
+const padLeft = (a) => numberOfDigits(a) === 2 ? a : `0${a}`;
 
+let hour;
+let minutes;
 if (options.notation === '24') {
-  const hourDigits = numberOfDigits(hour);
-  const minuteDigits = numberOfDigits(minutes);
-  hour = hourDigits === 2 ? hour : `0` + hour;
-  minutes = minuteDigits === 2 ? minutes : `0` + minutes;
+  hour = padLeft(now.getHours());
+  minutes = padLeft(now.getMinutes());
+} else {
+  hour = now.getHours();
+  minutes = now.getMinutes();
 }
+
+const day = now.getDate();
+const month = padLeft(now.getMonth() + 1);
+const monthName = months[now.getMonth()];
+const year = now.getFullYear();
+
+const firstDayOfWeek = new Date(now.getFullYear(), now.getMonth(), 1).getDay();
+
 
 console.log(`${hour}:${minutes}`);
 console.log(`---`);
-console.log(`  ${month}| ${filters}`);
-console.log(`  S  M  T  W  T  F  S| ${filters}`);
+console.log(`  ${monthName}| ${fontFilter} ${linkFilter} ${trimFilter}`);
+console.log(`  S  M  T  W  T  F  S| ${fontFilter} ${linkFilter} ${trimFilter}`);
 
 let daysSoFar = 0;
 let currentWeekString = ``;
@@ -50,7 +61,10 @@ for(let i = 1; i <= daysInMonth; i += 1) {
   currentWeekString += `${extraSpace} ${i}`;
   currentWeekString += day === i ? NC : '';
   if ((i) % 7 === 0 || i === daysInMonth) {
-    console.log(`${currentWeekString}|${filters}`);
+    console.log(`${currentWeekString}|${fontFilter} ${linkFilter} ${trimFilter}`);
     currentWeekString = '';
   }
 }
+
+const fullDate = `${year}-${month}-${day}`;
+console.log(`${fullDate}| ${fontFilter} bash='echo' param1="${fullDate} | pbcopy" terminal=false`);
