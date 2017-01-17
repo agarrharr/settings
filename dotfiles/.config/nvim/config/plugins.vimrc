@@ -26,10 +26,9 @@ nmap <M-k> <Plug>MoveLineUp
 vmap <M-j> <Plug>MoveBlockDown
 vmap <M-k> <Plug>MoveBlockUp
 
-" vim-autoformat
+" vim-autoformat    
 nnoremap <leader>f :Autoformat<CR>
-nnoremap <leader>w :RemoveTrailingSpaces<CR>
-
+nnoremap <leader>w mz:RemoveTrailingSpaces<CR>`z
 
 " consolate-vim
 nnoremap <leader>c :Consolate<cr>
