@@ -24,3 +24,5 @@ skitch
 skype
 spotify
 sublime-text
+toggldesktop
+transmission
