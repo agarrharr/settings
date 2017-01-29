@@ -9,6 +9,7 @@ bartender
 bitbar
 dropbox
 flux
+genymotion
 glueprint
 google-chrome
 grandperspective

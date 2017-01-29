@@ -36,7 +36,8 @@ RUBY_PATH="/usr/local/opt/ruby/bin:/Library/Ruby/Gems/2.0.0/gems"
 RVM_PATH="$HOME/.rvm/gems/ruby-2.1.5/bin:$HOME/.rvm/bin"
 PROJECT_NPM_PATH="./node_modules/.bin"
 YARN_PATH="$HOME/.yarn/bin"
-export PATH="$PATH:$LOCAL_PATH:$RUBY_PATH:$RVM_PATH:$PROJECT_NPM_PATH:$YARN_PATH"
+ANDROID_PATH="$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools"
+export PATH="$PATH:$LOCAL_PATH:$RUBY_PATH:$RVM_PATH:$PROJECT_NPM_PATH:$YARN_PATH:$ANDROID_PATH"
 
 # ==================================================================
 # Prompt

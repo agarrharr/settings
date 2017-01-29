@@ -10,4 +10,5 @@ reattach-to-user-namespace
 thefuck
 tmux
 vim
+watchman
 z
