@@ -1,6 +1,7 @@
 adobe-creative-cloud
 adobe-photoshop-cc
 adobe-illustrator-cc
+android-studio
 anki
 audacity
 audacity-lame-library
