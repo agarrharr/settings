@@ -13,6 +13,7 @@ genymotion
 glueprint
 google-chrome
 grandperspective
+hammerspoon
 hyper
 iterm2
 keyboard-maestro

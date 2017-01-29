@@ -49,6 +49,16 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
   - Default web browser: Google Chrome.app
 - Mission Control
   - [ ] Automatically rearrange Spaces based on most recent use
+- Security & Privacy
+  - Privacy
+    - Accessibility
+      - [x] Dropbox.app
+      - [x] Hammerspoon.app
+      - [x] Keyboard Maestro Engine.app
+      - [x] Keyboard Maestro.app
+      - [x] RescueTime.app
+      - [x] Steam.app
+      - [x] System Events.app
 - Keyboard
   - [ ] Adjust keyboard brightness in low light
   - [x] Use all keyboard and emoji viewers as standard function keys
@@ -77,12 +87,14 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
     - [x] Box Sync
     - [x] Dropbox
     - [x] Flux
+    - [x] Hammerspoon
     - [x] iTunesHelper
-    - [x] Keyboard Maestro
+    - [x] Keyboard Maestro Engine
     - [x] RescueTime
 - Accessibility
-  - [x] Use scroll gesture with modifier keys to zoom:
-    - Control
+  - Zoom
+    - [x] Use scroll gesture with modifier keys to zoom:
+      - Control
 
 #### Finder
 
@@ -145,6 +157,11 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
 1. Download [nova.itermcolors](https://raw.githubusercontent.com/trevordmiller/nova-iterm/master/build/nova.itermcolors)
 1. Profiles -> Colors -> Color Presets -> Import
 1. Select "nova.itermcolors"
+
+#### Hammerspoon
+
+- [x] Launch Hammerspoon at login
+- [ ] Show dock icon
 
 #### Mutt
 
