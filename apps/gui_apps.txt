@@ -6,6 +6,7 @@ anki
 audacity
 audacity-lame-library
 audio-hijack
+backblaze
 bartender
 bitbar
 dropbox
