@@ -197,6 +197,10 @@ srm ~/.my-pwds
 
 Create `~/.my-pandora-pwd` that contains password.
 
+#### Surfingkeys
+
+Load settings from `~/.config/surfingkeys/index.js`
+
 ### Mac App Store Apps to Install
 
 - Final Cut Pro
