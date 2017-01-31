@@ -1,4 +1,5 @@
 diff-so-fancy
 prettier-eslint-cli
 pure-prompt
+tldr
 trash-cli
