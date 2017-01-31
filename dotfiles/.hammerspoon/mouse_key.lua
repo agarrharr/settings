@@ -46,9 +46,9 @@ end
 
 for i = 1, 4 do
     local fn = hs.fnutils.partial(moveMouse, DX[i] * DELTA, DY[i] * DELTA)
-    modal:bind('', KEYS[i], fn, nil, fn)
     local fnSlow = hs.fnutils.partial(moveMouse, DX[i] * SLOW_DELTA, DY[i] * SLOW_DELTA)
     local fnFast = hs.fnutils.partial(moveMouse, DX[i] * FAST_DELTA, DY[i] * FAST_DELTA)
+    modal:bind('', KEYS[i], fn, nil, fn)
     modal:bind('cmd', KEYS[i], fnSlow, nil, fnSlow)
     modal:bind('alt', KEYS[i], fnFast, nil, fnFast)
 end

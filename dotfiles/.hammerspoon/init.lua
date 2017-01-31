@@ -1,6 +1,11 @@
 prefix = require("prefix")
 require("mouse_key")
+require("mouse-highlight")
 require("window-management")
+
+
+-- reload the config
+hs.hotkey.bind({"cmd","alt","shift"}, "D", mouseHighlight)
 
 -- reload the config
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
