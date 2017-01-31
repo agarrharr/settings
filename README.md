@@ -184,7 +184,7 @@ Accept all the defaults, enter real name, email address, and password for the ke
 Encrypt the password file and delete the old one. srm is a more secure delete.
 
 ```
-gpg -r aharris88@gmail.com -e ~/.my-pwds
+gpg -r adam@gmail.com -e ~/.my-pwds
 srm ~/.my-pwds
 ```
 
