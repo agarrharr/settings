@@ -253,4 +253,5 @@ Put something like this in `.local.zshrc`
 
 ```
 alias ge="git config --global user.email 'aharris88@users.noreply.github.com'"
+alias gwe="git config --global user.email 'adam@work.com'"
 ```
