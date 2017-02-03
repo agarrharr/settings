@@ -246,6 +246,13 @@ defaults write com.google.Chrome.canary AppleEnableMouseSwipeNavigateWithScrolls
 # Install Sublime Text settings
 #cp -r settings/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
 
+
+###############################################################################
+# Bitbar
+###############################################################################
+
+defaults write com.matryer.Bitbar pluginsDirectory -string "${HOME}/.config/bitbar"
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################

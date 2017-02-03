@@ -18,7 +18,6 @@ grandperspective
 hammerspoon
 hyper
 iterm2
-keyboard-maestro
 mou
 notational-velocity
 rescuetime

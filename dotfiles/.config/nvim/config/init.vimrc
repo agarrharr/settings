@@ -15,7 +15,7 @@ function! InstallInstantMarkdown(info)
     !npm -g install instant-markdown-d
   endif
 endfunction
-Plug 'suan/vim-instant-markdown', { 'do': function('InstallInstantMarkdown') }
+" Plug 'suan/vim-instant-markdown', { 'do': function('InstallInstantMarkdown') }
 " Formatter
 function! InstallJsBeautifier(info)
   if a:info.status == 'installed' || a:info.force
