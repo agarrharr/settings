@@ -4,7 +4,7 @@ require("mouse-highlight")
 require("window-management")
 
 
--- reload the config
+-- mouse highlight
 hs.hotkey.bind({"cmd","alt","shift"}, "D", mouseHighlight)
 
 -- reload the config
