@@ -38,12 +38,12 @@ if (options.notation === '24') {
 }
 
 const day = now.getDate();
+const paddedDay = padLeft(now.getDate());
 const month = padLeft(now.getMonth() + 1);
 const monthName = months[now.getMonth()];
 const year = now.getFullYear();
 
 const firstDayOfWeek = new Date(now.getFullYear(), now.getMonth(), 1).getDay();
-
 
 console.log(`${hour}:${minutes}`);
 console.log(`---`);
@@ -53,18 +53,18 @@ console.log(`  S  M  T  W  T  F  S| ${fontFilter} ${linkFilter} ${trimFilter}`);
 let daysSoFar = 0;
 let currentWeekString = ``;
 for(let i = 1; i <= daysInMonth; i += 1) {
-  if (i === 0) {
-    currentWeekString = ' '.repeat(firstDayOfWeek * 2);
+  if (i === 1) {
+    currentWeekString = ' '.repeat(firstDayOfWeek * 2 + firstDayOfWeek);
   }
   const extraSpace = numberOfDigits(i) === 1 ? ' ' : '';
   currentWeekString += day === i ? RED : '';
   currentWeekString += `${extraSpace} ${i}`;
   currentWeekString += day === i ? NC : '';
-  if ((i) % 7 === 0 || i === daysInMonth) {
+  if ((i + firstDayOfWeek) % 7 === 0 || i === daysInMonth) {
     console.log(`${currentWeekString}|${fontFilter} ${linkFilter} ${trimFilter}`);
     currentWeekString = '';
   }
 }
 
-const fullDate = `${year}-${month}-${day}`;
-console.log(`${fullDate}| ${fontFilter} bash='echo' param1="${fullDate} | pbcopy" terminal=false`);
+const fullDate = `${year}-${month}-${paddedDay}`;
+console.log(`${fullDate}| ${fontFilter} bash='echo' param1="${fullDate} | pbcopy" terminal=true`);
