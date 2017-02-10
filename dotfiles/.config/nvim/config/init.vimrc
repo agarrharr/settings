@@ -71,6 +71,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 " Highlight yanked text
 Plug 'machakann/vim-highlightedyank'
+" Calculate
+Plug 'arecarn/vim-crunch'
 
 call plug#end()
 
