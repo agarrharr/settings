@@ -128,7 +128,7 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
 - Enable hiding Spotlight with Bartender (https://www.macbartender.com/B2/system-item-setup/)
 - Menu Items
   - Completely Hide Menu Bar Item: Battery, Clock, Siri, Spotlight, Notification Center, User
-  - Nothing, Bartender does not do anything: BitBar
+  - Nothing, Bartender does not do anything: BitBar, TogglDesktop
   - Show in Bartender Bar, not in Menu Bar: everything else
   - Airport (wifi)
     - Item Updates
@@ -200,6 +200,17 @@ Create `~/.my-pandora-pwd` that contains password.
 #### Surfingkeys
 
 Load settings from `~/.config/surfingkeys/index.js`
+
+### Toggl
+
+- Preferences
+  - General
+    - [x] Record timeline
+    - [x] Show timer on menu bar
+    - [x] Show project on menu bar
+  - Reminder
+    - [x] Remind to track time
+      - (M-F)
 
 ### Mac App Store Apps to Install
 
