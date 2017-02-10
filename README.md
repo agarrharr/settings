@@ -205,6 +205,7 @@ Load settings from `~/.config/surfingkeys/index.js`
 
 - Preferences
   - General
+    - [ ] Idle detection
     - [x] Record timeline
     - [x] Show timer on menu bar
     - [x] Show project on menu bar
