@@ -49,6 +49,7 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
   - Default web browser: Google Chrome.app
 - Mission Control
   - [ ] Automatically rearrange Spaces based on most recent use
+  - [x] Displays have separate Spaces
 - Security & Privacy
   - Privacy
     - Accessibility
