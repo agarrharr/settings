@@ -78,6 +78,7 @@ alias gl="git pull"
 alias glg="git log --stat --max-count=10"
 alias gp="git push"
 alias gst="git status"
+alias gs="git stash save --include-untracked"
 
 gitAddStatus() {
   git add $*
