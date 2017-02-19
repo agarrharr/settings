@@ -73,6 +73,8 @@ Plug 'mxw/vim-jsx'
 Plug 'machakann/vim-highlightedyank'
 " Calculate
 Plug 'arecarn/vim-crunch'
+" Code coverage
+Plug 'ruanyl/coverage.vim'
 
 call plug#end()
 

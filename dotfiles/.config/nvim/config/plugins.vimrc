@@ -39,3 +39,10 @@ let g:ctrlp_match_window = 'results:100'
 
 " vim-jsx
 let g:jsx_ext_required = 0
+
+" coverage.vim
+let g:coverage_json_report_path = 'artifacts/coverage/coverage-final.json'
+let g:coverage_sign_covered = '⦿'
+let g:coverage_interval = 5000
+let g:coverage_show_covered = 0
+let g:coverage_show_uncovered = 1
