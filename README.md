@@ -202,7 +202,14 @@ Create `~/.my-pandora-pwd` that contains password.
 
 Load settings from `~/.config/surfingkeys/index.js`
 
-### Toggl
+#### Todoist
+
+- Preferences
+  - Shortcuts
+    - Show / Hide Todoist - ⌃⌘T
+    - Quick Add Task - ⌃⌘A
+
+#### Toggl
 
 - Preferences
   - General
