@@ -218,6 +218,7 @@ Load settings from `~/.config/surfingkeys/index.js`
 
 - Final Cut Pro
 - OneDrive
+- Todoist
 
 #### Other Apps to Install
 
