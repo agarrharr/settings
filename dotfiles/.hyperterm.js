@@ -8,5 +8,9 @@ module.exports = {
       altIsMeta: true
     }
   },
-  plugins: ['nova-hyperterm', 'hyperterm-summon']
+  plugins: [
+    'nova-hyperterm',
+    'hyperterm-summon',
+    'hyper-hide-title'
+  ]
 };
