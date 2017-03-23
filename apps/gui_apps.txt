@@ -24,6 +24,7 @@ rescuetime
 screenflow
 skitch
 skype
+slack
 spotify
 sublime-text
 toggldesktop
