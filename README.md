@@ -60,6 +60,9 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
       - [x] RescueTime.app
       - [x] Steam.app
       - [x] System Events.app
+- Displays
+  - Night Shift
+    - Schedule - Sunrise to Sunset
 - Keyboard
   - [ ] Adjust keyboard brightness in low light
   - [x] Use all keyboard and emoji viewers as standard function keys
@@ -87,7 +90,6 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
     - [x] Bitbar
     - [x] Box Sync
     - [x] Dropbox
-    - [x] Flux
     - [x] Hammerspoon
     - [x] iTunesHelper
     - [x] Keyboard Maestro Engine
