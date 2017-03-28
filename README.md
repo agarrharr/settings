@@ -171,6 +171,15 @@ Download [nova.itermcolors](https://raw.githubusercontent.com/trevordmiller/nova
 - [x] Launch Hammerspoon at login
 - [ ] Show dock icon
 
+#### Mail
+
+- All Day Events: None
+- Birthdays: None
+- Alerts
+  - [ ] Time to Leave
+- Advanced
+  - [x] Turn on time zone support
+
 #### Mutt
 
 On Google, enable 2-step verification and add an [app specific password](https://security.google.com/settings/security/apppasswords). Use this password in the `~/.my-pwds` file.
