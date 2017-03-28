@@ -157,9 +157,14 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
 
 #### iTerm 2
 
-1. Download [nova.itermcolors](https://raw.githubusercontent.com/trevordmiller/nova-iterm/master/build/nova.itermcolors)
-1. Profiles -> Colors -> Color Presets -> Import
-1. Select "nova.itermcolors"
+Download [nova.itermcolors](https://raw.githubusercontent.com/trevordmiller/nova-iterm/master/build/nova.itermcolors)
+
+- Profiles
+  - Colors
+    - [x] Smart Cursor Color
+    - Color Presets
+      - Import
+        - nova.itermcolors
 
 #### Hammerspoon
 
