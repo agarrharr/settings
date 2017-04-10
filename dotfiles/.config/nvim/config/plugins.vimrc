@@ -26,10 +26,6 @@ nmap <M-k> <Plug>MoveLineUp
 vmap <M-j> <Plug>MoveBlockDown
 vmap <M-k> <Plug>MoveBlockUp
 
-" vim-autoformat    
-nnoremap <leader>f :Autoformat<CR>
-nnoremap <leader>w mz:RemoveTrailingSpaces<CR>`z
-
 " consolate-vim
 nnoremap <leader>c :Consolate<cr>
 
@@ -46,3 +42,11 @@ let g:coverage_sign_covered = '⦿'
 let g:coverage_interval = 5000
 let g:coverage_show_covered = 0
 let g:coverage_show_uncovered = 1
+
+" neoformat
+autocmd BufWritePre *.js Neoformat
+let g:neoformat_javascript_prettier = {
+  \ 'exe': 'prettier',
+  \ 'args': ['--single-quote', '--no-bracket-spacing', '--trailing-comma', 'es5', '--stdin'],
+  \ 'stdin': 1
+\ }

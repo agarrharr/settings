@@ -9,20 +9,8 @@ function! BuildTern(info)
   endif
 endfunction
 Plug 'carlitux/deoplete-ternjs', { 'do': function('BuildTern') }
-" markdown preview
-function! InstallInstantMarkdown(info)
-  if a:info.status == 'installed' || a:info.force
-    !npm -g install instant-markdown-d
-  endif
-endfunction
-" Plug 'suan/vim-instant-markdown', { 'do': function('InstallInstantMarkdown') }
-" Formatter
-function! InstallJsBeautifier(info)
-  if a:info.status == 'installed' || a:info.force
-    !npm -g install js-beautify
-  endif
-endfunction
-Plug 'Chiel92/vim-autoformat', { 'do': function('InstallJsBeautifier') }
+" Formatting
+Plug 'sbdchd/neoformat'
 " Autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Commenter
