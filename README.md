@@ -145,6 +145,15 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
   - Gap at right of menu bar: Insert a gap when Notification Center is hidden (off)
 - Command + drap  the bartender icon all the way to the right, BitBar, wifi, then volume
 
+#### Calendar
+
+- Alerts
+  - All Day Events: None
+  - Birthdays: None
+  - [ ] Time to Leave
+- Advanced
+  - [x] Turn on time zone support
+
 #### Chrome
 
 - Chrome menu -> "Warn Before Quitting (⌘Q)"
@@ -173,12 +182,12 @@ Download [nova.itermcolors](https://raw.githubusercontent.com/trevordmiller/nova
 
 #### Mail
 
-- All Day Events: None
-- Birthdays: None
-- Alerts
-  - [ ] Time to Leave
-- Advanced
-  - [x] Turn on time zone support
+- General
+  - Default email reader: Mail.app
+  - New messages sound: None
+    - [ ] Play sounds for other mail actions
+- Viewing
+  - [x] Mark all messages as read when opening a conversation
 
 #### Mutt
 
