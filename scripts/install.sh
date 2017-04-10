@@ -125,7 +125,7 @@ function nvim {
   fancy_echo "Installing Neovim"
   fancy_echo "Brew install neovim"
   brew tap neovim/neovim
-  brew install neovim --HEAD
+  brew install neovim
   fancy_echo "pip install neovim"
   pip2 install neovim
   pip3 install neovim
