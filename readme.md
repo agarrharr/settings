@@ -126,6 +126,10 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
 
 ### Manual Application Settings
 
+#### Audacity
+
+Get LAME mp3 encoder.
+
 #### Bartender
 
 - Enable hiding Spotlight with Bartender (https://www.macbartender.com/B2/system-item-setup/)
@@ -254,7 +258,7 @@ Load settings from `~/.config/surfingkeys/index.js`
 
 #### Other Apps to Install
 
-- Outlook
+- Audacity
 - Tweetdeck
 
 ### Manual Development Settings
