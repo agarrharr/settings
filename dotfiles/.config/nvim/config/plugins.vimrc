@@ -45,6 +45,7 @@ let g:coverage_show_uncovered = 1
 
 " neoformat
 autocmd BufWritePre *.js Neoformat
+let g:neoformat_enabled_javascript = ['prettier']
 let g:neoformat_javascript_prettier = {
   \ 'exe': 'prettier',
   \ 'args': ['--single-quote', '--no-bracket-spacing', '--trailing-comma', 'es5', '--stdin'],
