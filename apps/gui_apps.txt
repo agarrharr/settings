@@ -24,5 +24,4 @@ slack
 spotify
 steam
 sublime-text
-toggldesktop
 vlc
