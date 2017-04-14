@@ -14,7 +14,5 @@ notational-velocity
 sketch
 skitch
 skype
-slack
-sublime-text
 thunderbird
 vlc
