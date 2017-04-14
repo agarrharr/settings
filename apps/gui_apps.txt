@@ -4,7 +4,6 @@ audio-hijack
 backblaze
 dropbox
 firefox
-glueprint
 google-chrome
 grandperspective
 hammerspoon

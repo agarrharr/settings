@@ -218,7 +218,8 @@ Load settings from `~/.config/surfingkeys/index.js`
 
 #### Other Apps to Install
 
-- Audacity
+- [Audacity](http://www.audacityteam.org/)
+- [LayerX](https://github.com/yuhua-chen/LayerX)
 
 ### Manual Development Settings
 
