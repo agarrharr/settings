@@ -55,10 +55,6 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
     - Accessibility
       - [x] Dropbox.app
       - [x] Hammerspoon.app
-      - [x] Keyboard Maestro Engine.app
-      - [x] Keyboard Maestro.app
-      - [x] RescueTime.app
-      - [x] Steam.app
       - [x] System Events.app
 - Displays
   - Night Shift
@@ -86,14 +82,13 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
   - [x] Find My Mac
 - Users & Groups
   - Login Items
-    - [x] Bartender
-    - [x] Bitbar
-    - [x] Box Sync
     - [x] Dropbox
     - [x] Hammerspoon
     - [x] iTunesHelper
-    - [x] Keyboard Maestro Engine
-    - [x] RescueTime
+- Date & Time
+  - Clock
+    - [x] Digital
+    - [x] Use a 24-hour clock
 - Accessibility
   - Zoom
     - [x] Use scroll gesture with modifier keys to zoom:
@@ -111,16 +106,10 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
     - New Finder windows show: Development
 - Sidebar
   - Favorites
-    - [ ] AirDrop
-    - [ ] All My Files
-    - [ ] Applications
-    - [ ] Desktop
-    - [ ] iCloud Drive
-    - [ ] Box Sync
-    - [x] Dropbox
-    - [x] Development
-    - [x] Documents
-    - [x] Downloads
+    - Dropbox
+    - Development
+    - Documents
+    - Downloads
   - Hide Tags
   - Hide Shared
 
@@ -129,25 +118,6 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
 #### Audacity
 
 Get LAME mp3 encoder.
-
-#### Bartender
-
-- Enable hiding Spotlight with Bartender (https://www.macbartender.com/B2/system-item-setup/)
-- Menu Items
-  - Completely Hide Menu Bar Item: Battery, Clock, Siri, Spotlight, Notification Center, User
-  - Nothing, Bartender does not do anything: BitBar, TogglDesktop
-  - Show in Bartender Bar, not in Menu Bar: everything else
-  - Airport (wifi)
-    - Item Updates
-      - [x] Show item in menu bar
-        - for: 5 Seconds
-- General
-  - [x] Launch Bartender at Login
-  - [ ] Autohides
-  - Clicking on Bartender will (Display Bartender Bar items in menu bar)
-- Appearance
-  - Gap at right of menu bar: Insert a gap when Notification Center is hidden (off)
-- Command + drap  the bartender icon all the way to the right, BitBar, wifi, then volume
 
 #### Calendar
 
@@ -242,35 +212,13 @@ Create `~/.my-pandora-pwd` that contains password.
 
 Load settings from `~/.config/surfingkeys/index.js`
 
-#### Todoist
-
-- Preferences
-  - Shortcuts
-    - Show / Hide Todoist - ⌃⌘T
-    - Quick Add Task - ⌃⌘A
-
-#### Toggl
-
-- Preferences
-  - General
-    - [ ] Idle detection
-    - [x] Record timeline
-    - [x] Show timer on menu bar
-    - [x] Show project on menu bar
-  - Reminder
-    - [x] Remind to track time
-      - (M-F)
-
 ### Mac App Store Apps to Install
 
 - Final Cut Pro
-- OneDrive
-- Todoist
 
 #### Other Apps to Install
 
 - Audacity
-- Tweetdeck
 
 ### Manual Development Settings
 

@@ -2,10 +2,8 @@ android-studio
 anki
 audio-hijack
 backblaze
-bitbar
 dropbox
 firefox
-genymotion
 glueprint
 google-chrome
 grandperspective
@@ -14,7 +12,6 @@ hyper
 iterm2
 kap
 notational-velocity
-rescuetime
 sketch
 skitch
 skype
