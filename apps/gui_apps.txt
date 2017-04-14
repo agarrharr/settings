@@ -2,7 +2,6 @@ android-studio
 anki
 audio-hijack
 backblaze
-bartender
 bitbar
 dropbox
 firefox
@@ -12,16 +11,14 @@ google-chrome
 grandperspective
 hammerspoon
 hyper
-id3-editorid3-editor
 iterm2
+kap
 notational-velocity
 rescuetime
-screenflow
 sketch
 skitch
 skype
 slack
-spotify
-steam
 sublime-text
+thunderbird
 vlc

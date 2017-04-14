@@ -161,12 +161,23 @@ Get LAME mp3 encoder.
 #### Chrome
 
 - Chrome menu -> "Warn Before Quitting (⌘Q)"
+- Preferences
+  - Settings
+    - Search [DuckDuckGo]
 
 #### Dropbox
 
 - Sign in
 - Preferences -> Import -> Photos
   - [ ] Enable camera uploads for [Photos and videos]
+
+#### Firefox
+
+- Preferences
+  - General
+    - Home Page: https://duckduckgo.com/
+  - Search
+    - Default Search Engine: DuckDuckGo
 
 #### iTerm 2
 

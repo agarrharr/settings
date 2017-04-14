@@ -221,6 +221,13 @@ defaults write com.apple.commerce AutoUpdate -bool true
 defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 
 ###############################################################################
+# Mail
+###############################################################################
+
+# Don't inline image attachments
+defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes
+
+###############################################################################
 # Photos                                                                      #
 ###############################################################################
 

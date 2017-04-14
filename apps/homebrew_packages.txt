@@ -7,6 +7,7 @@ n
 pianobar
 python3
 reattach-to-user-namespace
+task
 thefuck
 tmux
 vim
