@@ -15,4 +15,5 @@ sketch
 skitch
 skype
 thunderbird
+torbrowser
 vlc
