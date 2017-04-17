@@ -39,8 +39,6 @@ Plug 'tpope/vim-repeat'
 Plug 'PProvost/vim-markdown-jekyll'
 " Add JavaScript console.log
 Plug 'aharris88/consolation-vim'
-" Track time spent coding
-Plug 'wakatime/vim-wakatime'
 " enhances netrw
 Plug 'tpope/vim-vinegar'
 " Distraction-free writing
