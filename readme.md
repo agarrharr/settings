@@ -56,6 +56,13 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
       - [x] Dropbox.app
       - [x] Hammerspoon.app
       - [x] System Events.app
+- Spotlight
+  - Search Results
+    - [x] Applications
+    - [x] Calculator
+    - [x] Conversion
+    - [x] Definition
+    - [x] System Preferences
 - Displays
   - Night Shift
     - Schedule - Sunrise to Sunset
