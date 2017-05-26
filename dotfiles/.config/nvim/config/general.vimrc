@@ -1,5 +1,7 @@
 set number
 
+let mapleader = "\<Space>"
+
 colorscheme nova
 
 " Turn on spell checking for commit messages and automatic wrapping at the recommended 72 characters
