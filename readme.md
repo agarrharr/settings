@@ -39,6 +39,13 @@ pbcopy < ~/.ssh/id_rsa.pub
 cd ~/settings && git init && git add . && git remote add origin git@github.com:aharris88/settings.git && git remote update && git checkout master && cd -
 ```
 
+### Web Apps
+
+#### ProtonMail
+
+- Email Content
+  - Load embedded images [Manual]
+
 ## Manual Settings
 
 ### Manual System Settings
@@ -121,6 +128,12 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
   - Hide Shared
 
 ### Manual Application Settings
+
+- Make Skim the default app for `.pdf`.
+- Make VLC the defalt app for video and audio (`.m4v`, `.mov`, `.mp3`, `.mp4`, etc.).
+- Make Sequential the default app for images (`.jpg`, `.jpeg`, `.png`, `.gif`, etc.).
+
+To make an app the default for a file type: Right-click on a file with that extension, and click "Info", change the app under "Open with:", and click "Change All...".
 
 #### Audacity
 
@@ -272,3 +285,13 @@ Put something like this in `.local.zshrc`
 alias ge="git config --global user.email 'aharris88@users.noreply.github.com'"
 alias gwe="git config --global user.email 'adam@work.com'"
 ```
+
+### Android Apps
+
+#### Maps.me
+
+- Settings
+  - Miscellaneous
+    - [ ] Show offers
+    - [ ] Send Statistics
+    - [ ] Google Play Services

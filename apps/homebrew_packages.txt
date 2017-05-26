@@ -1,7 +1,9 @@
 dfu-util
 git
 gpg
+graphicsmagick
 hub
+imagemagick
 mutt
 n
 pianobar
