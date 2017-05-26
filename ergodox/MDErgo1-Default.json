@@ -42,6 +42,10 @@
                     "key": "5",
                     "label": "5"
                 },
+                "1": {
+                    "key": "6",
+                    "label": "6"
+                },
                 "2": {
                     "key": "#:'%'",
                     "label": "%"
@@ -49,6 +53,10 @@
                 "3": {
                     "key": "#:None",
                     "label": "NONE"
+                },
+                "4": {
+                    "key": "F5",
+                    "label": "F5"
                 }
             }
         },
@@ -63,6 +71,10 @@
                     "key": "4",
                     "label": "4"
                 },
+                "1": {
+                    "key": "7",
+                    "label": "7"
+                },
                 "2": {
                     "key": "#:'$'",
                     "label": "$"
@@ -70,6 +82,10 @@
                 "3": {
                     "key": "#:None",
                     "label": "NONE"
+                },
+                "4": {
+                    "key": "F4",
+                    "label": "F4"
                 }
             }
         },
@@ -84,6 +100,10 @@
                     "key": "3",
                     "label": "3"
                 },
+                "1": {
+                    "key": "8",
+                    "label": "8"
+                },
                 "2": {
                     "key": "#:'#'",
                     "label": "#"
@@ -91,6 +111,10 @@
                 "3": {
                     "key": "P\/",
                     "label": "P\/"
+                },
+                "4": {
+                    "key": "F3",
+                    "label": "F3"
                 }
             }
         },
@@ -105,6 +129,10 @@
                     "key": "2",
                     "label": "2"
                 },
+                "1": {
+                    "key": "9",
+                    "label": "9"
+                },
                 "2": {
                     "key": "#:'@'",
                     "label": "@"
@@ -112,6 +140,10 @@
                 "3": {
                     "key": "P*",
                     "label": "P*"
+                },
+                "4": {
+                    "key": "F2",
+                    "label": "F2"
                 }
             }
         },
@@ -126,6 +158,10 @@
                     "key": "1",
                     "label": "1"
                 },
+                "1": {
+                    "key": "0",
+                    "label": "0"
+                },
                 "2": {
                     "key": "#:'!'",
                     "label": "!"
@@ -133,6 +169,10 @@
                 "3": {
                     "key": "P-",
                     "label": "P-"
+                },
+                "4": {
+                    "key": "F1",
+                    "label": "F1"
                 }
             }
         },
@@ -161,8 +201,8 @@
             "h": 6,
             "layers": {
                 "0": {
-                    "key": "#:None",
-                    "label": "NONE"
+                    "key": "BACKSLASH",
+                    "label": "\\"
                 },
                 "2": {
                     "key": "#:'<'",
@@ -202,8 +242,8 @@
                     "label": "NONE"
                 },
                 "4": {
-                    "key": "F5",
-                    "label": "F5"
+                    "key": "F10",
+                    "label": "F10"
                 }
             }
         },
@@ -227,12 +267,12 @@
                     "label": "("
                 },
                 "3": {
-                    "key": "P9",
-                    "label": "P9"
+                    "key": "P7",
+                    "label": "P7"
                 },
                 "4": {
-                    "key": "F4",
-                    "label": "F4"
+                    "key": "F9",
+                    "label": "F9"
                 }
             }
         },
@@ -260,8 +300,8 @@
                     "label": "P8"
                 },
                 "4": {
-                    "key": "F3",
-                    "label": "F3"
+                    "key": "F8",
+                    "label": "F8"
                 }
             }
         },
@@ -285,12 +325,12 @@
                     "label": "&"
                 },
                 "3": {
-                    "key": "P7",
-                    "label": "P7"
+                    "key": "P9",
+                    "label": "P9"
                 },
                 "4": {
-                    "key": "F2",
-                    "label": "F2"
+                    "key": "F7",
+                    "label": "F7"
                 }
             }
         },
@@ -318,8 +358,8 @@
                     "label": "P+"
                 },
                 "4": {
-                    "key": "F1",
-                    "label": "F1"
+                    "key": "F6",
+                    "label": "F6"
                 }
             }
         },
@@ -364,8 +404,8 @@
                     "label": "NONE"
                 },
                 "4": {
-                    "key": "F10",
-                    "label": "F10"
+                    "key": "LEFT",
+                    "label": "\u2190"
                 }
             }
         },
@@ -389,12 +429,12 @@
                     "label": "{"
                 },
                 "3": {
-                    "key": "P6",
-                    "label": "P6"
+                    "key": "P4",
+                    "label": "P4"
                 },
                 "4": {
-                    "key": "F9",
-                    "label": "F9"
+                    "key": "DOWN",
+                    "label": "\u2193"
                 }
             }
         },
@@ -422,8 +462,8 @@
                     "label": "P5"
                 },
                 "4": {
-                    "key": "F8",
-                    "label": "F8"
+                    "key": "UP",
+                    "label": "\u2191"
                 }
             }
         },
@@ -447,12 +487,12 @@
                     "label": "-"
                 },
                 "3": {
-                    "key": "P4",
-                    "label": "P4"
+                    "key": "P6",
+                    "label": "P6"
                 },
                 "4": {
-                    "key": "F7",
-                    "label": "F7"
+                    "key": "RIGHT",
+                    "label": "\u2192"
                 }
             }
         },
@@ -478,10 +518,6 @@
                 "3": {
                     "key": "P+",
                     "label": "P+"
-                },
-                "4": {
-                    "key": "F6",
-                    "label": "F6"
                 }
             }
         },
@@ -540,8 +576,8 @@
             "h": 6,
             "layers": {
                 "0": {
-                    "key": "LSHIFT",
-                    "label": "L\u21d1"
+                    "key": "#:None",
+                    "label": "NONE"
                 },
                 "2": {
                     "key": "#:'>'",
@@ -579,6 +615,10 @@
                 "3": {
                     "key": "#:None",
                     "label": "NONE"
+                },
+                "4": {
+                    "key": "F12",
+                    "label": "F12"
                 }
             }
         },
@@ -602,8 +642,12 @@
                     "label": "["
                 },
                 "3": {
-                    "key": "P3",
-                    "label": "P3"
+                    "key": "P1",
+                    "label": "P1"
+                },
+                "4": {
+                    "key": "F11",
+                    "label": "F11"
                 }
             }
         },
@@ -652,12 +696,8 @@
                     "label": "_"
                 },
                 "3": {
-                    "key": "P1",
-                    "label": "P1"
-                },
-                "4": {
-                    "key": "F12",
-                    "label": "F12"
+                    "key": "P3",
+                    "label": "P3"
                 }
             }
         },
@@ -683,10 +723,6 @@
                 "3": {
                     "key": "PENTER",
                     "label": "P\u21b5"
-                },
-                "4": {
-                    "key": "F11",
-                    "label": "F11"
                 }
             }
         },
@@ -741,8 +777,8 @@
             "h": 8,
             "layers": {
                 "0": {
-                    "key": "SPACE",
-                    "label": "[&nbsp;]"
+                    "key": "FUN2",
+                    "label": "\u01922"
                 }
             }
         },
@@ -754,8 +790,8 @@
             "h": 8,
             "layers": {
                 "0": {
-                    "key": "BACKSPACE",
-                    "label": "BKSP"
+                    "key": "FUN1",
+                    "label": "\u01921"
                 }
             }
         },
@@ -767,8 +803,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "FUN1",
-                    "label": "\u01921"
+                    "key": "BACKSPACE",
+                    "label": "BKSP"
                 },
                 "3": {
                     "key": "P0",
@@ -784,8 +820,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "FUN2",
-                    "label": "\u01922"
+                    "key": "LGUI",
+                    "label": "LGUI"
                 },
                 "3": {
                     "key": "P0",
@@ -801,8 +837,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "LGUI",
-                    "label": "LGUI"
+                    "key": "LALT",
+                    "label": "LALT"
                 },
                 "2": {
                     "key": "SLASH",
@@ -822,8 +858,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "LALT",
-                    "label": "LALT"
+                    "key": "#:None",
+                    "label": "NONE"
                 },
                 "2": {
                     "key": "BACKSLASH",
@@ -891,6 +927,10 @@
                 "3": {
                     "key": "#:None",
                     "label": "NONE"
+                },
+                "4": {
+                    "key": "F5",
+                    "label": "F5"
                 }
             }
         },
@@ -912,6 +952,10 @@
                 "3": {
                     "key": "#:None",
                     "label": "NONE"
+                },
+                "4": {
+                    "key": "F4",
+                    "label": "F4"
                 }
             }
         },
@@ -933,6 +977,10 @@
                 "3": {
                     "key": "P\/",
                     "label": "P\/"
+                },
+                "4": {
+                    "key": "F3",
+                    "label": "F3"
                 }
             }
         },
@@ -954,6 +1002,10 @@
                 "3": {
                     "key": "P*",
                     "label": "P*"
+                },
+                "4": {
+                    "key": "F2",
+                    "label": "F2"
                 }
             }
         },
@@ -975,6 +1027,10 @@
                 "3": {
                     "key": "P-",
                     "label": "P-"
+                },
+                "4": {
+                    "key": "F1",
+                    "label": "F1"
                 }
             }
         },
@@ -1003,8 +1059,8 @@
             "h": 6,
             "layers": {
                 "0": {
-                    "key": "#:None",
-                    "label": "NONE"
+                    "key": "BACKSLASH",
+                    "label": "\\"
                 },
                 "2": {
                     "key": "#:'<'",
@@ -1042,6 +1098,10 @@
                 "3": {
                     "key": "#:None",
                     "label": "NONE"
+                },
+                "4": {
+                    "key": "F10",
+                    "label": "F10"
                 }
             }
         },
@@ -1067,6 +1127,10 @@
                 "3": {
                     "key": "P7",
                     "label": "P7"
+                },
+                "4": {
+                    "key": "F9",
+                    "label": "F9"
                 }
             }
         },
@@ -1092,6 +1156,10 @@
                 "3": {
                     "key": "P8",
                     "label": "P8"
+                },
+                "4": {
+                    "key": "F8",
+                    "label": "F8"
                 }
             }
         },
@@ -1115,8 +1183,12 @@
                     "label": "&"
                 },
                 "3": {
-                    "key": "P8",
-                    "label": "P8"
+                    "key": "P9",
+                    "label": "P9"
+                },
+                "4": {
+                    "key": "F7",
+                    "label": "F7"
                 }
             }
         },
@@ -1142,6 +1214,10 @@
                 "3": {
                     "key": "P+",
                     "label": "P+"
+                },
+                "4": {
+                    "key": "F6",
+                    "label": "F6"
                 }
             }
         },
@@ -1184,6 +1260,10 @@
                 "3": {
                     "key": "#:None",
                     "label": "NONE"
+                },
+                "4": {
+                    "key": "LEFT",
+                    "label": "\u2190"
                 }
             }
         },
@@ -1209,6 +1289,10 @@
                 "3": {
                     "key": "P4",
                     "label": "P4"
+                },
+                "4": {
+                    "key": "DOWN",
+                    "label": "\u2193"
                 }
             }
         },
@@ -1234,6 +1318,10 @@
                 "3": {
                     "key": "P5",
                     "label": "P5"
+                },
+                "4": {
+                    "key": "UP",
+                    "label": "\u2191"
                 }
             }
         },
@@ -1259,6 +1347,10 @@
                 "3": {
                     "key": "P6",
                     "label": "P6"
+                },
+                "4": {
+                    "key": "RIGHT",
+                    "label": "\u2192"
                 }
             }
         },
@@ -1342,8 +1434,8 @@
             "h": 6,
             "layers": {
                 "0": {
-                    "key": "RSHIFT",
-                    "label": "R\u21d1"
+                    "key": "#:None",
+                    "label": "NONE"
                 },
                 "2": {
                     "key": "#:'>'",
@@ -1381,6 +1473,10 @@
                 "3": {
                     "key": "#:None",
                     "label": "NONE"
+                },
+                "4": {
+                    "key": "F12",
+                    "label": "F12"
                 }
             }
         },
@@ -1406,6 +1502,10 @@
                 "3": {
                     "key": "P1",
                     "label": "P1"
+                },
+                "4": {
+                    "key": "F11",
+                    "label": "F11"
                 }
             }
         },
@@ -1535,8 +1635,8 @@
             "h": 8,
             "layers": {
                 "0": {
-                    "key": "SPACE",
-                    "label": "[&nbsp;]"
+                    "key": "FUN2",
+                    "label": "\u01922"
                 }
             }
         },
@@ -1548,8 +1648,8 @@
             "h": 8,
             "layers": {
                 "0": {
-                    "key": "BACKSPACE",
-                    "label": "BKSP"
+                    "key": "FUN1",
+                    "label": "\u01921"
                 }
             }
         },
@@ -1561,8 +1661,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "FUN1",
-                    "label": "\u01921"
+                    "key": "SPACE",
+                    "label": "[&nbsp;]"
                 },
                 "3": {
                     "key": "P0",
@@ -1578,8 +1678,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "FUN2",
-                    "label": "\u01922"
+                    "key": "RGUI",
+                    "label": "RGUI"
                 },
                 "3": {
                     "key": "P0",
@@ -1595,8 +1695,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "RGUI",
-                    "label": "RGUI"
+                    "key": "RALT",
+                    "label": "RALT"
                 },
                 "2": {
                     "key": "SLASH",
@@ -1616,8 +1716,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "RALT",
-                    "label": "RALT"
+                    "key": "#:None",
+                    "label": "NONE"
                 },
                 "2": {
                     "key": "BACKSLASH",
