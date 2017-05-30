@@ -16,7 +16,7 @@ augroup END
 
 " neomake
 autocmd! BufWritePost * Neomake
-let g:neomake_verbose = 0
+let g:neoformat_only_msg_on_error = 1
 let g:neomake_javascript_enabled_makers = ['eslint_d', 'eslint']
 let g:neomake_jsx_enabled_makers = ['eslint_d', 'eslint']
 

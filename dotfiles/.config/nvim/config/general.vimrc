@@ -61,9 +61,6 @@ augroup END
 set path+=**
 set suffixesadd+=.js
 
-" Set prettier as the JavaScript formatter
-autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
-
 " Copy to system clipboard when you yank
 set clipboard=unnamed
 
