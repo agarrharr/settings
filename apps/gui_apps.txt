@@ -1,3 +1,4 @@
+android-file-transfer
 android-studio
 anki
 audio-hijack
@@ -6,6 +7,7 @@ firefox
 gimp
 google-chrome
 grandperspective
+handshaker
 hammerspoon
 hyper
 iterm2
