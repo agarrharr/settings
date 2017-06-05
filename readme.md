@@ -224,10 +224,6 @@ srm ~/.my-pwds
 - Preferences -> Notes -> Storage -> Store and read notes on disk as: Plain Text Files *
 - Notes -> Read notes from: ~/Dropbox/notes
 
-#### Pianobar
-
-Create `~/.my-pandora-pwd` that contains password.
-
 #### Surfingkeys
 
 Load settings from `~/.config/surfingkeys/index.js`
