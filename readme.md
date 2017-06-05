@@ -291,3 +291,9 @@ alias gwe="git config --global user.email 'adam@work.com'"
     - [ ] Show offers
     - [ ] Send Statistics
     - [ ] Google Play Services
+
+#### Signal
+
+- Settings
+  - Chats and media
+    - [x] Use system emoji
