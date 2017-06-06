@@ -297,3 +297,9 @@ alias gwe="git config --global user.email 'adam@work.com'"
 - Settings
   - Chats and media
     - [x] Use system emoji
+
+#### Soundwaves
+
+- Settings
+  - Network & storage
+    - [x] Wi-Fi only downloading
