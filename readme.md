@@ -99,6 +99,8 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
     - [x] Dropbox
     - [x] Hammerspoon
     - [x] iTunesHelper
+- Siri
+  - [ ] Enable Siri
 - Date & Time
   - Clock
     - [x] Digital
