@@ -59,7 +59,7 @@ function install_or_update_homebrew {
 
 function install_or_update_homebrew_package {
   if ! brew list $1 >& /dev/null; then
-	brew install $1
+    brew install $1
   fi
 }
 
@@ -125,7 +125,7 @@ function nvim {
   fancy_echo "Installing Neovim"
   fancy_echo "Brew install neovim"
   brew tap neovim/neovim
-  brew install neovim
+  install_or_update_homebrew_package neovim
   fancy_echo "pip install neovim"
   pip2 install neovim
   pip3 install neovim
@@ -149,7 +149,7 @@ function nvim_plugins {
 
 function install_or_update_gui_app {
   if ! brew cask list $1 >& /dev/null; then
-	brew cask install $1
+    brew cask install $1 || fancy_echo_red 'Error installing '$1
   fi
 }
 
