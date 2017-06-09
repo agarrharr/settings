@@ -70,6 +70,10 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
     - [x] Conversion
     - [x] Definition
     - [x] System Preferences
+- CDs & DVDs (only shows up if you have an external drive plugged in)
+  - When you insert a music CD: Open VLC.app
+  - When you insert a picture CD: Open Sequential.app
+  - When you insert a video DVD: Open VLC.app
 - Displays
   - Night Shift
     - Schedule - Sunrise to Sunset
