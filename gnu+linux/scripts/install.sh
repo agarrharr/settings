@@ -43,10 +43,12 @@ function copy_dotfiles {
   mkdir -p ~/.OLD_DOTFILES
 
   for file in $(find ~/Development/github/aharris88/settings/gnu+linux/dotfiles -maxdepth 1 -mindepth 1 -exec basename {} \;); do
-    if [ -e ~/$file ]
-      then mv ~/$file ~/.OLD_DOTFILES/$file
+    if [ -e ~/$file ]; then
+      mv ~/$file ~/.OLD_DOTFILES/$file
     fi
-    ln -s ~/Development/github/aharris88/settings/gnu+linux/dotfiles/$file ~/$file
+    if [ ! -e ~/$file ]; then
+      ln -s ~/Development/github/aharris88/settings/gnu+linux/dotfiles/$file ~/$file
+    fi
   done
 }
 
