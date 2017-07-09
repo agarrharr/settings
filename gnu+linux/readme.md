@@ -14,3 +14,14 @@ The `scripts/install.sh` script will:
 - Tweak Tool
   - Typing
     - Ctrl key position: Swap Ctrl and Caps Lock
+
+
+#### .local.zshrc
+
+Put something like this in `~/.gitconfig.local`
+
+```
+[user]
+	email = aharris88@users.noreply.github.com
+	name = Adam Harris
+```
