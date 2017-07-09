@@ -12,7 +12,6 @@ function red_echo {
   echo -e "${RED}$1${NC}"
 }
 
-
 function uninstall_packages {
   apps='unity-webapps-common'
 
