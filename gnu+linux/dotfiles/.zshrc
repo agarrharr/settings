@@ -10,6 +10,7 @@ bindkey -M vicmd v edit-command-line
 autoload edit-command-line; zle -N edit-command-line
 
 # Turn on 256 Color
+# TODO: are both of these necessary?
 set -g default-terminal "xterm-256color"
 export TERM=xterm-256color
 
