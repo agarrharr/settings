@@ -1,5 +1,0 @@
-git
-gnome-tweak-tool
-tmux
-vim
-xclip

@@ -1,0 +1,13 @@
+audacity
+build-essential
+curl
+git
+gnome-tweak-tool
+screen
+screenkey
+tmux
+vim
+vim-gnome
+xclip
+xsel
+zsh
