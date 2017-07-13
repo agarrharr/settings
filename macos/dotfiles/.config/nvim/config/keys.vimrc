@@ -57,5 +57,7 @@ nnoremap <leader>b :PrintCurrentBranch<CR>
 " Highlight the word under the cursor
 nnoremap <leader>h :HighlightWordUnderCursor<CR>
 
+nnoremap <Leader>gh :ShowOnGithub<CR>
+
 " Remove all trailing whitespace in a file
 nnoremap <leader>w :StripTrailingWhitespaces<CR>

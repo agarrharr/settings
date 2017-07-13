@@ -1,3 +1,4 @@
 gatsby
 n
+markdown-pdf
 pure-prompt

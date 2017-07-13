@@ -3,11 +3,13 @@ build-essential
 curl
 git
 gnome-tweak-tool
+imagemagick
 screen
 screenkey
 tmux
 vim
 vim-gnome
+vokoscreen
 xclip
 xsel
 zsh

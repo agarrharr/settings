@@ -11,6 +11,14 @@ The `scripts/install.sh` script will:
 
 ## Manual Settings
 
+### Install Vim 8
+
+```bash
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt update
+sudo apt install vim
+```
+
 ### System Settings
 
 - Mouse & Touchpad
