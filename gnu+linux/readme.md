@@ -21,6 +21,8 @@ sudo apt install vim
 
 ### System Settings
 
+- Displays
+  - Scale for menu and title bars: 1.12
 - Mouse & Touchpad
   - [x] Natural scrolling
 
@@ -29,6 +31,8 @@ sudo apt install vim
 - Firefox
   - Search
     - Default Search Engine: DuckDuckGo
+  - New Tab Controls
+    - [x] Show blank page
 - Terminal
   - Profiles
     - Edit
