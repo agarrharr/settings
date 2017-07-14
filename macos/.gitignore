@@ -1,0 +1,14 @@
+dotfiles/.config/configstore
+
+# Nvim
+dotfiles/.config/nvim/autoload/*
+
+# Hub
+dotfiles/.config/hub
+
+# Mutt
+dotfiles/.mutt/certificates
+dotfiles/.mutt/cache
+
+# Pianobar
+dotfiles/.config/pianobar/state
