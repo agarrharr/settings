@@ -25,6 +25,9 @@ sudo apt install vim
   - Scale for menu and title bars: 1.12
 - Mouse & Touchpad
   - [x] Natural scrolling
+- Time & Date
+  - Clock
+    - [x] 24-hour time
 
 ### Other Programs
 
