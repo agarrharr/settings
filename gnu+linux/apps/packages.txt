@@ -4,6 +4,7 @@ curl
 git
 gnome-tweak-tool
 imagemagick
+python3
 screen
 screenkey
 tmux
