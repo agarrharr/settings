@@ -43,7 +43,7 @@ sudo apt install vim
         - [x] Run command as a login shell ([This is so that rvm works](https://github.com/rvm/ubuntu_rvm)
 - Tweak Tool
   - Typing
-    - Ctrl key position: Swap Ctrl and Caps Lock
+    - Ctrl key position: Caps Lock as Ctrl
 
 
 #### .local.zshrc

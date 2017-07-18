@@ -1,6 +1,7 @@
 audacity
 build-essential
 curl
+dfu-util
 git
 gnome-tweak-tool
 imagemagick
