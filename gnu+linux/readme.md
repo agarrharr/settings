@@ -19,11 +19,17 @@ sudo apt update
 sudo apt install vim
 ```
 
+### Install Skype
+
+- Download and install from website.
+- Need to find free software alternative
+
 ### System Settings
 
 - Displays
   - Scale for menu and title bars: 1.12
 - Mouse & Touchpad
+  - [ ] Tap to click
   - [x] Natural scrolling
 - Time & Date
   - Clock
