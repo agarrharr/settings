@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES_PATH="${HOME}/Development/github/aharris88/settings/gnu+linux"
+DOTFILES_PATH="${HOME}/Development/github/agarrharr/settings/gnu+linux"
 
 function green_echo {
   GREEN='\033[0;32m'
@@ -37,6 +37,24 @@ function install_zsh () {
   fi
 }
 
+function install_obs-studio {
+  sudo add-apt-repository ppa:obsproject/obs-studio
+  sudo apt-get update
+  sudo apt-get install -y obs-studio
+}
+
+function install_shotcut {
+  sudo add-apt-repository ppa:haraldhv/shotcut
+  sudo apt update
+  sudo apt install -y shotcut
+}
+
+function install_openshot {
+  sudo add-apt-repository ppa:jonoomph/openshot-edge
+  sudo apt-get update
+  sudo apt-get install -y openshot openshot-doc
+}
+
 function uninstall_packages {
   apps='unity-webapps-common'
 
@@ -47,6 +65,9 @@ function uninstall_packages {
       sudo apt-get --assume-yes purge $app
     fi
   done
+  install_obs-studio
+  install_shotcut
+  install_openshot
 }
 
 function install_npm {
@@ -141,7 +162,7 @@ function ruby_gems {
 
 function install {
   uninstall_packages
-  install_zsh 
+  install_zsh
   copy_dotfiles
   install_packages
   install_npm
