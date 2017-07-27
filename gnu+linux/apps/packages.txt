@@ -1,17 +1,24 @@
+ardour
 audacity
 build-essential
 curl
 dfu-util
+ffmpeg
 git
 gnome-tweak-tool
 imagemagick
 jq
+kdenlive
+libdvd-pkg dpkg-reconfigure libdvd-pkg
+openshot
+pavucontrol
 python3
 screen
 screenkey
 tmux
 vim
 vim-gnome
+vlc
 vokoscreen
 xclip
 xsel
