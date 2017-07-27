@@ -1,5 +1,6 @@
 # Vim
 *.swp
+*.un~
 
 # Npm
 
