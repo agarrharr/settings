@@ -1,3 +1,4 @@
+anki
 ardour
 audacity
 build-essential
