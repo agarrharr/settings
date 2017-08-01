@@ -24,6 +24,12 @@ sudo apt install vim
 - Download and install from website.
 - Need to find free software alternative
 
+### Install Dropbox
+
+- Download and install from website.
+- Move to bookmarks in Files
+- Need to find free software alternative
+
 ### System Settings
 
 - Displays
