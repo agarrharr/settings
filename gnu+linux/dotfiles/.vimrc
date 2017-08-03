@@ -1,5 +1,5 @@
 """"""
-" PLUGINS
+" SECTION: PLUGINS
 """"""
 
 call plug#begin('~/.nvim/plugged')
@@ -68,7 +68,7 @@ Plug 'ruanyl/coverage.vim'
 call plug#end()
 
 """"""
-" General
+" SECTION: GENERAL
 """"""
 
 " Tell vim how to save the file
@@ -158,8 +158,8 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " Shortcut to toggle invisible characters
 " Use the same symbols as TextMate for tabstops and EOLs
 :set list listchars=tab:\ \ ,trail:-
-nnoremap <leader>i :set list<CR>:set listchars=tab:▸\ ,eol:¬<CR>
-nnoremap <leader>io :set list<CR>:set listchars=tab:\ \ ,trail:-<CR>
+nnoremap <leader>i :set list<Enter>:set listchars=tab:▸\ ,eol:¬<Enter>
+nnoremap <leader>io :set list<Enter>:set listchars=tab:\ \ ,trail:-<Enter>
 " Change color to gray
 highlight NonText ctermfg=7 guifg=gray
 " Show this character when the line wraps
@@ -172,7 +172,7 @@ set updatetime=100
 setlocal conceallevel=0
 
 """"""
-" KEYS
+" SECTION: MAPPINGS
 """"""
 
 " Mappings to open config files
@@ -196,8 +196,8 @@ inoremap <C-k> <Esc><C-w>k
 inoremap <C-l> <Esc><C-w>l
 
 
-nnoremap <silent> <Leader>, :exe "vertical resize +10"<CR>
-nnoremap <silent> <Leader>. :exe "vertical resize -10"<CR>
+nnoremap <silent> <Leader>, :exe "vertical resize +10"<Enter>
+nnoremap <silent> <Leader>. :exe "vertical resize -10"<Enter>
 
 " Movement commands for :terminal windows
 "tnoremap <C-h> <C-\><C-n><C-w>h
@@ -216,31 +216,37 @@ nnoremap <leader>ss <C-w>s<C-w>j
 noremap Y y$
 
 " Set mappings for relative line numbering
-nnoremap <leader>lr :set relativenumber<CR>
-nnoremap <leader>ll :set norelativenumber<CR>
+nnoremap <leader>lr :set relativenumber<Enter>
+nnoremap <leader>ll :set norelativenumber<Enter>
 
 " Timetrap
-nnoremap <leader>tt :!t w<CR>
-nnoremap <leader>ti :!t in<CR>
-nnoremap <leader>to :!t out<CR>
+nnoremap <leader>tt :!t w<Enter>
+nnoremap <leader>ti :!t in<Enter>
+nnoremap <leader>to :!t out<Enter>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" Mappings for Functions
+" SUBSECTION: Mappings for Functions
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Print current git branch
-nnoremap <leader>b :PrintCurrentBranch<CR>
+nnoremap <leader>b :PrintCurrentBranch<Enter>
 
 " Highlight the word under the cursor
-nnoremap <leader>h :HighlightWordUnderCursor<CR>
+nnoremap <leader>h :HighlightWordUnderCursor<Enter>
 
-nnoremap <Leader>gh :ShowOnGithub<CR>
+nnoremap <Leader>gh :ShowOnGithub<Enter>
 
 " Remove all trailing whitespace in a file
-nnoremap <leader>w :StripTrailingWhitespaces<CR>
+nnoremap <leader>w :StripTrailingWhitespaces<Enter>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" FUNCTIONS
+" SUBSECTION: MAPPINGS for LaTeX
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+autocmd FileType tex nnoremap <C-t> :w<Enter>:!latex <C-r>%<Backspace><Backspace><Backspace><Backspace><Enter>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" SECTION: FUNCTIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Highlight all instances of word under cursor
@@ -260,7 +266,7 @@ function! ShowOnGithub()
 endfunction
 command! -nargs=0 ShowOnGithub call ShowOnGithub()
 
-nnoremap <Leader>gh :ShowOnGithub<CR>
+nnoremap <Leader>gh :ShowOnGithub<Enter>
 
 function! PrintCurrentBranch()
   exec ":.-1read!git rev-parse --abbrev-ref HEAD"
@@ -283,7 +289,7 @@ endfunction
 command! -nargs=0 StripTrailingWhitespaces call StripTrailingWhitespaces()
 
 """"""
-" PLUGINS
+" SECTION: PLUGINS
 """"""
 
 " ack.vim
