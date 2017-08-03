@@ -1,3 +1,4 @@
+ack-grep
 anki
 ardour
 audacity
