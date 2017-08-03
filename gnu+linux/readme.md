@@ -72,3 +72,17 @@ Put something like this in `~/.gitconfig.local`
 	email = aharris88@users.noreply.github.com
 	name = Adam Harris
 ```
+
+## [npm sudo problem](https://docs.npmjs.com/getting-started/fixing-npm-permissions)
+
+1. Make a directory for global installations:
+
+    ```bash
+    mkdir ~/.npm-global
+    ```
+
+1. Configure npm to use the new directory path:
+
+    ```bash
+    npm config set prefix '~/.npm-global'
+    ```
