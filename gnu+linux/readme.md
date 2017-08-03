@@ -56,7 +56,12 @@ sudo apt install vim
 - Tweak Tool
   - Typing
     - Ctrl key position: Caps Lock as Ctrl
-
+- VLC
+  - Tools
+    - Effects and Filters
+      - Audio effects
+        - Spatializer
+          - [x] Enable
 
 #### .local.zshrc
 
