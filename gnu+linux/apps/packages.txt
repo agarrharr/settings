@@ -4,6 +4,7 @@ audacity
 build-essential
 curl
 dfu-util
+evince
 ffmpeg
 git
 gnome-tweak-tool
