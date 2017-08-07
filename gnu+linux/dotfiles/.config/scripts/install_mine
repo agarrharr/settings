@@ -27,7 +27,7 @@ function install_zsh () {
     platform=$(uname);
     # If the platform is Linux, try an apt-get to install zsh and then recurse
     if [[ $platform == 'Linux' ]]; then
-      sudo apt-get install zsh
+      sudo apt-get install -y zsh
       install_zsh
     # If the platform is OS X, tell the user to install zsh :)
     elif [[ $platform == 'Darwin' ]]; then
@@ -55,6 +55,20 @@ function install_openshot {
   sudo apt-get install -y openshot openshot-doc
 }
 
+function install_ring {
+  sudo sh -c "echo 'deb https://dl.ring.cx/ring-nightly/ubuntu_16.04/ ring main' > /etc/apt/sources.list.d/ring-nightly-main.list"
+  sudo apt-key adv --keyserver pgp.mit.edu --recv-keys A295D773307D25A33AE72F2F64CD5FA175348F84
+  sudo add-apt-repository universe
+  sudo apt-get update
+  sudo apt-get install -y ring
+}
+
+function install_audiowaveform {
+  sudo add-apt-repository ppa:chris-needham/ppa
+  sudo apt-get update
+  sudo apt-get install -y audiowaveform
+}
+
 function uninstall_packages {
   apps='unity-webapps-common'
 
@@ -65,9 +79,6 @@ function uninstall_packages {
       sudo apt-get --assume-yes purge $app
     fi
   done
-  install_obs-studio
-  install_shotcut
-  install_openshot
 }
 
 function install_npm {
@@ -92,6 +103,13 @@ function install_npm_packages {
   done
 }
 
+function install_yarn {
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  sudo apt-get update
+  sudo apt-get install -y yarn
+}
+
 function install_packages {
   green_echo 'Installing packages'
   apps=$(cat "${DOTFILES_PATH}/apps/packages.txt")
@@ -100,7 +118,7 @@ function install_packages {
     which $app > /dev/null
     if [ $? == 1 ]; then
       green_echo "Installing ${app}"
-      sudo apt-get install --assume-yes $app
+      sudo apt-get install -y $app
     fi
   done
 }
@@ -126,7 +144,7 @@ function ruby {
       green_echo 'Installing RVM and the latest Ruby...'
       sudo apt-add-repository -y ppa:rael-gc/rvm
       sudo apt-get update
-      sudo apt-get install --assume-yes rvm
+      sudo apt-get install -y rvm
       rvm install ruby
     else
       local_version="$(rvm -v 2> /dev/null | awk '$2 != ""{print $2}')"
@@ -167,8 +185,14 @@ function install {
   install_packages
   install_npm
   install_npm_packages
+  install_yarn
   ruby
   ruby_gems
+  install_obs-studio
+  install_shotcut
+  install_openshot
+  install_ring
+  install_audiowaveform
 }
 
 install
