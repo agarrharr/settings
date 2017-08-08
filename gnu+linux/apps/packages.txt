@@ -3,6 +3,7 @@ anki
 ardour
 audacity
 build-essential
+cheese
 curl
 dfu-util
 evince
