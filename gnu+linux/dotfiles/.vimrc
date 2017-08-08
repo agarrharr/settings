@@ -176,13 +176,13 @@ setlocal conceallevel=0
 """"""
 
 " Mappings to open config files
-nnoremap <leader>ev :tabnew $MYVIMRC<cr>
-nnoremap <leader>et :tabnew ~/.tmux.conf<cr>
-nnoremap <leader>ez :tabnew ~/.zshrc<cr>
-nnoremap <leader>em :tabnew ~/.muttrc<cr>
-nnoremap <leader>eg :tabnew ~/.gitconfig<cr>
+nnoremap <leader>ev :tabnew $MYVIMRC<Enter>
+nnoremap <leader>et :tabnew ~/.tmux.conf<Enter>
+nnoremap <leader>ez :tabnew ~/.zshrc<Enter>
+nnoremap <leader>em :tabnew ~/.muttrc<Enter>
+nnoremap <leader>eg :tabnew ~/.gitconfig<Enter>
 
-nnoremap <leader>vs :source $MYVIMRC<cr>
+nnoremap <leader>vs :source $MYVIMRC<Enter>
 
 " Mappings for moving around panes
 nnoremap <C-h> <C-w>h
@@ -321,7 +321,7 @@ vmap <M-j> <Plug>MoveBlockDown
 vmap <M-k> <Plug>MoveBlockUp
 
 " consolate-vim
-nnoremap <leader>c :Consolate<cr>
+nnoremap <leader>c :Consolate<Enter>
 
 " ctrlp
 let g:ctrlp_working_path_mode = 0
