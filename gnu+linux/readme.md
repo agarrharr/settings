@@ -19,16 +19,13 @@ sudo apt update
 sudo apt install vim
 ```
 
-### Install Skype
+### Install Other Software
 
-- Download and install from website.
-- Need to find free software alternative
-
-### Install Dropbox
-
-- Download and install from website.
-- Move to bookmarks in Files
-- Need to find free software alternative
+- [Chrome](https://www.google.com/chrome/)
+- [Dropbox](https://www.dropbox.com/)
+  - Move to bookmarks in Files
+- [Expo XDE](https://expo.io/)
+- [Skype](https://www.skype.com/en/)
 
 ### System Settings
 
@@ -44,10 +41,17 @@ sudo apt install vim
 ### Other Programs
 
 - Firefox
-  - Search
-    - Default Search Engine: DuckDuckGo
-  - New Tab Controls
-    - [x] Show blank page
+  - Preferences (about:preferences)
+    - Search
+      - Default Search Engine: DuckDuckGo
+    - New Tab Controls
+      - [x] Show blank page
+  - Add-ons (about:addons)
+    - Extensions
+      - [Custom Tab Width](https://addons.mozilla.org/en-US/firefox/addon/custom-tab-width/)
+        - Preferences
+          - min: 30
+
 - Terminal
   - Profiles
     - Edit
