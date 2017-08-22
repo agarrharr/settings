@@ -31,14 +31,16 @@ setopt auto_cd
 # Path
 # ==================================================================
 
-LOCAL_PATH="$HOME/bin"
+NPM_PACKAGES="${HOME}/.npm-global/bin"
 RUBY_PATH="/usr/local/opt/ruby/bin:/Library/Ruby/Gems/2.0.0/gems"
 RVM_PATH="$HOME/.rvm/gems/ruby-2.1.5/bin:$HOME/.rvm/bin"
 PROJECT_NPM_PATH="./node_modules/.bin"
 YARN_PATH="$HOME/.yarn/bin"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 ANDROID_PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
-export PATH="$PATH:$LOCAL_PATH:$RUBY_PATH:$RVM_PATH:$PROJECT_NPM_PATH:$YARN_PATH:$ANDROID_PATH"
+LOCAL_PATH="$HOME/bin"
+LOCAL_SCRIPTS="$HOME/.config/scripts"
+export PATH="$NPM_PACKAGES:$RUBY_PATH:$RVM_PATH:$PROJECT_NPM_PATH:$YARN_PATH:$ANDROID_PATH:$LOCAL_PATH:$LOCAL_SCRIPTS:$PATH"
 
 # ==================================================================
 # Prompt
@@ -164,4 +166,5 @@ bindkey '^i' expand-or-complete-prefix
 # Display dots while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# TODO: fix syntax highlighting
+# source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

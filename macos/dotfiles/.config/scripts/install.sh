@@ -66,7 +66,7 @@ function install_or_update_homebrew_package {
 function homebrew_packages {
   install_or_update_homebrew
 
-  packages=$(cat ~/settings/apps/homebrew_packages.txt)
+  packages=$(cat ~/settings/macos/apps/homebrew_packages.txt)
 
   # Use Homebrew to install command line packages
   fancy_echo 'Installing Homebrew packages'
@@ -78,12 +78,14 @@ function homebrew_packages {
 function npm_packages {
   fancy_echo 'Installing npm packages'
 
+  npm install -g n
   n latest
 
-  packages=$(cat ~/settings/apps/npm_packages.txt)
+  packages=$(cat ~/settings/macos/apps/npm_packages.txt)
 
   # Use npm to install command line packages
   for package in $packages; do
+    fancy_echo $package
     npm install -g $package
   done
 }
@@ -115,9 +117,9 @@ function dotfiles {
   fancy_echo 'Copying dotfiles'
 
   # Create dotfile symlinks in home directory
-  for file in $(find ~/settings/dotfiles -depth 1 -exec basename {} \;); do
+  for file in $(find ~/settings/macos/dotfiles -depth 1 -exec basename {} \;); do
     rm -rf ~/$file
-    ln -s ~/settings/dotfiles/$file ~/$file
+    ln -s ~/settings/macos/dotfiles/$file ~/$file
   done
 }
 
@@ -155,7 +157,7 @@ function install_or_update_gui_app {
 
 function gui_apps {
   fancy_echo 'Installing GUI apps'
-  apps=$(cat ~/settings/apps/gui_apps.txt)
+  apps=$(cat ~/settings/macos/apps/gui_apps.txt)
 
   # Use Homebrew Cask to install gui apps
   for app in $apps; do
@@ -193,7 +195,7 @@ function install_or_update_gem {
 }
 
 function ruby_gems {
-  gems=$(cat ~/settings/apps/ruby_gems.txt)
+  gems=$(cat ~/settings/macos/apps/ruby_gems.txt)
 
   fancy_echo 'Installing Ruby gems'
   for gem in $gems; do
@@ -203,7 +205,7 @@ function ruby_gems {
 
 function macos {
   fancy_echo 'Run Mac Scripts'
-  ~/settings/scripts/.macos
+  ~/settings/macos/scripts/.macos
 }
 
 function development {

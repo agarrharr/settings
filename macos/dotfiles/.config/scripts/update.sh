@@ -5,7 +5,7 @@ set -euo pipefail
 # Ask for the administrator password upfront
 sudo -v
 
-. $HOME/settings/scripts/fancy_echo.sh
+. $HOME/settings/macos/scripts/fancy_echo.sh
 
 fancy_echo "Running software update script"
 fancy_echo "Updating Homebrew packages and Cask graphical apps"

@@ -24,6 +24,27 @@ mv ~ && curl -LO https://github.com/agarrharr/settings/archive/master.zip && unz
 ~/settings/macos/scripts/install.sh
 ```
 
+Install node [from website](https://nodejs.org).
+
+Make a directory for npm global installations.
+
+```
+mkdir ~/.npm-global
+```
+
+Change ownership of `/usr/local`.
+
+```
+chown adamgarrett-harris /usr/local
+```
+
+Create Development structure
+
+```
+mkdir -p ~/Development/github/agarrharr
+mkdir -p ~/Development/github/others
+```
+
 ## Add Git Remote to Settings Directory
 
 [Add SSH key to Github](https://github.com/settings/ssh)
@@ -49,8 +70,9 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
   - Default web browser: Google Chrome.app
 - Mission Control
   - [ ] Automatically rearrange Spaces based on most recent use
-  - [x] Displays have separate Spaces
 - Security & Privacy
+  - General
+    - [x] Require password [immediately] after sleep or screen saver begins
   - Privacy
     - Accessibility
       - [x] Dropbox.app
@@ -72,14 +94,11 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
     - Schedule - Sunrise to Sunset
 - Keyboard
   - [ ] Adjust keyboard brightness in low light
-  - [x] Use all keyboard and emoji viewers as standard function keys
   - Modifier Keys...
     - Apple Internal Keyboard / Trackpad
       - Caps Lock (⇪) Key: ⌃ Control
-      - Control (⌃) Key: ⇪ Caps Lock
     - Das Keyboard
       - Caps Lock (⇪) Key: ⌃ Control
-      - Control (⌃) Key: ⇪ Caps Lock
       - Option (⌥) Key: ⌘ Command
       - Command (⌘) Key: ⌥ Option
 - Trackpad
@@ -91,6 +110,9 @@ cd ~/settings && git init && git add . && git remote add origin git@github.com:a
     - [ ] Launchpad
 - iCloud
   - [x] Find My Mac
+- Touch ID
+  - Use Touch ID for:
+    - [x] Unlocking your Mac
 - Users & Groups
   - Login Items
     - [x] Dropbox
@@ -280,3 +302,8 @@ Put something like this in `.local.zshrc`
 alias ge="git config --global user.email 'agarrharr@users.noreply.github.com'"
 alias gwe="git config --global user.email 'adam@work.com'"
 ```
+
+## TODO
+
+- Add .gitconfig.local instructions
+- Add sudo npm problem instructions
