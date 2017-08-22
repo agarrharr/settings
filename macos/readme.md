@@ -36,7 +36,7 @@ pbcopy < ~/.ssh/id_rsa.pub
 ```
 
 ```bash
-cd ~/settings && git init && git add . && git remote add origin git@github.com:agarrharr/settings.git && git remote update && git checkout master && cd -
+cd ~/settings && git init && git remote add origin git@github.com:agarrharr/settings.git && git remote update -f && git checkout master && cd -
 ```
 
 ## Manual Settings
