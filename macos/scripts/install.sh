@@ -5,7 +5,7 @@ set -euo pipefail
 # Ask for the administrator password upfront
 sudo -v
 
-. $HOME/settings/scripts/fancy_echo.sh
+. $HOME/settings/macos/scripts/fancy_echo.sh
 
 function install_xcode_command_line_tools () {
   fancy_echo 'Installing Xcode Command Line Tools'
