@@ -20,7 +20,7 @@ The `scripts/install.sh` script will:
 ## Installation
 
 ``` bash
-curl -LO https://github.com/agarrharr/settings/archive/master.zip && unzip master.zip &&  mv settings-master ~/settings && rm master.zip
+mv ~ && curl -LO https://github.com/agarrharr/settings/archive/master.zip && unzip master.zip &&  mv ~/settings-master ~/settings && rm master.zip
 ~/settings/macos/scripts/install.sh
 ```
 
