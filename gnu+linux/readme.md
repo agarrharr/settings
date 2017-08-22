@@ -69,12 +69,21 @@ sudo apt install vim
 
 #### .local.zshrc
 
+Put something like this in `.local.zshrc`
+
+```
+alias ge="git config --global user.email 'agarrharr@users.noreply.github.com'"
+alias gwe="git config --global user.email 'adam@work.com'"
+```
+
+#### .gitconfig.local
+
 Put something like this in `~/.gitconfig.local`
 
 ```
 [user]
-	email = aharris88@users.noreply.github.com
-	name = Adam Harris
+	email = agarrharr@users.noreply.github.com
+	name = Adam Garrett-Harris
 ```
 
 ## [npm sudo problem](https://docs.npmjs.com/getting-started/fixing-npm-permissions)

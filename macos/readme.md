@@ -303,7 +303,26 @@ alias ge="git config --global user.email 'agarrharr@users.noreply.github.com'"
 alias gwe="git config --global user.email 'adam@work.com'"
 ```
 
-## TODO
+#### .gitconfig.local
 
-- Add .gitconfig.local instructions
-- Add sudo npm problem instructions
+Put something like this in `~/.gitconfig.local`
+
+```
+[user]
+	email = agarrharr@users.noreply.github.com
+	name = Adam Garrett-Harris
+```
+
+#### [npm sudo problem](https://docs.npmjs.com/getting-started/fixing-npm-permissions)
+
+1. Make a directory for global installations:
+
+    ```bash
+    mkdir ~/.npm-global
+    ```
+
+1. Configure npm to use the new directory path:
+
+    ```bash
+    npm config set prefix '~/.npm-global'
+    ```
