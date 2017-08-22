@@ -20,7 +20,7 @@ The `scripts/install.sh` script will:
 ## Installation
 
 ``` bash
-curl -LO https://github.com/aharris88/settings/archive/master.zip && unzip master.zip &&  mv settings-master ~/settings && rm master.zip
+curl -LO https://github.com/agarrharr/settings/archive/master.zip && unzip master.zip &&  mv settings-master ~/settings && rm master.zip
 ~/settings/macos/scripts/install.sh
 ```
 
@@ -36,7 +36,7 @@ pbcopy < ~/.ssh/id_rsa.pub
 ```
 
 ```bash
-cd ~/settings && git init && git add . && git remote add origin git@github.com:aharris88/settings.git && git remote update && git checkout master && cd -
+cd ~/settings && git init && git add . && git remote add origin git@github.com:agarrharr/settings.git && git remote update && git checkout master && cd -
 ```
 
 ## Manual Settings
@@ -277,6 +277,6 @@ let g:fugitive_github_domains = ['git@workgithub.com']
 Put something like this in `.local.zshrc`
 
 ```
-alias ge="git config --global user.email 'aharris88@users.noreply.github.com'"
+alias ge="git config --global user.email 'agarrharr@users.noreply.github.com'"
 alias gwe="git config --global user.email 'adam@work.com'"
 ```
