@@ -14,6 +14,7 @@ icecat
 iterm2
 kap
 mactex
+ngrok
 notational-velocity
 sequential
 sketch

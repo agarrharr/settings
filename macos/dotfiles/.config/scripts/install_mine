@@ -66,6 +66,8 @@ function install_or_update_homebrew_package {
 function homebrew_packages {
   install_or_update_homebrew
 
+  brew tap lucasefe/ta
+
   apps=$(cat ~/settings/macos/apps/homebrew_packages.txt)
 
   # Use Homebrew to install command line packages

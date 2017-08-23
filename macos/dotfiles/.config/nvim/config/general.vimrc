@@ -61,7 +61,7 @@ augroup END
 set path+=**
 set suffixesadd+=.js
 
-" Copy to system clipboard when you yank
+" Copy to system clipboard when you yank/copy
 set clipboard=unnamed
 
 " Close the Omni-Completion tip window when a selection is made
