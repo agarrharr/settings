@@ -92,6 +92,11 @@ function install_npm {
 
 function install_npm_packages {
   green_echo 'Installing npm packages'
+
+  mkdir -p ~/.npm-global
+  npm install -g n
+  n latest
+
   apps=$(cat "${DOTFILES_PATH}/apps/npm.txt")
 
   for app in $apps; do

@@ -5,7 +5,7 @@ set -euo pipefail
 # Ask for the administrator password upfront
 sudo -v
 
-. $HOME/settings/macos/scripts/fancy_echo.sh
+. $HOME/settings/macos/dotfiles/.config/scripts/fancy_echo.sh
 
 function install_xcode_command_line_tools () {
   fancy_echo 'Installing Xcode Command Line Tools'
@@ -66,27 +66,28 @@ function install_or_update_homebrew_package {
 function homebrew_packages {
   install_or_update_homebrew
 
-  packages=$(cat ~/settings/macos/apps/homebrew_packages.txt)
+  apps=$(cat ~/settings/macos/apps/homebrew_packages.txt)
 
   # Use Homebrew to install command line packages
   fancy_echo 'Installing Homebrew packages'
-  for package in $packages; do
-    install_or_update_homebrew_package $package
+  for app in $apps; do
+    install_or_update_homebrew_package $app
   done
 }
 
 function npm_packages {
   fancy_echo 'Installing npm packages'
 
+  mkdir -p ~/.npm-global
   npm install -g n
   n latest
 
-  packages=$(cat ~/settings/macos/apps/npm_packages.txt)
+  apps=$(cat ~/settings/macos/apps/npm_packages.txt)
 
-  # Use npm to install command line packages
-  for package in $packages; do
-    fancy_echo $package
-    npm install -g $package
+  # Use npm to install command line apps
+  for app in $apps; do
+    fancy_echo $app
+    npm install -g $app
   done
 }
 
@@ -195,11 +196,11 @@ function install_or_update_gem {
 }
 
 function ruby_gems {
-  gems=$(cat ~/settings/macos/apps/ruby_gems.txt)
+  apps=$(cat ~/settings/macos/apps/ruby_gems.txt)
 
   fancy_echo 'Installing Ruby gems'
-  for gem in $gems; do
-    install_or_update_gem $gem
+  for app in $apps; do
+    install_or_update_gem $app
   done
 }
 
