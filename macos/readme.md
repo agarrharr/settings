@@ -257,6 +257,7 @@ Load settings from `~/.config/surfingkeys/index.js`
 
 - [Audacity](http://www.audacityteam.org/)
 - [LayerX](https://github.com/yuhua-chen/LayerX)
+- [Postgres.app](reattach-to-user-namespace)
 
 ### Manual Development Settings
 

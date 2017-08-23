@@ -33,13 +33,14 @@ setopt auto_cd
 
 NPM_PACKAGES="${HOME}/.npm-global/bin"
 RUBY_PATH="/usr/local/opt/ruby/bin:/Library/Ruby/Gems/2.0.0/gems"
+POSTGRES_PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin"
 PROJECT_NPM_PATH="./node_modules/.bin"
 YARN_PATH="$HOME/.yarn/bin"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 ANDROID_PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 LOCAL_PATH="$HOME/bin"
 LOCAL_SCRIPTS="$HOME/.config/scripts"
-export PATH="$NPM_PACKAGES:$RUBY_PATH:$PROJECT_NPM_PATH:$YARN_PATH:$ANDROID_PATH:$LOCAL_PATH:$LOCAL_SCRIPTS:$PATH"
+export PATH="$NPM_PACKAGES:$RUBY_PATH:$POSTGRES_PATH:$PROJECT_NPM_PATH:$YARN_PATH:$ANDROID_PATH:$LOCAL_PATH:$LOCAL_SCRIPTS:$PATH"
 
 # ==================================================================
 # Prompt
