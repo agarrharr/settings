@@ -4,6 +4,8 @@ let mapleader = "\<Space>"
 
 colorscheme nova
 
+set mouse=a
+
 " Turn on spell checking for commit messages and automatic wrapping at the recommended 72 characters
 augroup filetype_gitcommit
   autocmd!
