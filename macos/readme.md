@@ -128,6 +128,9 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
   - Zoom
     - [x] Use scroll gesture with modifier keys to zoom:
       - Control
+  - Mouse & Trackpad
+    - Trackpad Options...
+      - [x] Enable dragging [three finger drag]
 
 #### Finder
 
