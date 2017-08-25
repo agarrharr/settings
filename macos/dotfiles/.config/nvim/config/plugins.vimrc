@@ -44,7 +44,7 @@ let g:coverage_show_covered = 0
 let g:coverage_show_uncovered = 1
 
 " neoformat
-autocmd BufWritePre *.js Neoformat
+autocmd BufWritePre *.js,*.jsx Neoformat
 let g:neoformat_enabled_javascript = ['prettier']
 let g:neoformat_javascript_prettier = {
   \ 'exe': 'prettier',
