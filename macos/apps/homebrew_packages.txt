@@ -1,4 +1,5 @@
 ack
+audio-hijack
 dfu-util
 git
 gpg
