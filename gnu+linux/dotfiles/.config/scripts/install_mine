@@ -37,6 +37,12 @@ function install_zsh () {
   fi
 }
 
+function install_git {
+  sudo apt-add-repository ppa:git-core/ppa
+  sudo apt-get update
+  sudo apt-get install git
+}
+
 function install_obs-studio {
   sudo add-apt-repository ppa:obsproject/obs-studio
   sudo apt-get update
@@ -67,6 +73,30 @@ function install_audiowaveform {
   sudo add-apt-repository ppa:chris-needham/ppa
   sudo apt-get update
   sudo apt-get install -y audiowaveform
+}
+
+function install_brave {
+  curl https://s3-us-west-2.amazonaws.com/brave-apt/keys.asc | sudo apt-key add -
+  sudo apt update
+  sudo apt install -y brave
+}
+
+function install_brew {
+  cd ~
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+}
+
+function install_brew_packages {
+  green_echo 'Installing brew packages'
+  apps=$(cat "${DOTFILES_PATH}/apps/brew.txt")
+
+  for app in $apps; do
+    which $app > /dev/null
+    if [ $? == 1 ]; then
+      green_echo "Installing ${app}"
+      brew install $app
+    fi
+  done
 }
 
 function uninstall_packages {
@@ -193,11 +223,15 @@ function install {
   install_yarn
   ruby
   ruby_gems
+  install_git
   install_obs-studio
   install_shotcut
   install_openshot
   install_ring
   install_audiowaveform
+  install_brave
+  install_brew
+  install_brew_packages
 }
 
 install

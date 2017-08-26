@@ -1,4 +1,7 @@
+create-react-app
 gatsby
 n
 markdown-pdf
+mocha
 pure-prompt
+react-native-cli
