@@ -175,6 +175,16 @@ setlocal conceallevel=0
 " SECTION: MAPPINGS
 """"""
 
+nnoremap <leader>dh :normal! mqO<dt>Host</dt><Esc>`q
+nnoremap <leader>dg :normal! mqO<dt>Guest</dt><Esc>`q
+nnoremap <leader>dd :normal! mqI<dd><Esc>A</dd><Esc>`q
+nnoremap <Tab> :!player_control vlc toggle<Enter><Enter>
+nnoremap <leader>0 :!player_control vlc back5<Enter><Enter>
+nnoremap <leader>1 :!player_control vlc speed100<Enter><Enter>
+nnoremap <leader>2 :!player_control vlc speed125<Enter><Enter>
+nnoremap <leader>3 :!player_control vlc speed150<Enter><Enter>
+nnoremap <leader>4 :!player_control vlc speed200<Enter><Enter>
+
 " Mappings to open config files
 nnoremap <leader>ev :tabnew $MYVIMRC<Enter>
 nnoremap <leader>et :tabnew ~/.tmux.conf<Enter>
