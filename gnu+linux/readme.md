@@ -21,11 +21,28 @@ sudo apt install vim
 
 ### Install Other Software
 
+- [Android Studio](https://developer.android.com/studio/index.html)
+  - Download
+  - `sudo unzip android-studio-ide-141.2178183-linux.zip -d /opt`
+  - Create `~/.local/share/applications/androidstudio.desktop` with the following
+    ```
+    [Desktop Entry]
+    Version=1.0
+    Type=Application
+    Name=Android Studio
+    Exec="/opt/android-studio/bin/studio.sh" %f
+    Icon=/opt/android-studio/bin/studio.png
+    Categories=Development;IDE;
+    Terminal=false
+    StartupNotify=true
+    StartupWMClass=android-studio
+    ```
+   - Open Android Studio and install the Android SDK
 - [Chrome](https://www.google.com/chrome/)
 - [Dropbox](https://www.dropbox.com/)
-  - Move to bookmarks in Files
 - [Expo XDE](https://expo.io/)
 - [Skype](https://www.skype.com/en/)
+- [TikzEdit](http://www.tikzedt.org/)
 
 ### System Settings
 
@@ -40,6 +57,12 @@ sudo apt install vim
 
 ### Other Programs
 
+- Brave
+  - Settings
+    - Search
+      - [x] DuckDuckGo
+- Files
+  - Move Dropbox to bookmarks
 - Firefox
   - Preferences (about:preferences)
     - Search
@@ -51,7 +74,6 @@ sudo apt install vim
       - [Custom Tab Width](https://addons.mozilla.org/en-US/firefox/addon/custom-tab-width/)
         - Preferences
           - min: 30
-
 - Terminal
   - Profiles
     - Edit
