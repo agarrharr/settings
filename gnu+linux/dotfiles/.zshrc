@@ -33,14 +33,17 @@ setopt auto_cd
 
 export N_PREFIX="${HOME}/.node_versions"
 
-NPM_PACKAGES_PATH="${HOME}/.npm-global"
+BREW_PATH="$HOME/linuxbrew/.linuxbrew/bin"
+NPM_PACKAGES_PATH="${HOME}/.npm-global/bin"
 RUBY_PATH="/usr/local/opt/ruby/bin:/Library/Ruby/Gems/2.0.0/gems"
 RVM_PATH="$HOME/.rvm/gems/ruby-2.1.5/bin:$HOME/.rvm/bin"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 ANDROID_PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 LOCAL_PATH="$HOME/bin"
 LOCAL_SCRIPTS="$HOME/.config/scripts"
-export PATH="$NPM_PACKAGES_PATH/bin:$RUBY_PATH:$RVM_PATH:$ANDROID_PATH:$LOCAL_PATH:$LOCAL_SCRIPTS:$PATH"
+export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
+export PATH="$BREW_PATH:$NPM_PACKAGES_PATH:$RUBY_PATH:$RVM_PATH:$ANDROID_PATH:$LOCAL_PATH:$LOCAL_SCRIPTS:$PATH"
 
 # ==================================================================
 # Prompt
