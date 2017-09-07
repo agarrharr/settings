@@ -1,7 +1,5 @@
 call plug#begin('~/.nvim/plugged')
 
-" Code linter
-Plug 'neomake/neomake'
 " Autocompletion
 function! BuildTern(info)
   if a:info.status == 'installed' || a:info.force
@@ -9,8 +7,8 @@ function! BuildTern(info)
   endif
 endfunction
 Plug 'carlitux/deoplete-ternjs', { 'do': function('BuildTern') }
-" Formatting
-Plug 'sbdchd/neoformat'
+" Formatting and Linting
+Plug 'w0rp/ale'
 " Autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Commenter

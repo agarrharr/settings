@@ -14,12 +14,6 @@ augroup plugin_fugitive
   autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
 
-" neomake
-autocmd! BufWritePost * Neomake
-let g:neoformat_only_msg_on_error = 1
-let g:neomake_javascript_enabled_makers = ['eslint_d', 'eslint']
-let g:neomake_jsx_enabled_makers = ['eslint_d', 'eslint']
-
 " vim-move
 nmap <M-j> <Plug>MoveLineDown
 nmap <M-k> <Plug>MoveLineUp
@@ -43,11 +37,8 @@ let g:coverage_interval = 5000
 let g:coverage_show_covered = 0
 let g:coverage_show_uncovered = 1
 
-" neoformat
-autocmd BufWritePre *.js,*.jsx Neoformat
-let g:neoformat_enabled_javascript = ['prettier']
-let g:neoformat_javascript_prettier = {
-  \ 'exe': 'prettier',
-  \ 'args': ['--single-quote', '--no-bracket-spacing', '--trailing-comma', 'es5', '--stdin'],
-  \ 'stdin': 1
-\ }
+" ale
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
