@@ -36,7 +36,7 @@ Plug 'tpope/vim-repeat'
 " Syntax for jekyll markdown with front matter
 Plug 'PProvost/vim-markdown-jekyll'
 " Add JavaScript console.log
-Plug 'aharris88/consolation-vim'
+Plug 'agarrharr/consolation-vim'
 " enhances netrw
 Plug 'tpope/vim-vinegar'
 " Distraction-free writing

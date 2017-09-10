@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ergodox_dir="${HOME}/Development/github/aharris88/settings/ergodox"
+ergodox_dir="${HOME}/Development/github/agarrharr/settings/ergodox"
 cat "${ergodox_dir}/MDErgo1-Default.json" | xsel --clipboard --input
 xdg-open "http://input.club/configurator-ergodox"
 
