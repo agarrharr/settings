@@ -21,7 +21,7 @@ The `scripts/install.sh` script will:
 
 ``` bash
 mv ~ && curl -LO https://github.com/agarrharr/settings/archive/master.zip && unzip master.zip &&  mv ~/settings-master ~/settings && rm master.zip
-~/settings/macos/scripts/install.sh
+~/settings/macos/dotfiles/.config/scripts/install.sh
 ```
 
 Install node [from website](https://nodejs.org).
