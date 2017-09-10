@@ -3,6 +3,7 @@ android-studio
 anki
 audio-hijack
 backblaze
+dropbox
 firefox
 gimp
 google-chrome
@@ -24,4 +25,5 @@ skype
 slack
 thunderbird
 torbrowser
+tunnelblick
 vlc
