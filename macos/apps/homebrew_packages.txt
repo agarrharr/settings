@@ -19,5 +19,6 @@ thefuck
 tmux
 vim
 watchman
+yarn
 z
 zsh-syntax-highlighting
