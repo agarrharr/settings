@@ -5,3 +5,4 @@ prettier-eslint-cli
 pure-prompt
 tldr
 trash-cli
+typescript
