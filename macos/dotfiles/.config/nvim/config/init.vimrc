@@ -59,6 +59,8 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'arecarn/vim-crunch'
 " Code coverage
 Plug 'ruanyl/coverage.vim'
+" TypeScript Syntax
+Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 
