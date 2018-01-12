@@ -1,6 +1,8 @@
 ack
 audio-hijack
+cowsay
 dfu-util
+fortune
 git
 gpg
 graphicsmagick

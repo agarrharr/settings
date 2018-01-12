@@ -6,3 +6,4 @@ pure-prompt
 tldr
 trash-cli
 typescript
+undollar
