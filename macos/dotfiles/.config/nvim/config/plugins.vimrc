@@ -15,10 +15,10 @@ augroup plugin_fugitive
 augroup END
 
 " vim-move
-nmap <C-j> <Plug>MoveLineDown
-nmap <C-k> <Plug>MoveLineUp
-vmap <C-j> <Plug>MoveBlockDown
-vmap <C-k> <Plug>MoveBlockUp
+nmap <M-j> <Plug>MoveLineDown
+nmap <M-k> <Plug>MoveLineUp
+vmap <M-j> <Plug>MoveBlockDown
+vmap <M-k> <Plug>MoveBlockUp
 
 " consolate-vim
 nnoremap <leader>c :Consolate<cr>
