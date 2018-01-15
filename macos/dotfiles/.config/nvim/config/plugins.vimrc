@@ -26,6 +26,10 @@ nnoremap <leader>c :Consolate<cr>
 " ctrlp
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window = 'results:100'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](public|\.cache)$',
+  \ 'file': '\v(yarn.lock|package-lock.json)$',
+  \ }
 
 " vim-jsx
 let g:jsx_ext_required = 0

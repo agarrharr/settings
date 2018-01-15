@@ -1,0 +1,4 @@
+--ignore-dir=public
+--ignore-dir=.cache
+--ignore-file=match:yarn.lock
+--ignore-file=match:package-lock.json
