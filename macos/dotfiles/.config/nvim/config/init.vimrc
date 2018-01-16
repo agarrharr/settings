@@ -61,6 +61,8 @@ Plug 'arecarn/vim-crunch'
 Plug 'ruanyl/coverage.vim'
 " TypeScript Syntax
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'runoshun/tscompletejob'
 
 call plug#end()
 
