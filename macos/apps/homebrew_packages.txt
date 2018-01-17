@@ -1,5 +1,4 @@
 ack
-audio-hijack
 cowsay
 dfu-util
 fortune

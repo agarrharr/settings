@@ -26,4 +26,5 @@ slack
 thunderbird
 torbrowser
 tunnelblick
+visual-studio-code
 vlc
