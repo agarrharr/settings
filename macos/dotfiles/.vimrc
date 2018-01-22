@@ -169,6 +169,11 @@ set updatetime=100
 " Fixes issue I had with json files hiding quotes
 setlocal conceallevel=0
 
+" Live substitution
+if has('nvim')
+  set inccommand=nosplit
+endif
+
 """""""""""""""
 " Section: Keys
 """""""""""""""
