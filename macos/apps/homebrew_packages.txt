@@ -9,6 +9,7 @@ heroku
 hub
 imagemagick
 mutt
+neovim
 pianobar
 postgresql
 python3

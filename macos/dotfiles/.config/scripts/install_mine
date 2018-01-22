@@ -39,11 +39,6 @@ function install_zsh () {
   fi
 }
 
-function submodules () {
-  fancy_echo 'Installing submodules'
-  cd ~/settings && git submodule init && git submodule update && cd -
-}
-
 function install_or_update_homebrew {
   which -s brew
   if [[ $? != 0 ]] ; then
@@ -103,29 +98,10 @@ function dotfiles {
   done
 }
 
-function nvim {
-  fancy_echo "Installing Neovim"
-  fancy_echo "Brew install neovim"
-  brew tap neovim/neovim
-  install_or_update_homebrew_package neovim
-  fancy_echo "pip install neovim"
-  pip2 install neovim
-  pip3 install neovim
-  fancy_echo "gem install neovim"
-  gem install neovim
-
-  # https://github.com/neovim/neovim/wiki/FAQ#my-ctrl-h-mapping-doesnt-work
-  infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
-  tic $TERM.ti
-}
-
-function nvim_plugins {
-  fancy_echo 'Installing Neovim plugins'
-
-  # Install vim-plug
-  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-  # Use vim-plug to install Neovim plugins
+function vim_plugins {
+  fancy_echo 'Installing vim plugins'
+  # Use vim-plug to install vim plugins
+  vim +PlugInstall +qall
   nvim +PlugInstall +qall
 }
 
@@ -185,7 +161,7 @@ function ruby_gems {
 
 function macos {
   fancy_echo 'Run Mac Scripts'
-  ~/settings/macos/scripts/.macos
+  ~/settings/macos/dotfiles/.config/scripts/.macos
 }
 
 function development {
@@ -196,13 +172,11 @@ function development {
 function install {
   install_xcode_command_line_tools
   install_zsh
-  submodules
   dotfiles
   homebrew_packages
   npm_packages
   gui_apps
-  nvim
-  nvim_plugins
+  vim_plugins
   ruby
   ruby_gems
   macos
