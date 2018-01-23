@@ -128,9 +128,6 @@ set wildignore+=*/vendor/*
 set wildignore+=*/compiled/*
 set wildignore+=*/cache/*
 
-" Put it into insert mode when entering a terminal pane
-autocmd BufWinEnter,WinEnter term://* startinsert
-
 " Setup indicator for 132 columns
 set colorcolumn=133
 
@@ -203,17 +200,24 @@ nnoremap <silent> <Leader>, :exe "vertical resize +10"<CR>
 nnoremap <silent> <Leader>. :exe "vertical resize -10"<CR>
 
 " Movement commands for :terminal windows
-tnoremap <C-h> <C-\><C-n><C-w>h
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
+if has('nvim')
+  " Quit terminal mode with escape key
+  tnoremap <Esc> <C-\><C-n>
+  " Send escape to the terminal program
+  tnoremap <C-v><Esc> <Esc>
+  " Mappings for movement in terminal mode
+  tnoremap <C-h> <C-\><C-n><C-w>h
+  tnoremap <C-j> <C-\><C-n><C-w>j
+  tnoremap <C-k> <C-\><C-n><C-w>k
+  tnoremap <C-l> <C-\><C-n><C-w>l
+
+  " Put it into insert mode when entering a terminal pane
+  autocmd BufWinEnter,WinEnter term://* startinsert
+endif
 
 " Mapping for opening splits and moving into it
 nnoremap <leader>sv <C-w>v<C-w>l
 nnoremap <leader>ss <C-w>s<C-w>j
-
-" Quit terminal mode with escape key
-tnoremap <Esc> <C-\><C-n>
 
 " Make Y yank to the end of the line instead of the entire line (i.e. same as yy).
 noremap Y y$
@@ -303,51 +307,62 @@ command! -nargs=0 StripTrailingWhitespaces call StripTrailingWhitespaces()
 " Section: Plugins
 """"""""""""""""""
 
-" Mappings to open config files
-nnoremap <leader>ev :tabnew $MYVIMRC<cr>
-nnoremap <leader>et :tabnew ~/.tmux.conf<cr>
-nnoremap <leader>ez :tabnew ~/.zshrc<cr>
-nnoremap <leader>em :tabnew ~/.muttrc<cr>
-nnoremap <leader>eg :tabnew ~/.gitconfig<cr>
+" ack.vim
+" don't jump to first result automatically
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>"
 
-nnoremap <leader>vs :source $MYVIMRC<cr>
+" deoplete.nvim
+let g:deoplete#enable_at_startup = 1
+let g:tern_request_timeout = 1
+" Disable autocompletion because ALE autocompletion works for TypeScript
+autocmd FileType typescript  let b:deoplete_disable_auto_complete = 1
 
-" Mappings for moving around panes
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-" Mappings for movement in insert mode
-inoremap <C-h> <Esc><C-w>h
-inoremap <C-j> <Esc><C-w>j
-inoremap <C-k> <Esc><C-w>k
-inoremap <C-l> <Esc><C-w>l
+" vim-fugitive
+" Automatically remove fugitive buffers from the buffer list
+augroup plugin_fugitive
+  autocmd!
+  autocmd BufReadPost fugitive://* set bufhidden=delete
+augroup END
 
+" vim-move
+nmap <leader>j <Plug>MoveLineDown
+nmap <leader>k <Plug>MoveLineUp
+vmap <leader>j <Plug>MoveBlockDown
+vmap <leader>k <Plug>MoveBlockUp
 
-nnoremap <silent> <Leader>, :exe "vertical resize +10"<CR>
-nnoremap <silent> <Leader>. :exe "vertical resize -10"<CR>
+" consolate-vim
+nnoremap <leader>c :Consolate<cr>
 
-" Movement commands for :terminal windows
-tnoremap <C-h> <C-\><C-n><C-w>h
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
+" ctrlp
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_match_window = 'results:100'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](public|\.cache)$',
+  \ 'file': '\v(yarn.lock|package-lock.json)$',
+  \ }
 
-" Mapping for opening splits and moving into it
-nnoremap <leader>sv <C-w>v<C-w>l
-nnoremap <leader>ss <C-w>s<C-w>j
+" vim-jsx
+let g:jsx_ext_required = 0
 
-" Quit terminal mode with escape key
-tnoremap <Esc> <C-\><C-n>
+" coverage.vim
+let g:coverage_json_report_path = 'artifacts/coverage/coverage-final.json'
+let g:coverage_sign_covered = '⦿'
+let g:coverage_interval = 5000
+let g:coverage_show_covered = 0
+let g:coverage_show_uncovered = 1
 
-" Make Y yank to the end of the line instead of the entire line (i.e. same as yy).
-noremap Y y$
+" ale
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
+" Enable completion where available.
+let g:ale_completion_enabled = 1
+nnoremap <leader>d :ALEGoToDefinition<CR>
 
-" Set mappings for relative line numbering
-nnoremap <leader>lr :set relativenumber<CR>
-nnoremap <leader>ll :set norelativenumber<CR>
-
-" Timetrap
-nnoremap <leader>tt :!t w<CR>
-nnoremap <leader>ti :!t in<CR>
-nnoremap <leader>to :!t out<CR>
+" TypeScript
+" tscompletejob
+nnoremap <leader>i :TsCompleteJobQuickInfo<CR>
+" Disable autocompletion because ALE autocompletion works for TypeScript
+let g:tscompletejob_complete_disable = 1
