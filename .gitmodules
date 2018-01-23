@@ -1,0 +1,6 @@
+[submodule "macos/dotfiles/.vim/plugged/vim-crunch"]
+	path = macos/dotfiles/.vim/plugged/vim-crunch
+	url = git://github.com/arecarn/vim-crunch.git
+[submodule "macos/dotfiles/.vim/plugged/tscompletejob"]
+	path = macos/dotfiles/.vim/plugged/tscompletejob
+	url = git://github.com/runoshun/tscompletejob.git
