@@ -8,6 +8,7 @@ graphicsmagick
 heroku
 hub
 imagemagick
+ledger
 mutt
 neovim
 pianobar
