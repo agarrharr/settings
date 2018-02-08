@@ -1,0 +1,1 @@
+-o ~/Movies/youtube/%(uploader)s/%(upload_date)s%(title)s.%(ext)s
