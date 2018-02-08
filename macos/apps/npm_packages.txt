@@ -1,6 +1,7 @@
 create-react-app
 create-react-native-app
 diff-so-fancy
+elm
 prettier-eslint-cli
 pure-prompt
 tldr

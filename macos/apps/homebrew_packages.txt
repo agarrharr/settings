@@ -1,6 +1,7 @@
 ack
 cowsay
 dfu-util
+elixir
 fortune
 git
 gpg
@@ -11,6 +12,7 @@ imagemagick
 ledger
 mutt
 neovim
+newsboat
 pianobar
 postgresql
 python3
