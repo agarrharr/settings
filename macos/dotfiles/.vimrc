@@ -31,7 +31,7 @@ Plug 'docunext/closetag.vim'
 " Git commands inside vim
 Plug 'tpope/vim-fugitive'
 " Automatic indentation
-Plug 'tpope/vim-sleuth'
+" Plug 'tpope/vim-sleuth'
 " Show a git diff n the gutter
 Plug 'airblade/vim-gitgutter'
 " Change the background of css colors to match
@@ -43,13 +43,13 @@ Plug 'matze/vim-move'
 " Repeat with . after plugin maps
 Plug 'tpope/vim-repeat'
 " Syntax for jekyll markdown with front matter
-Plug 'PProvost/vim-markdown-jekyll'
+" Plug 'PProvost/vim-markdown-jekyll'
 " Add JavaScript console.log
 Plug 'agarrharr/consolation-vim'
 " enhances netrw
 Plug 'tpope/vim-vinegar'
 " Distraction-free writing
-Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/goyo.vim'
 " Search
 Plug 'mileszs/ack.vim'
 " Scratchpad
@@ -67,11 +67,17 @@ Plug 'machakann/vim-highlightedyank'
 " Calculate
 Plug 'arecarn/vim-crunch'
 " Code coverage
-Plug 'ruanyl/coverage.vim'
-" TypeScript Syntax
+" Plug 'ruanyl/coverage.vim'
+" TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'runoshun/tscompletejob'
+" Ledger cli
+Plug 'ledger/vim-ledger'
+" Reason
+Plug 'reasonml-editor/vim-reason-plus'
+" Elm
+Plug 'ElmCast/elm-vim'
 
 call plug#end()
 
@@ -353,10 +359,12 @@ let g:coverage_show_covered = 0
 let g:coverage_show_uncovered = 1
 
 " ale
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
+\}
 let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
+" let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
 " Enable completion where available.
 let g:ale_completion_enabled = 1
 nnoremap <leader>d :ALEGoToDefinition<CR>
@@ -366,3 +374,6 @@ nnoremap <leader>d :ALEGoToDefinition<CR>
 nnoremap <leader>i :TsCompleteJobQuickInfo<CR>
 " Disable autocompletion because ALE autocompletion works for TypeScript
 let g:tscompletejob_complete_disable = 1
+
+" ledger-cli
+au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
