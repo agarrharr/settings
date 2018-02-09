@@ -367,13 +367,21 @@ let g:ale_fix_on_save = 1
 " let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
 " Enable completion where available.
 let g:ale_completion_enabled = 1
-nnoremap <leader>d :ALEGoToDefinition<CR>
+nnoremap <leader>ad :ALEGoToDefinition<CR>
+nnoremap <leader>ae :ALEDetail<CR>
 
 " TypeScript
 " tscompletejob
-nnoremap <leader>i :TsCompleteJobQuickInfo<CR>
+nnoremap <leader>ti :TsCompleteJobQuickInfo<CR>
 " Disable autocompletion because ALE autocompletion works for TypeScript
 let g:tscompletejob_complete_disable = 1
 
 " ledger-cli
 au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
+
+" elm-vim
+let g:elm_jump_to_error = 1
+let g:elm_setup_keybindings = 0
+nnoremap <leader>mr :ElmRepl<CR>
+nnoremap <leader>md :ElmShowDocs<CR>
+nnoremap <leader>mb :ElmBrowseDocs<CR>

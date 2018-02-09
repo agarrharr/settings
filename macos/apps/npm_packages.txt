@@ -4,6 +4,7 @@ diff-so-fancy
 elm
 elm-format
 elm-live
+elm-oracle
 prettier-eslint-cli
 pure-prompt
 tldr
