@@ -25,5 +25,6 @@ tmux
 vim
 watchman
 yarn
+youtube-dl
 z
 zsh-syntax-highlighting
