@@ -232,6 +232,9 @@ noremap Y y$
 nnoremap <leader>lr :set relativenumber<CR>
 nnoremap <leader>ll :set norelativenumber<CR>
 
+" Set * to search for the current visual selection
+vnoremap * y/<C-R>"<CR>
+
 " Timetrap
 nnoremap <leader>tt :!t w<CR>
 nnoremap <leader>ti :!t in<CR>
@@ -367,6 +370,7 @@ let g:ale_fix_on_save = 1
 " let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
 " Enable completion where available.
 let g:ale_completion_enabled = 1
+let g:ale_change_sign_column_color = 1
 nnoremap <leader>ad :ALEGoToDefinition<CR>
 nnoremap <leader>ae :ALEDetail<CR>
 
@@ -382,6 +386,7 @@ au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
 " elm-vim
 let g:elm_jump_to_error = 1
 let g:elm_setup_keybindings = 0
+let g:elm_make_show_warnings = 0
 nnoremap <leader>mr :ElmRepl<CR>
 nnoremap <leader>md :ElmShowDocs<CR>
 nnoremap <leader>mb :ElmBrowseDocs<CR>
