@@ -98,12 +98,12 @@ function dotfiles {
   done
 }
 
-function nvim {
-  fancy_echo "Installing Neovim Python Providers"
+# function nvim {
+#   fancy_echo "Installing Neovim Python Providers"
 
-  pip2 install --upgrade neovim
-  pip3 install --upgrade neovim
-}
+#   pip2 install --upgrade neovim
+#   pip3 install --upgrade neovim
+# }
 
 function vim_plugins {
   fancy_echo 'Installing vim plugins'
@@ -180,7 +180,7 @@ function install {
   install_xcode_command_line_tools
   install_zsh
   dotfiles
-  nvim
+  # nvim
   homebrew_packages
   npm_packages
   gui_apps
