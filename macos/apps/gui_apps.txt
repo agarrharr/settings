@@ -5,6 +5,7 @@ audio-hijack
 backblaze
 docker
 firefox
+genymotion
 gimp
 google-chrome
 grandperspective
