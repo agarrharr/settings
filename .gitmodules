@@ -1,6 +1,15 @@
-[submodule "macos/dotfiles/.vim/plugged/vim-crunch"]
-	path = macos/dotfiles/.vim/plugged/vim-crunch
-	url = git://github.com/arecarn/vim-crunch.git
+[submodule "macos/dotfiles/.vim/plugged/deoplete-ternjs"]
+	path = macos/dotfiles/.vim/plugged/deoplete-ternjs
+	url = git://github.com/carlitux/deoplete-ternjs.git
 [submodule "macos/dotfiles/.vim/plugged/tscompletejob"]
 	path = macos/dotfiles/.vim/plugged/tscompletejob
 	url = git://github.com/runoshun/tscompletejob.git
+	ignore = dirty
+[submodule "macos/dotfiles/.vim/plugged/vim-crunch"]
+	path = macos/dotfiles/.vim/plugged/vim-crunch
+	url = git://github.com/arecarn/vim-crunch.git
+	ignore = dirty
+[submodule "macos/dotfiles/.vim/plugged/vim-reason-plus"]
+	path = macos/dotfiles/.vim/plugged/vim-reason-plus
+	url = git://github.com/reasonml-editor/vim-reason-plus.git
+	ignore = dirty
