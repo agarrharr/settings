@@ -16,12 +16,16 @@ function! BuildTern(info)
   endif
 endfunction
 Plug 'carlitux/deoplete-ternjs', { 'do': function('BuildTern') }
+" NERDTree
+Plug 'scrooloose/nerdtree'
 " Formatting and Linting
 Plug 'w0rp/ale'
 " Autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Commenter
 Plug 'tpope/vim-commentary'
+" Increment dates and times
+Plug 'tpope/vim-speeddating'
 " Fuzzy searching for opening files
 Plug 'ctrlpvim/ctrlp.vim'
 " Quoting/parenthesizing made simple
@@ -30,8 +34,9 @@ Plug 'tpope/vim-surround'
 Plug 'docunext/closetag.vim'
 " Git commands inside vim
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 " Automatic indentation
-" Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-sleuth'
 " Show a git diff n the gutter
 Plug 'airblade/vim-gitgutter'
 " Change the background of css colors to match
@@ -78,6 +83,11 @@ Plug 'ledger/vim-ledger'
 Plug 'reasonml-editor/vim-reason-plus'
 " Elm
 Plug 'ElmCast/elm-vim'
+" Polyglot language pack
+Plug 'sheerun/vim-polyglot'
+" Ruby on Rails
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-endwise'
 
 call plug#end()
 
@@ -108,12 +118,15 @@ augroup END
 " Turn on search highlighting
 set hlsearch
 set incsearch
+
+" Save undo history
 set undofile
 " Hide undo files in netrw
 let g:netrw_list_hide='.*\.un\~$\|.*\.swp$'
 
 " I don't need this (plus there's a possible security problem)
 set modelines=0
+
 " Don't add newline to end of file
 set fileformats+=dos
 
@@ -152,15 +165,15 @@ set clipboard=unnamed
 
 " Close the Omni-Completion tip window when a selection is made
 " These lines close it on movement in insert mode or when leaving insert mode
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+" autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Invisible Characters
 " Shortcut to toggle invisible characters
 " Use the same symbols as TextMate for tabstops and EOLs
 :set list listchars=tab:\ \ ,trail:-
-nnoremap <leader>i :set list<CR>:set listchars=tab:▸\ ,eol:¬<CR>
-nnoremap <leader>io :set list<CR>:set listchars=tab:\ \ ,trail:-<CR>
+nnoremap <Leader>i :set list<CR>:set listchars=tab:▸\ ,eol:¬<CR>
+nnoremap <Leader>io :set list<CR>:set listchars=tab:\ \ ,trail:-<CR>
 " Change color to gray
 highlight NonText ctermfg=7 guifg=gray
 " Show this character when the line wraps
@@ -182,13 +195,13 @@ endif
 """""""""""""""
 
 " Mappings to open config files
-nnoremap <leader>ev :tabnew $MYVIMRC<cr>
-nnoremap <leader>et :tabnew ~/.tmux.conf<cr>
-nnoremap <leader>ez :tabnew ~/.zshrc<cr>
-nnoremap <leader>em :tabnew ~/.muttrc<cr>
-nnoremap <leader>eg :tabnew ~/.gitconfig<cr>
+nnoremap <Leader>ev :tabnew $MYVIMRC<cr>
+nnoremap <Leader>et :tabnew ~/.tmux.conf<cr>
+nnoremap <Leader>ez :tabnew ~/.zshrc<cr>
+nnoremap <Leader>em :tabnew ~/.muttrc<cr>
+nnoremap <Leader>eg :tabnew ~/.gitconfig<cr>
 
-nnoremap <leader>vs :source $MYVIMRC<cr>
+nnoremap <Leader>vs :source $MYVIMRC<cr>
 
 " Mappings for moving around panes
 nnoremap <C-h> <C-w>h
@@ -222,52 +235,56 @@ if has('nvim')
 endif
 
 " Mapping for opening splits and moving into it
-nnoremap <leader>sv <C-w>v<C-w>l
-nnoremap <leader>ss <C-w>s<C-w>j
+nnoremap <Leader>sv <C-w>v<C-w>l
+nnoremap <Leader>ss <C-w>s<C-w>j
 
 " Make Y yank to the end of the line instead of the entire line (i.e. same as yy).
 noremap Y y$
 
 " Set mappings for relative line numbering
-nnoremap <leader>lr :set relativenumber<CR>
-nnoremap <leader>ll :set norelativenumber<CR>
+nnoremap <Leader>lr :set relativenumber<CR>
+nnoremap <Leader>ll :set norelativenumber<CR>
 
 " Set * to search for the current visual selection
 vnoremap * y/<C-R>"<CR>
 
 " Timetrap
-nnoremap <leader>tt :!t w<CR>
-nnoremap <leader>ti :!t in<CR>
-nnoremap <leader>to :!t out<CR>
+nnoremap <Leader>tt :!t w<CR>
+nnoremap <Leader>ti :!t in<CR>
+nnoremap <Leader>to :!t out<CR>
+
+" VLC transcriptions
+nnoremap <Leader>dh :normal! mqO<dt>Host</dt><Esc>`q
+nnoremap <Leader>dg :normal! mqO<dt>Guest</dt><Esc>`q
+nnoremap <Leader>dd :normal! mqI<dd><Esc>A</dd><Esc>`q
+nnoremap <Tab> :!player_control vlc toggle<Enter><Enter>
+nnoremap <Leader>0 :!player_control vlc back5<Enter><Enter>
+nnoremap <Leader>1 :!player_control vlc speed100<Enter><Enter>
+nnoremap <Leader>2 :!player_control vlc speed125<Enter><Enter>
+nnoremap <Leader>3 :!player_control vlc speed150<Enter><Enter>
+nnoremap <Leader>4 :!player_control vlc speed200<Enter><Enter>
+
+" Search through command history (in command line mode) with Ctrl-P and Ctrl-N
+" And make Up and Down go through all of the history
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <Up> <C-p>
+cnoremap <Down> <C-n>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings for Functions
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Print current git branch
-nnoremap <leader>b :PrintCurrentBranch<CR>
+nnoremap <Leader>b :PrintCurrentBranch<CR>
 
 " Highlight the word under the cursor
-nnoremap <leader>h :HighlightWordUnderCursor<CR>
+nnoremap <Leader>h :HighlightWordUnderCursor<CR>
 
 nnoremap <Leader>gh :ShowOnGithub<CR>
 
 " Remove all trailing whitespace in a file
-nnoremap <leader>w :StripTrailingWhitespaces<CR>
-""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mappings for Functions
-""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Print current git branch
-nnoremap <leader>b :PrintCurrentBranch<CR>
-
-" Highlight the word under the cursor
-nnoremap <leader>h :HighlightWordUnderCursor<CR>
-
-nnoremap <Leader>gh :ShowOnGithub<CR>
-
-" Remove all trailing whitespace in a file
-nnoremap <leader>w :StripTrailingWhitespaces<CR>
+nnoremap <Leader>w :StripTrailingWhitespaces<CR>
 
 """"""""""""""""""""
 " Section: Functions
@@ -277,7 +294,7 @@ nnoremap <leader>w :StripTrailingWhitespaces<CR>
 " It doesn't clobber the search register
 function! HighlightWordUnderCursor()
     if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
-        exec 'match' 'Search' '/\V\<'.expand('<cword>').'\>/'
+        execute 'match' 'Search' '/\V\<'.expand('<cword>').'\>/'
     else
         match none
     endif
@@ -286,14 +303,14 @@ command! -nargs=0 HighlightWordUnderCursor call HighlightWordUnderCursor()
 
 function! ShowOnGithub()
   let u = system("echo ${${${$(git --git-dir=.git config --get remote.origin.url)#git@github.com:}%.git}#https://github.com/} | xargs echo -n")
-  silent exec "!open "."https://github.com/".u."/blob/master/".@%.'\#L'.line(".")
+  silent execute "!open "."https://github.com/".u."/blob/master/".@%.'\#L'.line(".")
 endfunction
 command! -nargs=0 ShowOnGithub call ShowOnGithub()
 
 nnoremap <Leader>gh :ShowOnGithub<CR>
 
 function! PrintCurrentBranch()
-  exec ":.-1read!git rev-parse --abbrev-ref HEAD"
+  execute ":.-1read!git rev-parse --abbrev-ref HEAD"
   :execute "normal! A: "
   startinsert!
 endfunction
@@ -312,14 +329,28 @@ function! StripTrailingWhitespaces()
 endfunction
 command! -nargs=0 StripTrailingWhitespaces call StripTrailingWhitespaces()
 
+function! CmusPause()
+  silent execute ":!cmus-remote --pause"
+endfunction
+command! -nargs=0 CmusPause call CmusPause()
+
+function! CmusBack()
+  execute ":!cmus-remote --seek -5"
+endfunction
+command! -nargs=0 CmusBack call CmusBack()
+
 """"""""""""""""""
 " Section: Plugins
 """"""""""""""""""
 
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+" map <C-m> :NERDTreeMirror<CR>
+
 " ack.vim
 " don't jump to first result automatically
 cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>"
+nnoremap <Leader><Space> :Ack!<Space>"
 
 " deoplete.nvim
 let g:deoplete#enable_at_startup = 1
@@ -335,13 +366,13 @@ augroup plugin_fugitive
 augroup END
 
 " vim-move
-nmap <leader>j <Plug>MoveLineDown
-nmap <leader>k <Plug>MoveLineUp
-vmap <leader>j <Plug>MoveBlockDown
-vmap <leader>k <Plug>MoveBlockUp
+nmap <Leader>j <Plug>MoveLineDown
+nmap <Leader>k <Plug>MoveLineUp
+vmap <Leader>j <Plug>MoveBlockDown
+vmap <Leader>k <Plug>MoveBlockUp
 
 " consolate-vim
-nnoremap <leader>c :Consolate<cr>
+nnoremap <Leader>c :Consolate<cr>
 
 " ctrlp
 let g:ctrlp_working_path_mode = 0
@@ -371,12 +402,12 @@ let g:ale_fix_on_save = 1
 " Enable completion where available.
 let g:ale_completion_enabled = 1
 let g:ale_change_sign_column_color = 1
-nnoremap <leader>ad :ALEGoToDefinition<CR>
-nnoremap <leader>ae :ALEDetail<CR>
+nnoremap <Leader>ad :ALEGoToDefinition<CR>
+nnoremap <Leader>ae :ALEDetail<CR>
 
 " TypeScript
 " tscompletejob
-nnoremap <leader>ti :TsCompleteJobQuickInfo<CR>
+nnoremap <Leader>ti :TsCompleteJobQuickInfo<CR>
 " Disable autocompletion because ALE autocompletion works for TypeScript
 let g:tscompletejob_complete_disable = 1
 
@@ -387,6 +418,9 @@ au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
 let g:elm_jump_to_error = 1
 let g:elm_setup_keybindings = 0
 let g:elm_make_show_warnings = 0
-nnoremap <leader>mr :ElmRepl<CR>
-nnoremap <leader>md :ElmShowDocs<CR>
-nnoremap <leader>mb :ElmBrowseDocs<CR>
+nnoremap <Leader>mr :ElmRepl<CR>
+nnoremap <Leader>md :ElmShowDocs<CR>
+nnoremap <Leader>mb :ElmBrowseDocs<CR>
+
+" polyglot
+let g:polyglot_disabled = ['elm']
