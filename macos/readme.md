@@ -197,6 +197,10 @@ Download [nova.itermcolors](https://raw.githubusercontent.com/trevordmiller/nova
 - [x] Launch Hammerspoon at login
 - [ ] Show dock icon
 
+#### Keybase
+
+Clone keybase git repositories to ~/Development/keybase, including the budget repo for use with `ledger-cli`.
+
 #### Mail
 
 - General
