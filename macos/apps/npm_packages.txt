@@ -5,9 +5,7 @@ elm
 elm-css
 elm-format
 elm-live
-elm-make
 elm-oracle
-elm-repl
 elm-test
 prettier-eslint-cli
 pure-prompt

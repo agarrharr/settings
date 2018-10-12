@@ -17,6 +17,7 @@ pianobar
 postgresql
 python3
 reattach-to-user-namespace
+rbenv
 redis
 ta
 task

@@ -398,7 +398,7 @@ let g:ale_fixers = {
 \   'typescript': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
-" let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
 " Enable completion where available.
 let g:ale_completion_enabled = 1
 let g:ale_change_sign_column_color = 1

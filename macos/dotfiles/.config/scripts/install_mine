@@ -40,6 +40,7 @@ function install_zsh () {
 }
 
 function install_or_update_homebrew {
+  # This if statement doesn't seem to work until homebrew is installed...
   which -s brew
   if [[ $? != 0 ]] ; then
       fancy_echo 'Installing Homebrew'
@@ -76,8 +77,10 @@ function npm_packages {
   fancy_echo 'Installing npm packages'
 
   mkdir -p ~/.npm-global
+
   npm install -g n
-  n latest
+  sudo chown -R $(whoami) /usr/local/lib/node_modules/
+  n stable
 
   apps=$(cat ~/settings/macos/apps/npm_packages.txt)
 
@@ -98,12 +101,12 @@ function dotfiles {
   done
 }
 
-# function nvim {
-#   fancy_echo "Installing Neovim Python Providers"
+function nvim {
+  fancy_echo "Installing Neovim Python Providers"
 
 #   pip2 install --upgrade neovim
-#   pip3 install --upgrade neovim
-# }
+  pip3 install --upgrade neovim
+}
 
 function vim_plugins {
   fancy_echo 'Installing vim plugins'
@@ -180,7 +183,7 @@ function install {
   install_xcode_command_line_tools
   install_zsh
   dotfiles
-  # nvim
+  nvim
   homebrew_packages
   npm_packages
   gui_apps

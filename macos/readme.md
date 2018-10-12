@@ -26,16 +26,11 @@ mv ~ && curl -LO https://github.com/agarrharr/settings/archive/master.zip && unz
 
 Install node [from website](https://nodejs.org).
 
-Make a directory for npm global installations.
+Run n with sudo, then change ownership of `/usr/local`. Then you should be able to run n without sudo.
 
 ```
-mkdir ~/.npm-global
-```
-
-Change ownership of `/usr/local`.
-
-```
-chown adamgarrett-harris /usr/local
+sudo n latest
+sudo chown -R $(whoami) /usr/local/n
 ```
 
 Create Development structure
@@ -94,13 +89,6 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
     - Schedule - Sunrise to Sunset
 - Keyboard
   - [ ] Adjust keyboard brightness in low light
-  - Modifier Keys...
-    - Apple Internal Keyboard / Trackpad
-      - Caps Lock (⇪) Key: ⌃ Control
-    - Das Keyboard
-      - Caps Lock (⇪) Key: ⌃ Control
-      - Option (⌥) Key: ⌘ Command
-      - Command (⌘) Key: ⌥ Option
 - Trackpad
   - Point & Click
     - [ ] Look up & data detectors
