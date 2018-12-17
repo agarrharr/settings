@@ -4,9 +4,13 @@ android-studio
 anki
 audio-hijack
 backblaze
+bartender
+bitbar
 buttercup
+cardhop
 docker
 dropbox
+fantastical
 firefox
 genymotion
 gimp
@@ -32,6 +36,7 @@ skim
 skype
 slack
 teamviewer
+textexpander
 thunderbird
 torbrowser
 tunnelblick
