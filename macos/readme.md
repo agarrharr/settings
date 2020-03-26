@@ -19,21 +19,27 @@ The `scripts/install.sh` script will:
 
 ## Installation
 
+Download:
+
 ``` bash
-mv ~ && curl -LO https://github.com/agarrharr/settings/archive/master.zip && unzip master.zip &&  mv ~/settings-master ~/settings && rm master.zip
-~/settings/macos/dotfiles/.config/scripts/install.sh
+cd ~ && curl -LO https://github.com/agarrharr/settings/archive/master.zip && unzip master.zip &&  mv ~/settings-master ~/settings && rm master.zip
+```
+
+Install Homebrew:
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
 Install node [from website](https://nodejs.org).
 
-Run n with sudo, then change ownership of `/usr/local`. Then you should be able to run n without sudo.
+Run the script:
 
 ```
-sudo n latest
-sudo chown -R $(whoami) /usr/local/n
+~/settings/macos/dotfiles/.config/scripts/install_mine
 ```
 
-Create Development structure
+Create Development structure:
 
 ```
 mkdir -p ~/Development/github/agarrharr
@@ -71,7 +77,6 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
   - Privacy
     - Accessibility
       - [x] Dropbox.app
-      - [x] Hammerspoon.app
       - [x] System Events.app
 - Spotlight
   - Search Results
@@ -80,10 +85,6 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
     - [x] Conversion
     - [x] Definition
     - [x] System Preferences
-- CDs & DVDs (only shows up if you have an external drive plugged in)
-  - When you insert a music CD: Open VLC.app
-  - When you insert a picture CD: Open Sequential.app
-  - When you insert a video DVD: Open VLC.app
 - Displays
   - Night Shift
     - Schedule - Sunrise to Sunset
@@ -104,8 +105,6 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
 - Users & Groups
   - Login Items
     - [x] Dropbox
-    - [x] Hammerspoon
-    - [x] iTunesHelper
 - Siri
   - [ ] Enable Siri
 - Date & Time
@@ -141,25 +140,6 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
 
 ### Manual Application Settings
 
-- Make Skim the default app for `.pdf`.
-- Make VLC the defalt app for video and audio (`.m4v`, `.mov`, `.mp3`, `.mp4`, etc.).
-- Make Sequential the default app for images (`.jpg`, `.jpeg`, `.png`, `.gif`, etc.).
-
-To make an app the default for a file type: Right-click on a file with that extension, and click "Info", change the app under "Open with:", and click "Change All...".
-
-#### Audacity
-
-Get LAME mp3 encoder.
-
-#### Calendar
-
-- Alerts
-  - All Day Events: None
-  - Birthdays: None
-  - [ ] Time to Leave
-- Advanced
-  - [x] Turn on time zone support
-
 #### Chrome
 
 - Chrome menu -> "Warn Before Quitting (⌘Q)"
@@ -192,53 +172,9 @@ Download [nova.itermcolors](https://raw.githubusercontent.com/trevordmiller/nova
       - Import
         - nova.itermcolors
 
-#### Hammerspoon
-
-- [x] Launch Hammerspoon at login
-- [ ] Show dock icon
-
 #### Keybase
 
 Clone keybase git repositories to ~/Development/keybase, including the budget repo for use with `ledger-cli`.
-
-#### Mail
-
-- General
-  - Default email reader: Mail.app
-  - New messages sound: None
-    - [ ] Play sounds for other mail actions
-- Viewing
-  - [x] Mark all messages as read when opening a conversation
-
-#### Mutt
-
-On Google, enable 2-step verification and add an [app specific password](https://security.google.com/settings/security/apppasswords). Use this password in the `~/.my-pwds` file.
-
-```
-set my_realname="Your Name"
-set my_email_a="your.email@gmail.com"
-set my_pass_a="password"
-set my_url_a="smtp://username@smtp.gmail.com:587/"
-```
-
-Create gpg key.
-
-```
-gpg --gen-key
-```
-Accept all the defaults, enter real name, email address, and password for the key. This is the password that you will use for mutt.
-
-Encrypt the password file and delete the old one. srm is a more secure delete.
-
-```
-gpg -r adam@gmail.com -e ~/.my-pwds
-srm ~/.my-pwds
-```
-
-#### Notational Velocity
-
-- Preferences -> Notes -> Storage -> Store and read notes on disk as: Plain Text Files *
-- Notes -> Read notes from: ~/Dropbox/notes
 
 #### Surfingkeys
 
@@ -246,13 +182,14 @@ Load settings from `~/.config/surfingkeys/index.js`
 
 ### Mac App Store Apps to Install
 
-- Final Cut Pro
+- Airmail
+- Cardhop
+- Drafts
+- Fantastical
 
 #### Other Apps to Install
 
-- [Audacity](http://www.audacityteam.org/)
-- [LayerX](https://github.com/yuhua-chen/LayerX)
-- [Postgres.app](reattach-to-user-namespace)
+- [Postgres.app]()
 
 ### Manual Development Settings
 

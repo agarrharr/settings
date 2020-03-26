@@ -88,6 +88,7 @@ Plug 'sheerun/vim-polyglot'
 " Ruby on Rails
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
+Plug 'ps-dev/ps-time-vim'
 
 call plug#end()
 

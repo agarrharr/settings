@@ -27,6 +27,10 @@ export LC_ALL=$LANG
 # Type ".." instead of "cd ..", "/usr/include" instead of "cd /usr/include".
 setopt auto_cd
 
+# NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 # ==================================================================
 # Path
 # ==================================================================
@@ -54,8 +58,6 @@ prompt pure
 # ==================================================================
 # Aliases
 # ==================================================================
-
-alias git='hub'
 
 alias vi='vim -u ~/.vim/essential.vim'
 
@@ -173,3 +175,4 @@ COMPLETION_WAITING_DOTS="true"
 
 # TODO: fix syntax highlighting
 # source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH="/usr/local/sbin:$PATH"

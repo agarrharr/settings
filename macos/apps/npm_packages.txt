@@ -13,3 +13,4 @@ tldr
 trash-cli
 typescript
 undollar
+yarn
