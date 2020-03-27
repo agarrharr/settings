@@ -1,5 +1,7 @@
 [include]
     path = ~/.gitconfig.local
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
 [core]
     editor = nvim
     excludesfile = ~/.gitignore
@@ -13,7 +15,7 @@
     enabled = 1
     autoupdate = 1
 [branch]
-    autosetuprebase = always
+    autoSetupRebase = always
 [merge]
     tool = vimdiff
     conflictstyle = diff3

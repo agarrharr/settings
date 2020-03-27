@@ -46,6 +46,14 @@ mkdir -p ~/Development/github/agarrharr
 mkdir -p ~/Development/github/others
 ```
 
+### Neovim
+
+Deoplete requires Python
+
+```
+pip3 install --user pynvim
+```
+
 ## Add Git Remote to Settings Directory
 
 [Add SSH key to Github](https://github.com/settings/ssh)
@@ -140,6 +148,22 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
 
 ### Manual Application Settings
 
+### Mac App Store Apps to Install
+
+- Airmail
+- Cardhop
+- Drafts
+- Fantastical
+
+#### Other Apps to Install
+
+- [Mob cli](https://github.com/remotemobprogramming/mob)
+
+#### Cardhop
+
+- General
+  - [x] Hide Cardhop in Dock
+
 #### Chrome
 
 - Chrome menu -> "Warn Before Quitting (⌘Q)"
@@ -152,6 +176,11 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
 - Sign in
 - Preferences -> Import -> Photos
   - [ ] Enable camera uploads for [Photos and videos]
+
+#### Fantastical
+
+- General
+  - Start week on: Monday
 
 #### Firefox
 
@@ -180,16 +209,10 @@ Clone keybase git repositories to ~/Development/keybase, including the budget re
 
 Load settings from `~/.config/surfingkeys/index.js`
 
-### Mac App Store Apps to Install
+#### TextExpander
 
-- Airmail
-- Cardhop
-- Drafts
-- Fantastical
-
-#### Other Apps to Install
-
-- [Postgres.app]()
+- Appearance
+  - [x] Hide TextExpander icon in Dock
 
 ### Manual Development Settings
 
