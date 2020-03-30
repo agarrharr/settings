@@ -170,6 +170,9 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
 - Preferences
   - Settings
     - Search [DuckDuckGo]
+- Dev Tools
+  - Network
+  - [x] Disable cache
 
 #### Dropbox
 
@@ -195,6 +198,8 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
 Download [nova.itermcolors](https://raw.githubusercontent.com/trevordmiller/nova-iterm/master/build/nova.itermcolors)
 
 - Profiles
+  - General
+    - Send text at start: `tmux attach -t base || tmux new -s base`
   - Colors
     - [x] Smart Cursor Color
     - Color Presets
@@ -204,6 +209,10 @@ Download [nova.itermcolors](https://raw.githubusercontent.com/trevordmiller/nova
 #### Keybase
 
 Clone keybase git repositories to ~/Development/keybase, including the budget repo for use with `ledger-cli`.
+
+### Keyboard Maestro
+
+File -> Start Syncing Macros -> Open Existing -> Choose from iCloud Drive Keyboard\ Maestro/"Keyboard Maestro Macros.kmsync"
 
 #### Surfingkeys
 
