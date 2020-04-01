@@ -31,6 +31,19 @@ setopt auto_cd
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  elif [[ $(nvm version) != $(nvm version default)  ]]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
 # ==================================================================
 # Path
 # ==================================================================
