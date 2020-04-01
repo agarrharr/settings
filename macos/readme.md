@@ -97,7 +97,12 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
   - Night Shift
     - Schedule - Sunrise to Sunset
 - Keyboard
-  - [ ] Adjust keyboard brightness in low light
+  - Keyboard
+    - [ ] Adjust keyboard brightness in low light
+  - Shortcuts
+    - Display
+      - [ ] Decrease display brightness
+      - [ ] Increase display brightness
 - Trackpad
   - Point & Click
     - [ ] Look up & data detectors
@@ -154,6 +159,8 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
 - Cardhop
 - Drafts
 - Fantastical
+- Moom
+- OmniFocus
 
 #### Other Apps to Install
 
@@ -210,9 +217,42 @@ Download [nova.itermcolors](https://raw.githubusercontent.com/trevordmiller/nova
 
 Clone keybase git repositories to ~/Development/keybase, including the budget repo for use with `ledger-cli`.
 
-### Keyboard Maestro
+#### Keyboard Maestro
 
 File -> Start Syncing Macros -> Open Existing -> Choose from iCloud Drive Keyboard\ Maestro/"Keyboard Maestro Macros.kmsync"
+
+#### Moom
+
+Should be able to import settings with:
+
+```
+defaults import com.manytricks.Moom ~/settings/macos/apps/Moom.plist
+```
+
+If you need to back it up again, do:
+
+```
+defaults export com.manytricks.Moom ~/settings/macos/apps/Moom.plist
+```
+
+- General
+  - [x] Launch automatically on login
+  - [ ] Show preferences on launch
+  - Run as [faceless] application
+- Mouse
+  - Zoom Button Controls
+    - [x] Enable [hexagon] grid with [6] x [4] cells
+  - Snap to Edges and Corners
+    - [x] Move & Zoom when dragging a window to a display edge or corner
+      - Top [Full Screen]
+      - Bottom [-]
+- Keyboard
+  - Trigger keyboard control with hot key: [⌃⌥⌘M]
+    - [ ] Show logo
+    - [x] Show cheat sheet
+  - Arrow keys: [Move & Zoom to Half Screen]
+  - Arrow keys with Command [⌘] held: [-]
+  - Arrow keys with Option [⌃] held: [Move to Other Display]
 
 #### Surfingkeys
 
