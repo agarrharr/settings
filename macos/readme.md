@@ -151,6 +151,10 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
   - Hide Tags
   - Hide Shared
 
+### Screensaver
+
+Get an [awesome screensaver](https://github.com/chrstphrknwtn/epoch-flip-clock-screensaver/)
+
 ### Manual Application Settings
 
 ### Mac App Store Apps to Install
@@ -246,13 +250,6 @@ defaults export com.manytricks.Moom ~/settings/macos/apps/Moom.plist
     - [x] Move & Zoom when dragging a window to a display edge or corner
       - Top [Full Screen]
       - Bottom [-]
-- Keyboard
-  - Trigger keyboard control with hot key: [⌃⌥⌘M]
-    - [ ] Show logo
-    - [x] Show cheat sheet
-  - Arrow keys: [Move & Zoom to Half Screen]
-  - Arrow keys with Command [⌘] held: [-]
-  - Arrow keys with Option [⌃] held: [Move to Other Display]
 
 #### Surfingkeys
 
