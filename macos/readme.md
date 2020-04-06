@@ -251,6 +251,14 @@ defaults export com.manytricks.Moom ~/settings/macos/apps/Moom.plist
       - Top [Full Screen]
       - Bottom [-]
 
+#### OmniFocus
+
+I have icons in a folder for custom perspectives at `~/settings/macos/apps/OmniFocus`. OmniFocus doesn't work with svgs, but I might want to change their color in the future. To do so, change the fill color of the svg, then use ImageMagick to convert it to a png:
+
+```
+convert -background none -density 1200 -resize 1024x1024 book.svg book.png
+```
+
 #### Surfingkeys
 
 Load settings from `~/.config/surfingkeys/index.js`
