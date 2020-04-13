@@ -180,7 +180,7 @@ Get an [awesome screensaver](https://github.com/chrstphrknwtn/epoch-flip-clock-s
 - Chrome menu -> "Warn Before Quitting (⌘Q)"
 - Preferences
   - Settings
-    - Search [DuckDuckGo]
+    - Search engine used in the address bar: [DuckDuckgo]
 - Dev Tools
   - Network
   - [x] Disable cache
