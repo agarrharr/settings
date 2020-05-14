@@ -1087,8 +1087,8 @@
       "h": 8,
       "layers": {
         "0": {
-          "key": "-",
-          "label": "-"
+          "key": "RGUI",
+          "label": "RGUI"
         }
       }
     },
