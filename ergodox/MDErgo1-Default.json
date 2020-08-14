@@ -22,10 +22,6 @@
         "0": {
           "key": "ESC",
           "label": "ESC"
-        },
-        "1": {
-          "key": "F11",
-          "label": "F11"
         }
       }
     },
@@ -331,12 +327,7 @@
       "y": 18,
       "w": 4,
       "h": 4,
-      "layers": {
-        "0": {
-          "key": "#:Layer[3]",
-          "label": "ƒ3"
-        }
-      }
+      "layers": {}
     },
     {
       "board": 0,
@@ -472,8 +463,8 @@
       "h": 8,
       "layers": {
         "0": {
-          "key": "DELETE",
-          "label": "DEL"
+          "key": "LALT",
+          "label": "LALT"
         }
       }
     },
@@ -500,8 +491,8 @@
       "h": 4,
       "layers": {
         "0": {
-          "key": "BACKSPACE",
-          "label": "BKSP"
+          "key": "LGUI",
+          "label": "LGUI"
         }
       }
     },
@@ -514,8 +505,8 @@
       "h": 4,
       "layers": {
         "0": {
-          "key": "LGUI",
-          "label": "LGUI"
+          "key": "LALT",
+          "label": "LALT"
         }
       }
     },
@@ -528,8 +519,8 @@
       "h": 4,
       "layers": {
         "0": {
-          "key": "LALT",
-          "label": "LALT"
+          "key": "LCTRL",
+          "label": "LCTRL"
         }
       }
     },
@@ -540,12 +531,7 @@
       "y": 18,
       "w": 4,
       "h": 4,
-      "layers": {
-        "0": {
-          "key": "LCTRL",
-          "label": "LCTRL"
-        }
-      }
+      "layers": {}
     },
     {
       "board": 0,
@@ -567,10 +553,6 @@
         "0": {
           "key": "#:LayerLock[2]",
           "label": "LOCK-2"
-        },
-        "1": {
-          "key": "F12",
-          "label": "F12"
         }
       }
     },
@@ -709,6 +691,10 @@
         "0": {
           "key": "[",
           "label": "["
+        },
+        "1": {
+          "key": "#:U\"Volume Up\" + CONS\"Volume Up\"",
+          "label": "VOL+"
         }
       }
     },
@@ -828,7 +814,7 @@
           "key": "H",
           "label": "H"
         },
-        "3": {
+        "1": {
           "key": "LEFT",
           "label": "←"
         }
@@ -846,13 +832,13 @@
           "key": "J",
           "label": "J"
         },
+        "1": {
+          "key": "DOWN",
+          "label": "↓"
+        },
         "2": {
           "key": "P4",
           "label": "P4"
-        },
-        "3": {
-          "key": "DOWN",
-          "label": "↓"
         }
       }
     },
@@ -868,13 +854,13 @@
           "key": "K",
           "label": "K"
         },
+        "1": {
+          "key": "UP",
+          "label": "↑"
+        },
         "2": {
           "key": "P5",
           "label": "P5"
-        },
-        "3": {
-          "key": "UP",
-          "label": "↑"
         }
       }
     },
@@ -890,13 +876,13 @@
           "key": "L",
           "label": "L"
         },
+        "1": {
+          "key": "RIGHT",
+          "label": "→"
+        },
         "2": {
           "key": "P6",
           "label": "P6"
-        },
-        "3": {
-          "key": "RIGHT",
-          "label": "→"
         }
       }
     },
@@ -961,6 +947,10 @@
         "0": {
           "key": "]",
           "label": "]"
+        },
+        "1": {
+          "key": "#:U\"Volume Down\" + CONS\"Volume Down\"",
+          "label": "VOL-"
         }
       }
     },
@@ -1082,8 +1072,8 @@
       "h": 4,
       "layers": {
         "0": {
-          "key": "ENTER",
-          "label": "↵"
+          "key": "#:Layer[1]",
+          "label": "ƒ1"
         }
       }
     },
@@ -1096,8 +1086,8 @@
       "h": 8,
       "layers": {
         "0": {
-          "key": "RGUI",
-          "label": "RGUI"
+          "key": "ENTER",
+          "label": "↵"
         }
       }
     },
@@ -1128,8 +1118,8 @@
       "h": 4,
       "layers": {
         "0": {
-          "key": "SPACE",
-          "label": "[ ]"
+          "key": "RGUI",
+          "label": "RGUI"
         },
         "2": {
           "key": "P0",
