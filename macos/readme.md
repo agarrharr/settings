@@ -169,6 +169,10 @@ Get an [awesome screensaver](https://github.com/chrstphrknwtn/epoch-flip-clock-s
 #### Other Apps to Install
 
 - [Mob cli](https://github.com/remotemobprogramming/mob)
+- [Chatology](https://www.flexibits.com/chatology)
+- [Forecast](https://overcast.fm/forecast)
+- [Kibohd Configurator](https://input.club/configurator-ergodox)
+- [MonitorControl](https://github.com/MonitorControl/MonitorControl)
 
 #### Cardhop
 
@@ -225,6 +229,11 @@ Clone keybase git repositories to ~/Development/keybase, including the budget re
 
 File -> Start Syncing Macros -> Open Existing -> Choose from iCloud Drive Keyboard\ Maestro/"Keyboard Maestro Macros.kmsync"
 
+#### MonitorControl
+
+- [x] Start MonitorControl at Login
+- [x] Show a slider for contrast
+
 #### Moom
 
 Should be able to import settings with:
@@ -252,6 +261,8 @@ defaults export com.manytricks.Moom ~/settings/macos/apps/Moom.plist
       - Bottom [-]
 
 #### OmniFocus
+
+In the Projects perspective: [x] Show Inbox
 
 I have icons in a folder for custom perspectives at `~/settings/macos/apps/OmniFocus`. OmniFocus doesn't work with svgs, but I might want to change their color in the future. To do so, change the fill color of the svg, then use ImageMagick to convert it to a png:
 
