@@ -62,7 +62,7 @@ Plug 'metakirby5/codi.vim'
 " Helps you open the right file
 Plug 'EinfachToll/DidYouMean'
 " Color theme
-Plug 'trevordmiller/nova-vim'
+Plug 'altercation/vim-colors-solarized'
 " JavaScript syntax highlighting and indentation
 Plug 'pangloss/vim-javascript'
 " JavaScript React
@@ -84,11 +84,12 @@ Plug 'reasonml-editor/vim-reason-plus'
 " Elm
 Plug 'ElmCast/elm-vim'
 " Polyglot language pack
+" polyglot
+let g:polyglot_disabled = ['elm']
 Plug 'sheerun/vim-polyglot'
 " Ruby on Rails
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
-Plug 'ps-dev/ps-time-vim'
 
 call plug#end()
 
@@ -100,7 +101,9 @@ set number
 
 let mapleader = "\<Space>"
 
-colorscheme nova
+syntax enable
+set background=dark
+colorscheme solarized
 
 set mouse=a
 
@@ -190,6 +193,9 @@ setlocal conceallevel=0
 if has('nvim')
   set inccommand=nosplit
 endif
+
+let g:python_host_prog  = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 """""""""""""""
 " Section: Keys
@@ -397,9 +403,11 @@ let g:coverage_show_uncovered = 1
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'typescript': ['prettier'],
+\   'typescriptreact': ['prettier'],
+\   'scss': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
+" let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
 " Enable completion where available.
 let g:ale_completion_enabled = 1
 let g:ale_change_sign_column_color = 1
@@ -422,6 +430,3 @@ let g:elm_make_show_warnings = 0
 nnoremap <Leader>mr :ElmRepl<CR>
 nnoremap <Leader>md :ElmShowDocs<CR>
 nnoremap <Leader>mb :ElmBrowseDocs<CR>
-
-" polyglot
-let g:polyglot_disabled = ['elm']
