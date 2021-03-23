@@ -87,9 +87,11 @@ function take() {
     cd $1
 }
 
+alias dc="docker-compose"
+
 alias ga="gitAddStatus"
 alias gc="git commit --verbose"
-alias gcm="git checkout master"
+alias gcm="git checkout main"
 alias gco="git checkout"
 alias gd="git diff"
 alias gl="git pull"
@@ -109,6 +111,13 @@ gitAddStatus() {
 # https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/
 smartresize() {
    mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
+}
+
+# $1 input_image
+# $2 input_mp3
+# $3 output_mp4
+imageAndAudioToVideo() {
+  ffmpeg -loop 1 -i $1 -i $2 -c:v libx264 -tune stillimage -c:a aac -b:a 192k -pix_fmt yuv420p -shortest $3
 }
 
 # ==================================================================
