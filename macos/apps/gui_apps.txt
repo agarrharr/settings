@@ -10,15 +10,12 @@ google-chrome
 grandperspective
 iterm2
 karabiner-elements
-keybase
 keyboard-maestro
-lastpass
 postico
 postman
 rider
 skype
 slack
 textexpander
-tunnelblick
 visual-studio-code
 vlc

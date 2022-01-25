@@ -1,32 +1,30 @@
 [include]
-    path = ~/.gitconfig.local
-[url "ssh://git@github.com/"]
-    insteadOf = https://github.com/
+  path = ~/.gitconfig.local
 [core]
-    editor = nvim
-    excludesfile = ~/.gitignore
-    autocrlf = input
-    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    ignorecase = false
-    pager = "diff-so-fancy | less --tabs=1,5 -R"
+  editor = nvim
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  ignorecase = false
+  pager = "diff-so-fancy | less --tabs=1,5 -R"
 [web]
-    browser = open
+  browser = open
 [rerere]
-    enabled = 1
-    autoupdate = 1
+  enabled = 1
+  autoupdate = 1
 [branch]
-    autoSetupRebase = always
+  autoSetupRebase = always
 [merge]
-    tool = vimdiff
-    conflictstyle = diff3
+  tool = vimdiff
+  conflictstyle = diff3
 [diff]
-    tool = vimdiff
+  tool = vimdiff
 [push]
-    default = simple
+  default = simple
 [user]
-    useconfigonly = true
-	email = agarrharr@users.noreply.github.com
-	name = Adam Garrett-Harris
+  useconfigonly = true
+  email = agarrharr@users.noreply.github.com
+  name = Adam Garrett-Harris
 [color]
   pager = true
   ui = auto

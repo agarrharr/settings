@@ -50,6 +50,7 @@ load-nvmrc
 
 NPM_PACKAGES="${HOME}/.npm-global/bin"
 RUBY_PATH="/usr/local/opt/ruby/bin:/Library/Ruby/Gems/2.0.0/gems"
+PYTHON_PATH="$HOME/Library/Python/2.7/bin"
 POSTGRES_PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin"
 PROJECT_NPM_PATH="./node_modules/.bin"
 YARN_PATH="$HOME/.yarn/bin"
@@ -57,7 +58,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 ANDROID_PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 LOCAL_PATH="$HOME/bin"
 LOCAL_SCRIPTS="$HOME/.config/scripts"
-export PATH="$NPM_PACKAGES:$RUBY_PATH:$POSTGRES_PATH:$PROJECT_NPM_PATH:$YARN_PATH:$ANDROID_PATH:$LOCAL_PATH:$LOCAL_SCRIPTS:$PATH"
+export PATH="$NPM_PACKAGES:$RUBY_PATH:$PYTHON_PATH:$POSTGRES_PATH:$PROJECT_NPM_PATH:$YARN_PATH:$ANDROID_PATH:$LOCAL_PATH:$LOCAL_SCRIPTS:$PATH"
 
 # ==================================================================
 # Prompt
@@ -198,3 +199,7 @@ COMPLETION_WAITING_DOTS="true"
 # TODO: fix syntax highlighting
 # source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/usr/local/sbin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

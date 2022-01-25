@@ -60,9 +60,7 @@ function install_or_update_homebrew_package {
 }
 
 function homebrew_packages {
-  install_or_update_homebrew
-
-  brew tap lucasefe/ta
+  # install_or_update_homebrew
 
   apps=$(cat ~/settings/macos/apps/homebrew_packages.txt)
 
@@ -176,8 +174,8 @@ function development {
 }
 
 function install {
-  install_xcode_command_line_tools
-  install_zsh
+  # install_xcode_command_line_tools
+  # install_zsh
   dotfiles
   homebrew_packages
   npm_packages
