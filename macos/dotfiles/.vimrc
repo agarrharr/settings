@@ -10,6 +10,14 @@
 call plug#begin('~/.vim/plugged')
 
 " Autocompletion
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 function! BuildTern(info)
   if a:info.status == 'installed' || a:info.force
     !npm install -g tern
@@ -20,8 +28,6 @@ Plug 'carlitux/deoplete-ternjs', { 'do': function('BuildTern') }
 Plug 'scrooloose/nerdtree'
 " Formatting and Linting
 Plug 'w0rp/ale'
-" Autocompletion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Commenter
 Plug 'tpope/vim-commentary'
 " Increment dates and times

@@ -66,7 +66,9 @@ export PATH="$NPM_PACKAGES:$RUBY_PATH:$PYTHON_PATH:$POSTGRES_PATH:$PROJECT_NPM_P
 
 # https://github.com/sindresorhus/pure/issues/116
 fpath+=("/usr/local/share/zsh/site-functions")
-autoload -U promptinit && promptinit
+# https://github.com/sindresorhus/pure/issues/116
+fpath+=/opt/homebrew/share/zsh/site-functions
+autoload -U promptinit; promptinit
 prompt pure
 
 # ==================================================================

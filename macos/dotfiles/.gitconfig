@@ -46,7 +46,6 @@
   meta = yellow
   frag = black bold
   func = blue
-  old = red strike
   new = green
   commit = blue
   whitespace = red

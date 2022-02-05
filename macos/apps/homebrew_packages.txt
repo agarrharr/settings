@@ -6,6 +6,7 @@ ledger
 neovim
 nvm
 postgresql
+pure
 reattach-to-user-namespace
 thefuck
 tmux
