@@ -1,16 +1,4 @@
-create-react-app
-create-react-native-app
-diff-so-fancy
-elm
-elm-css
-elm-format
-elm-live
-elm-oracle
-elm-test
-prettier-eslint-cli
 pure-prompt
 tldr
 trash-cli
-typescript
 undollar
-yarn

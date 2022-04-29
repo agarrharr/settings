@@ -210,7 +210,7 @@ Get an [awesome screensaver](https://github.com/chrstphrknwtn/epoch-flip-clock-s
 
 #### iTerm 2
 
-Download [nova.itermcolors](https://raw.githubusercontent.com/trevordmiller/nova-iterm/master/build/nova.itermcolors)
+Download [Solarized](https://ethanschoonover.com/solarized)
 
 - Profiles
   - General
@@ -219,11 +219,9 @@ Download [nova.itermcolors](https://raw.githubusercontent.com/trevordmiller/nova
     - [x] Smart Cursor Color
     - Color Presets
       - Import
-        - nova.itermcolors
-
-#### Keybase
-
-Clone keybase git repositories to ~/Development/keybase, including the budget repo for use with `ledger-cli`.
+        - Solarized Dark
+  - Colors
+    - Font size 22
 
 #### Keyboard Maestro
 
@@ -231,8 +229,11 @@ File -> Start Syncing Macros -> Open Existing -> Choose from iCloud Drive Keyboa
 
 #### MonitorControl
 
-- [x] Start MonitorControl at Login
-- [x] Show a slider for contrast
+- General
+  - [x] Sync brightness changes from Built-in and Apple displays
+  - [x] Start at Login
+- Displays
+  - [x] Show a slider for contrast
 
 #### Moom
 
