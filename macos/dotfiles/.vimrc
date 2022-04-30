@@ -370,6 +370,8 @@ let g:deoplete#enable_at_startup = 1
 let g:tern_request_timeout = 1
 " Disable autocompletion because ALE autocompletion works for TypeScript
 autocmd FileType typescript  let b:deoplete_disable_auto_complete = 1
+" https://github.com/carlitux/deoplete-ternjs/issues/88
+call deoplete#custom#option('num_processes', 4)
 
 " vim-fugitive
 " Automatically remove fugitive buffers from the buffer list
