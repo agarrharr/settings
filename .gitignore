@@ -1,3 +1,6 @@
+# Neovim
+macos/dotfiles/.vim/plugged/*
+
 # Ergodox
 ergodox/kll
 ergodox/log
