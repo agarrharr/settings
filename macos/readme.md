@@ -220,6 +220,7 @@ Download [Solarized](https://ethanschoonover.com/solarized)
     - Color Presets
       - Import
         - Solarized Dark
+      - Change Black Bright to "586e75"
   - Colors
     - Font size 22
 
