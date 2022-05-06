@@ -108,6 +108,16 @@ gitAddStatus() {
   git status
 }
 
+# Autocomplete git branches with fzf
+gch() {
+ git checkout "$(git branch | fzf| tr -d '[:space:]')"
+}
+
+# Preview files in current directory with fzf and bat (cat with syntax highlighting)
+preview() {
+  fzf --preview 'bat --color=always --style=numbers {}' --bind ctrl-d:preview-page-down,ctrl-u:preview-page-up,ctrl-n:preview-down,enter:preview-down,ctrl-p:preview-up,G:preview-bottom,ctrl-g:preview-top
+}
+
 # $1 input_image
 # $2 width
 # $3 output_dir
@@ -197,6 +207,15 @@ bindkey '^i' expand-or-complete-prefix
 
 # Display dots while waiting for completion
 COMPLETION_WAITING_DOTS="true"
+
+# fzf keyboard shortcut
+fzf-file-widget() {
+  local output
+  output=$(fzf</dev/tty) && LBUFFER+=${(q-)output}
+}
+zle -N fzf-file-widget
+bindkey -M vicmd "^T" fzf-file-widget
+bindkey -M viins "^T" fzf-file-widget
 
 # TODO: fix syntax highlighting
 # source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

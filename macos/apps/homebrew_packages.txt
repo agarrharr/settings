@@ -1,9 +1,12 @@
+bat
 diff-so-fancy
 git
+fzf
 neovim
 nvm
 pure
 reattach-to-user-namespace
+ripgrep
 thefuck
 tmux
 vim

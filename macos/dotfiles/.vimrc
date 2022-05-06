@@ -96,6 +96,9 @@ Plug 'sheerun/vim-polyglot'
 " Ruby on Rails
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
+" fzf fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -439,3 +442,9 @@ let g:elm_make_show_warnings = 0
 nnoremap <Leader>mr :ElmRepl<CR>
 nnoremap <Leader>md :ElmShowDocs<CR>
 nnoremap <Leader>mb :ElmBrowseDocs<CR>
+
+" fzf
+let g:fzf_layout = { 'down': '~40%' }
+" Remember to use :GFiles to fuzzy find files (ignoring .gitignored files)
+" Use :Rg to use ripgrep to fuzzy search within files with ripgrep
+" Use :Commits to view commit history and Enter to check it out
