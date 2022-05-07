@@ -221,7 +221,7 @@ Download [Solarized](https://ethanschoonover.com/solarized)
       - Import
         - Solarized Dark
       - Change Black Bright to "586e75"
-  - Colors
+  - Text
     - Font size 22
 
 #### Keyboard Maestro

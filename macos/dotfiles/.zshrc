@@ -113,6 +113,11 @@ gch() {
  git checkout "$(git branch | fzf| tr -d '[:space:]')"
 }
 
+fd() {
+  preview="git diff $@ --color=always -- {-1}"
+  git diff $@ --name-only | fzf -m --ansi --preview-window=wrap --preview $preview --bind ctrl-d:preview-page-down,ctrl-u:preview-page-up,ctrl-n:preview-down,enter:preview-down,ctrl-p:preview-up,G:preview-bottom,ctrl-g:preview-top
+}
+
 # Preview files in current directory with fzf and bat (cat with syntax highlighting)
 preview() {
   fzf --preview 'bat --color=always --style=numbers {}' --bind ctrl-d:preview-page-down,ctrl-u:preview-page-up,ctrl-n:preview-down,enter:preview-down,ctrl-p:preview-up,G:preview-bottom,ctrl-g:preview-top
