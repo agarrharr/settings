@@ -307,6 +307,25 @@ nnoremap <Leader>w :StripTrailingWhitespaces<CR>
 " Section: Functions
 """"""""""""""""""""
 
+" autocmd BufWritePost *.swift silent !xed -b % // open this file in Xcode in the background whenever I save a Swift file
+
+autocmd BufWritePost *.swift call OpenInXcode()
+
+function! OpenInXcode()
+    " Get the current file path
+    let current_file = expand('%')
+
+    " Escape special characters in the file path
+    let escaped_file = shellescape(current_file)
+
+    " Run the xed command
+    silent execute "!xed -b " . escaped_file
+endfunction
+
+""""""""""""""""""""
+" Section: Functions
+""""""""""""""""""""
+
 " Highlight all instances of word under cursor
 " It doesn't clobber the search register
 function! HighlightWordUnderCursor()
