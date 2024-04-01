@@ -128,12 +128,9 @@ function change_xcode_scheme()
 			repeat with doc in allDocuments
 				-- Check if the document represents a workspace
 				if class of doc is workspace document then
-					-- Check if the document name contains the workspace project name
-					if name of doc contains "Countable" then
-						-- Store the workspace document and its path
-						set workspaceDocument to doc
-						exit repeat
-					end if
+					-- Store the workspace document and its path
+					set workspaceDocument to doc
+					exit repeat
 				end if
 			end repeat
 			
