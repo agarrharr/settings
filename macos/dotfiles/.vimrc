@@ -96,6 +96,13 @@ Plug 'sheerun/vim-polyglot'
 " Ruby on Rails
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
+" iOS Development
+function! BuildXcodeBuild(info)
+  if a:info.status == 'installed' || a:info.force
+    !make install
+  endif
+endfunction
+Plug 'wojciech-kulik/xcodebuild.nvim' { 'do': function('BuildXcodeBuild') }
 " fzf fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
