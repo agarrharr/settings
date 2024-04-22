@@ -21,6 +21,6 @@
   "nvim-web-devicons": { "branch": "master", "commit": "3ee60deaa539360518eaab93a6c701fe9f4d82ef" },
   "openingh.nvim": { "branch": "main", "commit": "613c18967d42202f3e2a9ac788caf62a402e7c1a" },
   "plenary.nvim": { "branch": "master", "commit": "8aad4396840be7fc42896e3011751b7609ca4119" },
-  "telescope.nvim": { "branch": "master", "commit": "1bb28df3cfc241b961331f00dcb8d5b45fe3e4f0" },
+  "telescope.nvim": { "branch": "0.1.x", "commit": "1bb28df3cfc241b961331f00dcb8d5b45fe3e4f0" },
   "xcodebuild.nvim": { "branch": "main", "commit": "f71cad884f871f42b16cff8514527cc45fd9ea28" }
 }

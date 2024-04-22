@@ -99,32 +99,6 @@ function dotfiles {
   done
 }
 
-function vim_plugins {
-  fancy_echo 'Installing vim plugins'
-  # Use vim-plug to install vim plugins
-  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  vim +PlugInstall +qall
-  nvim +PlugInstall +qall
-}
-
-function install_or_update_gui_app {
-  # This if statement doesn't seem to work until at least one homebrew cask is installed...
-  if ! brew cask list $1 >& /dev/null; then
-    brew cask install $1 || fancy_echo_red 'Error installing '$1
-  fi
-}
-
-function gui_apps {
-  fancy_echo 'Installing GUI apps'
-  apps=$(cat ~/settings/macos/apps/gui_apps.txt)
-
-  # Use Homebrew Cask to install gui apps
-  for app in $apps; do
-    install_or_update_gui_app $app
-  done
-}
-
 function ruby {
   if ! command -v rbenv >/dev/null; then
     if ! command -v rvm >/dev/null; then
@@ -178,9 +152,7 @@ function install {
   # install_zsh
   dotfiles
   homebrew_packages
-  npm_packages
-  gui_apps
-  vim_plugins
+  # npm_packages
   # ruby
   # ruby_gems
   macos

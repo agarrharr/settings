@@ -12,3 +12,14 @@ tmux
 vim
 z
 zsh-syntax-highlighting
+1password --cask
+bartender --cask
+figma --cask
+google-chrome --cask
+iterm2 --cask
+karabiner-elements --cask
+keyboard-maestro --cask
+postman --cask
+slack --cask
+textexpander --cask
+visual-studio-code --cask
