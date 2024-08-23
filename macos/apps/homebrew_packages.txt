@@ -1,4 +1,5 @@
 bat
+cloc
 diff-so-fancy
 git
 fzf
@@ -19,7 +20,9 @@ google-chrome --cask
 iterm2 --cask
 karabiner-elements --cask
 keyboard-maestro --cask
+obsidian --cask
 postman --cask
+proxyman --cask
 slack --cask
 textexpander --cask
 visual-studio-code --cask
