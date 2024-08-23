@@ -73,7 +73,7 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
 
 ### Manual System Settings
 
-#### System Preferences
+#### System Settings
 
 - General
   - Default web browser: Google Chrome.app
@@ -125,6 +125,8 @@ cd ~/settings && git init && git remote add origin git@github.com:agarrharr/sett
     - [x] Digital
     - [x] Use a 24-hour clock
 - Accessibility
+  - Display
+    [x] Show window title icons (This shows proxy icons in Finder)
   - Zoom
     - [x] Use scroll gesture with modifier keys to zoom:
       - Control
