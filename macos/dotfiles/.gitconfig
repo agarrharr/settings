@@ -22,10 +22,6 @@
 [push]
   default = simple
   autoSetupRemote = true
-[user]
-  useconfigonly = true
-	email = agarrharr@users.noreply.github.com
-	name = Adam Garrett-Harris
 [color]
   pager = true
   ui = auto
