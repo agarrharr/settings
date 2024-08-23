@@ -15,16 +15,17 @@
 [branch]
   autoSetupRebase = always
 [merge]
-  tool = vimdiff
+	tool = Kaleidoscope
   conflictstyle = diff3
 [diff]
-  tool = vimdiff
+	tool = Kaleidoscope
 [push]
   default = simple
+  autoSetupRemote = true
 [user]
   useconfigonly = true
-  email = agarrharr@users.noreply.github.com
-  name = Adam Garrett-Harris
+	email = agarrharr@users.noreply.github.com
+	name = Adam Garrett-Harris
 [color]
   pager = true
   ui = auto
@@ -75,3 +76,15 @@
   selected = normal
   separator = red bold
   linenumber = normal
+[pull]
+	rebase = true
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+	trustExitCode = true
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
