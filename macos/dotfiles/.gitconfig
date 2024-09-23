@@ -15,10 +15,10 @@
 [branch]
   autoSetupRebase = always
 [merge]
-	tool = Kaleidoscope
+  tool = Kaleidoscope
   conflictstyle = diff3
 [diff]
-	tool = Kaleidoscope
+  tool = Kaleidoscope
 [push]
   default = simple
   autoSetupRemote = true
@@ -73,14 +73,14 @@
   separator = red bold
   linenumber = normal
 [pull]
-	rebase = true
+  rebase = true
 [difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [difftool]
-	prompt = false
-	trustExitCode = true
+  prompt = false
+  trustExitCode = true
 [mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
 [mergetool]
-	prompt = false
+  prompt = false
