@@ -75,15 +75,6 @@
                             "to": [{ "key_code": "right_command" }]
                         }
                     ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 18,
-                        "vendor_id": 13807
-                    },
-                    "ignore": false
                 }
             ],
             "fn_function_keys": [
