@@ -4,6 +4,26 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Command-Option-Click to Find Selected Symbol in Project with Delay",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "modifiers": { "mandatory": ["left_command", "left_option"] },
+                                    "pointing_button": "button1"
+                                },
+                                "to_delayed_action": {
+                                    "to_if_invoked": [
+                                        {
+                                            "key_code": "f",
+                                            "modifiers": ["left_command", "left_shift", "left_control"]
+                                        }
+                                    ]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Double-tap shift to Open Quickly in Xcode",
                         "manipulators": [
                             {
