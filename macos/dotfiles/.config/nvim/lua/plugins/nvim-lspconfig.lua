@@ -18,6 +18,9 @@ return {
 
       opts.desc = "Show documentation for what is under cursor"
       vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+
+      opts.desc = "Jump to definition"
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     end
 
     lspconfig["sourcekit"].setup({

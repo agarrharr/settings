@@ -22,6 +22,7 @@ return {
         },
         -- indent = { enable = true },
         autotag = { enable = false },
+        auto_install = true,
         ensure_installed = {
           "json",
           "yaml",
