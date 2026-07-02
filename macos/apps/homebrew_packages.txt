@@ -20,9 +20,11 @@ google-chrome --cask
 iterm2 --cask
 karabiner-elements --cask
 keyboard-maestro --cask
+moom --cask
 obsidian --cask
 postman --cask
 proxyman --cask
 slack --cask
 textexpander --cask
 visual-studio-code --cask
+xcodes --cask
