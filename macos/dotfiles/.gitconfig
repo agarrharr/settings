@@ -84,3 +84,5 @@
   trustExitCode = true
 [mergetool]
   prompt = false
+[user]
+	email = 3266363+agarrharr@users.noreply.github.com

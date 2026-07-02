@@ -1,3 +1,6 @@
+# AI
+.claude
+
 # Mac OS generated files
 .DS_Store
 .Trashes
@@ -20,3 +23,6 @@
 
 # Npm
 npm-debug.log
+
+# iOS
+buildServer.json

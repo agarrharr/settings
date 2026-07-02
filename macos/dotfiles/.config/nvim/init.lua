@@ -56,9 +56,9 @@ function OpenInXcode()
     local escaped_file = vim.fn.shellescape(current_file)
 
     -- Run the xed command
-    vim.fn.system("xed -b " .. escaped_file)
+    -- vim.fn.system("xed -b " .. escaped_file)
 
-    change_xcode_scheme()
+    -- change_xcode_scheme()
 end
 
 -- Define the autocommand to call OpenInXcode after saving Swift files

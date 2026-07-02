@@ -22,7 +22,7 @@ The `scripts/install.sh` script will:
 Download:
 
 ``` bash
-cd ~ && curl -LO https://github.com/agarrharr/settings/archive/master.zip && unzip master.zip &&  mv ~/settings-master ~/settings && rm master.zip
+cd ~ && curl -LO https://github.com/agarrharr/settings/archive/main.zip && unzip main.zip &&  mv ~/settings-main ~/settings && rm main.zip
 ```
 
 Install Homebrew:
@@ -66,7 +66,7 @@ pbcopy < ~/.ssh/id_rsa.pub
 ```
 
 ```bash
-cd ~/settings && git init && git remote add origin git@github.com:agarrharr/settings.git && git remote update -f && git checkout master && cd -
+cd ~/settings && git init && git remote add origin git@github.com:agarrharr/settings.git && git remote update -f && git checkout main && cd -
 ```
 
 ## Manual Settings
@@ -218,13 +218,11 @@ Download [Solarized](https://ethanschoonover.com/solarized)
   - General
     - Send text at start: `tmux attach -t base || tmux new -s base`
   - Colors
-    - [x] Smart Cursor Color
     - Color Presets
-      - Import
         - Solarized Dark
-      - Change Black Bright to "586e75"
   - Text
-    - Font size 22
+    - Download https://github.com/Karmenzind/monaco-nerd-fonts
+    - Monaco Nerd Font Mono
 
 #### Keyboard Maestro
 
