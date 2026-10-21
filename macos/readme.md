@@ -140,6 +140,9 @@ Get an [awesome screensaver](https://github.com/chrstphrknwtn/epoch-flip-clock-s
 
 #### iTerm 2
 
+- General
+  - Selection
+    - [x] Applications in terminal may access clipboard
 - Profiles
   - General
     - Send text at start: `tmux attach -t base || tmux new -s base`
