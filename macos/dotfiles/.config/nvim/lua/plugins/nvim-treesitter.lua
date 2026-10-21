@@ -1,41 +1,41 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    -- Pinned: `main` is a rewrite and doesn't support this config
-    branch = "master",
-    event = { "BufReadPre", "BufNewFile" },
+    branch = "main",
+    lazy = false, -- main doesn't support lazy-loading
     build = ":TSUpdate",
-    dependencies = {
-      "windwp/nvim-ts-autotag",
-    },
     config = function()
-      local treesitter = require("nvim-treesitter.configs")
+      local treesitter = require("nvim-treesitter")
 
-      treesitter.setup({
-        incremental_selection = {
-          enable = false,
-          keymaps = {
-            scope_incremental = "a",
-            node_decremental = "z",
-          },
-        },
-        highlight = {
-          enable = true,
-        },
-        -- indent = { enable = true },
-        autotag = { enable = false },
-        auto_install = true,
-        ensure_installed = {
-          "json",
-          "yaml",
-          "markdown",
-          "markdown_inline",
-          "lua",
-          "gitignore",
-          "swift",
-        },
-        -- Ignore swift and use the standard parser (I should look into a better solution)
-        ignore_install = { "swift" },
+      treesitter.install({
+        "json",
+        "yaml",
+        "markdown",
+        "markdown_inline",
+        "lua",
+        "gitignore",
+        "swift",
+      })
+
+      -- main doesn't enable highlighting or auto-install parsers, so do both here
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("treesitter", { clear = true }),
+        callback = function(args)
+          local lang = vim.treesitter.language.get_lang(args.match)
+          if not lang then
+            return
+          end
+
+          if vim.treesitter.language.add(lang) then
+            vim.treesitter.start(args.buf, lang)
+          elseif vim.tbl_contains(treesitter.get_available(), lang) then
+            treesitter.install(lang):await(vim.schedule_wrap(function(err)
+              if not err and vim.api.nvim_buf_is_valid(args.buf) then
+                vim.treesitter.start(args.buf, lang)
+              end
+            end))
+          end
+        end,
       })
     end,
   },
