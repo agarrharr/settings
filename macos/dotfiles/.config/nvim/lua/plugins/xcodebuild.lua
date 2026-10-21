@@ -72,5 +72,11 @@ return {
     vim.keymap.set("n", "<leader>xd", "<cmd>XcodebuildSelectDevice<cr>", { desc = "Select Device" })
     vim.keymap.set("n", "<leader>xp", "<cmd>XcodebuildSelectTestPlan<cr>", { desc = "Select Test Plan" })
     vim.keymap.set("n", "<leader>xq", "<cmd>Telescope quickfix<cr>", { desc = "Show QuickFix List" })
+
+    -- Xcode app helpers (lua/xcode.lua)
+    vim.api.nvim_create_user_command("XcodeFollow", function() require("xcode").toggle_follow() end, { desc = "Toggle opening Swift files in Xcode" })
+    vim.keymap.set("n", "<leader>xo", function() require("xcode").toggle_follow() end, { desc = "Toggle Xcode follow" })
+    vim.keymap.set("n", "<leader>xv", function() require("xcode").refresh_canvas() end, { desc = "Refresh Xcode canvas" })
+    vim.keymap.set("n", "<leader>xV", function() require("xcode").toggle_canvas() end, { desc = "Show/hide Xcode canvas" })
   end,
 }
