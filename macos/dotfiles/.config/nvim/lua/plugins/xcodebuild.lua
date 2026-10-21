@@ -3,12 +3,18 @@ local progress_handle
 return {
   "wojciech-kulik/xcodebuild.nvim",
   dependencies = {
-    "nvim-telescope/telescope.nvim",
+    "ibhagwan/fzf-lua",
     "MunifTanjim/nui.nvim",
   },
   config = function()
     require("xcodebuild").setup({
       show_build_progress_bar = false,
+      -- Use fzf-lua for pickers (snacks.nvim is installed for images, not as a picker)
+      integrations = {
+        telescope_nvim = { enabled = false },
+        snacks_nvim = { enabled = false },
+        fzf_lua = { enabled = true },
+      },
       logs = {
         auto_open_on_success_tests = false,
         auto_open_on_failed_tests = false,
@@ -71,7 +77,7 @@ return {
 
     vim.keymap.set("n", "<leader>xd", "<cmd>XcodebuildSelectDevice<cr>", { desc = "Select Device" })
     vim.keymap.set("n", "<leader>xp", "<cmd>XcodebuildSelectTestPlan<cr>", { desc = "Select Test Plan" })
-    vim.keymap.set("n", "<leader>xq", "<cmd>Telescope quickfix<cr>", { desc = "Show QuickFix List" })
+    vim.keymap.set("n", "<leader>xq", "<cmd>FzfLua quickfix<cr>", { desc = "Show QuickFix List" })
 
     -- Xcode app helpers (lua/xcode.lua)
     vim.api.nvim_create_user_command("XcodeFollow", function() require("xcode").toggle_follow() end, { desc = "Toggle opening Swift files in Xcode" })
