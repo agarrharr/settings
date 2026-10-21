@@ -45,6 +45,12 @@ vim.api.nvim_set_keymap('i', '<C-j>', '<Esc><C-w>j', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-k>', '<Esc><C-w>k', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-l>', '<Esc><C-w>l', { noremap = true })
 
+-- Mappings for moving lines up and down (keeps indentation)
+vim.keymap.set('n', '<Leader>j', '<cmd>m .+1<CR>==', { desc = 'Move line down' })
+vim.keymap.set('n', '<Leader>k', '<cmd>m .-2<CR>==', { desc = 'Move line up' })
+vim.keymap.set('v', '<Leader>j', ":m '>+1<CR>gv=gv", { desc = 'Move selection down', silent = true })
+vim.keymap.set('v', '<Leader>k', ":m '<-2<CR>gv=gv", { desc = 'Move selection up', silent = true })
+
 -- Section: Functions
 
 -- Strip trailing whitespaces
