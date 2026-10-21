@@ -1,21 +1,29 @@
 bat
 cloc
 diff-so-fancy
+fd
 git
 fzf
 neovim
 nvm
+pipx
 pure
 reattach-to-user-namespace
 ripgrep
+swiftlint
 thefuck
 tmux
+tree-sitter-cli
 vim
+xcbeautify
+xcode-build-server
+xcp
 z
 zsh-syntax-highlighting
 1password --cask
 bartender --cask
 figma --cask
+ghostty --cask
 google-chrome --cask
 iterm2 --cask
 karabiner-elements --cask

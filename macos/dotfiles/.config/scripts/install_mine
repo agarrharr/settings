@@ -89,6 +89,18 @@ function npm_packages {
   done
 }
 
+function pipx_packages {
+  fancy_echo 'Installing pipx packages'
+
+  apps=$(cat ~/settings/macos/apps/pipx_packages.txt)
+
+  # Use pipx to install Python command line apps
+  for app in $apps; do
+    fancy_echo $app
+    pipx install $app
+  done
+}
+
 function dotfiles {
   fancy_echo 'Copying dotfiles'
 
@@ -152,6 +164,7 @@ function install {
   # install_zsh
   dotfiles
   homebrew_packages
+  pipx_packages
   # npm_packages
   # ruby
   # ruby_gems
