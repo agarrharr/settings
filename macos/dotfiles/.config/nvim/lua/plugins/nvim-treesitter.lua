@@ -32,7 +32,8 @@ return {
           "gitignore",
           "swift",
         },
-        auto_install = true,
+        -- Ignore swift and use the standard parser (I should look into a better solution)
+        ignore_install = { "swift" },
       })
     end,
   },
