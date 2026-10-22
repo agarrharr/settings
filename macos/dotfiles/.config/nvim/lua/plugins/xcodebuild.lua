@@ -55,6 +55,49 @@ return {
       code_coverage = {
         enabled = true,
       },
+      -- Only errors, so ]q / [q step through what's breaking the build
+      quickfix = {
+        show_warnings_on_quickfixlist = false,
+      },
+    })
+
+    -- Show build errors in the gutter as soon as the build finishes,
+    -- without waiting for sourcekit-lsp to analyze each file
+    local build_errors_ns = vim.api.nvim_create_namespace("xcodebuild-build-errors")
+    local build_errors_group = vim.api.nvim_create_augroup("XcodebuildBuildErrors", { clear = true })
+
+    vim.api.nvim_create_autocmd("User", {
+      group = build_errors_group,
+      pattern = "XcodebuildBuildStarted",
+      callback = function()
+        vim.diagnostic.reset(build_errors_ns)
+      end,
+    })
+
+    vim.api.nvim_create_autocmd("User", {
+      group = build_errors_group,
+      pattern = "XcodebuildBuildFinished",
+      callback = function(args)
+        vim.diagnostic.reset(build_errors_ns)
+
+        local by_file = {}
+        for _, error in ipairs(args.data.errors or {}) do
+          if error.filepath and error.lineNumber then
+            by_file[error.filepath] = by_file[error.filepath] or {}
+            table.insert(by_file[error.filepath], {
+              lnum = error.lineNumber - 1,
+              col = math.max((error.columnNumber or 1) - 1, 0),
+              message = table.concat(error.message or {}, "\n"),
+              severity = vim.diagnostic.severity.ERROR,
+              source = "xcodebuild",
+            })
+          end
+        end
+
+        for filepath, diagnostics in pairs(by_file) do
+          vim.diagnostic.set(build_errors_ns, vim.fn.bufadd(filepath), diagnostics)
+        end
+      end,
     })
 
     -- stylua: ignore start
