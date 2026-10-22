@@ -127,5 +127,10 @@ return {
     vim.keymap.set("n", "<leader>xo", function() require("xcode").toggle_follow() end, { desc = "Toggle Xcode follow" })
     vim.keymap.set("n", "<leader>xv", function() require("xcode").refresh_canvas() end, { desc = "Refresh Xcode canvas" })
     vim.keymap.set("n", "<leader>xV", function() require("xcode").toggle_canvas() end, { desc = "Show/hide Xcode canvas" })
+    vim.keymap.set("n", "<leader>xw", function() require("xcode").toggle_issues() end, { desc = "Show/hide runtime warnings and errors" })
+    vim.keymap.set("n", "<leader>xE", function() require("xcode").toggle_events() end, { desc = "Show/hide events (subsystems in log_events.txt)" })
+    vim.keymap.set("n", "<leader>xL", function() require("xcode").toggle_issues_and_events() end, { desc = "Show/hide issues and events side by side" })
+    vim.keymap.set("n", "<leader>xa", function() require("xcode").toggle_app_output() end, { desc = "Show/hide app output" })
+    vim.keymap.set("n", "<leader>xA", function() require("xcode").toggle_all_logs() end, { desc = "Show/hide all app logs" })
   end,
 }

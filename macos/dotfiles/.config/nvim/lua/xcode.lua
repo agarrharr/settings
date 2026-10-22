@@ -176,4 +176,378 @@ function M.toggle_canvas()
     canvas("toggle")
 end
 
+-- Log views: splits at the bottom that stream logs while the app runs
+local log_views = {}
+local log_ns = vim.api.nvim_create_namespace("xcode-logs")
+
+-- Colors for formatted log views (purple like Xcode's runtime issues)
+vim.api.nvim_set_hl(0, "XcodeLogRuntimeWarning", { fg = "#cba6f7", default = true })
+vim.api.nvim_set_hl(0, "XcodeLogWarning", { link = "DiagnosticWarn", default = true })
+vim.api.nvim_set_hl(0, "XcodeLogError", { link = "DiagnosticError", default = true })
+vim.api.nvim_set_hl(0, "XcodeLogTime", { link = "Comment", default = true })
+vim.api.nvim_set_hl(0, "XcodeLogLabel", { link = "Identifier", default = true })
+
+---@class XcodeLogEntry
+---@field label string shown before the message, e.g. the subsystem
+---@field message string
+---@field hl string|nil highlight group for the label and message
+
+---@class XcodeLogView
+---@field command string[]
+---@field title string
+---@field format (fun(event: table): XcodeLogEntry)|nil when set, `command` outputs `log stream --style ndjson`
+---  and each event is shown formatted; otherwise the output is shown as-is in a terminal
+
+local function nil_if_null(value)
+    return value ~= vim.NIL and value or nil
+end
+
+---Appends a formatted entry to a log buffer, keeping windows at the bottom scrolled to the bottom
+local function append_log_entry(buf, event, entry)
+    local time = (nil_if_null(event.timestamp) or ""):match("%d+:%d+:%d+%.%d%d%d") or ""
+    local prefix = time .. "  " .. entry.label .. "  "
+    local lines = vim.split(entry.message, "\n", { trimempty = true })
+    if #lines == 0 then
+        lines = { "" }
+    end
+    lines[1] = prefix .. lines[1]
+    for i = 2, #lines do
+        lines[i] = string.rep(" ", #time + 2) .. lines[i]
+    end
+
+    local following = {}
+    for _, win in ipairs(vim.fn.win_findbuf(buf)) do
+        following[win] = vim.api.nvim_win_get_cursor(win)[1] == vim.api.nvim_buf_line_count(buf)
+    end
+
+    local first = vim.api.nvim_buf_line_count(buf)
+    local is_empty = first == 1 and vim.api.nvim_buf_get_lines(buf, 0, 1, false)[1] == ""
+    if is_empty then
+        first = 0
+    end
+
+    vim.bo[buf].modifiable = true
+    vim.api.nvim_buf_set_lines(buf, first, is_empty and 1 or first, false, lines)
+    vim.bo[buf].modifiable = false
+
+    vim.api.nvim_buf_set_extmark(buf, log_ns, first, 0, { end_col = #time, hl_group = "XcodeLogTime" })
+    vim.api.nvim_buf_set_extmark(buf, log_ns, first, #time + 2, {
+        end_col = #time + 2 + #entry.label,
+        hl_group = entry.hl or "XcodeLogLabel",
+    })
+    if entry.hl then
+        for i, line in ipairs(lines) do
+            local col = i == 1 and #prefix or #time + 2
+            vim.api.nvim_buf_set_extmark(buf, log_ns, first + i - 1, col, { end_col = #line, hl_group = entry.hl })
+        end
+    end
+
+    local last = vim.api.nvim_buf_line_count(buf)
+    for win, was_following in pairs(following) do
+        if was_following then
+            vim.api.nvim_win_set_cursor(win, { last, 0 })
+        end
+    end
+end
+
+---Starts a formatted log view in the current window and returns its job
+---@param view XcodeLogView
+local function start_formatted_log_view(buf, view)
+    vim.bo[buf].modifiable = false
+    local partial = ""
+
+    return vim.fn.jobstart(view.command, {
+        on_stdout = function(_, data)
+            data[1] = partial .. data[1]
+            partial = table.remove(data)
+            for _, line in ipairs(data) do
+                if line:sub(1, 1) == "{" then
+                    local ok, event = pcall(vim.json.decode, line)
+                    if ok and vim.api.nvim_buf_is_valid(buf) then
+                        append_log_entry(buf, event, view.format(event))
+                    end
+                end
+            end
+        end,
+    })
+end
+
+---Opens a window for a log view: beside any log view already showing at the bottom,
+---or else as a new split across the bottom
+local function open_log_window()
+    for _, view in pairs(log_views) do
+        local win = vim.api.nvim_buf_is_valid(view.buf) and vim.fn.bufwinid(view.buf) or -1
+        if win ~= -1 then
+            vim.api.nvim_set_current_win(win)
+            vim.cmd("rightbelow vsplit")
+            return
+        end
+    end
+
+    vim.cmd("botright 12split")
+end
+
+---Shows or hides a log split, starting it if needed.
+---`get_view` returns what to run, or nil (after notifying) if it can't start.
+---@param name string
+---@param get_view fun(): XcodeLogView|nil
+local function toggle_log_view(name, get_view)
+    local existing = log_views[name]
+
+    -- Start over if the stream stopped (e.g. the simulator was shut down)
+    if existing and vim.fn.jobwait({ existing.job }, 0)[1] ~= -1 then
+        if vim.api.nvim_buf_is_valid(existing.buf) then
+            vim.api.nvim_buf_delete(existing.buf, { force = true })
+        end
+        existing = nil
+        log_views[name] = nil
+    end
+
+    if existing and vim.api.nvim_buf_is_valid(existing.buf) then
+        local win = vim.fn.bufwinid(existing.buf)
+        if win ~= -1 then
+            vim.api.nvim_win_close(win, false)
+        else
+            local original_win = vim.api.nvim_get_current_win()
+            open_log_window()
+            vim.api.nvim_win_set_buf(0, existing.buf)
+            vim.api.nvim_set_current_win(original_win)
+        end
+        return
+    end
+
+    local view = get_view()
+    if not view then
+        return
+    end
+
+    local original_win = vim.api.nvim_get_current_win()
+    open_log_window()
+    local buf = vim.api.nvim_create_buf(false, true)
+    vim.api.nvim_win_set_buf(0, buf)
+    vim.wo.wrap = false
+
+    local job
+    if view.format then
+        job = start_formatted_log_view(buf, view)
+    else
+        job = vim.fn.jobstart(view.command, { term = true })
+    end
+
+    vim.api.nvim_buf_set_name(buf, view.title)
+    vim.bo[buf].bufhidden = "hide"
+    log_views[name] = { buf = buf, job = job }
+    vim.api.nvim_set_current_win(original_win)
+end
+
+---Whether a log view is showing in a window
+local function is_log_view_visible(name)
+    local view = log_views[name]
+    return view ~= nil and vim.api.nvim_buf_is_valid(view.buf) and vim.fn.bufwinid(view.buf) ~= -1
+end
+
+local function is_simulator_booted(udid)
+    local devices = vim.json.decode(vim.fn.system({ "xcrun", "simctl", "list", "devices", "--json" })).devices
+    for _, runtime_devices in pairs(devices) do
+        for _, device in ipairs(runtime_devices) do
+            if device.udid == udid then
+                return device.state == "Booted"
+            end
+        end
+    end
+    return false
+end
+
+-- Runtime warnings (Xcode's purple issues), minus Apple's internal performance diagnostics
+local runtime_warnings_predicate = 'subsystem == "com.apple.runtime-issues" AND category != "SkipRuntimeIssues"'
+
+-- The app's own log messages: Logger/os_log from the app and its packages (e.g. TCA, Firebase)
+-- and runtime warnings, without Apple frameworks' messages
+local app_messages_predicate = 'eventType == "logEvent" AND ((subsystem != "" AND NOT subsystem BEGINSWITH "com.apple.") OR ('
+    .. runtime_warnings_predicate
+    .. "))"
+
+---Returns xcodebuild.nvim's settings if its selected simulator is running the app, or else the problem
+---@return table|nil settings
+---@return string|nil problem
+local function running_simulator()
+    local ok, project_config = pcall(require, "xcodebuild.project.config")
+    local settings = ok and project_config.settings or {}
+    if settings.platform ~= "iOS Simulator" or not settings.destination then
+        return nil, "select a simulator with :XcodebuildSelectDevice first"
+    end
+
+    if not settings.productName then
+        return nil, "build the app first"
+    end
+
+    if not is_simulator_booted(settings.destination) then
+        return nil, (settings.deviceName or "the simulator") .. " isn't running. Run the app first."
+    end
+
+    return settings
+end
+
+---Returns a command streaming the app's unified log from the simulator
+---@param settings table from running_simulator()
+---@param extra_predicate string|nil narrows the log further
+---@param style string|nil "compact" (default) or "ndjson"
+local function log_stream_command(settings, extra_predicate, style)
+    local predicate = string.format('process == "%s"', settings.productName)
+    if extra_predicate then
+        predicate = predicate .. " AND " .. extra_predicate
+    end
+
+    return {
+        "xcrun", "simctl", "spawn", settings.destination,
+        "log", "stream", "--style", style or "compact", "--level", "debug", "--predicate", predicate,
+    }
+end
+
+---Returns a function for toggle_log_view that streams the simulator's log, or warns why it can't
+---@param title string
+---@param extra_predicate string|nil
+---@param format (fun(event: table): XcodeLogEntry)|nil shows formatted entries instead of raw output
+local function simulator_log_view(title, extra_predicate, format)
+    return function()
+        local settings, problem = running_simulator()
+        if not settings then
+            vim.notify(title .. ": " .. problem, vim.log.levels.WARN)
+            return nil
+        end
+
+        return {
+            command = log_stream_command(settings, extra_predicate, format and "ndjson" or nil),
+            title = title .. " (" .. (settings.deviceName or settings.destination) .. ")",
+            format = format,
+        }
+    end
+end
+
+---Purple for runtime warnings, red for errors from the app's own code and packages,
+---yellow for errors from Apple's frameworks
+---@return XcodeLogEntry
+local function format_issue(event)
+    local subsystem = nil_if_null(event.subsystem) or ""
+    local entry = { message = nil_if_null(event.eventMessage) or "" }
+
+    if subsystem == "com.apple.runtime-issues" then
+        entry.label = nil_if_null(event.category) or "Runtime"
+        entry.hl = "XcodeLogRuntimeWarning"
+    else
+        entry.label = subsystem ~= "" and subsystem or vim.fs.basename(nil_if_null(event.senderImagePath) or "")
+        local from_apple = subsystem == "" or vim.startswith(subsystem, "com.apple.")
+        entry.hl = from_apple and "XcodeLogWarning" or "XcodeLogError"
+    end
+
+    return entry
+end
+
+---@return XcodeLogEntry
+local function format_event(event)
+    return {
+        label = nil_if_null(event.subsystem) or "",
+        message = nil_if_null(event.eventMessage) or "",
+    }
+end
+
+---Shows or hides the app's issues: runtime warnings (Xcode's purple issues, e.g. from SwiftUI or
+---IssueReporting's reportIssue) and errors, colored by kind
+function M.toggle_issues()
+    toggle_log_view(
+        "issues",
+        simulator_log_view(
+            "Issues",
+            'eventType == "logEvent" AND (messageType == error OR messageType == fault) AND category != "SkipRuntimeIssues"',
+            format_issue
+        )
+    )
+end
+
+---Shows or hides log messages from the subsystems listed in the project's
+---.nvim/xcodebuild/log_events.txt (e.g. the app's TCA and analytics loggers)
+function M.toggle_events()
+    local ok, appdata = pcall(require, "xcodebuild.project.appdata")
+    if not ok or not appdata.appdir then
+        vim.notify("Events: run :XcodebuildSetup first", vim.log.levels.WARN)
+        return
+    end
+
+    local path = appdata.appdir .. "/log_events.txt"
+    if vim.fn.filereadable(path) == 0 then
+        vim.fn.writefile({
+            "# Log subsystems for the events panel (<leader>xE in Neovim)",
+            "#",
+            "# One subsystem per line: the subsystem of a Logger(subsystem:category:) in the app.",
+            "",
+        }, path)
+    end
+
+    local subsystems = vim.tbl_filter(function(line)
+        return vim.trim(line) ~= "" and not vim.startswith(line, "#")
+    end, vim.fn.readfile(path))
+
+    if #subsystems == 0 then
+        vim.notify("Events: add the log subsystems to show, one per line", vim.log.levels.INFO)
+        vim.cmd.tabedit(path)
+        return
+    end
+
+    local quoted = vim.tbl_map(function(subsystem)
+        return string.format('"%s"', vim.trim(subsystem))
+    end, subsystems)
+
+    toggle_log_view(
+        "events",
+        simulator_log_view(
+            "Events",
+            string.format('eventType == "logEvent" AND subsystem IN {%s}', table.concat(quoted, ", ")),
+            format_event
+        )
+    )
+end
+
+---Shows issues and events side by side at the bottom, or hides both if they're showing
+function M.toggle_issues_and_events()
+    local both_visible = is_log_view_visible("issues") and is_log_view_visible("events")
+    if both_visible or not is_log_view_visible("issues") then
+        M.toggle_issues()
+    end
+    if both_visible or not is_log_view_visible("events") then
+        M.toggle_events()
+    end
+end
+
+---Shows or hides everything the app logs to the unified log (Logger, os_log, Apple frameworks)
+function M.toggle_all_logs()
+    toggle_log_view("all_logs", simulator_log_view("All logs"))
+end
+
+---Shows or hides what Xcode's console would show: the app's printed output (stdout/stderr, which
+---xcodebuild.nvim saves on every run) together with the app's own log messages and runtime warnings
+function M.toggle_app_output()
+    toggle_log_view("app_output", function()
+        local ok, appdata = pcall(require, "xcodebuild.project.appdata")
+        if not ok or not appdata.app_logs_filepath then
+            vim.notify("App output: run :XcodebuildSetup first", vim.log.levels.WARN)
+            return nil
+        end
+
+        -- -F keeps following when xcodebuild.nvim clears the file at the start of each run
+        local tail = { "tail", "-n", "+1", "-F", appdata.app_logs_filepath }
+
+        local settings, problem = running_simulator()
+        if not settings then
+            vim.notify("App output: showing printed output only (" .. problem .. ")", vim.log.levels.INFO)
+            return { command = tail, title = "App output" }
+        end
+
+        -- Run both, and stop tail when the log stream stops
+        local script = 'file=$1; shift; trap "kill 0" EXIT HUP TERM; tail -n +1 -F "$file" & "$@"'
+        local command = { "sh", "-c", script, "sh", appdata.app_logs_filepath }
+        vim.list_extend(command, log_stream_command(settings, app_messages_predicate))
+        return { command = command, title = "App output (" .. (settings.deviceName or settings.destination) .. ")" }
+    end)
+end
+
 return M
