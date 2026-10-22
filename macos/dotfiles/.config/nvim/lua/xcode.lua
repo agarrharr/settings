@@ -509,7 +509,7 @@ local function notify_issue(kind)
         if pending_notification.errors > 0 then
             table.insert(parts, string.format("✖ %d error%s", pending_notification.errors, pending_notification.errors == 1 and "" or "s"))
         end
-        local message = table.concat(parts, ", ") .. "  (<leader>xw)"
+        local message = table.concat(parts, ", ") .. "  (<leader>li)"
 
         local has_fidget, fidget = pcall(require, "fidget")
         if has_fidget then
@@ -749,7 +749,7 @@ function M.toggle_events()
     local path = appdata.appdir .. "/log_events.txt"
     if vim.fn.filereadable(path) == 0 then
         vim.fn.writefile({
-            "# Log subsystems for the events panel (<leader>xE in Neovim)",
+            "# Log subsystems for the events panel (<leader>le in Neovim)",
             "#",
             "# One subsystem per line: the subsystem of a Logger(subsystem:category:) in the app.",
             "",

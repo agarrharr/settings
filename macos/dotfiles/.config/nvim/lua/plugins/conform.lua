@@ -14,12 +14,12 @@ return {
       log_level = vim.log.levels.ERROR,
     })
 
-    vim.keymap.set({ "n", "v" }, "<leader>mp", function()
+    vim.keymap.set({ "n", "v" }, "<leader>cf", function()
       conform.format({
         lsp_fallback = true,
         async = false,
         timeout_ms = 500,
       })
-    end, { desc = "Format file or range (in visual mode)" })
+    end, { desc = "Format file (or selection)" })
   end,
 }

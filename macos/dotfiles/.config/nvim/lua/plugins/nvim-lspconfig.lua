@@ -12,14 +12,27 @@ return {
     local on_attach = function(_, bufnr)
       opts.buffer = bufnr
 
-      opts.desc = "Show line diagnostics"
+      opts.desc = "Show errors and warnings on this line"
       vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
 
-      opts.desc = "Show documentation for what is under cursor"
+      opts.desc = "Show type and documentation"
       vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
-      opts.desc = "Jump to definition"
+      opts.desc = "Go to definition"
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+
+      -- Code (<leader>c): easier-to-find versions of Neovim's built-in gra / grn / gO
+      opts.desc = "Code action"
+      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+
+      opts.desc = "Rename symbol"
+      vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
+
+      opts.desc = "Symbols in this file"
+      vim.keymap.set("n", "<leader>cs", "<cmd>FzfLua lsp_document_symbols<CR>", opts)
+
+      opts.desc = "Symbols in the project"
+      vim.keymap.set("n", "<leader>cS", "<cmd>FzfLua lsp_live_workspace_symbols<CR>", opts)
     end
 
     vim.lsp.config("sourcekit", {

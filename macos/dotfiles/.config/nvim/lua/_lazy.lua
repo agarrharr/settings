@@ -26,4 +26,4 @@ require("lazy").setup({
 
 -- KEYMAPS
 local keymap = vim.keymap
-keymap.set("n", "<leader>ll", "<cmd>Lazy<CR>", { desc = "Opens Lazy" })
+keymap.set("n", "<leader>vl", "<cmd>Lazy<CR>", { desc = "Plugins (Lazy)" })

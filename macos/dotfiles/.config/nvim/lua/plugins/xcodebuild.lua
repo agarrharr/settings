@@ -67,7 +67,7 @@ return {
     local build_errors_group = vim.api.nvim_create_augroup("XcodebuildBuildErrors", { clear = true })
 
     -- Watch for runtime warnings and errors while the app runs (counted in lualine, notified,
-    -- and marked in the code), even when the issues view (<leader>xw) is hidden
+    -- and marked in the code), even when the issues view (<leader>li) is hidden
     vim.api.nvim_create_autocmd("User", {
       group = build_errors_group,
       pattern = "XcodebuildApplicationLaunched",
@@ -114,36 +114,37 @@ return {
     })
 
     -- stylua: ignore start
-    vim.keymap.set("n", "<leader>X", "<cmd>XcodebuildPicker<cr>", { desc = "Show Xcodebuild Actions" })
-    vim.keymap.set("n", "<leader>xf", "<cmd>XcodebuildProjectManager<cr>", { desc = "Show Project Manager Actions" })
+    -- Xcode (<leader>x): build, run, test, devices, and the Xcode app
+    vim.keymap.set("n", "<leader>xx", "<cmd>XcodebuildPicker<cr>", { desc = "All xcodebuild actions" })
+    vim.keymap.set("n", "<leader>xf", "<cmd>XcodebuildProjectManager<cr>", { desc = "Project files (add, rename, move)" })
 
-    vim.keymap.set("n", "<leader>xb", "<cmd>XcodebuildBuild<cr>", { desc = "Build Project" })
-    vim.keymap.set("n", "<leader>xB", "<cmd>XcodebuildBuildForTesting<cr>", { desc = "Build For Testing" })
-    vim.keymap.set("n", "<leader>xr", "<cmd>XcodebuildBuildRun<cr>", { desc = "Build & Run Project" })
+    vim.keymap.set("n", "<leader>xb", "<cmd>XcodebuildBuild<cr>", { desc = "Build" })
+    vim.keymap.set("n", "<leader>xB", "<cmd>XcodebuildBuildForTesting<cr>", { desc = "Build for testing" })
+    vim.keymap.set("n", "<leader>xr", "<cmd>XcodebuildBuildRun<cr>", { desc = "Build and run" })
 
-    vim.keymap.set("n", "<leader>xt", "<cmd>XcodebuildTest<cr>", { desc = "Run Tests" })
-    vim.keymap.set("v", "<leader>xt", "<cmd>XcodebuildTestSelected<cr>", { desc = "Run Selected Tests" })
-    vim.keymap.set("n", "<leader>xT", "<cmd>XcodebuildTestClass<cr>", { desc = "Run This Test Class" })
+    vim.keymap.set("n", "<leader>xt", "<cmd>XcodebuildTest<cr>", { desc = "Run tests" })
+    vim.keymap.set("v", "<leader>xt", "<cmd>XcodebuildTestSelected<cr>", { desc = "Run selected tests" })
+    vim.keymap.set("n", "<leader>xT", "<cmd>XcodebuildTestClass<cr>", { desc = "Run this test class" })
+    vim.keymap.set("n", "<leader>xe", "<cmd>XcodebuildTestExplorerToggle<cr>", { desc = "Toggle test explorer" })
+    vim.keymap.set("n", "<leader>xs", "<cmd>XcodebuildFailingSnapshots<cr>", { desc = "Failing snapshot tests" })
+    vim.keymap.set("n", "<leader>xc", "<cmd>XcodebuildToggleCodeCoverage<cr>", { desc = "Toggle code coverage" })
+    vim.keymap.set("n", "<leader>xC", "<cmd>XcodebuildShowCodeCoverageReport<cr>", { desc = "Code coverage report" })
 
-    vim.keymap.set("n", "<leader>xl", "<cmd>XcodebuildToggleLogs<cr>", { desc = "Toggle Xcodebuild Logs" })
-    vim.keymap.set("n", "<leader>xc", "<cmd>XcodebuildToggleCodeCoverage<cr>", { desc = "Toggle Code Coverage" })
-    vim.keymap.set("n", "<leader>xC", "<cmd>XcodebuildShowCodeCoverageReport<cr>", { desc = "Show Code Coverage Report" })
-    vim.keymap.set("n", "<leader>xe", "<cmd>XcodebuildTestExplorerToggle<cr>", { desc = "Toggle Test Explorer" })
-    vim.keymap.set("n", "<leader>xs", "<cmd>XcodebuildFailingSnapshots<cr>", { desc = "Show Failing Snapshots" })
-
-    vim.keymap.set("n", "<leader>xd", "<cmd>XcodebuildSelectDevice<cr>", { desc = "Select Device" })
-    vim.keymap.set("n", "<leader>xp", "<cmd>XcodebuildSelectTestPlan<cr>", { desc = "Select Test Plan" })
-    vim.keymap.set("n", "<leader>xq", "<cmd>FzfLua quickfix<cr>", { desc = "Show QuickFix List" })
+    vim.keymap.set("n", "<leader>xd", "<cmd>XcodebuildSelectDevice<cr>", { desc = "Select device" })
+    vim.keymap.set("n", "<leader>xp", "<cmd>XcodebuildSelectTestPlan<cr>", { desc = "Select test plan" })
 
     -- Xcode app helpers (lua/xcode.lua)
     vim.api.nvim_create_user_command("XcodeFollow", function() require("xcode").toggle_follow() end, { desc = "Toggle opening Swift files in Xcode" })
-    vim.keymap.set("n", "<leader>xo", function() require("xcode").toggle_follow() end, { desc = "Toggle Xcode follow" })
+    vim.keymap.set("n", "<leader>xo", function() require("xcode").toggle_follow() end, { desc = "Toggle following files in Xcode" })
     vim.keymap.set("n", "<leader>xv", function() require("xcode").refresh_canvas() end, { desc = "Refresh Xcode canvas" })
-    vim.keymap.set("n", "<leader>xV", function() require("xcode").toggle_canvas() end, { desc = "Show/hide Xcode canvas" })
-    vim.keymap.set("n", "<leader>xw", function() require("xcode").toggle_issues() end, { desc = "Show/hide runtime warnings and errors" })
-    vim.keymap.set("n", "<leader>xE", function() require("xcode").toggle_events() end, { desc = "Show/hide events (subsystems in log_events.txt)" })
-    vim.keymap.set("n", "<leader>xL", function() require("xcode").toggle_issues_and_events() end, { desc = "Show/hide issues and events side by side" })
-    vim.keymap.set("n", "<leader>xa", function() require("xcode").toggle_app_output() end, { desc = "Show/hide app output" })
-    vim.keymap.set("n", "<leader>xA", function() require("xcode").toggle_all_logs() end, { desc = "Show/hide all app logs" })
+    vim.keymap.set("n", "<leader>xV", function() require("xcode").toggle_canvas() end, { desc = "Toggle Xcode canvas" })
+
+    -- Logs (<leader>l): build log and app logs while it runs on a simulator
+    vim.keymap.set("n", "<leader>lb", "<cmd>XcodebuildToggleLogs<cr>", { desc = "Toggle build log" })
+    vim.keymap.set("n", "<leader>li", function() require("xcode").toggle_issues() end, { desc = "Toggle issues (runtime warnings and errors)" })
+    vim.keymap.set("n", "<leader>le", function() require("xcode").toggle_events() end, { desc = "Toggle events (log_events.txt)" })
+    vim.keymap.set("n", "<leader>ll", function() require("xcode").toggle_issues_and_events() end, { desc = "Toggle issues and events side by side" })
+    vim.keymap.set("n", "<leader>la", function() require("xcode").toggle_app_output() end, { desc = "Toggle app output" })
+    vim.keymap.set("n", "<leader>lA", function() require("xcode").toggle_all_logs() end, { desc = "Toggle all app logs" })
   end,
 }
