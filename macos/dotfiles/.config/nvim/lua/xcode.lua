@@ -197,6 +197,8 @@ vim.api.nvim_set_hl(0, "XcodeLogLabel", { link = "Identifier", default = true })
 ---@field title string
 ---@field format (fun(event: table): XcodeLogEntry)|nil when set, `command` outputs `log stream --style ndjson`
 ---  and each event is shown formatted; otherwise the output is shown as-is in a terminal
+---@field on_event (fun(event: table, append: fun(entry: XcodeLogEntry)))|nil used instead of `format` to
+---  handle each event, e.g. to look things up before appending its entry
 
 local function nil_if_null(value)
     return value ~= vim.NIL and value or nil
@@ -264,7 +266,15 @@ local function start_formatted_log_view(buf, view)
                 if line:sub(1, 1) == "{" then
                     local ok, event = pcall(vim.json.decode, line)
                     if ok and vim.api.nvim_buf_is_valid(buf) then
-                        append_log_entry(buf, event, view.format(event))
+                        if view.on_event then
+                            view.on_event(event, function(entry)
+                                if vim.api.nvim_buf_is_valid(buf) then
+                                    append_log_entry(buf, event, entry)
+                                end
+                            end)
+                        else
+                            append_log_entry(buf, event, view.format(event))
+                        end
                     end
                 end
             end
@@ -285,6 +295,40 @@ local function open_log_window()
     end
 
     vim.cmd("botright 12split")
+end
+
+---Starts a log view, showing it at the bottom or (with `show` false) running it in the background
+---@param name string
+---@param view XcodeLogView
+---@param show boolean
+local function start_log_view(name, view, show)
+    local original_win = vim.api.nvim_get_current_win()
+    local buf = vim.api.nvim_create_buf(false, true)
+    if show then
+        open_log_window()
+        vim.api.nvim_win_set_buf(0, buf)
+        vim.wo.wrap = false
+    end
+
+    local job
+    if view.format or view.on_event then
+        job = start_formatted_log_view(buf, view)
+    else
+        vim.api.nvim_buf_call(buf, function()
+            job = vim.fn.jobstart(view.command, { term = true })
+        end)
+    end
+
+    vim.api.nvim_buf_set_name(buf, view.title)
+    vim.bo[buf].bufhidden = "hide"
+    log_views[name] = { buf = buf, job = job }
+    vim.api.nvim_set_current_win(original_win)
+end
+
+---Whether a log view's stream is running
+local function is_log_view_running(name)
+    local view = log_views[name]
+    return view ~= nil and vim.api.nvim_buf_is_valid(view.buf) and vim.fn.jobwait({ view.job }, 0)[1] == -1
 end
 
 ---Shows or hides a log split, starting it if needed.
@@ -311,33 +355,16 @@ local function toggle_log_view(name, get_view)
             local original_win = vim.api.nvim_get_current_win()
             open_log_window()
             vim.api.nvim_win_set_buf(0, existing.buf)
+            vim.wo.wrap = false
             vim.api.nvim_set_current_win(original_win)
         end
         return
     end
 
     local view = get_view()
-    if not view then
-        return
+    if view then
+        start_log_view(name, view, true)
     end
-
-    local original_win = vim.api.nvim_get_current_win()
-    open_log_window()
-    local buf = vim.api.nvim_create_buf(false, true)
-    vim.api.nvim_win_set_buf(0, buf)
-    vim.wo.wrap = false
-
-    local job
-    if view.format then
-        job = start_formatted_log_view(buf, view)
-    else
-        job = vim.fn.jobstart(view.command, { term = true })
-    end
-
-    vim.api.nvim_buf_set_name(buf, view.title)
-    vim.bo[buf].bufhidden = "hide"
-    log_views[name] = { buf = buf, job = job }
-    vim.api.nvim_set_current_win(original_win)
 end
 
 ---Whether a log view is showing in a window
@@ -451,17 +478,263 @@ local function format_event(event)
     }
 end
 
----Shows or hides the app's issues: runtime warnings (Xcode's purple issues, e.g. from SwiftUI or
+-- Issue tracking: counts, notifications, and code marks for the issues view, which also runs in
+-- the background after the app launches (see M.start_issue_monitor)
+
+local issue_counts = { runtime = 0, errors = 0 }
+local issues_process_id = nil
+local issue_marks_ns = vim.api.nvim_create_namespace("xcode-runtime-issues")
+vim.diagnostic.config({ signs = { text = { [vim.diagnostic.severity.WARN] = "🟣" } } }, issue_marks_ns)
+
+local pending_notification = { runtime = 0, errors = 0 }
+local notification_scheduled = false
+
+---Notifies about new issues, grouping bursts into one notification (unless the issues view is showing)
+local function notify_issue(kind)
+    if is_log_view_visible("issues") then
+        return
+    end
+
+    pending_notification[kind] = pending_notification[kind] + 1
+    if notification_scheduled then
+        return
+    end
+
+    notification_scheduled = true
+    vim.defer_fn(function()
+        local parts = {}
+        if pending_notification.runtime > 0 then
+            table.insert(parts, string.format("🟣 %d runtime warning%s", pending_notification.runtime, pending_notification.runtime == 1 and "" or "s"))
+        end
+        if pending_notification.errors > 0 then
+            table.insert(parts, string.format("✖ %d error%s", pending_notification.errors, pending_notification.errors == 1 and "" or "s"))
+        end
+        local message = table.concat(parts, ", ") .. "  (<leader>xw)"
+
+        local has_fidget, fidget = pcall(require, "fidget")
+        if has_fidget then
+            fidget.notify(message, vim.log.levels.WARN)
+        else
+            vim.notify(message, vim.log.levels.WARN)
+        end
+
+        pending_notification = { runtime = 0, errors = 0 }
+        notification_scheduled = false
+    end, 1000)
+end
+
+---Runs a command in the background and calls `callback(lines)` with its output on the main loop
+local function run_shell(command, callback)
+    vim.system(command, { text = true }, function(result)
+        vim.schedule(function()
+            callback(vim.split(result.stdout or "", "\n", { trimempty = true }))
+        end)
+    end)
+end
+
+local app_images_cache = {}
+
+---Finds the Mach-O images in the app bundle, keyed by UUID, with their __TEXT load address
+local function app_images(process_image_path, callback)
+    if app_images_cache[process_image_path] then
+        return callback(app_images_cache[process_image_path])
+    end
+
+    local bundle = vim.fs.dirname(process_image_path)
+    local files = { process_image_path }
+    vim.list_extend(files, vim.fn.glob(bundle .. "/*.dylib", false, true))
+
+    local script = [[
+for f in "$@"; do
+  uuid=$(dwarfdump --uuid "$f" | awk '/arm64/ { print $2; exit }')
+  vmaddr=$(otool -l "$f" | awk '/segname __TEXT$/ { getline; print $2; exit }')
+  echo "$uuid $vmaddr $f"
+done]]
+    run_shell({ "sh", "-c", script, "sh", unpack(files) }, function(lines)
+        local images = {}
+        for _, line in ipairs(lines) do
+            local uuid, vmaddr, path = line:match("^(%S+) (%S+) (.+)$")
+            if uuid then
+                -- Debug builds usually have their debug info in place; use a dSYM if there is one
+                local dsym = path .. ".dSYM/Contents/Resources/DWARF/" .. vim.fs.basename(path)
+                images[uuid] = { path = vim.fn.filereadable(dsym) == 1 and dsym or path, vmaddr = tonumber(vmaddr) }
+            end
+        end
+        app_images_cache[process_image_path] = images
+        callback(images)
+    end)
+end
+
+local project_files_cache = {}
+
+---Maps file names to paths for the files tracked in the project's git repo
+local function project_files(callback)
+    local cwd = vim.fn.getcwd()
+    if project_files_cache[cwd] then
+        return callback(project_files_cache[cwd])
+    end
+
+    run_shell({ "git", "-C", cwd, "ls-files", "--full-name", "*.swift" }, function(lines)
+        local root = vim.trim(vim.fn.system({ "git", "-C", cwd, "rev-parse", "--show-toplevel" }))
+        local files = {}
+        for _, path in ipairs(lines) do
+            files[vim.fs.basename(path)] = files[vim.fs.basename(path)] or (root .. "/" .. path)
+        end
+        project_files_cache[cwd] = files
+        callback(files)
+    end)
+end
+
+---Finds where in the project's own code an issue came from, from its backtrace.
+---Calls `callback(location)` with { path, line, func } or nil.
+local function locate_issue(event, callback)
+    local frames = type(event.backtrace) == "table" and event.backtrace.frames or {}
+    local process_image_path = nil_if_null(event.processImagePath)
+    if #frames == 0 or not process_image_path then
+        return callback(nil)
+    end
+
+    app_images(process_image_path, function(images)
+        -- Symbolicate the frames in the app's own images, in order
+        local by_image = {}
+        for index, frame in ipairs(frames) do
+            local image = images[frame.imageUUID]
+            if image and image.vmaddr then
+                by_image[frame.imageUUID] = by_image[frame.imageUUID] or { image = image, frames = {} }
+                table.insert(by_image[frame.imageUUID].frames, { index = index, address = image.vmaddr + frame.imageOffset })
+            end
+        end
+
+        local symbols = {}
+        local remaining = vim.tbl_count(by_image)
+        if remaining == 0 then
+            return callback(nil)
+        end
+
+        local function finish()
+            project_files(function(files)
+                for index = 1, #frames do
+                    local symbol = symbols[index]
+                    local func, file, line = (symbol or ""):match("^(.-) %(in .-%) %((.-):(%d+)%)$")
+                    if file and files[file] then
+                        return callback({ path = files[file], line = tonumber(line), func = func })
+                    end
+                end
+                callback(nil)
+            end)
+        end
+
+        for _, group in pairs(by_image) do
+            local command = { "atos", "-o", group.image.path, "-arch", "arm64", "-l", string.format("0x%x", group.image.vmaddr) }
+            for _, frame in ipairs(group.frames) do
+                table.insert(command, string.format("0x%x", frame.address))
+            end
+            run_shell(command, function(lines)
+                for i, frame in ipairs(group.frames) do
+                    symbols[frame.index] = lines[i]
+                end
+                remaining = remaining - 1
+                if remaining == 0 then
+                    finish()
+                end
+            end)
+        end
+    end)
+end
+
+---Clears the counts and code marks when log events start coming from a new run of the app
+local function start_new_run_if_needed(event, append)
+    local process_id = nil_if_null(event.processID)
+    if process_id == issues_process_id then
+        return
+    end
+
+    issues_process_id = process_id
+    issue_counts = { runtime = 0, errors = 0 }
+    vim.diagnostic.reset(issue_marks_ns)
+    append({ label = "──", message = "New run of the app (process " .. tostring(process_id) .. ") ──", hl = "XcodeLogTime" })
+end
+
+---Counts, notifies about, and marks the code for each issue, then shows it in the issues view
+local function process_issue(event, append)
+    start_new_run_if_needed(event, append)
+
+    local entry = format_issue(event)
+    if entry.hl == "XcodeLogWarning" then
+        return append(entry) -- errors from Apple's frameworks are shown, but not counted
+    end
+
+    local kind = entry.hl == "XcodeLogRuntimeWarning" and "runtime" or "errors"
+    issue_counts[kind] = issue_counts[kind] + 1
+    notify_issue(kind)
+
+    if kind ~= "runtime" then
+        return append(entry)
+    end
+
+    locate_issue(event, function(location)
+        -- IssueReporting's messages can't be read from the log, only their location
+        local unreadable = entry.message == "" or entry.message:find("^<compose failure")
+        if location then
+            local where = vim.fs.basename(location.path) .. ":" .. location.line .. " in " .. location.func
+            entry.message = unreadable and ("Runtime warning at " .. where) or (entry.message .. "\n↳ " .. where)
+
+            -- Load the file first, or the sign is drawn on line 1 of the still-empty buffer
+            local buf = vim.fn.bufadd(location.path)
+            vim.fn.bufload(buf)
+            local marks = vim.diagnostic.get(buf, { namespace = issue_marks_ns })
+            table.insert(marks, {
+                lnum = location.line - 1,
+                col = 0,
+                message = unreadable and ("Runtime warning in " .. location.func) or entry.message,
+                severity = vim.diagnostic.severity.WARN,
+                source = "runtime warning",
+            })
+            vim.diagnostic.set(issue_marks_ns, buf, marks)
+        elseif unreadable then
+            entry.message = "Runtime warning (message and location unavailable)"
+        end
+        append(entry)
+    end)
+end
+
+---Returns the number of runtime warnings and errors from the app's own code in the current run
+---@return { runtime: integer, errors: integer }
+function M.issue_counts()
+    return issue_counts
+end
+
+---Starts the issues view in the background (if it isn't running), so new issues are counted and
+---notified about even while it's hidden. Meant to run when the app launches.
+function M.start_issue_monitor()
+    if is_log_view_running("issues") then
+        return
+    end
+
+    local settings = running_simulator()
+    if settings then
+        start_log_view("issues", M.issues_view(), false)
+    end
+end
+
+---Returns the issues view: runtime warnings (Xcode's purple issues, e.g. from SwiftUI or
 ---IssueReporting's reportIssue) and errors, colored by kind
+---@return XcodeLogView|nil
+function M.issues_view()
+    local view = simulator_log_view(
+        "Issues",
+        'eventType == "logEvent" AND (messageType == error OR messageType == fault) AND category != "SkipRuntimeIssues"',
+        format_issue
+    )()
+    if view then
+        view.on_event = process_issue
+    end
+    return view
+end
+
+---Shows or hides the issues view
 function M.toggle_issues()
-    toggle_log_view(
-        "issues",
-        simulator_log_view(
-            "Issues",
-            'eventType == "logEvent" AND (messageType == error OR messageType == fault) AND category != "SkipRuntimeIssues"',
-            format_issue
-        )
-    )
+    toggle_log_view("issues", M.issues_view)
 end
 
 ---Shows or hides log messages from the subsystems listed in the project's

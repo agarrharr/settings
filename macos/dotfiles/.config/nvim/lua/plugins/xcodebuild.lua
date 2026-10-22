@@ -66,6 +66,16 @@ return {
     local build_errors_ns = vim.api.nvim_create_namespace("xcodebuild-build-errors")
     local build_errors_group = vim.api.nvim_create_augroup("XcodebuildBuildErrors", { clear = true })
 
+    -- Watch for runtime warnings and errors while the app runs (counted in lualine, notified,
+    -- and marked in the code), even when the issues view (<leader>xw) is hidden
+    vim.api.nvim_create_autocmd("User", {
+      group = build_errors_group,
+      pattern = "XcodebuildApplicationLaunched",
+      callback = function()
+        require("xcode").start_issue_monitor()
+      end,
+    })
+
     vim.api.nvim_create_autocmd("User", {
       group = build_errors_group,
       pattern = "XcodebuildBuildStarted",
@@ -95,7 +105,10 @@ return {
         end
 
         for filepath, diagnostics in pairs(by_file) do
-          vim.diagnostic.set(build_errors_ns, vim.fn.bufadd(filepath), diagnostics)
+          -- Load the file first, or the sign is drawn on line 1 of the still-empty buffer
+          local bufnr = vim.fn.bufadd(filepath)
+          vim.fn.bufload(bufnr)
+          vim.diagnostic.set(build_errors_ns, bufnr, diagnostics)
         end
       end,
     })
