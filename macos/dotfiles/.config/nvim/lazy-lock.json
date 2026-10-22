@@ -6,6 +6,7 @@
   "cmp-path": { "branch": "main", "commit": "c642487086dbd9a93160e1679a1327be111cbc25" },
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
   "conform.nvim": { "branch": "master", "commit": "016802de402556da54c36bd7359b441266b01cdd" },
+  "diffview-plus.nvim": { "branch": "main", "commit": "2a2d89a07f5d5d3cef7f542b99c3e28050ca205c" },
   "fidget.nvim": { "branch": "main", "commit": "9e0201673e08e997e7cf52afca5565c70bd117f3" },
   "friendly-snippets": { "branch": "main", "commit": "b4d01b0fdf3c9a549961c2f9ffe8dc09be166219" },
   "fzf-lua": { "branch": "main", "commit": "5dca84ef44f37b960a128a43d044ee348ff86fb4" },
